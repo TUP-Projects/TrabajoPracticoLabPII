@@ -10,6 +10,7 @@ namespace AcademikaBackend.BusinessLayer.Entities
     {
         public int Id_provincia { get; set; }
         public string Nom_provincia { get; set; }
-        public int Id_pais { get; set; }
+        public Pais Pais { get; set; }
+
     }
 }

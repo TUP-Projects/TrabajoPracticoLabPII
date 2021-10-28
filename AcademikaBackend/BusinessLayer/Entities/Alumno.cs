@@ -8,24 +8,10 @@ namespace AcademikaBackend.BusinessLayer.Entities
 {
     public class Alumno
     {
-        public EstadoCivil EstadoCivil
-        {
-            get { return EstadoCivil; }
-            set { EstadoCivil = value; }
-        }
-
-        public SituacionHabitacional SituacionHabitacional
-        {
-            get { return SituacionHabitacional; }
-            set { SituacionHabitacional = value; }
-        }
-
-        public TipoDocumento TipoDocumento
-        {
-            get { return TipoDocumento; }
-            set { TipoDocumento = value; }
-        }
-
+        public EstadoCivil EstadoCivil { get; set; }
+        public SituacionHabitacional SituacionHabitacional { get; set; }
+        public TipoDocumento TipoDocumento { get; set; }
+        public Barrio Barrio { get; set; }
         public int Legajo { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -37,14 +23,7 @@ namespace AcademikaBackend.BusinessLayer.Entities
         public DateTime Fecha_Nac { get; set; }
         public bool Trabaja { get; set; }
         public int Id_Tipo_Trab { get; set; }
-        public int Id_Barrio { get; set; }
         public int Telefono { get; set; }
         public string Email { get; set; }
-
-        public Alumno()
-        {
-            EstadoCivil = new EstadoCivil();
-        }
-
     }
 }
