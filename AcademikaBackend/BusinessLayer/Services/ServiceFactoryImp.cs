@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AcademikaBackend.servicios
+namespace AcademikaBackend.BusinessLayer.Services
 {
     public class ServiceFactoryImp : AbstractServiceFactory
     {
-        public override IService CrearService()
+        public override IAlumnosService CrearServiceAlumno()
         {
-            //return new aqui poner service a retornar
-            return null;
+            return new AlumnosService();
         }
     }
 }

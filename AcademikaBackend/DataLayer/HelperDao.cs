@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AcademikaBackend.BusinessLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AcademikaBackend.datos
+namespace AcademikaBackend.DataLayer
 {
     class HelperDao
     {
@@ -58,7 +59,7 @@ namespace AcademikaBackend.datos
         }
 
 
-        //public bool EjecutarInsert(Receta receta, string spMaestro, string spDetalle)
+        //public bool EjecutarInsert(Alumno alumno, string spMaestro, string spDetalle)
         //{
         //    bool ok = true;
 
@@ -72,11 +73,11 @@ namespace AcademikaBackend.datos
         //        SqlCommand cmdMaestro = new SqlCommand(spMaestro, connection, transaction);
         //        cmdMaestro.CommandType = CommandType.StoredProcedure;
 
-        //        cmdMaestro.Parameters.AddWithValue("@id_receta", receta.RecetaNro);
-        //        cmdMaestro.Parameters.AddWithValue("@tipo_receta", receta.TipoDeReceta);
-        //        cmdMaestro.Parameters.AddWithValue("@nombre", receta.Nombre);
-        //        if(receta.Cheff != null)
-        //            cmdMaestro.Parameters.AddWithValue("@cheff", receta.Cheff);
+        //        cmdMaestro.Parameters.AddWithValue("@id_receta", alumno.RecetaNro);
+        //        cmdMaestro.Parameters.AddWithValue("@tipo_receta", alumno.TipoDeReceta);
+        //        cmdMaestro.Parameters.AddWithValue("@nombre", alumno.Nombre);
+        //        if (alumno.Cheff != null)
+        //            cmdMaestro.Parameters.AddWithValue("@cheff", alumno.Cheff);
         //        else
         //            cmdMaestro.Parameters.AddWithValue("@cheff", DBNull.Value);
 
@@ -100,7 +101,7 @@ namespace AcademikaBackend.datos
         //    {
         //        transaction.Rollback();
         //        ok = false;
-               
+
         //    }
         //    finally
         //    {
@@ -111,7 +112,6 @@ namespace AcademikaBackend.datos
         //    }
         //    return ok;
         //}
-
 
         public int EjecutarSQLConValorOUT(string nombreSP, string nombreParametro)
         {

@@ -640,6 +640,23 @@ GO
 
 /* SECTION STORES PROCEDURES */
 
+/* SP'S DE CONSULTAS DE TABLAS */
+CREATE PROCEDURE SP_CONSULTAR_CARRERAS
+AS
+BEGIN
+	SELECT * FROM CARRERAS
+END
+GO
+
+CREATE PROCEDURE SP_CONSULTAR_TIPOS_DOC
+AS
+BEGIN
+	SELECT * FROM TIPOS_DOC
+END
+GO
+
+/* FIN SP DE CONSULTAS */
+
 /*
 	Cantidad de alumnos regulares, libres, por materia, curso, carrera, año de cursado.
 	Ejemplos de ejecución:
