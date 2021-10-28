@@ -21,7 +21,6 @@ namespace AcademikaBackend.datos
 
         public static HelperDao GetInstance()
         {
-
             if (instance == null)
             {
                 instance = new HelperDao();
