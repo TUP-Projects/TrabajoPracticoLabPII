@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AcademikaBackend.BusinessLayer.Entities
 {
-    class EstadoCivil
-    {
+    public class EstadoCivil
+    { 
+        public int Id_Estado_Civil { get; set; }
+        public string Estado_Civil { get; set; }
     }
 }

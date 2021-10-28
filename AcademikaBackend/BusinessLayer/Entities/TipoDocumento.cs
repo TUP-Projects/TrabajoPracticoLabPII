@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace AcademikaBackend.BusinessLayer.Entities
 {
-    public class Provincia
+    public class TipoDocumento
     {
-        public int Id_provincia { get; set; }
-        public string Nom_provincia { get; set; }
-        public int Id_pais { get; set; }
+        public int Id_Tipo_Doc { get; set; }
+        public string Tipo_Doc { get; set; }
     }
 }

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace AcademikaBackend.BusinessLayer.Entities
 {
-    public class Provincia
+    public class SituacionHabitacional
     {
-        public int Id_provincia { get; set; }
-        public string Nom_provincia { get; set; }
-        public int Id_pais { get; set; }
+        public int Id_Situac_Habit { get; set; }
+        public string Situac_Habit { get; set; }
     }
 }
