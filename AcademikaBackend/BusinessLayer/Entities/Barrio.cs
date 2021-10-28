@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace AcademikaBackend.BusinessLayer.Entities
 {
-    class Localidades
+    class Barrio
     {
+        public int Id_Barrio { get; set; }
+        public string  Nom_Barrio { get; set; }
+
         public int Id_Localidad { get; set; }
-        public string Nom_Localidad { get; set; }
-        public int Id_Provincia { get; set; }
     }
 }
