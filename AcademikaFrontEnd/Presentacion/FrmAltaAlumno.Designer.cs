@@ -1,4 +1,5 @@
-﻿namespace Academika.Presentacion
+﻿
+namespace Academika.Presentacion
 {
     partial class FrmAltaAlumno
     {
