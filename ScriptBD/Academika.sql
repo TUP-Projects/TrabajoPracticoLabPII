@@ -7,6 +7,7 @@ CREATE TABLE ESTADOS_CIVIL (
 	id_estado_civil int IDENTITY (1,1), 
 	estado_civil varchar (50) not null,
 	CONSTRAINT pk_estado_civil PRIMARY KEY (id_estado_civil)
+
 )
 
 CREATE TABLE CARGOS (
@@ -117,8 +118,8 @@ CREATE TABLE DOCENTES (
 id_docente int IDENTITY (1,1),
 nombre varchar (50) not null,
 apellido varchar (50) not null,
-email nvarchar (60),
-telefono varchar (30),
+email nvarchar (60) null,
+telefono int null,
 CONSTRAINT pk_docentes PRIMARY KEY (id_docente)
 )
 
@@ -351,6 +352,10 @@ INSERT INTO TURNOS_EXAMEN(turno, anio_lectivo) VALUES ('CUARTO TURNO', 22 )
 INSERT INTO CARGOS(cargo) VALUES ('PRESIDENTE DE MESA')
 INSERT INTO CARGOS(cargo) VALUES ('PRIMER VOCAL')
 INSERT INTO CARGOS(cargo) VALUES ('SEGUNDO VOCAL')
+INSERT INTO CARGOS(cargo) VALUES ('JEFE DE CATEDRA')
+INSERT INTO CARGOS(cargo) VALUES ('PROFESOR ADJUNTO')
+INSERT INTO CARGOS(cargo) VALUES ('AYUDANTE PRIMERA')
+
 
 --CONDICIONES
 INSERT INTO CONDICIONES(condicion) VALUES ('REGULAR')
@@ -954,6 +959,260 @@ END
 END
 ELSE
  RAISERROR('No se realiza la inscripción automática, no hay materias asociadas a la carrera elegida.', 16, 1)
+END
+GO
+
+-- Agrego campos/fk a varias tablas por cómo están planteados los forms de la capa de presentación
+
+ALTER TABLE MATERIASxCARRERA ADD anio_cursada int NULL, cuatrimestre tinyint NULL
+ALTER TABLE MATERIASxCARRERA ADD dictado VARCHAR(50)
+ALTER TABLE MATERIASxCARRERA ADD carga_horaria int
+ALTER TABLE DOCENTESxMATERIA ADD id_cargo int 
+ALTER TABLE DOCENTESxMATERIA ADD CONSTRAINT fk_cargo_docentesxmateria FOREIGN KEY (id_cargo) REFERENCES cargos (id_cargo)
+ALTER TABLE CARRERAS ADD duracion int
+ALTER TABLE TURNOS_EXAMEN ADD id_materia int
+ALTER TABLE TURNOS_EXAMEN ADD CONSTRAINT fk_materia_turnos_examen FOREIGN KEY (id_materia) REFERENCES materias (id_materia)
+ALTER TABLE TIPOS_EXAMEN ADD id_cargo int 
+ALTER TABLE TIPOS_EXAMEN ADD CONSTRAINT fk_cargo_tipos_examen FOREIGN KEY (id_cargo) REFERENCES cargos (id_cargo)
+ALTER TABLE EXAMENES ADD id_curso int
+ALTER TABLE EXAMENES ADD CONSTRAINT fk_curso_examenes FOREIGN KEY (id_curso) REFERENCES cursos (id_curso)
+GO 
+
+
+-- SP Para dar de alta materias según form 'Alta Materias'
+
+CREATE PROC SP_ALTA_MATERIAS
+@nombre_materia varchar(100),
+@carga_horaria int,
+@id_carrera int = NULL,
+@anio_dictado int,
+@dictado varchar(50),
+@id_curso int = 1,
+@cuatrimestre tinyint,
+@id_jefe int,
+@id_prof_adj int,
+@id_ayud int
+AS
+BEGIN
+
+DECLARE @id_materia INT
+DECLARE @id_materia_curso INT
+DECLARE @id_cargo_jefe INT
+DECLARE @id_cargo_prof INT
+DECLARE @id_cargo_ayud INT
+
+SELECT @id_cargo_jefe = id_cargo FROM CARGOS WHERE cargo = 'JEFE DE CATEDRA'
+SELECT @id_cargo_ayud = id_cargo FROM CARGOS WHERE cargo = 'AYUDANTE PRIMERA'
+SELECT @id_cargo_prof = id_cargo FROM CARGOS WHERE cargo = 'PROFESOR ADJUNTO'
+
+IF NOT EXISTS (SELECT m.materia from materias m WHERE UPPER(materia) = UPPER(@nombre_materia))
+BEGIN
+	BEGIN TRAN
+	INSERT INTO MATERIAS VALUES (@nombre_materia)
+	SELECT @id_materia = MAX(id_materia) FROM MATERIAS
+	IF (@id_carrera IS NOT NULL)
+	BEGIN
+		INSERT INTO MATERIASxCARRERA VALUES (@id_materia, @id_carrera, @anio_dictado, @cuatrimestre, @carga_horaria)
+		IF (@id_materia NOT IN (SELECT DISTINCT id_materia FROM MATERIASxCURSO))
+		BEGIN
+			BEGIN TRAN
+			INSERT INTO MATERIASxCURSO VALUES (@id_materia, @id_curso)
+			SELECT @id_materia_curso = MAX(id_materia_curso) FROM MATERIASxCURSO
+			COMMIT
+		END
+		ELSE
+		BEGIN
+			SELECT @id_materia_curso = id_materia_curso FROM MATERIASxCURSO WHERE id_materia = @id_materia AND id_curso = @id_curso
+		END
+		INSERT INTO DOCENTESxMATERIA VALUES (@id_jefe, @id_materia_curso, @id_cargo_jefe)
+		INSERT INTO DOCENTESxMATERIA VALUES (@id_prof_adj, @id_materia_curso, @id_cargo_prof)
+		INSERT INTO DOCENTESxMATERIA VALUES (@id_ayud, @id_materia_curso, @id_cargo_ayud)
+	END	
+	ELSE
+		SELECT 'Se ha grabado la materia sin asociar a ninguna carrera'
+	COMMIT
+END
+ELSE
+	RAISERROR('La materia especificada ya existe', 16, 1)
+
+END
+GO
+
+-- SP Correspondiente a Form Alta Alumno
+
+CREATE PROC SP_ALTA_ALUMNOS
+@nombre VARCHAR(50),
+@apellido VARCHAR(50),
+@genero VARCHAR(50) = NULL,
+@fecha_nac datetime,
+@id_tipo_doc int,
+@num_doc int,
+@telefono int = NULL,
+@email VARCHAR(50) = NULL,
+@calle VARCHAR(50) = NULL,
+@numero int = NULL,
+@id_barrio int = NULL,
+@id_estado_civil int = NULL,
+@id_situac_habit int = NULL,
+@trabaja bit = NULL,
+@id_tipo_trab int = NULL,
+@id_carrera int = NULL,
+@id_curso int = NULL
+AS
+BEGIN
+DECLARE @legajo INT
+IF (@nombre IS NOT NULL AND @apellido IS NOT NULL AND @fecha_nac IS NOT NULL AND @id_tipo_doc IS NOT NULL AND @num_doc IS NOT NULL)
+	BEGIN TRAN
+	INSERT INTO ALUMNOS VALUES (@nombre, @apellido, @genero, @id_tipo_doc, @num_doc, @calle, @numero, @id_situac_habit, @fecha_nac, @id_estado_civil, @trabaja, @id_tipo_trab, @id_barrio, @email, @telefono)
+	IF (@id_carrera IS NOT NULL)
+	BEGIN
+	SELECT @legajo = MAX(legajo) FROM ALUMNOS
+	COMMIT
+	EXEC SP_INSCRIPCION_CARRERA @legajo, @id_carrera
+	END
+END
+GO
+
+
+CREATE PROC SP_INSCRIPCION_CARRERA
+@legajo int,
+@id_carrera INT
+AS
+BEGIN
+IF (@legajo IN (SELECT legajo FROM ALUMNOS) AND @legajo NOT IN (SELECT legajo FROM ALUMNOSxCARRERA WHERE legajo = @legajo AND id_carrera = @id_carrera))
+	INSERT INTO ALUMNOSxCARRERA VALUES (@legajo, @id_carrera, YEAR(GETDATE()))
+ELSE
+	RAISERROR('El alumno ya está inscripto en la carrera especificada', 16, 1)
+END
+GO
+
+-- SP correspondiente a Form Alta Cursos
+CREATE PROC SP_ALTA_CURSO
+@nombre_curso VARCHAR(30),
+@id_materia int
+AS
+BEGIN
+DECLARE @id_curso INT
+INSERT INTO CURSOS VALUES (@nombre_curso)
+SET @id_curso = SCOPE_IDENTITY()
+INSERT INTO MATERIASxCURSO VALUES (@id_materia, @id_curso)
+END
+GO
+
+-- SP correspondiente al Form Alta Docentes
+CREATE PROC SP_ALTA_DOCENTE
+@nombre VARCHAR(50),
+@apellido VARCHAR(50),
+@email NVARCHAR(60) = NULL,
+@telefono int = NULL
+AS
+BEGIN
+IF (@nombre IS NOT NULL AND @apellido IS NOT NULL)
+INSERT INTO DOCENTES VALUES (@nombre, @apellido, @email, @telefono)
+ELSE 
+RAISERROR ('El nombre y el apellido del docente son datos obligatorios', 16, 1)
+END
+GO
+
+CREATE PROC SP_ALTA_LUGARES
+@tabla VARCHAR(50),
+@descripcion VARCHAR(50),
+@fk_asoc int = NULL
+AS
+BEGIN
+DECLARE @SQL NVARCHAR(MAX)
+IF (@tabla IS NOT NULL AND @descripcion IS NOT NULL AND @fk_asoc IS NULL)
+BEGIN
+SET @SQL = 'INSERT INTO ' + @tabla + ' VALUES (' + @descripcion + ')'
+END
+ELSE IF (@tabla IS NOT NULL AND @descripcion IS NOT NULL AND @fk_asoc IS NOT NULL)
+BEGIN
+SET @SQL = 'INSERT INTO ' + @tabla + ' VALUES (' + @descripcion + ',' + @fk_asoc + ')'
+END
+ELSE
+BEGIN
+RAISERROR('Parámetros insuficientes', 16, 1)
+END
+
+EXEC SP_EXECUTESQL @SQL
+END
+GO
+
+-- SP correspondiente al Form Alta Tecni
+CREATE PROC SP_ALTA_CARRERA
+@carrera VARCHAR(100),
+@duracion INT
+AS
+IF (UPPER(@carrera) NOT IN (SELECT UPPER(carrera) FROM CARRERAS))
+INSERT INTO CARRERAS VALUES (@carrera, @duracion)
+ELSE
+RAISERROR('La carrera ya está dada de alta.', 16, 1)
+GO
+
+-- SPs Correspondiente a Form Turnos
+ALTER PROC SP_ALTA_TIPO_EX
+@tipo_examen VARCHAR(30),
+@id_cargo int = NULL
+AS
+IF (UPPER(@tipo_examen) NOT IN (SELECT UPPER(tipo_examen) FROM TIPOS_EXAMEN))
+INSERT INTO TIPOS_EXAMEN VALUES (@tipo_examen, @id_cargo)
+ELSE
+RAISERROR('Tipo de examen existente.', 16, 1)
+GO
+
+CREATE PROC SP_ALTA_TURNOS
+@turno VARCHAR(30),
+@anio_lectivo datetime,
+@id_materia int
+AS
+IF (NOT EXISTS (SELECT * FROM TURNOS_EXAMEN WHERE UPPER(turno) = UPPER(@turno) AND anio_lectivo = YEAR(@anio_lectivo) AND id_materia = @id_materia))
+INSERT INTO TURNOS_EXAMEN VALUES (@turno, YEAR(@anio_lectivo), @id_materia)
+ELSE
+RAISERROR('Turno de examen existente.', 16, 1)
+GO
+
+-- SP Correspondiente a Form Examenes
+CREATE PROC SP_INSERTA_EXAMEN
+@id_tipo_examen int,
+@fecha datetime,
+@id_materia int,
+@turno int = NULL,
+@id_curso int,
+@legajo int,
+@nota int = NULL,
+@id_pres int,
+@id_primer int = NULL,
+@id_segundo int = NULL
+AS
+BEGIN 
+DECLARE @id_turno INT
+DECLARE @anio_lectivo INT = YEAR(@fecha)
+DECLARE @id_cargo_pres INT
+DECLARE @id_cargo_primer INT
+DECLARE @id_cargo_segundo INT
+
+SELECT @id_cargo_pres = id_cargo FROM CARGOS WHERE cargo = 'PRESIDENTE DE MESA'
+SELECT @id_cargo_primer = id_cargo FROM CARGOS WHERE cargo = 'PRIMER VOCAL'
+SELECT @id_cargo_segundo = id_cargo FROM CARGOS WHERE cargo = 'SEGUNDO VOCAL'
+
+IF (@id_tipo_examen IS NOT NULL AND @fecha IS NOT NULL AND @id_materia IS NOT NULL AND @id_curso IS NOT NULL AND @legajo IS NOT NULL)
+BEGIN
+	IF(@turno IS NOT NULL)
+	BEGIN
+	SELECT @id_turno = id_turno FROM TURNOS_EXAMEN WHERE turno = @turno AND anio_lectivo = @anio_lectivo AND id_materia = @id_materia
+		IF (@id_turno IS NULL)
+		BEGIN
+			INSERT INTO TURNOS_EXAMEN VALUES (@turno, @anio_lectivo, @id_materia)
+			SET @id_turno = SCOPE_IDENTITY()
+			INSERT INTO DOCENTExTURNO VALUES (@id_pres, @id_turno, @id_cargo_pres)
+			INSERT INTO DOCENTExTURNO VALUES (@id_primer, @id_turno, @id_cargo_primer)
+			INSERT INTO DOCENTExTURNO VALUES (@id_segundo, @id_turno, @id_cargo_segundo)
+		END
+	END
+	INSERT INTO EXAMENES VALUES (@id_tipo_examen, @fecha, @id_turno, @id_materia, @legajo, @nota, @id_curso)
+END
+ELSE 
+RAISERROR ('Falta especificar alguno de los parámetros', 16, 1)
 END
 GO
 

@@ -35,15 +35,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.rjTextBox4 = new RJCodeAdvance.RJControls.RJTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rjComboBox1 = new RJCodeAdvance.RJControls.RJComboBox();
             this.lblTipoDni = new System.Windows.Forms.Label();
             this.rjDatePicker1 = new RJCodeAdvance.RJControls.RJDatePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.rjComboBox2 = new RJCodeAdvance.RJControls.RJComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.rjComboBox3 = new RJCodeAdvance.RJControls.RJComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -121,7 +118,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(95, 445);
+            this.label6.Location = new System.Drawing.Point(141, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 20);
             this.label6.TabIndex = 144;
@@ -137,7 +134,7 @@
             this.rjTextBox4.BorderSize = 2;
             this.rjTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox4.Location = new System.Drawing.Point(245, 441);
+            this.rjTextBox4.Location = new System.Drawing.Point(340, 129);
             this.rjTextBox4.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox4.Multiline = false;
             this.rjTextBox4.Name = "rjTextBox4";
@@ -149,18 +146,6 @@
             this.rjTextBox4.TabIndex = 143;
             this.rjTextBox4.Texts = "Cargo (Ej. Presidente mesa, 1er Vocal, etc.)";
             this.rjTextBox4.UnderlinedStyle = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label7.Location = new System.Drawing.Point(12, 400);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(244, 20);
-            this.label7.TabIndex = 142;
-            this.label7.Tag = "Materia";
-            this.label7.Text = "Designación Cargos p/ Finales:";
             // 
             // label2
             // 
@@ -221,7 +206,7 @@
             this.rjDatePicker1.BorderSize = 0;
             this.rjDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.rjDatePicker1.Location = new System.Drawing.Point(418, 293);
-            this.rjDatePicker1.MinimumSize = new System.Drawing.Size(0, 35);
+            this.rjDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
             this.rjDatePicker1.Name = "rjDatePicker1";
             this.rjDatePicker1.Size = new System.Drawing.Size(232, 35);
             this.rjDatePicker1.SkinColor = System.Drawing.Color.MediumSlateBlue;
@@ -239,35 +224,6 @@
             this.label4.TabIndex = 149;
             this.label4.Text = "Fecha Turno.:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // rjComboBox2
-            // 
-            this.rjComboBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox2.BorderSize = 1;
-            this.rjComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rjComboBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox2.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox2.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox2.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox2.Location = new System.Drawing.Point(450, 350);
-            this.rjComboBox2.MinimumSize = new System.Drawing.Size(200, 30);
-            this.rjComboBox2.Name = "rjComboBox2";
-            this.rjComboBox2.Padding = new System.Windows.Forms.Padding(1);
-            this.rjComboBox2.Size = new System.Drawing.Size(200, 30);
-            this.rjComboBox2.TabIndex = 152;
-            this.rjComboBox2.Texts = "";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label8.Location = new System.Drawing.Point(394, 359);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
-            this.label8.TabIndex = 151;
-            this.label8.Text = "Curso:";
             // 
             // rjComboBox3
             // 
@@ -306,8 +262,6 @@
             this.ClientSize = new System.Drawing.Size(946, 616);
             this.Controls.Add(this.rjComboBox3);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.rjComboBox2);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.rjDatePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.rjComboBox1);
@@ -316,7 +270,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.rjTextBox4);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.rjTextBox1);
@@ -337,15 +290,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private RJCodeAdvance.RJControls.RJTextBox rjTextBox4;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private RJCodeAdvance.RJControls.RJComboBox rjComboBox1;
         private System.Windows.Forms.Label lblTipoDni;
         private RJCodeAdvance.RJControls.RJDatePicker rjDatePicker1;
         private System.Windows.Forms.Label label4;
-        private RJCodeAdvance.RJControls.RJComboBox rjComboBox2;
-        private System.Windows.Forms.Label label8;
         private RJCodeAdvance.RJControls.RJComboBox rjComboBox3;
         private System.Windows.Forms.Label label9;
     }
