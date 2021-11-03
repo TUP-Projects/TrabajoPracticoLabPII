@@ -276,15 +276,15 @@ INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CAPILLA DE SITON',
 INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CAPILLA LA ESPERANZA', 5)
 INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CASAS VEJAS', 5)
 INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CASEROS ESTE', 5)
-INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CA√ëADA DE LUQUE', 5)
-INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CA√ëADA DEL TALA', 5)
-INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CA√ëADA VERDE', 5)
+INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CA—ADA DE LUQUE', 5)
+INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CA—ADA DEL TALA', 5)
+INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CA—ADA VERDE', 5)
 INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CERRO PELADO', 5)
 INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CHARACATO', 5)
-INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CHA√ëARIACO', 5)
+INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CHA—ARIACO', 5)
 INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CHIPITIN', 5)
 INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CHUA', 5)
-INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CHURQUI CA√ëADA', 5)
+INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('CHURQUI CA—ADA', 5)
 INSERT INTO LOCALIDADES (nom_localidad, id_provincia) VALUES('COLAZO', 5)
 
 
@@ -320,7 +320,7 @@ INSERT INTO TIPOS_TRABAJO VALUES ('Rel. Dependencia Full-Time')
 INSERT INTO TIPOS_TRABAJO VALUES ('Rel. Dependencia Part-Time')
 INSERT INTO TIPOS_TRABAJO VALUES ('Trabajador Independiente')
 
---REVISAR SI FALTA ALG√öN TIPO DE EXAMEN
+--REVISAR SI FALTA ALG⁄N TIPO DE EXAMEN
 -- TIPOS_EXAMEN
 INSERT INTO TIPOS_EXAMEN(tipo_examen) VALUES ('PRIMER PARCIAL')
 INSERT INTO TIPOS_EXAMEN(tipo_examen) VALUES ('SEGUNDO PARCIAL')
@@ -385,7 +385,7 @@ INSERT INTO MATERIAS(materia) VALUES ('ORGANIZACION EMPRESARIAL')
 INSERT INTO MATERIAS(materia) VALUES ('ELEMENTOS DE INVESTIGACION OPERATIVA')
 INSERT INTO MATERIAS(materia) VALUES ('LABORATORIO DE COMPUTACION III')
 INSERT INTO MATERIAS(materia) VALUES ('METODOLOGIA DE SISTEMAS I')
-INSERT INTO MATERIAS(materia) VALUES ('DISE√ëO Y ADMINISTRACION DE BASES DE DATOS')
+INSERT INTO MATERIAS(materia) VALUES ('DISE—O Y ADMINISTRACION DE BASES DE DATOS')
 INSERT INTO MATERIAS(materia) VALUES ('LEGISLACION')
 INSERT INTO MATERIAS(materia) VALUES ('LABORATORIO DE COMPUTACION IV')
 INSERT INTO MATERIAS(materia) VALUES ('PRACTICA PROFESIONAL - TUP')
@@ -453,8 +453,8 @@ INSERT INTO ESTADOS_CIVIL VALUES ('Divorciado/a')
 
 -- CARRERAS
 
-INSERT INTO CARRERAS VALUES ('Tecnicatura en Programaci√≥n')
-INSERT INTO CARRERAS VALUES ('Tecnicatura en Mecatr√≥nica')
+INSERT INTO CARRERAS VALUES ('Tecnicatura en ProgramaciÛn')
+INSERT INTO CARRERAS VALUES ('Tecnicatura en MecatrÛnica')
 INSERT INTO CARRERAS VALUES ('Tecnicatura en Mantenimiento Industrial')
 
 -- CURSOS
@@ -479,65 +479,65 @@ INSERT INTO CURSOS VALUES ('2T3')
 
 -- DOCENTES
 
-INSERT INTO DOCENTES VALUES('Carlos','Gonz√°lez','carlosgonzalez@gmail.com',1143789800)
-INSERT INTO DOCENTES VALUES('Maria Belen','Mu√±oz','MariaBelenMu√±oz@gmail.com',1143913032)
+INSERT INTO DOCENTES VALUES('Carlos','Gonz·lez','carlosgonzalez@gmail.com',1143789800)
+INSERT INTO DOCENTES VALUES('Maria Belen','MuÒoz','MariaBelenMuÒoz@gmail.com',1143913032)
 INSERT INTO DOCENTES VALUES('Camila','Rojas','CamilaRojas@gmail.com',1144036264)
-INSERT INTO DOCENTES VALUES('Juan Manuel','D√≠az','JuanManuelD√≠az@gmail.com',1144159496)
-INSERT INTO DOCENTES VALUES('Maria Florencia','P√©rez','MariaFlorenciaP√©rez@gmail.com',1144282728)
+INSERT INTO DOCENTES VALUES('Juan Manuel','DÌaz','JuanManuelDÌaz@gmail.com',1144159496)
+INSERT INTO DOCENTES VALUES('Maria Florencia','PÈrez','MariaFlorenciaPÈrez@gmail.com',1144282728)
 INSERT INTO DOCENTES VALUES('Juan Ignacio','Soto','JuanIgnacioSoto@gmail.com',1144405960)
 INSERT INTO DOCENTES VALUES('Nicolas','Contreras','NicolasContreras@gmail.com',1144529192)
 INSERT INTO DOCENTES VALUES('Rocio Belen','Silva','RocioBelenSilva@gmail.com',1144652424)
-INSERT INTO DOCENTES VALUES('Florencia','Mart√≠nez','FlorenciaMart√≠nez@gmail.com',1144775656)
-INSERT INTO DOCENTES VALUES('Juan Cruz','Sep√∫lveda','JuanCruzSep√∫lveda@gmail.com',1144898888)
+INSERT INTO DOCENTES VALUES('Florencia','MartÌnez','FlorenciaMartÌnez@gmail.com',1144775656)
+INSERT INTO DOCENTES VALUES('Juan Cruz','Sep˙lveda','JuanCruzSep˙lveda@gmail.com',1144898888)
 INSERT INTO DOCENTES VALUES('Sofia','Morales','SofiaMorales@gmail.com',1145022120)
-INSERT INTO DOCENTES VALUES('Matias Ezequiel','Rodr√≠guez','MatiasEzequielRodr√≠guez@gmail.com',1145145352)
-INSERT INTO DOCENTES VALUES('Agustin','L√≥pez','AgustinL√≥pez@gmail.com',1145268584)
+INSERT INTO DOCENTES VALUES('Matias Ezequiel','RodrÌguez','MatiasEzequielRodrÌguez@gmail.com',1145145352)
+INSERT INTO DOCENTES VALUES('Agustin','LÛpez','AgustinLÛpez@gmail.com',1145268584)
 INSERT INTO DOCENTES VALUES('Maria Sol','Fuentes','MariaSolFuentes@gmail.com',1145391816)
-INSERT INTO DOCENTES VALUES('Agustina','Hern√°ndez','AgustinaHern√°ndez@gmail.com',1145515048)
-INSERT INTO DOCENTES VALUES('Tom√°s','Torres','Tom√°sTorres@gmail.com',1145638280)
+INSERT INTO DOCENTES VALUES('Agustina','Hern·ndez','AgustinaHern·ndez@gmail.com',1145515048)
+INSERT INTO DOCENTES VALUES('Tom·s','Torres','Tom·sTorres@gmail.com',1145638280)
 INSERT INTO DOCENTES VALUES('Miguel Angel','Araya','MiguelAngelAraya@gmail.com',1145761512)
 INSERT INTO DOCENTES VALUES('Micaela','Flores','MicaelaFlores@gmail.com',1145884744)
 INSERT INTO DOCENTES VALUES('Juan Pablo','Espinoza','JuanPabloEspinoza@gmail.com',1146007976)
 INSERT INTO DOCENTES VALUES('Maria Victoria','Valenzuela','MariaVictoriaValenzuela@gmail.com',1146131208)
 INSERT INTO DOCENTES VALUES('Jose Luis','Castillo','JoseLuisCastillo@gmail.com',1146254440)
 INSERT INTO DOCENTES VALUES('Santiago','Tapia','SantiagoTapia@gmail.com',1146377672)
-INSERT INTO DOCENTES VALUES('Mar√≠a Eugenia','Reyes','Mar√≠aEugeniaReyes@gmail.com',1146500904)
-INSERT INTO DOCENTES VALUES('Julieta','Guti√©rrez','JulietaGuti√©rrez@gmail.com',1146624136)
-INSERT INTO DOCENTES VALUES('Camila Bel√©n','Castro','CamilaBel√©nCastro@gmail.com',1146747368)
+INSERT INTO DOCENTES VALUES('MarÌa Eugenia','Reyes','MarÌaEugeniaReyes@gmail.com',1146500904)
+INSERT INTO DOCENTES VALUES('Julieta','GutiÈrrez','JulietaGutiÈrrez@gmail.com',1146624136)
+INSERT INTO DOCENTES VALUES('Camila BelÈn','Castro','CamilaBelÈnCastro@gmail.com',1146747368)
 INSERT INTO DOCENTES VALUES('Matias Nicolas','Pizarro','MatiasNicolasPizarro@gmail.com',1146870600)
-INSERT INTO DOCENTES VALUES('Maria Jose','√Ålvarez','MariaJose√Ålvarez@gmail.com',1146993832)
-INSERT INTO DOCENTES VALUES('Facundo','V√°squez','FacundoV√°squez@gmail.com',1147117064)
-INSERT INTO DOCENTES VALUES('Franco','S√°nchez','FrancoS√°nchez@gmail.com',1147240296)
-INSERT INTO DOCENTES VALUES('Lucia','Fern√°ndez','LuciaFern√°ndez@gmail.com',1147363528)
-INSERT INTO DOCENTES VALUES('Juan Carlos','Ram√≠rez','JuanCarlosRam√≠rez@gmail.com',1147486760)
+INSERT INTO DOCENTES VALUES('Maria Jose','¡lvarez','MariaJose¡lvarez@gmail.com',1146993832)
+INSERT INTO DOCENTES VALUES('Facundo','V·squez','FacundoV·squez@gmail.com',1147117064)
+INSERT INTO DOCENTES VALUES('Franco','S·nchez','FrancoS·nchez@gmail.com',1147240296)
+INSERT INTO DOCENTES VALUES('Lucia','Fern·ndez','LuciaFern·ndez@gmail.com',1147363528)
+INSERT INTO DOCENTES VALUES('Juan Carlos','RamÌrez','JuanCarlosRamÌrez@gmail.com',1147486760)
 INSERT INTO DOCENTES VALUES('Maria de los Angeles','Carrasco','MariadelosAngelesCarrasco@gmail.com',1147609992)
-INSERT INTO DOCENTES VALUES('Micaela Belen','G√≥mez','MicaelaBelenG√≥mez@gmail.com',1147733224)
-INSERT INTO DOCENTES VALUES('Federico','Cort√©s','FedericoCort√©s@gmail.com',1147856456)
+INSERT INTO DOCENTES VALUES('Micaela Belen','GÛmez','MicaelaBelenGÛmez@gmail.com',1147733224)
+INSERT INTO DOCENTES VALUES('Federico','CortÈs','FedericoCortÈs@gmail.com',1147856456)
 INSERT INTO DOCENTES VALUES('Gabriel Alejandro','Herrera','GabrielAlejandroHerrera@gmail.com',1147979688)
-INSERT INTO DOCENTES VALUES('Ignacio','N√∫√±ez','IgnacioN√∫√±ez@gmail.com',1148102920)
+INSERT INTO DOCENTES VALUES('Ignacio','N˙Òez','IgnacioN˙Òez@gmail.com',1148102920)
 INSERT INTO DOCENTES VALUES('Francisco','Jara','FranciscoJara@gmail.com',1148226152)
 INSERT INTO DOCENTES VALUES('Matias','Vergara','MatiasVergara@gmail.com',1148349384)
-INSERT INTO DOCENTES VALUES('Joaqu√≠n','Rivera','Joaqu√≠nRivera@gmail.com',1148472616)
+INSERT INTO DOCENTES VALUES('JoaquÌn','Rivera','JoaquÌnRivera@gmail.com',1148472616)
 INSERT INTO DOCENTES VALUES('Lucas Ezequiel','Figueroa','LucasEzequielFigueroa@gmail.com',1148595848)
 INSERT INTO DOCENTES VALUES('Juan Jose','Riquelme','JuanJoseRiquelme@gmail.com',1148719080)
-INSERT INTO DOCENTES VALUES('Lucas','Garc√≠a','LucasGarc√≠a@gmail.com',1148842312)
+INSERT INTO DOCENTES VALUES('Lucas','GarcÌa','LucasGarcÌa@gmail.com',1148842312)
 INSERT INTO DOCENTES VALUES('Franco Nicolas','Miranda','FrancoNicolasMiranda@gmail.com',1148965544)
 INSERT INTO DOCENTES VALUES('Florencia Belen','Bravo','FlorenciaBelenBravo@gmail.com',1149088776)
-INSERT INTO DOCENTES VALUES('Mar√≠a Agustina','Vera','Mar√≠aAgustinaVera@gmail.com',1149212008)
+INSERT INTO DOCENTES VALUES('MarÌa Agustina','Vera','MarÌaAgustinaVera@gmail.com',1149212008)
 INSERT INTO DOCENTES VALUES('Carolina','Molina','CarolinaMolina@gmail.com',1149335240)
 INSERT INTO DOCENTES VALUES('Nicolas Alejandro','Vega','NicolasAlejandroVega@gmail.com',1149458472)
 INSERT INTO DOCENTES VALUES('Micaela Soledad','Campos','MicaelaSoledadCampos@gmail.com',1149581704)
 INSERT INTO DOCENTES VALUES('Manuel','Sandoval','ManuelSandoval@gmail.com',1149704936)
-INSERT INTO DOCENTES VALUES('Juli√°n','Orellana','Juli√°nOrellana@gmail.com',1149828168)
-INSERT INTO DOCENTES VALUES('Facundo Nicolas','C√°rdenas','FacundoNicolasC√°rdenas@gmail.com',1149951400)
+INSERT INTO DOCENTES VALUES('Juli·n','Orellana','Juli·nOrellana@gmail.com',1149828168)
+INSERT INTO DOCENTES VALUES('Facundo Nicolas','C·rdenas','FacundoNicolasC·rdenas@gmail.com',1149951400)
 INSERT INTO DOCENTES VALUES('Victoria','Olivares','VictoriaOlivares@gmail.com',1150074632)
-INSERT INTO DOCENTES VALUES('Mar√≠a Celeste','Alarc√≥n','Mar√≠aCelesteAlarc√≥n@gmail.com',1150197864)
+INSERT INTO DOCENTES VALUES('MarÌa Celeste','AlarcÛn','MarÌaCelesteAlarcÛn@gmail.com',1150197864)
 INSERT INTO DOCENTES VALUES('Gonzalo','Gallardo','GonzaloGallardo@gmail.com',1150321096)
 INSERT INTO DOCENTES VALUES('Sofia Belen','Ortiz','SofiaBelenOrtiz@gmail.com',1150444328)
 INSERT INTO DOCENTES VALUES('Martin','Garrido','MartinGarrido@gmail.com',1150567560)
-INSERT INTO DOCENTES VALUES('Sebasti√°n','Salazar','Sebasti√°nSalazar@gmail.com',1150690792)
-INSERT INTO DOCENTES VALUES('Antonella','Guzm√°n','AntonellaGuzm√°n@gmail.com',1150814024)
-INSERT INTO DOCENTES VALUES('Maria Laura','Henr√≠quez','MariaLauraHenr√≠quez@gmail.com',1150937256)
+INSERT INTO DOCENTES VALUES('Sebasti·n','Salazar','Sebasti·nSalazar@gmail.com',1150690792)
+INSERT INTO DOCENTES VALUES('Antonella','Guzm·n','AntonellaGuzm·n@gmail.com',1150814024)
+INSERT INTO DOCENTES VALUES('Maria Laura','HenrÌquez','MariaLauraHenrÌquez@gmail.com',1150937256)
 INSERT INTO DOCENTES VALUES('Maximiliano','Saavedra','MaximilianoSaavedra@gmail.com',1151060488)
 INSERT INTO DOCENTES VALUES('Luis Alberto','Navarro','LuisAlbertoNavarro@gmail.com',1151183720)
 INSERT INTO DOCENTES VALUES('Maria Fernanda','Aguilera','MariaFernandaAguilera@gmail.com',1151306952)
@@ -545,17 +545,17 @@ INSERT INTO DOCENTES VALUES('Carlos Alberto','Parra','CarlosAlbertoParra@gmail.c
 INSERT INTO DOCENTES VALUES('Nicolas Ezequiel','Romero','NicolasEzequielRomero@gmail.com',1151553416)
 INSERT INTO DOCENTES VALUES('Macarena','Aravena','MacarenaAravena@gmail.com',1151676648)
 INSERT INTO DOCENTES VALUES('Yamila Belen','Vargas','YamilaBelenVargas@gmail.com',1151799880)
-INSERT INTO DOCENTES VALUES('Valentina','V√°zquez','ValentinaV√°zquez@gmail.com',1151923112)
-INSERT INTO DOCENTES VALUES('Emanuel','C√°ceres','EmanuelC√°ceres@gmail.com',1152046344)
-INSERT INTO DOCENTES VALUES('Micaela Ayelen','Y√°√±ez','MicaelaAyelenY√°√±ez@gmail.com',1152169576)
+INSERT INTO DOCENTES VALUES('Valentina','V·zquez','ValentinaV·zquez@gmail.com',1151923112)
+INSERT INTO DOCENTES VALUES('Emanuel','C·ceres','EmanuelC·ceres@gmail.com',1152046344)
+INSERT INTO DOCENTES VALUES('Micaela Ayelen','Y·Òez','MicaelaAyelenY·Òez@gmail.com',1152169576)
 INSERT INTO DOCENTES VALUES('Ana Laura','Leiva','AnaLauraLeiva@gmail.com',1152292808)
 INSERT INTO DOCENTES VALUES('Daniel Alejandro','Escobar','DanielAlejandroEscobar@gmail.com',1152416040)
 INSERT INTO DOCENTES VALUES('Martina','Ruiz','MartinaRuiz@gmail.com',1152539272)
-INSERT INTO DOCENTES VALUES('Lucas Gabriel','Vald√©s','LucasGabrielVald√©s@gmail.com',1152662504)
+INSERT INTO DOCENTES VALUES('Lucas Gabriel','ValdÈs','LucasGabrielValdÈs@gmail.com',1152662504)
 INSERT INTO DOCENTES VALUES('Maria Emilia','Vidal','MariaEmiliaVidal@gmail.com',1152785736)
 INSERT INTO DOCENTES VALUES('Franco Emanuel','Salinas','FrancoEmanuelSalinas@gmail.com',1152908968)
-INSERT INTO DOCENTES VALUES('Rodrigo','Zu√±iga','RodrigoZu√±iga@gmail.com',1153032200)
-INSERT INTO DOCENTES VALUES('Rocio','Pe√±a','RocioPe√±a@gmail.com',1153155432)
+INSERT INTO DOCENTES VALUES('Rodrigo','ZuÒiga','RodrigoZuÒiga@gmail.com',1153032200)
+INSERT INTO DOCENTES VALUES('Rocio','PeÒa','RocioPeÒa@gmail.com',1153155432)
 INSERT INTO DOCENTES VALUES('Ana Paula','Godoy','AnaPaulaGodoy@gmail.com',1153278664)
 INSERT INTO DOCENTES VALUES('Brian Ezequiel','Lagos','BrianEzequielLagos@gmail.com',1153401896)
 INSERT INTO DOCENTES VALUES('Maria Soledad','Maldonado','MariaSoledadMaldonado@gmail.com',1153525128)
@@ -567,7 +567,7 @@ INSERT INTO DOCENTES VALUES('Juan Gabriel','Moreno','JuanGabrielMoreno@gmail.com
 INSERT INTO DOCENTES VALUES('Luciano','Sanhueza','LucianoSanhueza@gmail.com',1154264520)
 INSERT INTO DOCENTES VALUES('Lucas Matias','Carvajal','LucasMatiasCarvajal@gmail.com',1154387752)
 INSERT INTO DOCENTES VALUES('Camila Soledad','Navarrete','CamilaSoledadNavarrete@gmail.com',1154510984)
-INSERT INTO DOCENTES VALUES('Lautaro','S√°ez','LautaroS√°ez@gmail.com',1154634216)
+INSERT INTO DOCENTES VALUES('Lautaro','S·ez','LautaroS·ez@gmail.com',1154634216)
 INSERT INTO DOCENTES VALUES('Milagros','Alvarado','MilagrosAlvarado@gmail.com',1154757448)
 INSERT INTO DOCENTES VALUES('Ezequiel','Donoso','EzequielDonoso@gmail.com',1154880680)
 INSERT INTO DOCENTES VALUES('Lucas Emanuel','Poblete','LucasEmanuelPoblete@gmail.com',1155003912)
@@ -577,8 +577,8 @@ INSERT INTO DOCENTES VALUES('Miguel Alejandro','Ortega','MiguelAlejandroOrtega@g
 INSERT INTO DOCENTES VALUES('Juan Martin','Venegas','JuanMartinVenegas@gmail.com',1155496840)
 INSERT INTO DOCENTES VALUES('Lucas Nahuel','Guerrero','LucasNahuelGuerrero@gmail.com',1155620072)
 INSERT INTO DOCENTES VALUES('Franco David','Mendoza','FrancoDavidMendoza@gmail.com',1155743304)
-INSERT INTO DOCENTES VALUES('Yamila Soledad','Far√≠as','YamilaSoledadFar√≠as@gmail.com',1155866536)
-INSERT INTO DOCENTES VALUES('Matias Alejandro','San Mart√≠n','MatiasAlejandroSanMart√≠n@gmail.com',1155989768)
+INSERT INTO DOCENTES VALUES('Yamila Soledad','FarÌas','YamilaSoledadFarÌas@gmail.com',1155866536)
+INSERT INTO DOCENTES VALUES('Matias Alejandro','San MartÌn','MatiasAlejandroSanMartÌn@gmail.com',1155989768)
 
 --ALUMNOS
 
@@ -625,7 +625,7 @@ GO
 
 /* SECTION VIEWS */
 
-/* Vista con datos de utilidad de alumnos que est√°n inscriptos a una carrera y sus respectivas materias-cursos */
+/* Vista con datos de utilidad de alumnos que est·n inscriptos a una carrera y sus respectivas materias-cursos */
 CREATE VIEW vw_condiciones_alumnos
 AS
 	SELECT a.legajo Legajo, a.nombre + ' ' + a.apellido Alumno, m.materia Materia, ca.carrera Carrera, c.curso Curso, am.anio_cursado Anio, co.condicion Condicion 
@@ -663,15 +663,15 @@ GO
 /* FIN SP DE CONSULTAS */
 
 /*
-	Cantidad de alumnos regulares, libres, por materia, curso, carrera, a√±o de cursado.
-	Ejemplos de ejecuci√≥n:
+	Cantidad de alumnos regulares, libres, por materia, curso, carrera, aÒo de cursado.
+	Ejemplos de ejecuciÛn:
 		DECLARE @cantidadOut INT
-		EXEC sp_condiciones_alumnos 'Libre', @cantidad = @cantidadOut OUTPUT -- > Vemos el detalle los alumnos en condici√≥n de libres y la cantidad si queremos ver la salida, sino no especificamos nada 
+		EXEC sp_condiciones_alumnos 'Libre', @cantidad = @cantidadOut OUTPUT -- > Vemos el detalle los alumnos en condiciÛn de libres y la cantidad si queremos ver la salida, sino no especificamos nada 
 		SELECT @cantidadOut 
-		sp_condiciones_alumnos 'Regular', 'Mate' --> Vemos los alumnos regulares de todas las matem√°ticas
-		sp_condiciones_alumnos 'Regular', 'Mate', 'Prog'  --> S√≥lo libres de matem√°ticas de la Tec en Prog (escrito as√≠ nom√°s para ver el uso del like)
+		sp_condiciones_alumnos 'Regular', 'Mate' --> Vemos los alumnos regulares de todas las matem·ticas
+		sp_condiciones_alumnos 'Regular', 'Mate', 'Prog'  --> SÛlo libres de matem·ticas de la Tec en Prog (escrito asÌ nom·s para ver el uso del like)
 		sp_condiciones_alumnos 'Regular', 'Mate', 'Prog', 2021 --> idem anterior pero del curso 1w1
-		sp_condiciones_alumnos 'Regular', NULL, NULL, NULL, 2021 --> solo regulares del 2021 .. Y as√≠ se puede seguir jugando con los par√°metros filtrando en funci√≥n de lo deseado.
+		sp_condiciones_alumnos 'Regular', NULL, NULL, NULL, 2021 --> solo regulares del 2021 .. Y asÌ se puede seguir jugando con los par·metros filtrando en funciÛn de lo deseado.
 */
 CREATE PROCEDURE SP_CONDICIONES_ALUMNOS
 	@condicion varchar(50) = NULL,
@@ -682,11 +682,11 @@ CREATE PROCEDURE SP_CONDICIONES_ALUMNOS
 	@cantidad int = NULL OUTPUT
 	AS
 		SELECT * INTO #tmp
-		FROM dbo.vw_condiciones_alumnos -- Ac√° se usa la vista vw_condiciones_alumnos para simplificar el SP
+		FROM dbo.vw_condiciones_alumnos -- Ac· se usa la vista vw_condiciones_alumnos para simplificar el SP
 		WHERE (@condicion IS NULL OR condicion = @condicion) AND -- Las condiciones son 3, pensado que sea valor exacto sacado de combo
-		(@materia IS NULL OR materia LIKE '%' + @materia + '%') AND -- Pensado para tomarlo de caja de texto, si escribo "mate" que me traiga resultados de todas las matem√°ticas
+		(@materia IS NULL OR materia LIKE '%' + @materia + '%') AND -- Pensado para tomarlo de caja de texto, si escribo "mate" que me traiga resultados de todas las matem·ticas
 		(@carrera IS NULL OR carrera LIKE  '%' + @carrera +'%' ) AND -- Idem anterior
-		(@curso IS NULL OR curso = @curso) AND -- Los cursos tambi√©n vendr√≠an de combo fijo. Son ejemplos como para mostrar dos formas, esto lo definir√≠a un usuario
+		(@curso IS NULL OR curso = @curso) AND -- Los cursos tambiÈn vendrÌan de combo fijo. Son ejemplos como para mostrar dos formas, esto lo definirÌa un usuario
 		(@aniocursado IS NULL OR Anio = @aniocursado)
 
 		SELECT * FROM #tmp
@@ -698,9 +698,9 @@ GO
 
 
 /*
-	Promedio de notas por alumno, materia, a√±o, curso, etc.
-	Es muy parecido al anterior s√≥lo que aqu√≠ no se usa la vista (para hacer algo distinto) y todas las condiciones se buscan por ID.
-	Ejemplo de ejecuci√≥n:
+	Promedio de notas por alumno, materia, aÒo, curso, etc.
+	Es muy parecido al anterior sÛlo que aquÌ no se usa la vista (para hacer algo distinto) y todas las condiciones se buscan por ID.
+	Ejemplo de ejecuciÛn:
 		declare @promedioOut numeric (5,2)
 		exec SP_PROMEDIO_NOTAS 2, 1, 2021, 1, 1 ,@promedio = @promedioOut output
 		select @promedioOut
@@ -730,8 +730,8 @@ GO
 
 /*
 	Cantidades de alumnos (promedio de notas, cantidad de materias regulares y aprobadas) por edades, 
-	estado civil, situaci√≥n habitacional y laboral, etc.
-	Ejemplo de ejecuci√≥n:
+	estado civil, situaciÛn habitacional y laboral, etc.
+	Ejemplo de ejecuciÛn:
 		EXEC SP_ESTADISTICAS_ALUMNOS 'Edad'
 */
 CREATE PROC SP_ESTADISTICAS_ALUMNOS
@@ -746,8 +746,8 @@ CREATE PROC SP_ESTADISTICAS_ALUMNOS
 
 		SET @groupByGenerico = CASE @groupElegido WHEN 'Edad' THEN @groupByEdad
 												  WHEN 'Estado Civil' THEN @groupByEstadoCivil
-												  WHEN 'Situaci√≥n Habitacional' THEN @groupBySitHabit 
-												  WHEN 'Situaci√≥n Laboral' THEN @groupBySitLabo
+												  WHEN 'SituaciÛn Habitacional' THEN @groupBySitHabit 
+												  WHEN 'SituaciÛn Laboral' THEN @groupBySitLabo
 		END
 
 		DECLARE @SQL NVARCHAR(MAX)  = 
@@ -768,8 +768,8 @@ CREATE PROC SP_ESTADISTICAS_ALUMNOS
 GO
 
 /*
-	Alumnos que no han rendido (o no han aprobado) ninguna materia en los √∫ltimos a√±os.
-	Ejemplo de ejecuci√≥n:
+	Alumnos que no han rendido (o no han aprobado) ninguna materia en los ˙ltimos aÒos.
+	Ejemplo de ejecuciÛn:
 		EXEC SP_ALUMNOS_SIN_APROBADAS
 */
 
@@ -778,13 +778,13 @@ AS
 BEGIN
 	SELECT * FROM TIPOS_DOC
 END
-
+GO
 CREATE PROC SP_ALUMNOS_SIN_APROBADAS
 	AS
 	BEGIN
 		SELECT a.Legajo, a.Alumno, a.Carrera, a.Anio,
 		CASE WHEN e.nota IS NULL THEN 'Alumno sin registros en finales.'
-				WHEN e.nota < 4 THEN 'Alumno sin aprobar finales en los √∫ltimos 5 a√±os.'
+				WHEN e.nota < 4 THEN 'Alumno sin aprobar finales en los ˙ltimos 5 aÒos.'
 		END AS 'Comentario'
 		FROM dbo.vw_condiciones_alumnos a
 		LEFT JOIN EXAMENES e ON e.legajo = a.legajo AND id_tipo_examen = 4
@@ -794,8 +794,8 @@ GO
 
 
 /*
-	Alumnos que no han cursado materias en el √∫ltimo a√±o.
-	Ejemplo de ejecuci√≥n:
+	Alumnos que no han cursado materias en el ˙ltimo aÒo.
+	Ejemplo de ejecuciÛn:
 		EXEC SP_ALUMNOS_SIN_CURSADA
 */
 CREATE PROC SP_ALUMNOS_SIN_CURSADA
@@ -812,13 +812,13 @@ GO
 /* SECTION TRIGGERS */
 
 /* 
-	Trigger que al insertar un registro en ex√°menes valida que el alumno se haya inscripto en la materia en los 
-	√∫ltimos 5 a√±os y no est√© en condici√≥n de libre.
-	Si se quiere modificar alg√∫n registro del examen, posterior a la inscripci√≥n se hace la misma validaci√≥n 
+	Trigger que al insertar un registro en ex·menes valida que el alumno se haya inscripto en la materia en los 
+	˙ltimos 5 aÒos y no estÈ en condiciÛn de libre.
+	Si se quiere modificar alg˙n registro del examen, posterior a la inscripciÛn se hace la misma validaciÛn 
 	para no dar posbilidad de dejar datos inconsistentes.
 	Ejemplos de uso:
-		INSERT INTO EXAMENES VALUES (1, '2021-10-01', 1, 1, 5, NULL) -- El legajo 5 no est√° inscripto en la materia ID = 1, esto da error y borra el registro insertado
-		UPDATE EXAMENES SET nota = 5 WHERE id_examen = 7 -- No afecta, no se tocan los campos clave. Se cambia la nota con √©xito
+		INSERT INTO EXAMENES VALUES (1, '2021-10-01', 1, 1, 5, NULL) -- El legajo 5 no est· inscripto en la materia ID = 1, esto da error y borra el registro insertado
+		UPDATE EXAMENES SET nota = 5 WHERE id_examen = 7 -- No afecta, no se tocan los campos clave. Se cambia la nota con Èxito
 */
 CREATE TRIGGER TRG_VALIDA_EXAMEN
 ON EXAMENES
@@ -836,9 +836,9 @@ AS
 
 	IF(EXISTS (SELECT legajo FROM ALUMNOSxMATERIA WHERE legajo = @legajo AND id_materia = @materia AND id_condicion in (1,2) AND anio_cursado > YEAR(GETDATE()) - 5))
 		IF (EXISTS (SELECT * FROM DELETED))
-			PRINT ('Modificaci√≥n en datos de examen realizada con √©xito.')
+			PRINT ('ModificaciÛn en datos de examen realizada con Èxito.')
 		ELSE
-			PRINT ('Inscripci√≥n realizada con √©xito.')
+			PRINT ('InscripciÛn realizada con Èxito.')
 	ELSE
 		IF (EXISTS (SELECT * FROM DELETED))
 		BEGIN
@@ -848,7 +848,7 @@ AS
 		ELSE
 		BEGIN
 			DELETE FROM EXAMENES WHERE id_examen = @id_examen
-			RAISERROR('Hubo un error al registrar el examen, verifique que el alumno est√© en condiciones de poder inscribirse.', 16, 1)
+			RAISERROR('Hubo un error al registrar el examen, verifique que el alumno estÈ en condiciones de poder inscribirse.', 16, 1)
 		END
 	END
 GO
@@ -857,7 +857,7 @@ GO
 
 
 
--- Funcion que muestra la cantidad de materias aprobadas para el legajo que se pasa como par√°metro
+-- Funcion que muestra la cantidad de materias aprobadas para el legajo que se pasa como par·metro
 
 CREATE FUNCTION FN_MATERIAS_APROBADAS (@legajo int)
 RETURNS INT
@@ -874,8 +874,8 @@ GO
 --SELECT dbo.FN_MATERIAS_APROBADAS(2)
 
 
--- Trigger que al inscribir un alumno en una carrera lo inscribie autom√°ticamente en las primeras 4 materias de esa carrera, en un curso determinado seg√∫n la cantidad alumnos inscriptos (<= 100).
--- Suposiciones: las cursadas no pueden tener m√°s de 100 alumnos, al pasar el n√∫mero se asigna al otro curso. Los id de materia est√°n correlativos y ordenados en MATERIASxCARRERA
+-- Trigger que al inscribir un alumno en una carrera lo inscribie autom·ticamente en las primeras 4 materias de esa carrera, en un curso determinado seg˙n la cantidad alumnos inscriptos (<= 100).
+-- Suposiciones: las cursadas no pueden tener m·s de 100 alumnos, al pasar el n˙mero se asigna al otro curso. Los id de materia est·n correlativos y ordenados en MATERIASxCARRERA
 CREATE TRIGGER TRG_INSCRIPCION_CARRERA
 ON ALUMNOSxCARRERA
 AFTER INSERT, UPDATE
@@ -896,7 +896,7 @@ SELECT @id_materia = id_materia FROM #primeras_materias
 SET @corte = @id_materia + 3
 IF (EXISTS (SELECT * FROM #primeras_materias))
 BEGIN
-WHILE @id_materia <= @corte AND @cant_alumnos_materia < 201 -- Suponemos que el tope de alumnos que soporta una c√°tedra es de 200.
+WHILE @id_materia <= @corte AND @cant_alumnos_materia < 201 -- Suponemos que el tope de alumnos que soporta una c·tedra es de 200.
 BEGIN
 	INSERT INTO ALUMNOSxMATERIA VALUES (@legajo, @id_materia, 1, YEAR(GETDATE()))
 	SELECT @cant_alumnos_materia = count(*) FROM ALUMNOSxCURSO acu INNER JOIN MATERIASxCURSO mc ON mc.id_curso = acu.id_curso AND acu.id_materia = @id_materia AND acu.id_curso = @id_curso
@@ -911,11 +911,11 @@ BEGIN
 END
 END
 ELSE
- RAISERROR('No se realiza la inscripci√≥n autom√°tica, no hay materias asociadas a la carrera elegida.', 16, 1)
+ RAISERROR('No se realiza la inscripciÛn autom·tica, no hay materias asociadas a la carrera elegida.', 16, 1)
 END
 GO
 
--- Agrego campos/fk a varias tablas por c√≥mo est√°n planteados los forms de la capa de presentaci√≥n
+-- Agrego campos/fk a varias tablas por cÛmo est·n planteados los forms de la capa de presentaciÛn
 
 ALTER TABLE MATERIASxCARRERA ADD anio_cursada int NULL, cuatrimestre tinyint NULL
 ALTER TABLE MATERIASxCARRERA ADD dictado VARCHAR(50)
@@ -929,26 +929,26 @@ ALTER TABLE TIPOS_EXAMEN ADD id_cargo int
 ALTER TABLE TIPOS_EXAMEN ADD CONSTRAINT fk_cargo_tipos_examen FOREIGN KEY (id_cargo) REFERENCES cargos (id_cargo)
 ALTER TABLE EXAMENES ADD id_curso int
 ALTER TABLE EXAMENES ADD CONSTRAINT fk_curso_examenes FOREIGN KEY (id_curso) REFERENCES cursos (id_curso)
+
 GO 
 
 
--- SP Para dar de alta materias seg√∫n form 'Alta Materias'
-
+-- SPs correspondientes a Form Materias
+-- Alta
 CREATE PROC SP_ALTA_MATERIAS
-@nombre_materia varchar(100),
+@id_materia int,
 @carga_horaria int,
 @id_carrera int = NULL,
 @anio_dictado int,
 @dictado varchar(50),
 @id_curso int = 1,
-@cuatrimestre tinyint,
+@cuatrimestre tinyint = NULL,
 @id_jefe int,
 @id_prof_adj int,
 @id_ayud int
 AS
 BEGIN
 
-DECLARE @id_materia INT
 DECLARE @id_materia_curso INT
 DECLARE @id_cargo_jefe INT
 DECLARE @id_cargo_prof INT
@@ -958,14 +958,13 @@ SELECT @id_cargo_jefe = id_cargo FROM CARGOS WHERE cargo = 'JEFE DE CATEDRA'
 SELECT @id_cargo_ayud = id_cargo FROM CARGOS WHERE cargo = 'AYUDANTE PRIMERA'
 SELECT @id_cargo_prof = id_cargo FROM CARGOS WHERE cargo = 'PROFESOR ADJUNTO'
 
-IF NOT EXISTS (SELECT m.materia from materias m WHERE UPPER(materia) = UPPER(@nombre_materia))
+IF NOT EXISTS (SELECT * from MATERIASxCARRERA m WHERE id_materia = @id_materia AND id_carrera = @id_carrera AND anio_cursada = @anio_dictado)
 BEGIN
 	BEGIN TRAN
-	INSERT INTO MATERIAS VALUES (@nombre_materia)
-	SELECT @id_materia = MAX(id_materia) FROM MATERIAS
+	
 	IF (@id_carrera IS NOT NULL)
 	BEGIN
-		INSERT INTO MATERIASxCARRERA VALUES (@id_materia, @id_carrera, @anio_dictado, @cuatrimestre, @carga_horaria)
+		INSERT INTO MATERIASxCARRERA VALUES (@id_carrera, @id_materia, @anio_dictado, @cuatrimestre, @carga_horaria, @dictado)
 		IF (@id_materia NOT IN (SELECT DISTINCT id_materia FROM MATERIASxCURSO))
 		BEGIN
 			BEGIN TRAN
@@ -986,11 +985,67 @@ BEGIN
 	COMMIT
 END
 ELSE
-	RAISERROR('La materia especificada ya existe', 16, 1)
-
+	IF EXISTS (SELECT * FROM MATERIASxCURSO WHERE id_materia = @id_materia AND id_curso = @id_curso)
+		RAISERROR('Ya existe la materÌa-carrera-curso en la DB', 16, 1)
+	ELSE
+	BEGIN
+			BEGIN TRAN
+			INSERT INTO MATERIASxCURSO VALUES (@id_materia, @id_curso)
+			SELECT @id_materia_curso = MAX(id_materia_curso) FROM MATERIASxCURSO
+			INSERT INTO DOCENTESxMATERIA VALUES (@id_jefe, @id_materia_curso, @id_cargo_jefe)
+			INSERT INTO DOCENTESxMATERIA VALUES (@id_prof_adj, @id_materia_curso, @id_cargo_prof)
+			INSERT INTO DOCENTESxMATERIA VALUES (@id_ayud, @id_materia_curso, @id_cargo_ayud)
+			COMMIT
+	END
 END
 GO
 
+-- Consulta
+CREATE PROC SP_CONSULTA_MATERIAS 
+@id_materia int = NULL, 
+@id_materia_carrera int = NULL
+AS
+BEGIN
+SELECT mxc.id_materias_carrera IdMateriasCarrera, mxcur.id_materia_curso IdMateriaCurso, m.id_materia Id, mxc.dictado Dictado, d.id_docente IdDocente, d.nombre + ' ' + d.apellido Docente, car.cargo Cargo, cur.curso Curso,
+mxc.anio_cursada 'AnioDictado', ca.carrera Carrera, m.materia 'NombreMat', mxc.cuatrimestre cuatrimestre, mxc.carga_horaria 'Carga'
+FROM 
+MATERIASxCURSO mxcur 
+INNER JOIN DOCENTESxMATERIA dxm ON dxm.id_materia_curso = mxcur.id_materia_curso
+INNER JOIN DOCENTES d ON d.id_docente = dxm.id_docente
+INNER JOIN MATERIAS m ON m.id_materia = mxcur.id_materia 
+INNER JOIN MATERIASxCARRERA mxc ON mxc.id_materia = m.id_materia
+INNER JOIN CARRERAS ca ON ca.id_carrera = mxc.id_carrera
+INNER JOIN CARGOS car ON car.id_cargo = dxm.id_cargo
+INNER JOIN CURSOS cur ON cur.id_curso = mxcur.id_curso
+WHERE (@id_materia IS NULL or m.id_materia = @id_materia) AND (@id_materia_carrera IS NULL OR mxc.id_materias_carrera = @id_materia_carrera)
+END
+GO
+
+--SP Actualiza MateriasXCarrera
+CREATE PROC SP_ACTUALIZA_MATERIASxCARRERA
+@id_materia_x_carrera int,
+@dictado VARCHAR(50),
+@cuatrimestre tinyint,
+@anio_dictado int,
+@carga_horaria int
+AS
+BEGIN
+UPDATE MATERIASxCARRERA SET dictado = @dictado, cuatrimestre = @cuatrimestre, anio_cursada = @anio_dictado, carga_horaria = @carga_horaria WHERE id_materias_carrera = @id_materia_x_carrera
+END
+GO
+
+-- SP delete docentes x materia
+CREATE PROC SP_DELETE_DOCENTESxMATERIA
+@id_docente int,
+@id_materia_curso int
+
+AS
+BEGIN
+
+DELETE FROM DOCENTESxMATERIA WHERE id_docente = @id_docente AND id_materia_curso = @id_materia_curso 
+
+END
+GO
 -- SP Correspondiente a Form Alta Alumno
 
 CREATE PROC SP_ALTA_ALUMNOS
@@ -1035,7 +1090,7 @@ BEGIN
 IF (@legajo IN (SELECT legajo FROM ALUMNOS) AND @legajo NOT IN (SELECT legajo FROM ALUMNOSxCARRERA WHERE legajo = @legajo AND id_carrera = @id_carrera))
 	INSERT INTO ALUMNOSxCARRERA VALUES (@legajo, @id_carrera, YEAR(GETDATE()))
 ELSE
-	RAISERROR('El alumno ya est√° inscripto en la carrera especificada', 16, 1)
+	RAISERROR('El alumno ya est· inscripto en la carrera especificada', 16, 1)
 END
 GO
 
@@ -1084,7 +1139,7 @@ SET @SQL = 'INSERT INTO ' + @tabla + ' VALUES (' + @descripcion + ',' + @fk_asoc
 END
 ELSE
 BEGIN
-RAISERROR('Par√°metros insuficientes', 16, 1)
+RAISERROR('Par·metros insuficientes', 16, 1)
 END
 
 EXEC SP_EXECUTESQL @SQL
@@ -1099,11 +1154,11 @@ AS
 IF (UPPER(@carrera) NOT IN (SELECT UPPER(carrera) FROM CARRERAS))
 INSERT INTO CARRERAS VALUES (@carrera, @duracion)
 ELSE
-RAISERROR('La carrera ya est√° dada de alta.', 16, 1)
+RAISERROR('La carrera ya est· dada de alta.', 16, 1)
 GO
 
 -- SPs Correspondiente a Form Turnos
-ALTER PROC SP_ALTA_TIPO_EX
+CREATE PROC SP_ALTA_TIPO_EX
 @tipo_examen VARCHAR(30),
 @id_cargo int = NULL
 AS
@@ -1165,7 +1220,44 @@ BEGIN
 	INSERT INTO EXAMENES VALUES (@id_tipo_examen, @fecha, @id_turno, @id_materia, @legajo, @nota, @id_curso)
 END
 ELSE 
-RAISERROR ('Falta especificar alguno de los par√°metros', 16, 1)
+RAISERROR ('Falta especificar alguno de los par·metros', 16, 1)
 END
 GO
+
+-- SP PrÛximo ID de utilidada para varios formularios
+
+CREATE PROCEDURE  [dbo].[SP_OBTENER_PROX_ID]
+@tabla VARCHAR(50)
+AS
+BEGIN
+	DECLARE @SQL NVARCHAR(MAX)
+	
+	SET @SQL = 'DECLARE @proximo_id int SET @proximo_id = (SELECT COUNT(*)+1 FROM ' + @tabla + ') SELECT @proximo_id Prox_ID'
+
+	EXEC sp_executesql @SQL
+END
+GO
+
+CREATE PROC SP_CONSULTA_ENTIDAD
+@tabla VARCHAR(50)
+AS
+BEGIN
+DECLARE @SQL NVARCHAR(MAX)
+DECLARE @COLUMNAID NVARCHAR(MAX)
+	SELECT @COLUMNAID = COLUMN_NAME+' ID ,'
+	FROM information_schema.columns
+	WHERE table_name = @tabla and ordinal_position = 1
+	
+	IF (@tabla = 'Docentes' OR @tabla = 'Alumnos')
+	BEGIN
+		SET @SQL = 'SELECT DISTINCT ' + @COLUMNAID + ' nombre + '' '' + apellido as Descripcion FROM ' + @tabla
+	END
+	ELSE
+	BEGIN
+		SET @SQL = 'SELECT DISTINCT ' + @COLUMNAID + SUBSTRING(@tabla, 1, LEN(@tabla) - 1) + ' as Descripcion FROM ' + @tabla
+	END
+	EXEC sp_executesql @SQL
+END
+
+
 

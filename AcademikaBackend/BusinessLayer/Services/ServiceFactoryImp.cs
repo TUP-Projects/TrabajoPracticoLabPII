@@ -8,9 +8,9 @@ namespace AcademikaBackend.BusinessLayer.Services
 {
     public class ServiceFactoryImp : AbstractServiceFactory
     {
-        public override IAlumnosService CrearServiceAlumno()
+        public override IMateriasService CrearServiceMaterias()
         {
-            return new AlumnosService();
+            return new MateriasService();
         }
     }
 }

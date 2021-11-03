@@ -1,0 +1,24 @@
+﻿using AcademikaBackend.BusinessLayer.Entities;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AcademikaBackend.BusinessLayer.Services
+{
+    public interface IMateriasService
+    {
+        bool InsertarMateria(Materia materia, MateriasXCarrera mxc, MateriasXCurso mxcur, List<DocentesXMateria> dxm);
+        int ObtenerProxId(string tabla);
+
+        DataTable ConsultaMateria(int id_materia);
+
+        List<EntidadGenerica> CargaCombos(string tabla);
+
+        bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc);
+
+        bool EliminaDocxMateria(DocentesXMateria dxm);
+    }
+}

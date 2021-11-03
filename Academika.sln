@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcademikaBackend", "Academi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcademikaWebAPI", "AcademikaWebAPI\AcademikaWebAPI.csproj", "{285F20E6-4D0B-4ACD-B6B4-464210D8B3A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademikaFrontend", "AcademikaFrontEnd\AcademikaFrontend.csproj", "{A8494838-95C0-4E97-A271-18B937002FE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademikaFront", "AcademikaFront\AcademikaFront.csproj", "{92294378-DDAB-4B22-83D4-742B456493EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{285F20E6-4D0B-4ACD-B6B4-464210D8B3A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{285F20E6-4D0B-4ACD-B6B4-464210D8B3A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{285F20E6-4D0B-4ACD-B6B4-464210D8B3A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8494838-95C0-4E97-A271-18B937002FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8494838-95C0-4E97-A271-18B937002FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8494838-95C0-4E97-A271-18B937002FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8494838-95C0-4E97-A271-18B937002FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92294378-DDAB-4B22-83D4-742B456493EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92294378-DDAB-4B22-83D4-742B456493EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92294378-DDAB-4B22-83D4-742B456493EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92294378-DDAB-4B22-83D4-742B456493EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

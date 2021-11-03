@@ -270,5 +270,11 @@
   <ItemGroup>
     <None Include="Resources\academika.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AcademikaBackend\AcademikaBackend.csproj">
+      <Project>{d59f85c6-abe7-47b9-a1ba-ba00a2bd755c}</Project>
+      <Name>AcademikaBackend</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,6 +8,6 @@ namespace AcademikaBackend.BusinessLayer.Services
 {
     public abstract class AbstractServiceFactory
     {
-         public abstract IAlumnosService CrearServiceAlumno();
+         public abstract IMateriasService CrearServiceMaterias();
     }
 }

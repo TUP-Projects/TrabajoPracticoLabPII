@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Academika.Presentacion
 {
     public partial class FrmAltaMaterias : Form
     {
+
         public FrmAltaMaterias()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace Academika.Presentacion
 
         private void FrmAltaMaterias_Load(object sender, EventArgs e)
         {
+
 
         }
 
@@ -41,5 +44,7 @@ namespace Academika.Presentacion
         {
 
         }
+
+      
     }
 }
