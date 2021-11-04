@@ -81,7 +81,25 @@ namespace AcademikaBackend.DataLayer
           
             int retVal = (int)HelperDao.EjecutarSql("SP_DELETE_DOCENTESxMATERIA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
             
-            return retVal > 0 ? true : false;
+            return retVal > 0;
+        }
+
+        public List<Materia> GetMaterias()
+        {
+            List<Materia> lst = new();
+            SqlCommand cmd = new();
+            DataTable table = helper.ConsultaSQL(cmd, "SP_CONSULTAR_MATERIAS");
+
+            foreach (DataRow row in table.Rows)
+            {
+                Materia oMateria = new Materia();
+                oMateria.Id_Materia = Convert.ToInt32(row["id_materia"].ToString());
+                oMateria.NombreMateria = row["materia"].ToString();
+
+                lst.Add(oMateria);
+            }
+
+            return lst;
         }
     }
 }

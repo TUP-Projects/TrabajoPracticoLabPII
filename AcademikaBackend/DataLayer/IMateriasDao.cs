@@ -17,7 +17,7 @@ namespace AcademikaBackend.DataLayer
         bool InsertaMateria(Materia materia, MateriasXCarrera mxc, MateriasXCurso mxcur, List<DocentesXMateria> dxm);
 
         DataTable CargaCombos(string tabla);
-
+        List<Materia> GetMaterias();
         bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc);
 
         bool EliminaDocxCarrera(DocentesXMateria dxm);

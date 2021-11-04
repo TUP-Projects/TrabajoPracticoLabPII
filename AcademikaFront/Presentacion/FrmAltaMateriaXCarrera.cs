@@ -1,5 +1,7 @@
-﻿using AcademikaBackend.BusinessLayer.Entities;
+﻿using Academika.Client;
+using AcademikaBackend.BusinessLayer.Entities;
 using AcademikaBackend.BusinessLayer.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,19 +18,28 @@ namespace Academika.Presentacion
     public partial class FrmAltaMateriaXCarrera : Form
     {
         private IMateriasService servicio;
-
         Materia materia;
-
         MateriasXCarrera mxc;
-
         MateriasXCurso mxcur;
 
         int mostrarAyuda = 0;
         public FrmAltaMateriaXCarrera()
         {
             InitializeComponent();
-            
             servicio = new ServiceFactoryImp().CrearServiceMaterias();
+            
+        }
+
+        private async Task Cargar_MateriasAsync()
+        {
+            // servicio.ObtenerPresupuestoPorID(nro);
+            string url = "https://localhost:44365/api/Materias/";
+            var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
+            List<Materia> lstMaterias = JsonConvert.DeserializeObject<List<Materia>>(resultado);
+            cboMateria.DataSource = lstMaterias;
+            //valueMember y DisplayMember serán las properties de los objetos
+            cboMateria.ValueMember = "Id_Materia";
+            cboMateria.DisplayMember = "NombreMateria";
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,10 +49,8 @@ namespace Academika.Presentacion
 
         private void FrmAltaMaterias_Load(object sender, EventArgs e)
         {
-
-            
-            Inicia();
-            
+            //Inicia();
+            Cargar_MateriasAsync();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -61,7 +70,8 @@ namespace Academika.Presentacion
             lblId.Text = "ID Materia - Carrera: " + servicio.ObtenerProxId("MATERIASxCARRERA").ToString();
         }
 
-        private void Inicia() {
+        private void Inicia()
+        {
 
             rtbAnio.Text = DateTime.Now.Year.ToString();
             ConsultaID();
@@ -91,19 +101,20 @@ namespace Academika.Presentacion
 
         }
 
-        private void CargaCombo(ComboBox cbo, string nombreEntidad) {
+        private void CargaCombo(ComboBox cbo, string nombreEntidad)
+        {
 
             List<EntidadGenerica> lst = new List<EntidadGenerica>();
 
             lst = servicio.CargaCombos(nombreEntidad);
-            
+
             cbo.DataSource = lst;
 
             cbo.ValueMember = "IDEntidad";
             cbo.DisplayMember = "NombreEntidad";
 
             cbo.SelectedIndex = -1;
-        
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -112,18 +123,20 @@ namespace Academika.Presentacion
             mxc = new MateriasXCarrera();
             mxcur = new MateriasXCurso();
 
-            if (cboMateria.SelectedIndex == -1) {
+            if (cboMateria.SelectedIndex == -1)
+            {
 
                 MessageBox.Show("Debe seleccionar una materia", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboMateria.Focus();
                 return;
             }
-            
+
             materia.Id_Materia = (int)cboMateria.SelectedValue;
             materia.NombreMateria = cboMateria.SelectedText;
             mxc.Materia = materia;
 
-            if (cboCarrera.SelectedIndex == -1) {
+            if (cboCarrera.SelectedIndex == -1)
+            {
                 MessageBox.Show("Debe seleccionar una carrera", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboCarrera.Focus();
                 return;
@@ -164,21 +177,21 @@ namespace Academika.Presentacion
             lstDocentes.Add(new DocentesXMateria(ayudante, mxcur, "Ayudante"));
             lstDocentes.Add(new DocentesXMateria(jefe, mxcur, "Jefe"));
 
-            
+
 
             if (servicio.InsertarMateria(materia, mxc, mxcur, lstDocentes))
             {
                 MessageBox.Show("Se agregó la materia al plan de estudios!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-              
+
                 dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
-                
+
             }
             else
             {
                 MessageBox.Show("Error al intentar grabar la materia. Revise no estar duplicando valores en la tabla siguiente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
             }
-            
+
         }
 
         private void dgvResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)

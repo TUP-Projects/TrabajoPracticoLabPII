@@ -18,6 +18,11 @@ namespace AcademikaBackend.BusinessLayer.Services
             MateriasDao = new MateriasDao();
         }
 
+        public List<Materia> ConsultarMaterias()
+        {
+            return MateriasDao.GetMaterias();
+        }
+
         public bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc)
         {
             return MateriasDao.ActualizaDatosMateriasxCarrera(mxc);

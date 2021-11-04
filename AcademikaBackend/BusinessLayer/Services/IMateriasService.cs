@@ -17,8 +17,12 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         List<EntidadGenerica> CargaCombos(string tabla);
 
+        public List<Materia> ConsultarMaterias();
+
         bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc);
 
         bool EliminaDocxMateria(DocentesXMateria dxm);
+
+
     }
 }

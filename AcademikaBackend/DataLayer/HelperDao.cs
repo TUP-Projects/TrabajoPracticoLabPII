@@ -1,4 +1,5 @@
 ﻿using AcademikaBackend.BusinessLayer.Entities;
+using AcademikaBackend.Properties;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,7 +19,8 @@ namespace AcademikaBackend.DataLayer
 
         private HelperDao()
         {
-            connectionString = Properties.Resources.ConnectionString.ToString();
+            //connectionString = ConnectionStrings.Ciro.ToString(); //CONEXION CIRO
+            connectionString = ConnectionStrings.Cristian.ToString();
         }
 
         public static HelperDao GetInstance()
@@ -30,16 +32,20 @@ namespace AcademikaBackend.DataLayer
             return instance;
         }
 
-        public DataTable ConsultaSQL(SqlCommand cmd, string storeName, List<DbParameter> ListaParametros)
+        public DataTable ConsultaSQL(SqlCommand cmd, string storeName, List<DbParameter> ListaParametros = null)
         {
             SqlConnection cnn = new SqlConnection(connectionString);
             
             DataTable tabla = new DataTable();
             
-            foreach (DbParameter parameter in ListaParametros)
+            if (ListaParametros != null)
             {
-                cmd.Parameters.Add(parameter);
+                foreach (DbParameter parameter in ListaParametros)
+                {
+                    cmd.Parameters.Add(parameter);
+                }
             }
+            
             try
             {
                 cnn.ConnectionString = connectionString;
@@ -61,7 +67,7 @@ namespace AcademikaBackend.DataLayer
                     cnn.Close();
 
             }
-return tabla;
+            return tabla;
         }
 
 
