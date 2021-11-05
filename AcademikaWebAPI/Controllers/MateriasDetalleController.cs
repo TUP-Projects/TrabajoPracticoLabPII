@@ -19,13 +19,7 @@ namespace AcademikaWebAPI.Controllers
             _materiasDetalleService = new ServiceFactoryImp().CrearServiceMaterias();
         }
 
-        [HttpGet]
-        public IActionResult GetAllMaterias()
-        {
-            return Ok(_materiasDetalleService.ConsultarMaterias());
-        }
 
-        // GET api/<PresupuestosController>/5
         [HttpGet("{entidad}")]
         public IActionResult GetEntidad(string entidad)
         {

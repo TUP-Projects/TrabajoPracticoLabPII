@@ -1289,26 +1289,30 @@ BEGIN
 END
 GO
 
-CREATE PROC SP_CONSULTA_ENTIDAD
+CREATE PROC SP_CONSULTA_ENTIDAD 
 @tabla VARCHAR(50)
 AS
 BEGIN
 DECLARE @SQL NVARCHAR(MAX)
 DECLARE @COLUMNAID NVARCHAR(MAX)
+DECLARE @COLUMNADESC NVARCHAR(MAX)
 	SELECT @COLUMNAID = COLUMN_NAME+' ID ,'
 	FROM information_schema.columns
 	WHERE table_name = @tabla and ordinal_position = 1
 	
+	SELECT @COLUMNADESC = COLUMN_NAME+' Descripcion'
+	FROM information_schema.columns
+	WHERE table_name = @tabla and ordinal_position = 2
 	IF (@tabla = 'Docentes' OR @tabla = 'Alumnos')
 	BEGIN
 		SET @SQL = 'SELECT DISTINCT ' + @COLUMNAID + ' nombre + '' '' + apellido as Descripcion FROM ' + @tabla
 	END
 	ELSE
 	BEGIN
-		SET @SQL = 'SELECT DISTINCT ' + @COLUMNAID + SUBSTRING(@tabla, 1, LEN(@tabla) - 1) + ' as Descripcion FROM ' + @tabla
+		SET @SQL = 'SELECT DISTINCT ' + @COLUMNAID + @COLUMNADESC + ' FROM ' + @tabla
 	END
 	EXEC sp_executesql @SQL
+	
 END
 
-
-
+GO
