@@ -108,7 +108,6 @@
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click_1);
             // 
             // iconButton1
             // 
@@ -154,7 +153,6 @@
             this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConfiguracion.UseVisualStyleBackColor = true;
-            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // btnConsultas
             // 
@@ -422,36 +420,34 @@
             this.rjDropDownMenu2.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropDownMenu2.Name = "rjDropDownMenu2";
             this.rjDropDownMenu2.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropDownMenu2.Size = new System.Drawing.Size(294, 100);
+            this.rjDropDownMenu2.Size = new System.Drawing.Size(214, 100);
             this.rjDropDownMenu2.Opening += new System.ComponentModel.CancelEventHandler(this.rjDropDownMenu2_Opening);
             // 
             // exámenesToolStripMenuItem
             // 
             this.exámenesToolStripMenuItem.Name = "exámenesToolStripMenuItem";
-            this.exámenesToolStripMenuItem.Size = new System.Drawing.Size(293, 24);
+            this.exámenesToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.exámenesToolStripMenuItem.Text = "Exámenes";
             this.exámenesToolStripMenuItem.Click += new System.EventHandler(this.exámenesToolStripMenuItem_Click);
             // 
             // turnosToolStripMenuItem
             // 
             this.turnosToolStripMenuItem.Name = "turnosToolStripMenuItem";
-            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(293, 24);
+            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.turnosToolStripMenuItem.Text = "Turnos Exámenes";
             this.turnosToolStripMenuItem.Click += new System.EventHandler(this.turnosToolStripMenuItem_Click);
             // 
             // tipoExámenesToolStripMenuItem
             // 
             this.tipoExámenesToolStripMenuItem.Name = "tipoExámenesToolStripMenuItem";
-            this.tipoExámenesToolStripMenuItem.Size = new System.Drawing.Size(293, 24);
+            this.tipoExámenesToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.tipoExámenesToolStripMenuItem.Text = "Tipo Exámenes";
             this.tipoExámenesToolStripMenuItem.Click += new System.EventHandler(this.tipoExámenesToolStripMenuItem_Click);
             // 
             // actualizarCondiciónAlumnoToolStripMenuItem
             // 
             this.actualizarCondiciónAlumnoToolStripMenuItem.Name = "actualizarCondiciónAlumnoToolStripMenuItem";
-            this.actualizarCondiciónAlumnoToolStripMenuItem.Size = new System.Drawing.Size(293, 24);
-            this.actualizarCondiciónAlumnoToolStripMenuItem.Text = "Actualizar Condición Alumno";
-            this.actualizarCondiciónAlumnoToolStripMenuItem.Click += new System.EventHandler(this.actualizarCondiciónAlumnoToolStripMenuItem_Click);
+            this.actualizarCondiciónAlumnoToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             // 
             // rjDropDownMenu1
             // 
@@ -496,7 +492,6 @@
             this.toolStripDetalleMaterias.Name = "toolStripDetalleMaterias";
             this.toolStripDetalleMaterias.Size = new System.Drawing.Size(201, 24);
             this.toolStripDetalleMaterias.Text = "Detalle Materias";
-            this.toolStripDetalleMaterias.Click += new System.EventHandler(this.toolStripDetalleMateriasMenuItem_Click);
             // 
             // FrmMain
             // 

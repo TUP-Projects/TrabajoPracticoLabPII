@@ -34,8 +34,8 @@ namespace AcademikaBackend.BusinessLayer.Services
             foreach (DataRow row in MateriasDao.CargaCombos(tabla).Rows) {
 
                 EntidadGenerica oEntidadGen = new EntidadGenerica();
-                oEntidadGen.IDEntidad = Convert.ToInt32(row["ID"].ToString());
-                oEntidadGen.NombreEntidad = row["Descripcion"].ToString();
+                oEntidadGen.ID = Convert.ToInt32(row["ID"].ToString());
+                oEntidadGen.Descripcion = row["Descripcion"].ToString();
 
                 lst.Add(oEntidadGen);
             }
@@ -64,6 +64,10 @@ namespace AcademikaBackend.BusinessLayer.Services
             return MateriasDao.ObtenerProxId(tabla);
         }
 
-        
+        public DataTable CargaDgvEntidad(string tabla)
+        {
+
+            return MateriasDao.CargaCombos(tabla);
+        }
     }
 }

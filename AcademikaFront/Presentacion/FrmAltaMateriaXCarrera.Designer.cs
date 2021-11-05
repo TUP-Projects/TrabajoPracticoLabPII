@@ -46,7 +46,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cboAyud = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            //this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnBorrar = new FontAwesome.Sharp.IconButton();
@@ -254,7 +254,7 @@
             // 
             // iconButton3
             // 
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            /*this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
             this.iconButton3.IconColor = System.Drawing.Color.DarkGoldenrod;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.Location = new System.Drawing.Point(1025, 487);
@@ -263,7 +263,7 @@
             this.iconButton3.Size = new System.Drawing.Size(88, 67);
             this.iconButton3.TabIndex = 108;
             this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);*/
             // 
             // btnLimpiar
             // 
@@ -560,6 +560,7 @@
             this.btnSearch.Tag = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+
             // 
             // rtbAyuda
             // 

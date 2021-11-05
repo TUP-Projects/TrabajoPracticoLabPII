@@ -30,18 +30,33 @@ namespace Academika.Presentacion
             
         }
 
-        private async Task Cargar_MateriasAsync()
+        private async Task Cargar_CombosAsync(ComboBox combo, string entidad)
         {
-            // servicio.ObtenerPresupuestoPorID(nro);
-            string url = "https://localhost:44365/api/Materias/";
+            
+            string urlBase = "https://localhost:44365/api/MateriasDetalle/";
+            string url = urlBase + entidad;
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
-            List<Materia> lstMaterias = JsonConvert.DeserializeObject<List<Materia>>(resultado);
-            cboMateria.DataSource = lstMaterias;
-            //valueMember y DisplayMember serán las properties de los objetos
-            cboMateria.ValueMember = "Id_Materia";
-            cboMateria.DisplayMember = "NombreMateria";
+            List<EntidadGenerica> lstEntidad = JsonConvert.DeserializeObject<List<EntidadGenerica>>(resultado);
+            combo.DataSource = lstEntidad;
+            
+            combo.ValueMember = "ID";
+            combo.DisplayMember = "Descripcion";
+
+            combo.SelectedIndex = -1;
         }
 
+        private async Task Consultar_DetalleMateriaAsync(int idMateria) {
+
+
+            string urlBase = "https://localhost:44365/api/MateriasDetalle/Consulta/";
+            string url = urlBase + idMateria.ToString();
+
+            var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
+            DataTable dt = (DataTable)JsonConvert.DeserializeObject(resultado, (typeof(DataTable)));
+            
+            dgvResultado.DataSource = dt;
+
+        }
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -49,8 +64,8 @@ namespace Academika.Presentacion
 
         private void FrmAltaMaterias_Load(object sender, EventArgs e)
         {
-            //Inicia();
-            Cargar_MateriasAsync();
+            Inicia();
+            //Cargar_MateriasAsync();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -75,19 +90,23 @@ namespace Academika.Presentacion
 
             rtbAnio.Text = DateTime.Now.Year.ToString();
             ConsultaID();
-            CargaCombo(cboAdj, "docentes");
-            CargaCombo(cboMateria, "materias");
-            CargaCombo(cboAyud, "docentes");
-            CargaCombo(cboJefe, "docentes");
-            CargaCombo(cboCarrera, "carreras");
-            CargaCombo(cboCurso, "cursos");
+            Cargar_CombosAsync(cboAdj, "docentes");
+            Cargar_CombosAsync(cboMateria, "materias");
+            Cargar_CombosAsync(cboAyud, "docentes");
+            Cargar_CombosAsync(cboJefe, "docentes");
+            Cargar_CombosAsync(cboCarrera, "carreras");
+            Cargar_CombosAsync(cboCurso, "cursos");
 
+
+            dgvResultado.Columns[0].ReadOnly = true;
             dgvResultado.Columns[1].ReadOnly = true;
+            dgvResultado.Columns[2].ReadOnly = true;
             dgvResultado.Columns[3].ReadOnly = true;
-            dgvResultado.Columns[4].ReadOnly = true;
             dgvResultado.Columns[5].ReadOnly = true;
+            dgvResultado.Columns[6].ReadOnly = true;
             dgvResultado.Columns[7].ReadOnly = true;
-            dgvResultado.Columns[8].ReadOnly = true;
+            dgvResultado.Columns[9].ReadOnly = true;
+            dgvResultado.Columns[10].ReadOnly = true;
 
         }
 
@@ -183,13 +202,15 @@ namespace Academika.Presentacion
             {
                 MessageBox.Show("Se agregó la materia al plan de estudios!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
+                Consultar_DetalleMateriaAsync(materia.Id_Materia);
+
 
             }
             else
             {
                 MessageBox.Show("Error al intentar grabar la materia. Revise no estar duplicando valores en la tabla siguiente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
+                Consultar_DetalleMateriaAsync(materia.Id_Materia);
+
             }
 
         }
@@ -203,14 +224,15 @@ namespace Academika.Presentacion
         {
             mxc = new MateriasXCarrera();
 
-            mxc.Id_Materias_x_Carrera = (int)dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value;
+            mxc.Id_Materias_x_Carrera = (int)(long)dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value;
             mxc.Dictado = (string)dgvResultado.CurrentRow.Cells["Dictado"].Value;
-            mxc.AnioDictado = (int)dgvResultado.CurrentRow.Cells["AnioDictado"].Value;
-            mxc.CargaHoraria = (int)dgvResultado.CurrentRow.Cells["Carga"].Value;
-            //mxc.Cuatrimestre = (int)dgvResultado.CurrentRow.Cells["Cuatrimestre"].Value;
+            mxc.AnioDictado = (int)(long)dgvResultado.CurrentRow.Cells["AnioDictado"].Value;
+            mxc.CargaHoraria = (int)(long)dgvResultado.CurrentRow.Cells["Carga"].Value;
+            mxc.Cuatrimestre = (int)(long)dgvResultado.CurrentRow.Cells["Cuatrimestre"].Value;
 
             if (servicio.ActualizaDatosMateriasxCarrera(mxc))
-                MessageBox.Show("Se agregó la materia al plan de estudios!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se editó el campo deseado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Consultar_DetalleMateriaAsync(materia.Id_Materia);
 
         }
 
@@ -223,12 +245,14 @@ namespace Academika.Presentacion
 
                 MessageBox.Show("Debe seleccionar una materia", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboMateria.Focus();
-                return;
+                
             }
 
             materia.Id_Materia = (int)cboMateria.SelectedValue;
 
-            dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
+
+             Consultar_DetalleMateriaAsync(materia.Id_Materia);
+        
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -259,8 +283,8 @@ namespace Academika.Presentacion
         {
             DocentesXMateria dxm = new DocentesXMateria();
 
-            dxm.Docente.Id_Docente = (int)dgvResultado.CurrentRow.Cells["IdDocente"].Value;
-            dxm.Mxcur.Id_Materias_x_Curso = (int)dgvResultado.CurrentRow.Cells["IdMateriaCurso"].Value;
+            dxm.Docente.Id_Docente = (int)(long)dgvResultado.CurrentRow.Cells["IdDocente"].Value;
+            dxm.Mxcur.Id_Materias_x_Curso = (int)(long)dgvResultado.CurrentRow.Cells["IdMateriaCurso"].Value;
 
             //mxc.Cuatrimestre = (int)dgvResultado.CurrentRow.Cells["Cuatrimestre"].Value;
 

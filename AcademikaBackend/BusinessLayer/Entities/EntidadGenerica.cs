@@ -8,8 +8,8 @@ namespace AcademikaBackend.BusinessLayer.Entities
 {
     public class EntidadGenerica
     {
-        public int IDEntidad { get; set; }
+        public int ID { get; set; }
 
-        public string NombreEntidad { get; set; }
+        public string Descripcion { get; set; }
     }
 }

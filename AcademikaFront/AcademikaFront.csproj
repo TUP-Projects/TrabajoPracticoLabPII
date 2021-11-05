@@ -39,7 +39,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CustomControls.RJControls" Version="1.0.0" />
+    <PackageReference Include="FontAwesome.Sharp" Version="5.15.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.14" />
+    <PackageReference Include="RJCodeAdvance.RJControl2s" Version="1.0.0" />
+    <PackageReference Include="RJCodeAdvance.RJControls" Version="1.0.0" />
+    <PackageReference Include="VisualBasic.PowerPacks.Vs" Version="1.0.0" />
   </ItemGroup>
 
 </Project>

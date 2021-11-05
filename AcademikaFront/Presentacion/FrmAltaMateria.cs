@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AcademikaBackend.BusinessLayer.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,16 @@ namespace Academika.Presentacion
 {
     public partial class FrmAltaMateria : Form
     {
+        private IMateriasService servicio;
         public FrmAltaMateria()
         {
             InitializeComponent();
+            servicio = new ServiceFactoryImp().CrearServiceMaterias();
         }
-
+        private void FrmAltaMateria_Load(object sender, EventArgs e)
+        {
+            dgvMaterias.DataSource = servicio.CargaDgvEntidad("materias");
+        }
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -31,5 +37,7 @@ namespace Academika.Presentacion
         {
 
         }
+
+    
     }
 }

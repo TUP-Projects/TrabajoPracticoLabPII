@@ -33,16 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblLegajoDocente = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMaterias = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLegajoDocente
@@ -66,13 +66,13 @@
             this.richTextBox1.TabIndex = 89;
             this.richTextBox1.Text = "";
             // 
-            // dataGridView1
+            // dgvMaterias
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvMaterias.AllowUserToAddRows = false;
+            this.dgvMaterias.AllowUserToDeleteRows = false;
+            this.dgvMaterias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.dgvMaterias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMaterias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -80,19 +80,19 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 30;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMaterias.ColumnHeadersHeight = 30;
+            this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Materia});
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(131, 178);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvMaterias.EnableHeadersVisualStyles = false;
+            this.dgvMaterias.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvMaterias.Location = new System.Drawing.Point(131, 178);
+            this.dgvMaterias.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvMaterias.Name = "dgvMaterias";
+            this.dgvMaterias.ReadOnly = true;
+            this.dgvMaterias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -100,15 +100,33 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMaterias.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(516, 258);
-            this.dataGridView1.TabIndex = 90;
+            this.dgvMaterias.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMaterias.Size = new System.Drawing.Size(516, 258);
+            this.dgvMaterias.TabIndex = 90;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 45;
+            // 
+            // Materia
+            // 
+            this.Materia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Materia.DataPropertyName = "Descripcion";
+            this.Materia.HeaderText = "Materia";
+            this.Materia.Name = "Materia";
+            this.Materia.ReadOnly = true;
+            this.Materia.Width = 81;
             // 
             // iconButton5
             // 
@@ -182,20 +200,6 @@
             this.label3.TabIndex = 115;
             this.label3.Text = "Materia";
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Materia
-            // 
-            this.Materia.DataPropertyName = "Descripcion";
-            this.Materia.HeaderText = "Materia";
-            this.Materia.Name = "Materia";
-            this.Materia.ReadOnly = true;
-            // 
             // FrmAltaMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -208,14 +212,15 @@
             this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMaterias);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lblLegajoDocente);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmAltaMateria";
             this.Tag = "Ejemplo: 1W3";
             this.Text = "Alta Materia";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmAltaMateria_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,7 +230,7 @@
 
         private System.Windows.Forms.Label lblLegajoDocente;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMaterias;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton5;

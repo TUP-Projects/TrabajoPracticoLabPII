@@ -23,6 +23,8 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         bool EliminaDocxMateria(DocentesXMateria dxm);
 
+        DataTable CargaDgvEntidad(string tabla);
+
 
     }
 }

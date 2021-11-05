@@ -52,10 +52,6 @@ namespace Academika.Presentacion
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreTec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rjDatePicker1 = new RJCodeAdvance.RJControls.RJDatePicker();
             this.rjComboBox1 = new RJCodeAdvance.RJControls.RJComboBox();
             this.rjTextBox1 = new RJCodeAdvance.RJControls.RJTextBox();
@@ -76,6 +72,11 @@ namespace Academika.Presentacion
             this.rjComboBox8 = new RJCodeAdvance.RJControls.RJComboBox();
             this.rjComboBox9 = new RJCodeAdvance.RJControls.RJComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreTec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +86,7 @@ namespace Academika.Presentacion
             this.lblTipoDni.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTipoDni.Location = new System.Drawing.Point(354, 80);
             this.lblTipoDni.Name = "lblTipoDni";
-            this.lblTipoDni.Size = new System.Drawing.Size(50, 13);
+            this.lblTipoDni.Size = new System.Drawing.Size(54, 15);
             this.lblTipoDni.TabIndex = 5;
             this.lblTipoDni.Text = "Dni Tipo:";
             // 
@@ -95,7 +96,7 @@ namespace Academika.Presentacion
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(369, 209);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 15;
             this.label1.Text = "Barrio";
             // 
@@ -105,7 +106,7 @@ namespace Academika.Presentacion
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(611, 209);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(58, 15);
             this.label2.TabIndex = 17;
             this.label2.Text = "Localidad";
             // 
@@ -115,7 +116,7 @@ namespace Academika.Presentacion
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
             this.label3.Location = new System.Drawing.Point(37, 247);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(56, 15);
             this.label3.TabIndex = 19;
             this.label3.Text = "Provincia";
             // 
@@ -125,14 +126,14 @@ namespace Academika.Presentacion
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
             this.label4.Location = new System.Drawing.Point(37, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(68, 15);
             this.label4.TabIndex = 20;
             this.label4.Text = "Fecha Nac.:";
             // 
             // lblLegajoDocente
             // 
             this.lblLegajoDocente.AutoSize = true;
-            this.lblLegajoDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegajoDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLegajoDocente.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblLegajoDocente.Location = new System.Drawing.Point(37, 9);
             this.lblLegajoDocente.Name = "lblLegajoDocente";
@@ -146,7 +147,7 @@ namespace Academika.Presentacion
             this.label5.ForeColor = System.Drawing.Color.Gainsboro;
             this.label5.Location = new System.Drawing.Point(37, 124);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(48, 15);
             this.label5.TabIndex = 48;
             this.label5.Text = "Carrera:";
             // 
@@ -156,7 +157,7 @@ namespace Academika.Presentacion
             this.label6.ForeColor = System.Drawing.Color.Gainsboro;
             this.label6.Location = new System.Drawing.Point(47, 319);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.Size = new System.Drawing.Size(52, 15);
             this.label6.TabIndex = 50;
             this.label6.Text = "Trabaja?:";
             // 
@@ -166,7 +167,7 @@ namespace Academika.Presentacion
             this.radioButton1.ForeColor = System.Drawing.Color.Gainsboro;
             this.radioButton1.Location = new System.Drawing.Point(115, 319);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(34, 17);
+            this.radioButton1.Size = new System.Drawing.Size(34, 19);
             this.radioButton1.TabIndex = 51;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Si\r\n";
@@ -178,7 +179,7 @@ namespace Academika.Presentacion
             this.radioButton2.ForeColor = System.Drawing.Color.Gainsboro;
             this.radioButton2.Location = new System.Drawing.Point(155, 319);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
+            this.radioButton2.Size = new System.Drawing.Size(41, 19);
             this.radioButton2.TabIndex = 52;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "No";
@@ -190,7 +191,7 @@ namespace Academika.Presentacion
             this.label7.ForeColor = System.Drawing.Color.Gainsboro;
             this.label7.Location = new System.Drawing.Point(37, 285);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 13);
+            this.label7.Size = new System.Drawing.Size(69, 15);
             this.label7.TabIndex = 53;
             this.label7.Text = "Estado civil:";
             // 
@@ -199,7 +200,7 @@ namespace Academika.Presentacion
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(322, 318);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 21);
+            this.comboBox8.Size = new System.Drawing.Size(121, 23);
             this.comboBox8.TabIndex = 60;
             // 
             // label10
@@ -208,7 +209,7 @@ namespace Academika.Presentacion
             this.label10.ForeColor = System.Drawing.Color.Gainsboro;
             this.label10.Location = new System.Drawing.Point(232, 321);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 13);
+            this.label10.Size = new System.Drawing.Size(91, 15);
             this.label10.TabIndex = 61;
             this.label10.Text = "Relacón laboral:";
             // 
@@ -218,7 +219,7 @@ namespace Academika.Presentacion
             this.label12.ForeColor = System.Drawing.Color.Gainsboro;
             this.label12.Location = new System.Drawing.Point(298, 125);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 13);
+            this.label12.Size = new System.Drawing.Size(41, 15);
             this.label12.TabIndex = 107;
             this.label12.Text = "Turno:";
             // 
@@ -228,7 +229,7 @@ namespace Academika.Presentacion
             this.label13.ForeColor = System.Drawing.Color.Gainsboro;
             this.label13.Location = new System.Drawing.Point(566, 125);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 13);
+            this.label13.Size = new System.Drawing.Size(74, 15);
             this.label13.TabIndex = 109;
             this.label13.Text = "Año Ingreso:";
             // 
@@ -239,7 +240,7 @@ namespace Academika.Presentacion
             this.dateTimePicker1.Location = new System.Drawing.Point(639, 122);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(53, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(53, 23);
             this.dateTimePicker1.TabIndex = 110;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -286,7 +287,7 @@ namespace Academika.Presentacion
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -296,6 +297,7 @@ namespace Academika.Presentacion
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.Carrera,
             this.NombreTec,
             this.Anio,
             this.Cuatrimestre});
@@ -307,14 +309,14 @@ namespace Academika.Presentacion
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -322,35 +324,11 @@ namespace Academika.Presentacion
             this.dataGridView1.Size = new System.Drawing.Size(870, 249);
             this.dataGridView1.TabIndex = 113;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // NombreTec
-            // 
-            this.NombreTec.HeaderText = "Nombre";
-            this.NombreTec.Name = "NombreTec";
-            this.NombreTec.ReadOnly = true;
-            // 
-            // Anio
-            // 
-            this.Anio.HeaderText = "Año";
-            this.Anio.Name = "Anio";
-            this.Anio.ReadOnly = true;
-            // 
-            // Cuatrimestre
-            // 
-            this.Cuatrimestre.HeaderText = "Cuatrimestre";
-            this.Cuatrimestre.Name = "Cuatrimestre";
-            this.Cuatrimestre.ReadOnly = true;
-            // 
             // rjDatePicker1
             // 
             this.rjDatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjDatePicker1.BorderSize = 0;
-            this.rjDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.rjDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjDatePicker1.Location = new System.Drawing.Point(104, 71);
             this.rjDatePicker1.MinimumSize = new System.Drawing.Size(0, 35);
             this.rjDatePicker1.Name = "rjDatePicker1";
@@ -365,7 +343,7 @@ namespace Academika.Presentacion
             this.rjComboBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox1.BorderSize = 1;
             this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rjComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
             this.rjComboBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -385,7 +363,7 @@ namespace Academika.Presentacion
             this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox1.BorderRadius = 0;
             this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox1.Location = new System.Drawing.Point(38, 33);
             this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -407,7 +385,7 @@ namespace Academika.Presentacion
             this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox2.BorderRadius = 0;
             this.rjTextBox2.BorderSize = 2;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox2.Location = new System.Drawing.Point(214, 33);
             this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
@@ -429,7 +407,7 @@ namespace Academika.Presentacion
             this.rjTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox3.BorderRadius = 0;
             this.rjTextBox3.BorderSize = 2;
-            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox3.Location = new System.Drawing.Point(389, 33);
             this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
@@ -451,7 +429,7 @@ namespace Academika.Presentacion
             this.rjTextBox4.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox4.BorderRadius = 0;
             this.rjTextBox4.BorderSize = 2;
-            this.rjTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox4.Location = new System.Drawing.Point(626, 70);
             this.rjTextBox4.Margin = new System.Windows.Forms.Padding(4);
@@ -472,7 +450,7 @@ namespace Academika.Presentacion
             this.rjComboBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox2.BorderSize = 1;
             this.rjComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rjComboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjComboBox2.ForeColor = System.Drawing.Color.DimGray;
             this.rjComboBox2.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox2.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -491,7 +469,7 @@ namespace Academika.Presentacion
             this.rjComboBox3.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox3.BorderSize = 1;
             this.rjComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rjComboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjComboBox3.ForeColor = System.Drawing.Color.DimGray;
             this.rjComboBox3.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox3.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -511,7 +489,7 @@ namespace Academika.Presentacion
             this.rjTextBox5.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox5.BorderRadius = 0;
             this.rjTextBox5.BorderSize = 2;
-            this.rjTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox5.Location = new System.Drawing.Point(214, 152);
             this.rjTextBox5.Margin = new System.Windows.Forms.Padding(4);
@@ -533,7 +511,7 @@ namespace Academika.Presentacion
             this.rjTextBox6.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox6.BorderRadius = 0;
             this.rjTextBox6.BorderSize = 2;
-            this.rjTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox6.Location = new System.Drawing.Point(38, 152);
             this.rjTextBox6.Margin = new System.Windows.Forms.Padding(4);
@@ -555,7 +533,7 @@ namespace Academika.Presentacion
             this.rjTextBox7.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox7.BorderRadius = 0;
             this.rjTextBox7.BorderSize = 2;
-            this.rjTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjTextBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox7.Location = new System.Drawing.Point(34, 200);
             this.rjTextBox7.Margin = new System.Windows.Forms.Padding(4);
@@ -577,7 +555,7 @@ namespace Academika.Presentacion
             this.rjTextBox8.BorderFocusColor = System.Drawing.Color.HotPink;
             this.rjTextBox8.BorderRadius = 0;
             this.rjTextBox8.BorderSize = 2;
-            this.rjTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjTextBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rjTextBox8.Location = new System.Drawing.Point(202, 200);
             this.rjTextBox8.Margin = new System.Windows.Forms.Padding(4);
@@ -598,7 +576,7 @@ namespace Academika.Presentacion
             this.rjComboBox4.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox4.BorderSize = 1;
             this.rjComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rjComboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjComboBox4.ForeColor = System.Drawing.Color.DimGray;
             this.rjComboBox4.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox4.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -617,7 +595,7 @@ namespace Academika.Presentacion
             this.rjComboBox5.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox5.BorderSize = 1;
             this.rjComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rjComboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjComboBox5.ForeColor = System.Drawing.Color.DimGray;
             this.rjComboBox5.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox5.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -636,7 +614,7 @@ namespace Academika.Presentacion
             this.rjComboBox6.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox6.BorderSize = 1;
             this.rjComboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rjComboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjComboBox6.ForeColor = System.Drawing.Color.DimGray;
             this.rjComboBox6.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox6.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -655,7 +633,7 @@ namespace Academika.Presentacion
             this.label14.ForeColor = System.Drawing.Color.Gainsboro;
             this.label14.Location = new System.Drawing.Point(332, 250);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(29, 13);
+            this.label14.Size = new System.Drawing.Size(28, 15);
             this.label14.TabIndex = 129;
             this.label14.Text = "País";
             // 
@@ -665,7 +643,7 @@ namespace Academika.Presentacion
             this.rjComboBox7.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox7.BorderSize = 1;
             this.rjComboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rjComboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjComboBox7.ForeColor = System.Drawing.Color.DimGray;
             this.rjComboBox7.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox7.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -684,7 +662,7 @@ namespace Academika.Presentacion
             this.rjComboBox8.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox8.BorderSize = 1;
             this.rjComboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rjComboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjComboBox8.ForeColor = System.Drawing.Color.DimGray;
             this.rjComboBox8.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox8.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -703,7 +681,7 @@ namespace Academika.Presentacion
             this.rjComboBox9.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox9.BorderSize = 1;
             this.rjComboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rjComboBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjComboBox9.ForeColor = System.Drawing.Color.DimGray;
             this.rjComboBox9.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.rjComboBox9.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -722,9 +700,39 @@ namespace Academika.Presentacion
             this.label8.ForeColor = System.Drawing.Color.Gainsboro;
             this.label8.Location = new System.Drawing.Point(332, 285);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 13);
+            this.label8.Size = new System.Drawing.Size(124, 15);
             this.label8.TabIndex = 132;
             this.label8.Text = "Situación habitacional";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Carrera
+            // 
+            this.Carrera.HeaderText = "Carrera";
+            this.Carrera.Name = "Carrera";
+            this.Carrera.ReadOnly = true;
+            // 
+            // NombreTec
+            // 
+            this.NombreTec.HeaderText = "Nombre";
+            this.NombreTec.Name = "NombreTec";
+            this.NombreTec.ReadOnly = true;
+            // 
+            // Anio
+            // 
+            this.Anio.HeaderText = "Año";
+            this.Anio.Name = "Anio";
+            this.Anio.ReadOnly = true;
+            // 
+            // Cuatrimestre
+            // 
+            this.Cuatrimestre.HeaderText = "Cuatrimestre";
+            this.Cuatrimestre.Name = "Cuatrimestre";
+            this.Cuatrimestre.ReadOnly = true;
             // 
             // FrmAltaAlumno
             // 
@@ -802,10 +810,6 @@ namespace Academika.Presentacion
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreTec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuatrimestre;
         private RJCodeAdvance.RJControls.RJDatePicker rjDatePicker1;
         private RJCodeAdvance.RJControls.RJComboBox rjComboBox1;
         private RJCodeAdvance.RJControls.RJTextBox rjTextBox1;
@@ -826,5 +830,10 @@ namespace Academika.Presentacion
         private RJCodeAdvance.RJControls.RJComboBox rjComboBox8;
         private RJCodeAdvance.RJControls.RJComboBox rjComboBox9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Carrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreTec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuatrimestre;
     }
 }

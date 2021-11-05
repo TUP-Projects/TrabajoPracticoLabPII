@@ -213,11 +213,6 @@ namespace Academika.Presentacion
             OpenChild(new FrmConsultas());
         }
 
-        private void btnConfiguracion_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color6);
-            OpenChild(new FrmConfig());
-        }
 
         private void rjToggleButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -252,20 +247,11 @@ namespace Academika.Presentacion
         {
             OpenChild(new FrmAltaMateria());
         }
-        private void toolStripDetalleMateriasMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenChild(new FrmAltaMateriaXCarrera());
-        }
-
         private void exámenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChild(new FrmExamenes());
         }
 
-        private void actualizarCondiciónAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenChild(new FrmActualCond());
-        }
 
         private void tipoExámenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -277,10 +263,6 @@ namespace Academika.Presentacion
             OpenChild(new FrmTipoExam());
         }
 
-        private void iconButton2_Click_1(object sender, EventArgs e)
-        {
-            OpenChild(new FrmConfig());
-        }
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
