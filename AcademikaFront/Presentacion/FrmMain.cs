@@ -127,7 +127,7 @@ namespace Academika.Presentacion
         {
             ActivateButton(sender, RGBColors.color3);
             rjDropDownMenu2.Show(btnModExamenes, btnModExamenes.Width, 0);
-
+            
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
@@ -160,7 +160,7 @@ namespace Academika.Presentacion
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMesage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
+        
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -192,7 +192,7 @@ namespace Academika.Presentacion
             if (WindowState == FormWindowState.Normal)
                 WindowState = FormWindowState.Maximized;
             else
-                WindowState = FormWindowState.Normal;
+            WindowState = FormWindowState.Normal;
 
         }
 
@@ -243,7 +243,7 @@ namespace Academika.Presentacion
         {
             OpenChild(new FrmAltaCursos());
         }
-        private void toolStripMateriasMenuItem_Click(object sender, EventArgs e)
+        private void toolStripMateriasMenuItem_Click (object sender, EventArgs e)
         {
             OpenChild(new FrmAltaMateria());
         }
@@ -274,23 +274,5 @@ namespace Academika.Presentacion
         {
             OpenChild(new FrmAltaMateriaXCarrera());
         }
-<<<<<<< Updated upstream
-        private void horafecha_Tick_1(object sender, EventArgs e)
-        {
-            lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
-            lblFecha.Text = DateTime.Now.ToShortDateString();
-        }
-
-        private void lblFecha_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblHora_Click(object sender, EventArgs e)
-        {
-
-        }
-=======
->>>>>>> Stashed changes
     }
 }

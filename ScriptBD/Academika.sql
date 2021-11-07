@@ -1348,3 +1348,5 @@ UPDATE MATERIASxCARRERA SET estado = 0 WHERE id_materia = @idmateria AND id_carr
 END
 GO
 
+
+SP_CONSULTA_MATERIAs_DETALLE
