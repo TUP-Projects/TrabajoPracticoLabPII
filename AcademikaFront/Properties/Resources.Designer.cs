@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AcademikaBackend.Properties {
+namespace AcademikaFront.Properties {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace AcademikaBackend.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ConnectionStrings {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ConnectionStrings() {
+        internal Resources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace AcademikaBackend.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AcademikaBackend.Properties.ConnectionStrings", typeof(ConnectionStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AcademikaFront.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,33 +57,6 @@ namespace AcademikaBackend.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Data Source=localhost;Initial Catalog=Academika;Integrated Security=True.
-        /// </summary>
-        internal static string Ciro {
-            get {
-                return ResourceManager.GetString("Ciro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Data Source=.\SQLEXPRESS;Initial Catalog=Academika;Integrated Security=True.
-        /// </summary>
-        internal static string Cristian {
-            get {
-                return ResourceManager.GetString("Cristian", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Data Source=lawbraker\mydb;Initial Catalog=Academika;Integrated Security=True.
-        /// </summary>
-        internal static string Lucio {
-            get {
-                return ResourceManager.GetString("Lucio", resourceCulture);
             }
         }
     }

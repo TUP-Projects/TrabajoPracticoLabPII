@@ -117,13 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Ciro" xml:space="preserve">
-    <value>Data Source=localhost;Initial Catalog=Academika;Integrated Security=True</value>
-  </data>
-  <data name="Cristian" xml:space="preserve">
-    <value>Data Source=.\SQLEXPRESS;Initial Catalog=Academika;Integrated Security=True</value>
-  </data>
-  <data name="Lucio" xml:space="preserve">
-    <value>Data Source=lawbraker\mydb;Initial Catalog=Academika;Integrated Security=True</value>
-  </data>
 </root>
