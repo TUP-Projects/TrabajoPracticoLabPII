@@ -227,11 +227,12 @@ namespace Academika.Presentacion
 
                 MessageBox.Show("Debe seleccionar una materia", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboMateria.Focus();
-                
+
             }
-
-            materia.Id_Materia = (int)cboMateria.SelectedValue;
-
+            else
+            {
+                materia.Id_Materia = (int)cboMateria.SelectedValue;
+            }
 
              Consultar_DetalleMateriaAsync(materia.Id_Materia);
         
