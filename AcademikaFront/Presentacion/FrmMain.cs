@@ -269,5 +269,10 @@ namespace Academika.Presentacion
             FrmAcercaDe nuevo = new FrmAcercaDe();
             nuevo.Show();
         }
+
+        private void toolStripDetalleMaterias_Click(object sender, EventArgs e)
+        {
+            OpenChild(new FrmAltaMateriaXCarrera());
+        }
     }
 }

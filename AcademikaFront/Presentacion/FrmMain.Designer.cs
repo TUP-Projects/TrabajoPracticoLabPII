@@ -492,6 +492,7 @@
             this.toolStripDetalleMaterias.Name = "toolStripDetalleMaterias";
             this.toolStripDetalleMaterias.Size = new System.Drawing.Size(201, 24);
             this.toolStripDetalleMaterias.Text = "Detalle Materias";
+            this.toolStripDetalleMaterias.Click += new System.EventHandler(this.toolStripDetalleMaterias_Click);
             // 
             // FrmMain
             // 

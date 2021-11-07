@@ -161,7 +161,7 @@ namespace AcademikaBackend.DataLayer
             return MyParameter;
         }
 
-        public bool AltaMaterias(Materia materia, MateriasXCarrera mxc, MateriasXCurso mxcur, List<DocentesXMateria> dxm)
+        public bool AltaMaterias(Materia materia, MateriasXCarrera mxc, List<DocentesXMateria> dxm)
         {
             bool ok = true;
 
@@ -181,18 +181,21 @@ namespace AcademikaBackend.DataLayer
                 sqlParams.Add(HelperDao.CrearParametro(cmd, "@cuatrimestre", DbType.Int32, mxc.Cuatrimestre));
                 sqlParams.Add(HelperDao.CrearParametro(cmd, "@anio_dictado", DbType.Int32, mxc.AnioDictado));
                 sqlParams.Add(HelperDao.CrearParametro(cmd, "@dictado", DbType.String, mxc.Dictado));
-                sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_curso", DbType.Int32, mxcur.Curso.Id_Curso));
+
 
                 foreach (DocentesXMateria item in dxm) {
-                    
+
                     if (item.Cargo == "Jefe")
+                    {
                         sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_jefe", DbType.Int32, item.Docente.Id_Docente));
+                        sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_curso", DbType.Int32, item.Curso.Id_Curso));
+                    }
                     else if (item.Cargo == "Adjunto")
                         sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_prof_adj", DbType.Int32, item.Docente.Id_Docente));
                     else if (item.Cargo == "Ayudante")
                         sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_ayud", DbType.Int32, item.Docente.Id_Docente));
                 }
-                EjecutarSql("SP_ALTA_MATERIAS", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+                EjecutarSql("SP_ALTA_MATERIA_CARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
 
                 transaction.Commit();
         }

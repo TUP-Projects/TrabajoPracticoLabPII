@@ -48,14 +48,14 @@ namespace AcademikaBackend.BusinessLayer.Services
             return MateriasDao.ConsultaMateria(id_materia);
         }
 
-        public bool EliminaDocxMateria(DocentesXMateria dxm)
+        public bool BajaCursoMateriaDocente(DocentesXMateria dxm)
         {
-            return MateriasDao.EliminaDocxCarrera(dxm);
+            return MateriasDao.BajaCursoMateriaDocente(dxm);
         }
 
-        public bool InsertarMateria(Materia materia, MateriasXCarrera mxc, MateriasXCurso mxcur, List<DocentesXMateria> dxm)
+        public bool InsertarMateria(Materia materia, MateriasXCarrera mxc, List<DocentesXMateria> dxm)
         {
-            return MateriasDao.InsertaMateria(materia, mxc, mxcur, dxm);
+            return MateriasDao.InsertaMateria(materia, mxc, dxm);
         }
 
         public int ObtenerProxId(string tabla)

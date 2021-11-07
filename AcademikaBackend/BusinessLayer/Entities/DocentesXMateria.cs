@@ -10,21 +10,24 @@ namespace AcademikaBackend.BusinessLayer.Entities
     {
         public Docente Docente { get; set; }
 
-        public MateriasXCurso Mxcur { get; set; }
+        public MateriasXCarrera Mxcar { get; set; }
 
         public string Cargo { get; set; }
 
-        public DocentesXMateria(Docente docente, MateriasXCurso mxcur, string cargo) {
+        public Curso Curso { get; set; }
+        public DocentesXMateria(Docente docente, MateriasXCarrera mxcar, string cargo, Curso curso) {
 
             this.Docente = docente;
-            this.Mxcur = mxcur;
+            this.Curso = curso;
+            this.Mxcar = mxcar;         
             this.Cargo = cargo;
         
         }
         public DocentesXMateria()
         {
             Docente = new Docente();
-            Mxcur = new MateriasXCurso();
+            Mxcar = new MateriasXCarrera();
+            Curso = new Curso();
         }
     }
 }

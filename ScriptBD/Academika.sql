@@ -102,6 +102,7 @@ CONSTRAINT pk_cursos PRIMARY KEY (id_curso)
 CREATE TABLE CARRERAS (
 id_carrera int IDENTITY (1,1),
 carrera varchar (100) not null,
+estado tinyint,
 CONSTRAINT pk_carreras PRIMARY KEY (id_carrera)
 )
 CREATE TABLE CONDICIONES (
@@ -112,6 +113,7 @@ CONSTRAINT pk_condiciones PRIMARY KEY (id_condicion)
 CREATE TABLE MATERIAS (
 id_materia int IDENTITY (1,1),
 materia varchar (100) not null,
+estado tinyint,
 CONSTRAINT pk_materias PRIMARY KEY (id_materia)
 )
 CREATE TABLE DOCENTES (
@@ -175,36 +177,39 @@ CONSTRAINT fk_tipo_examen_examenes FOREIGN KEY (id_tipo_examen) REFERENCES TIPOS
 CONSTRAINT fk_turno_examenes FOREIGN KEY (id_turno) REFERENCES TURNOS_EXAMEN (id_turno)
 )
 
-CREATE TABLE MATERIASxCURSO(
-id_materia_curso int IDENTITY(1,1),
-id_materia int,
-id_curso int,
 
-CONSTRAINT pk_materia_curso PRIMARY KEY (id_materia_curso),
-CONSTRAINT fk_materia_materias_x_curso FOREIGN KEY (id_materia) REFERENCES MATERIAS (id_materia),
-CONSTRAINT fk_curso_materias_x_curso FOREIGN KEY (id_curso) REFERENCES CURSOS (id_curso)
-)
-
-
-
-CREATE TABLE DOCENTESxMATERIA (
-id_docente_materia int IDENTITY(1,1),
-id_docente int,
-id_materia_curso int
-
-CONSTRAINT pk_docente_materia PRIMARY KEY (id_docente_materia),
-CONSTRAINT fk_docente_docentes_x_materia FOREIGN KEY (id_docente) REFERENCES DOCENTES (id_docente),
-CONSTRAINT fk_materia_curso_docentes_x_materia FOREIGN KEY (id_materia_curso) REFERENCES MATERIASxCURSO (id_materia_curso)
-)
 
 CREATE TABLE MATERIASxCARRERA (
 	id_materias_carrera int IDENTITY (1,1),
 	id_carrera int, 
 	id_materia int, 
+	anio_dictado int,
+	cuatrimestre int,
+	dictado VARCHAR(50),
+	carga_horaria int,
+	estado tinyint
 	CONSTRAINT pk_id_materias_carrera PRIMARY KEY (id_materias_carrera),
 	CONSTRAINT fk_id_carrera FOREIGN KEY (id_carrera) REFERENCES carreras (id_carrera),
 	CONSTRAINT fk_id_materia FOREIGN KEY (id_materia) REFERENCES materias (id_materia)
 )
+
+
+CREATE TABLE [dbo].[DOCENTESxMATERIA](
+	[id_docente_materia] [int] IDENTITY(1,1) NOT NULL,
+	[id_docente] [int] NULL,
+	[id_cargo] [int] NULL,
+	[id_materias_carrera] [int] NULL,
+	[id_curso] [int] NULL,
+	[estado] [tinyint] NULL
+
+ 
+CONSTRAINT pk_docente_materia PRIMARY KEY CLUSTERED (id_docente_materia), 
+CONSTRAINT fk_cargo_docentesxmateria FOREIGN KEY([id_cargo]) REFERENCES [dbo].[CARGOS] ([id_cargo]),
+CONSTRAINT fk_docente_docentes_x_materia FOREIGN KEY([id_docente]) REFERENCES [dbo].[DOCENTES] ([id_docente]),
+CONSTRAINT fk_id_curso_carrera_doc_x_materias FOREIGN KEY([id_curso]) REFERENCES [dbo].[CURSOS] ([id_curso]),
+CONSTRAINT fk_id_materias_carrera_doc_x_materias FOREIGN KEY([id_materias_carrera]) REFERENCES [dbo].[MATERIASxCARRERA] ([id_materias_carrera])
+)
+
 
 CREATE TABLE DOCENTExTURNO (
 	id_docente_turno int IDENTITY (1,1),
@@ -368,72 +373,72 @@ INSERT INTO CONDICIONES(condicion) VALUES ('LIBRE')
 
 --MATERIAS
 --TUP
-INSERT INTO MATERIAS(materia) VALUES ('PROGRAMACION I')
-INSERT INTO MATERIAS(materia) VALUES ('SISTEMAS DE PROCESAMIENTO DE DATOS')
-INSERT INTO MATERIAS(materia) VALUES ('MATEMATICA')
-INSERT INTO MATERIAS(materia) VALUES ('INGLES I')
-INSERT INTO MATERIAS(materia) VALUES ('LABORATORIO DE COMPUTACION I')
-INSERT INTO MATERIAS(materia) VALUES ('PROGRAMACION II')
-INSERT INTO MATERIAS(materia) VALUES ('ARQUITECTURA Y SISTEMAS OPERATIVOSI')
-INSERT INTO MATERIAS(materia) VALUES ('ESTADISTICA')
-INSERT INTO MATERIAS(materia) VALUES ('INGLES II')
-INSERT INTO MATERIAS(materia) VALUES ('LABORATORIO DE COMPUTACION II')
-INSERT INTO MATERIAS(materia) VALUES ('METODOLOGIA DE LA INVESTIGACION')
-INSERT INTO MATERIAS(materia) VALUES ('PROGRAMACION III')
-INSERT INTO MATERIAS(materia) VALUES ('ORGANIZACION CONTABLE DE LA EMPRESA')
-INSERT INTO MATERIAS(materia) VALUES ('ORGANIZACION EMPRESARIAL')
-INSERT INTO MATERIAS(materia) VALUES ('ELEMENTOS DE INVESTIGACION OPERATIVA')
-INSERT INTO MATERIAS(materia) VALUES ('LABORATORIO DE COMPUTACION III')
-INSERT INTO MATERIAS(materia) VALUES ('METODOLOGIA DE SISTEMAS I')
-INSERT INTO MATERIAS(materia) VALUES ('DISEÑO Y ADMINISTRACION DE BASES DE DATOS')
-INSERT INTO MATERIAS(materia) VALUES ('LEGISLACION')
-INSERT INTO MATERIAS(materia) VALUES ('LABORATORIO DE COMPUTACION IV')
-INSERT INTO MATERIAS(materia) VALUES ('PRACTICA PROFESIONAL - TUP')
+INSERT INTO MATERIAS VALUES ('PROGRAMACION I', 1)
+INSERT INTO MATERIAS VALUES ('SISTEMAS DE PROCESAMIENTO DE DATOS', 1)
+INSERT INTO MATERIAS VALUES ('MATEMATICA', 1)
+INSERT INTO MATERIAS VALUES ('INGLES I',1)
+INSERT INTO MATERIAS VALUES ('LABORATORIO DE COMPUTACION I', 1)
+INSERT INTO MATERIAS VALUES ('PROGRAMACION II', 1)
+INSERT INTO MATERIAS VALUES ('ARQUITECTURA Y SISTEMAS OPERATIVOSI', 1)
+INSERT INTO MATERIAS VALUES ('ESTADISTICA', 1)
+INSERT INTO MATERIAS VALUES ('INGLES II', 1)
+INSERT INTO MATERIAS VALUES ('LABORATORIO DE COMPUTACION II', 1)
+INSERT INTO MATERIAS VALUES ('METODOLOGIA DE LA INVESTIGACION', 1)
+INSERT INTO MATERIAS VALUES ('PROGRAMACION III', 1)
+INSERT INTO MATERIAS VALUES ('ORGANIZACION CONTABLE DE LA EMPRESA', 1)
+INSERT INTO MATERIAS VALUES ('ORGANIZACION EMPRESARIAL', 1)
+INSERT INTO MATERIAS VALUES ('ELEMENTOS DE INVESTIGACION OPERATIVA', 1)
+INSERT INTO MATERIAS VALUES ('LABORATORIO DE COMPUTACION III', 1)
+INSERT INTO MATERIAS VALUES ('METODOLOGIA DE SISTEMAS I', 1)
+INSERT INTO MATERIAS VALUES ('DISEÑO Y ADMINISTRACION DE BASES DE DATOS', 1)
+INSERT INTO MATERIAS VALUES ('LEGISLACION', 1)
+INSERT INTO MATERIAS VALUES ('LABORATORIO DE COMPUTACION IV', 1)
+INSERT INTO MATERIAS VALUES ('PRACTICA PROFESIONAL - TUP', 1)
 --TUM(MECATRONICA)
-INSERT INTO MATERIAS(materia) VALUES ('MECATRONICA I')
-INSERT INTO MATERIAS(materia) VALUES ('FISICA')
-INSERT INTO MATERIAS(materia) VALUES ('MATEMATICA')
-INSERT INTO MATERIAS(materia) VALUES ('INGLES')
-INSERT INTO MATERIAS(materia) VALUES ('HERRAMIENTAS INFORMATICAS')
-INSERT INTO MATERIAS(materia) VALUES ('SISTEMAS CAD')
-INSERT INTO MATERIAS(materia) VALUES ('MATERIALES')
-INSERT INTO MATERIAS(materia) VALUES ('ELECTROTECNIA I')
-INSERT INTO MATERIAS(materia) VALUES ('SISTEMAS DIGITALES')
-INSERT INTO MATERIAS(materia) VALUES ('MECATRONICA II')
-INSERT INTO MATERIAS(materia) VALUES ('MECANICA I')
-INSERT INTO MATERIAS(materia) VALUES ('MANTENIMIENTO INDUSTRIAL')
-INSERT INTO MATERIAS(materia) VALUES ('ELECTRONICA')
-INSERT INTO MATERIAS(materia) VALUES ('ELECTROTECNIA II')
-INSERT INTO MATERIAS(materia) VALUES ('MECANICA II')
-INSERT INTO MATERIAS(materia) VALUES ('TECNOLOGIA DE LA FABRICACION')
-INSERT INTO MATERIAS(materia) VALUES ('AUTOMACION INDUSTRIAL')
-INSERT INTO MATERIAS(materia) VALUES ('GESTION DE LA CALIDAD Y METROLOGIA')
-INSERT INTO MATERIAS(materia) VALUES ('PASANTIA ENTES OFICIALES O EMPRESAS')
-INSERT INTO MATERIAS(materia) VALUES ('SEMINARIOS')
+INSERT INTO MATERIAS VALUES ('MECATRONICA I', 1)
+INSERT INTO MATERIAS VALUES ('FISICA', 1)
+INSERT INTO MATERIAS VALUES ('MATEMATICA', 1)
+INSERT INTO MATERIAS VALUES ('INGLES', 1)
+INSERT INTO MATERIAS VALUES ('HERRAMIENTAS INFORMATICAS', 1)
+INSERT INTO MATERIAS VALUES ('SISTEMAS CAD', 1)
+INSERT INTO MATERIAS VALUES ('MATERIALES', 1)
+INSERT INTO MATERIAS VALUES ('ELECTROTECNIA I', 1)
+INSERT INTO MATERIAS VALUES ('SISTEMAS DIGITALES', 1)
+INSERT INTO MATERIAS VALUES ('MECATRONICA II', 1)
+INSERT INTO MATERIAS VALUES ('MECANICA I', 1)
+INSERT INTO MATERIAS VALUES ('MANTENIMIENTO INDUSTRIAL', 1)
+INSERT INTO MATERIAS VALUES ('ELECTRONICA', 1)
+INSERT INTO MATERIAS VALUES ('ELECTROTECNIA II', 1)
+INSERT INTO MATERIAS VALUES ('MECANICA II', 1)
+INSERT INTO MATERIAS VALUES ('TECNOLOGIA DE LA FABRICACION', 1)
+INSERT INTO MATERIAS VALUES ('AUTOMACION INDUSTRIAL', 1)
+INSERT INTO MATERIAS VALUES ('GESTION DE LA CALIDAD Y METROLOGIA', 1)
+INSERT INTO MATERIAS VALUES ('PASANTIA ENTES OFICIALES O EMPRESAS', 1)
+INSERT INTO MATERIAS VALUES ('SEMINARIOS', 1)
 
 --TUMI
-INSERT INTO MATERIAS(materia) VALUES ('MANTENIMIENTO INDUSTRIAL I')
-INSERT INTO MATERIAS(materia) VALUES ('ELECTROTECNIA I')
-INSERT INTO MATERIAS(materia) VALUES ('MATEMATICA')
-INSERT INTO MATERIAS(materia) VALUES ('QUIMICA')
-INSERT INTO MATERIAS(materia) VALUES ('RELACIONES INDUSTRIALES')
-INSERT INTO MATERIAS(materia) VALUES ('INFORMATICA I')
-INSERT INTO MATERIAS(materia) VALUES ('MECANICA II')
-INSERT INTO MATERIAS(materia) VALUES ('SISTEMA DE REPRESENTACION')
-INSERT INTO MATERIAS(materia) VALUES ('CONOCIMIENTOS DE LOS MATERIALES')
-INSERT INTO MATERIAS(materia) VALUES ('NEUMATICA E HIDRAULICA')
-INSERT INTO MATERIAS(materia) VALUES ('MANTENIMIENTO INDUSTRIAL II')
-INSERT INTO MATERIAS(materia) VALUES ('ELEMENTOS DE MAQUINAS')
-INSERT INTO MATERIAS(materia) VALUES ('TECNOLOGIA DE FRIO Y CALOR')
-INSERT INTO MATERIAS(materia) VALUES ('INSTALACIONES Y MAQUINAS ELECTRICAS')
-INSERT INTO MATERIAS(materia) VALUES ('INFORMATICA II')
-INSERT INTO MATERIAS(materia) VALUES ('ELEMENTOS DE AUTOMATICACION')
-INSERT INTO MATERIAS(materia) VALUES ('INGLES')
-INSERT INTO MATERIAS(materia) VALUES ('SEGURIDAD HIGIENE Y PROTECCION AMBIENTAL')
-INSERT INTO MATERIAS(materia) VALUES ('COSTOS Y CONTROL DE GESTION')
-INSERT INTO MATERIAS(materia) VALUES ('ASEGURAMIENTO DE LA CALIDAD')
-INSERT INTO MATERIAS(materia) VALUES ('PRACTICA PROFESIONAL - TUMI')
-INSERT INTO MATERIAS(materia) VALUES ('PASANTIA - TUMI')
+INSERT INTO MATERIAS VALUES ('MANTENIMIENTO INDUSTRIAL I', 1)
+INSERT INTO MATERIAS VALUES ('ELECTROTECNIA I', 1)
+INSERT INTO MATERIAS VALUES ('MATEMATICA', 1)
+INSERT INTO MATERIAS VALUES ('QUIMICA', 1)
+INSERT INTO MATERIAS VALUES ('RELACIONES INDUSTRIALES', 1)
+INSERT INTO MATERIAS VALUES ('INFORMATICA I', 1)
+INSERT INTO MATERIAS VALUES ('MECANICA II', 1)
+INSERT INTO MATERIAS VALUES ('SISTEMA DE REPRESENTACION', 1)
+INSERT INTO MATERIAS VALUES ('CONOCIMIENTOS DE LOS MATERIALES', 1)
+INSERT INTO MATERIAS VALUES ('NEUMATICA E HIDRAULICA', 1)
+INSERT INTO MATERIAS VALUES ('MANTENIMIENTO INDUSTRIAL II', 1)
+INSERT INTO MATERIAS VALUES ('ELEMENTOS DE MAQUINAS', 1)
+INSERT INTO MATERIAS VALUES ('TECNOLOGIA DE FRIO Y CALOR', 1)
+INSERT INTO MATERIAS VALUES ('INSTALACIONES Y MAQUINAS ELECTRICAS', 1)
+INSERT INTO MATERIAS VALUES ('INFORMATICA II', 1)
+INSERT INTO MATERIAS VALUES ('ELEMENTOS DE AUTOMATICACION', 1)
+INSERT INTO MATERIAS VALUES ('INGLES', 1)
+INSERT INTO MATERIAS VALUES ('SEGURIDAD HIGIENE Y PROTECCION AMBIENTAL', 1)
+INSERT INTO MATERIAS VALUES ('COSTOS Y CONTROL DE GESTION', 1)
+INSERT INTO MATERIAS VALUES ('ASEGURAMIENTO DE LA CALIDAD', 1)
+INSERT INTO MATERIAS VALUES ('PRACTICA PROFESIONAL - TUMI', 1)
+INSERT INTO MATERIAS VALUES ('PASANTIA - TUMI', 1)
 
 
 
@@ -453,9 +458,9 @@ INSERT INTO ESTADOS_CIVIL VALUES ('Divorciado/a')
 
 -- CARRERAS
 
-INSERT INTO CARRERAS VALUES ('Tecnicatura en Programación')
-INSERT INTO CARRERAS VALUES ('Tecnicatura en Mecatrónica')
-INSERT INTO CARRERAS VALUES ('Tecnicatura en Mantenimiento Industrial')
+INSERT INTO CARRERAS VALUES ('Tecnicatura en Programación', 1)
+INSERT INTO CARRERAS VALUES ('Tecnicatura en Mecatrónica', 1)
+INSERT INTO CARRERAS VALUES ('Tecnicatura en Mantenimiento Industrial', 1)
 
 -- CURSOS
 INSERT INTO CURSOS VALUES ('1W1')
@@ -612,17 +617,13 @@ INSERT INTO MATERIASxCARRERA(id_carrera, id_materia) VALUES (1, 1)
 --EXAMENES
 INSERT INTO EXAMENES(id_tipo_examen, fecha, id_turno, id_materia, legajo, nota) VALUES (1, '20211023', 1, 1, 1, 10)
 
---MATERIASxCURSO
-INSERT INTO MATERIASxCURSO (id_materia, id_curso) values (1,1)
-
 --DOCENTExTURNO
 INSERT INTO DOCENTExTURNO (id_docente, id_turno, id_cargo) values(1,1,1)
 
 --DOCENTESxMATERIA
-INSERT INTO DOCENTESxMATERIA(id_docente, id_materia_curso) values (1,1)
+INSERT INTO DOCENTESxMATERIA(id_docente, id_cargo, id_materias_carrera, id_curso, estado) values (1,1,1,1,1)
 
 GO
-
 /* SECTION VIEWS */
 
 /* Vista con datos de utilidad de alumnos que están inscriptos a una carrera y sus respectivas materias-cursos */
@@ -631,23 +632,25 @@ AS
 	SELECT a.legajo Legajo, a.nombre + ' ' + a.apellido Alumno, m.materia Materia, ca.carrera Carrera, c.curso Curso, am.anio_cursado Anio, co.condicion Condicion 
 	FROM ALUMNOSxMATERIA am
 	INNER JOIN ALUMNOSxCARRERA ac ON ac.legajo = am.legajo 
-	INNER JOIN ALUMNOSxCURSO acu ON acu.legajo = am.legajo 
-	INNER JOIN MATERIASxCURSO mc ON am.id_materia = mc.id_materia AND acu.legajo = am.legajo AND acu.id_curso = mc.id_curso
-	INNER JOIN MATERIASxCARRERA mca ON am.id_materia = mca.id_materia AND ac.id_carrera = mca.id_carrera
+	INNER JOIN ALUMNOSxCURSO acu ON acu.legajo = am.legajo AND am.id_materia = acu.id_materia
+	INNER JOIN MATERIASxCARRERA mca ON am.id_materia = mca.id_materia AND ac.id_carrera = mca.id_carrera 
 	INNER JOIN ALUMNOS a ON a.legajo = am.legajo AND a.legajo = ac.legajo
 	INNER JOIN MATERIAS m ON m.id_materia = am.id_materia
-	INNER JOIN CURSOS c ON mc.id_curso = c.id_curso
+	INNER JOIN CURSOS c ON acu.id_curso = c.id_curso
 	INNER JOIN CARRERAS ca ON ca.id_carrera = ac.id_carrera AND ca.id_carrera = mca.id_carrera 
 	INNER JOIN CONDICIONES co ON co.id_condicion = am.id_condicion
 
 GO
 
 
+
+
+
 /* SECTION STORES PROCEDURES */
 
 /* SP'S DE CONSULTAS DE TABLAS */
 
-
+UPDATE MATERIASxCARRERA SET estado = 1
 CREATE PROCEDURE SP_CONSULTAR_MATERIAS
 AS
 BEGIN
@@ -764,20 +767,20 @@ CREATE PROC SP_PROMEDIO_NOTAS
 	@idcarrera int = NULL,
 	@promedio numeric(5,2) OUTPUT
 	AS 
+		
 		SELECT @promedio = AVG(CAST(nota AS NUMERIC(5,2))) 
 		FROM EXAMENES e 
 			INNER JOIN ALUMNOSxMATERIA am ON e.legajo= am.legajo AND e.id_materia = am.id_materia
 			INNER JOIN ALUMNOSxCURSO ac ON ac.legajo = am.legajo 
-			INNER JOIN MATERIASxCURSO mc ON mc.id_curso = ac.id_curso AND am.id_materia = mc.id_materia
-			INNER JOIN MATERIASxCARRERA mca ON mca.id_materia = e.id_materia
+			INNER JOIN ALUMNOSxCARRERA aca ON aca.legajo = e.legajo		
+			INNER JOIN MATERIASxCARRERA mca ON mca.id_materia = e.id_materia AND am.id_materia = mca.id_materia AND aca.id_carrera = mca.id_carrera
 		WHERE (@legajo IS NULL OR am.legajo = @legajo) AND
 			(@idmateria IS NULL OR am.id_materia = @idmateria) AND
 			(@idcarrera IS NULL OR mca.id_carrera = @idcarrera) AND
-			(@idcurso IS NULL OR mc.id_curso = @idcurso) AND
+			(@idcurso IS NULL OR ac.id_curso = @idcurso) AND
 			(@aniocursado IS NULL OR am.anio_cursado = @aniocursado)
 
 GO
-
 
 /*
 	Cantidades de alumnos (promedio de notas, cantidad de materias regulares y aprobadas) por edades, 
@@ -950,7 +953,7 @@ BEGIN
 WHILE @id_materia <= @corte AND @cant_alumnos_materia < 201 -- Suponemos que el tope de alumnos que soporta una cátedra es de 200.
 BEGIN
 	INSERT INTO ALUMNOSxMATERIA VALUES (@legajo, @id_materia, 1, YEAR(GETDATE()))
-	SELECT @cant_alumnos_materia = count(*) FROM ALUMNOSxCURSO acu INNER JOIN MATERIASxCURSO mc ON mc.id_curso = acu.id_curso AND acu.id_materia = @id_materia AND acu.id_curso = @id_curso
+	SELECT @cant_alumnos_materia = count(*) FROM ALUMNOSxCURSO where id_materia = @id_materia AND id_curso = @id_curso
 	IF @cant_alumnos_materia <= 100 AND  @id_materia <= @corte
 		INSERT INTO ALUMNOSxCURSO VALUES (@legajo, @id_curso, @id_materia)
 	ELSE 
@@ -966,13 +969,10 @@ ELSE
 END
 GO
 
+
+
 -- Agrego campos/fk a varias tablas por cómo están planteados los forms de la capa de presentación
 
-ALTER TABLE MATERIASxCARRERA ADD anio_cursada int NULL, cuatrimestre tinyint NULL
-ALTER TABLE MATERIASxCARRERA ADD dictado VARCHAR(50)
-ALTER TABLE MATERIASxCARRERA ADD carga_horaria int
-ALTER TABLE DOCENTESxMATERIA ADD id_cargo int 
-ALTER TABLE DOCENTESxMATERIA ADD CONSTRAINT fk_cargo_docentesxmateria FOREIGN KEY (id_cargo) REFERENCES cargos (id_cargo)
 ALTER TABLE CARRERAS ADD duracion int
 ALTER TABLE TURNOS_EXAMEN ADD id_materia int
 ALTER TABLE TURNOS_EXAMEN ADD CONSTRAINT fk_materia_turnos_examen FOREIGN KEY (id_materia) REFERENCES materias (id_materia)
@@ -986,7 +986,7 @@ GO
 
 -- SPs correspondientes a Form Materias
 -- Alta
-CREATE PROC SP_ALTA_MATERIAS
+CREATE PROC SP_ALTA_MATERIA_CARRERA
 @id_materia int,
 @carga_horaria int,
 @id_carrera int = NULL,
@@ -1000,7 +1000,7 @@ CREATE PROC SP_ALTA_MATERIAS
 AS
 BEGIN
 
-DECLARE @id_materia_curso INT
+DECLARE @id_materia_carrera INT
 DECLARE @id_cargo_jefe INT
 DECLARE @id_cargo_prof INT
 DECLARE @id_cargo_ayud INT
@@ -1009,66 +1009,76 @@ SELECT @id_cargo_jefe = id_cargo FROM CARGOS WHERE cargo = 'JEFE DE CATEDRA'
 SELECT @id_cargo_ayud = id_cargo FROM CARGOS WHERE cargo = 'AYUDANTE PRIMERA'
 SELECT @id_cargo_prof = id_cargo FROM CARGOS WHERE cargo = 'PROFESOR ADJUNTO'
 
-IF NOT EXISTS (SELECT * from MATERIASxCARRERA m WHERE id_materia = @id_materia AND id_carrera = @id_carrera AND anio_cursada = @anio_dictado)
+IF NOT EXISTS (SELECT * from MATERIASxCARRERA m WHERE id_materia = @id_materia AND id_carrera = @id_carrera)
 BEGIN
 	BEGIN TRAN
-	
 	IF (@id_carrera IS NOT NULL)
 	BEGIN
-		INSERT INTO MATERIASxCARRERA VALUES (@id_carrera, @id_materia, @anio_dictado, @cuatrimestre, @carga_horaria, @dictado)
-		IF (@id_materia NOT IN (SELECT DISTINCT id_materia FROM MATERIASxCURSO))
-		BEGIN
-			BEGIN TRAN
-			INSERT INTO MATERIASxCURSO VALUES (@id_materia, @id_curso)
-			SELECT @id_materia_curso = MAX(id_materia_curso) FROM MATERIASxCURSO
-			COMMIT
-		END
-		ELSE
-		BEGIN
-			SELECT @id_materia_curso = id_materia_curso FROM MATERIASxCURSO WHERE id_materia = @id_materia AND id_curso = @id_curso
-		END
-		INSERT INTO DOCENTESxMATERIA VALUES (@id_jefe, @id_materia_curso, @id_cargo_jefe)
-		INSERT INTO DOCENTESxMATERIA VALUES (@id_prof_adj, @id_materia_curso, @id_cargo_prof)
-		INSERT INTO DOCENTESxMATERIA VALUES (@id_ayud, @id_materia_curso, @id_cargo_ayud)
+		INSERT INTO MATERIASxCARRERA VALUES (@id_carrera, @id_materia, @anio_dictado, @cuatrimestre,  @dictado, @carga_horaria, 1)
+		SET @id_materia_carrera = SCOPE_IDENTITY()
+		INSERT INTO DOCENTESxMATERIA VALUES (@id_jefe, @id_cargo_jefe, @id_materia_carrera, @id_curso, 1)
+		INSERT INTO DOCENTESxMATERIA VALUES (@id_prof_adj, @id_cargo_prof, @id_materia_carrera, @id_curso, 1)
+		INSERT INTO DOCENTESxMATERIA VALUES (@id_ayud, @id_cargo_ayud, @id_materia_carrera, @id_curso, 1)
 	END	
 	ELSE
 		SELECT 'Se ha grabado la materia sin asociar a ninguna carrera'
 	COMMIT
 END
 ELSE
-	IF EXISTS (SELECT * FROM MATERIASxCURSO WHERE id_materia = @id_materia AND id_curso = @id_curso)
-		RAISERROR('Ya existe la matería-carrera-curso en la DB', 16, 1)
+	IF(@id_curso NOT IN (SELECT id_curso FROM DOCENTESxMATERIA dxma INNER JOIN MATERIASxCARRERA mxca ON mxca.id_materias_carrera = dxma.id_materias_carrera WHERE mxca.id_carrera = @id_carrera AND mxca.id_materia = @id_materia))
+	BEGIN
+	SELECT @id_materia_carrera = id_materias_carrera FROM MATERIASxCARRERA WHERE id_carrera = @id_carrera AND id_materia = @id_materia
+	INSERT INTO DOCENTESxMATERIA VALUES (@id_jefe, @id_cargo_jefe, @id_materia_carrera, @id_curso, 1)
+	INSERT INTO DOCENTESxMATERIA VALUES (@id_prof_adj, @id_cargo_prof, @id_materia_carrera, @id_curso, 1)
+	INSERT INTO DOCENTESxMATERIA VALUES (@id_ayud, @id_cargo_ayud, @id_materia_carrera, @id_curso, 1)
+	END
 	ELSE
 	BEGIN
-			BEGIN TRAN
-			INSERT INTO MATERIASxCURSO VALUES (@id_materia, @id_curso)
-			SELECT @id_materia_curso = MAX(id_materia_curso) FROM MATERIASxCURSO
-			INSERT INTO DOCENTESxMATERIA VALUES (@id_jefe, @id_materia_curso, @id_cargo_jefe)
-			INSERT INTO DOCENTESxMATERIA VALUES (@id_prof_adj, @id_materia_curso, @id_cargo_prof)
-			INSERT INTO DOCENTESxMATERIA VALUES (@id_ayud, @id_materia_curso, @id_cargo_ayud)
-			COMMIT
+	RAISERROR('Ya se dió de alta la materia para la carrera especificada', 16, 1)
 	END
 END
 GO
 
--- Consulta
-CREATE PROC SP_CONSULTA_MATERIAS 
+
+
+-- Consulta HACER UNA VISTA
+CREATE VIEW dbo.vw_materias_detalle
+AS
+SELECT mxcar.id_materias_carrera IdMateriasCarrera, m.id_materia IdMateria, mxcar.dictado Dictado, d.id_docente IdDocente, 
+(SELECT d.nombre + ' ' + d.apellido FROM DOCENTESxMATERIA dxm1 WHERE id_cargo = 4 AND id_docente = dxm.id_docente AND id_curso = dxm.id_curso) 'JefedeCatedra',
+(SELECT d.nombre + ' ' + d.apellido FROM DOCENTESxMATERIA dxm1 WHERE id_cargo = 5 AND id_docente = dxm.id_docente AND id_curso = dxm.id_curso) 'ProfesorAdjunto',
+(SELECT d.nombre + ' ' + d.apellido FROM DOCENTESxMATERIA dxm1 WHERE id_cargo = 6 AND id_docente = dxm.id_docente AND id_curso = dxm.id_curso) 'AyudantePrimera',
+cur.id_curso IdCurso, cur.curso NomCurso,
+mxcar.anio_dictado 'AnioDictado', ca.id_carrera IdCarrera, ca.carrera Carrera, m.materia 'NombreMat', mxcar.cuatrimestre cuatrimestre, mxcar.carga_horaria 'Carga'
+FROM 
+MATERIASxCARRERA mxcar
+INNER JOIN DOCENTESxMATERIA dxm ON dxm.id_materias_carrera = mxcar.id_materias_carrera
+INNER JOIN DOCENTES d ON d.id_docente = dxm.id_docente
+INNER JOIN MATERIAS m ON m.id_materia = mxcar.id_materia 
+INNER JOIN CARRERAS ca ON ca.id_carrera = mxcar.id_carrera
+INNER JOIN CARGOS car ON car.id_cargo = dxm.id_cargo
+INNER JOIN CURSOS cur ON cur.id_curso = dxm.id_curso
+WHERE mxcar.estado = 1 AND dxm.estado = 1
+
+CREATE PROC SP_CONSULTA_MATERIAS_DETALLE 
 @id_materia int = NULL, 
 @id_materia_carrera int = NULL
 AS
 BEGIN
-SELECT mxc.id_materias_carrera IdMateriasCarrera, mxcur.id_materia_curso IdMateriaCurso, m.id_materia Id, mxc.dictado Dictado, d.id_docente IdDocente, d.nombre + ' ' + d.apellido Docente, car.cargo Cargo, cur.curso Curso,
-mxc.anio_cursada 'AnioDictado', ca.carrera Carrera, m.materia 'NombreMat', mxc.cuatrimestre cuatrimestre, mxc.carga_horaria 'Carga'
-FROM 
-MATERIASxCURSO mxcur 
-INNER JOIN DOCENTESxMATERIA dxm ON dxm.id_materia_curso = mxcur.id_materia_curso
-INNER JOIN DOCENTES d ON d.id_docente = dxm.id_docente
-INNER JOIN MATERIAS m ON m.id_materia = mxcur.id_materia 
-INNER JOIN MATERIASxCARRERA mxc ON mxc.id_materia = m.id_materia
-INNER JOIN CARRERAS ca ON ca.id_carrera = mxc.id_carrera
-INNER JOIN CARGOS car ON car.id_cargo = dxm.id_cargo
-INNER JOIN CURSOS cur ON cur.id_curso = mxcur.id_curso
-WHERE (@id_materia IS NULL or m.id_materia = @id_materia) AND (@id_materia_carrera IS NULL OR mxc.id_materias_carrera = @id_materia_carrera)
+
+IF OBJECT_ID(N'tempdb..#tmp', N'U') IS NOT NULL
+DROP TABLE #tmp
+
+SELECT * INTO #tmp FROM( SELECT * FROM dbo.vw_materias_detalle
+ ) tmp
+
+SELECT [IdMateriasCarrera], [IdMateria], [Dictado], MIN([JefedeCatedra]) JefedeCatedra, MIN([ProfesorAdjunto]) ProfesorAdjunto, MIN([AyudantePrimera]) AyudantePrimera,
+[IdCurso], [NomCurso], [AnioDictado], [IdCarrera], [Carrera], [NombreMat], [Cuatrimestre], [Carga]
+FROM #tmp 
+WHERE (@id_materia_carrera IS NULL OR [IdMateriasCarrera] = @id_materia_carrera) AND (@id_materia IS NULL OR [IdMateria] = @id_materia)
+GROUP BY
+[IdMateriasCarrera], [IdMateria], [Dictado],
+[IdCurso], [NomCurso], [AnioDictado], [IdCarrera], [Carrera], [NombreMat], [Cuatrimestre], [Carga]
 END
 GO
 
@@ -1081,19 +1091,19 @@ CREATE PROC SP_ACTUALIZA_MATERIASxCARRERA
 @carga_horaria int
 AS
 BEGIN
-UPDATE MATERIASxCARRERA SET dictado = @dictado, cuatrimestre = @cuatrimestre, anio_cursada = @anio_dictado, carga_horaria = @carga_horaria WHERE id_materias_carrera = @id_materia_x_carrera
+UPDATE MATERIASxCARRERA SET dictado = @dictado, cuatrimestre = @cuatrimestre, anio_dictado = @anio_dictado, carga_horaria = @carga_horaria WHERE id_materias_carrera = @id_materia_x_carrera
 END
 GO
 
 -- SP delete docentes x materia
-CREATE PROC SP_DELETE_DOCENTESxMATERIA
-@id_docente int,
-@id_materia_curso int
+CREATE PROC SP_BAJA_MATERIAxCURSO
+@id_curso int,
+@id_materia_carrera int
 
 AS
 BEGIN
 
-DELETE FROM DOCENTESxMATERIA WHERE id_docente = @id_docente AND id_materia_curso = @id_materia_curso 
+UPDATE DOCENTESxMATERIA SET estado = 0 WHERE id_materias_carrera = @id_materia_carrera AND id_curso = @id_curso
 
 END
 GO
@@ -1146,15 +1156,15 @@ END
 GO
 
 -- SP correspondiente a Form Alta Cursos
-CREATE PROC SP_ALTA_CURSO
-@nombre_curso VARCHAR(30),
-@id_materia int
+CREATE PROC [dbo].[SP_ALTA_CURSO]
+@nombre_curso VARCHAR(30)
 AS
 BEGIN
 DECLARE @id_curso INT
-INSERT INTO CURSOS VALUES (@nombre_curso)
-SET @id_curso = SCOPE_IDENTITY()
-INSERT INTO MATERIASxCURSO VALUES (@id_materia, @id_curso)
+IF (LTRIM(RTRIM(@nombre_curso)) NOT IN (SELECT curso FROM CURSOS))
+	INSERT INTO CURSOS VALUES (@nombre_curso)
+ELSE
+	RAISERROR('El curso ya existe', 16,1)
 END
 GO
 
@@ -1203,7 +1213,7 @@ CREATE PROC SP_ALTA_CARRERA
 @duracion INT
 AS
 IF (UPPER(@carrera) NOT IN (SELECT UPPER(carrera) FROM CARRERAS))
-INSERT INTO CARRERAS VALUES (@carrera, @duracion)
+INSERT INTO CARRERAS VALUES (@carrera, @duracion, 1)
 ELSE
 RAISERROR('La carrera ya está dada de alta.', 16, 1)
 GO
@@ -1290,7 +1300,8 @@ END
 GO
 
 CREATE PROC SP_CONSULTA_ENTIDAD 
-@tabla VARCHAR(50)
+@tabla VARCHAR(50), 
+@estado int = null
 AS
 BEGIN
 DECLARE @SQL NVARCHAR(MAX)
@@ -1300,19 +1311,42 @@ DECLARE @COLUMNADESC NVARCHAR(MAX)
 	FROM information_schema.columns
 	WHERE table_name = @tabla and ordinal_position = 1
 	
-	SELECT @COLUMNADESC = COLUMN_NAME+' Descripcion'
+	SELECT @COLUMNADESC = COLUMN_NAME+' Descripcion '
 	FROM information_schema.columns
 	WHERE table_name = @tabla and ordinal_position = 2
+	BEGIN TRY
 	IF (@tabla = 'Docentes' OR @tabla = 'Alumnos')
 	BEGIN
-		SET @SQL = 'SELECT DISTINCT ' + @COLUMNAID + ' nombre + '' '' + apellido as Descripcion FROM ' + @tabla
+		SET @SQL = 'SELECT DISTINCT ' + @COLUMNAID + ' nombre + '' '' + apellido as Descripcion FROM ' + @tabla 
 	END
 	ELSE
 	BEGIN
-		SET @SQL = 'SELECT DISTINCT ' + @COLUMNAID + @COLUMNADESC + ' FROM ' + @tabla
+		SET @SQL = 'SELECT DISTINCT ' + @COLUMNAID + @COLUMNADESC + ' , estado Estado FROM ' + @tabla + ' WHERE estado = ' + ISNULL(CAST(@estado AS varchar(1)), 2)+ ' OR ' + ISNULL(CAST(@estado AS varchar(1)),2) + ' = 2'
 	END
 	EXEC sp_executesql @SQL
+
+	END TRY
+	BEGIN CATCH
+	BEGIN
+		SET @SQL = 'SELECT DISTINCT ' + @COLUMNAID + @COLUMNADESC + ' FROM ' + @tabla 
+		EXEC sp_executesql @SQL
+	END
+	END CATCH
 	
 END
 
 GO
+
+SP_CONSULTA_ENTIDAD 'paises'
+
+CREATE PROC SP_BAJA_MATERIASXCARRERA
+@idmateria int,
+@idcarrera int
+AS
+BEGIN 
+UPDATE MATERIASxCARRERA SET estado = 0 WHERE id_materia = @idmateria AND id_carrera = @idcarrera
+END
+GO
+
+
+SP_CONSULTA_MATERIAs_DETALLE
