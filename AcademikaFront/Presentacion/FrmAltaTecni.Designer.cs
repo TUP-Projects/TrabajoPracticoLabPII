@@ -37,7 +37,6 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
@@ -45,6 +44,7 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duración = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(137, 28);
             this.richTextBox2.TabIndex = 88;
-            this.richTextBox2.Text = "Nombre Tecnicatura";
+            this.richTextBox2.Text = "Nombre Carrera";
             // 
             // label1
             // 
@@ -106,6 +106,15 @@
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.iconButton4.IconColor = System.Drawing.Color.Black;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+<<<<<<< Updated upstream
+            this.iconButton4.Location = new System.Drawing.Point(772, 227);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(65, 55);
+            this.iconButton4.TabIndex = 109;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+=======
             this.iconButton4.Location = new System.Drawing.Point(888, 227);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton4.Name = "iconButton4";
@@ -125,16 +134,24 @@
             this.iconButton3.TabIndex = 108;
             this.iconButton3.UseVisualStyleBackColor = true;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+>>>>>>> Stashed changes
             // 
             // iconButton2
             // 
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.iconButton2.IconColor = System.Drawing.Color.Crimson;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+<<<<<<< Updated upstream
+            this.iconButton2.Location = new System.Drawing.Point(459, 525);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(65, 55);
+=======
             this.iconButton2.Location = new System.Drawing.Point(888, 68);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(88, 67);
+>>>>>>> Stashed changes
             this.iconButton2.TabIndex = 107;
             this.iconButton2.UseVisualStyleBackColor = true;
             // 
@@ -143,22 +160,37 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.iconButton1.IconColor = System.Drawing.Color.ForestGreen;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+<<<<<<< Updated upstream
+            this.iconButton1.Location = new System.Drawing.Point(295, 525);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(65, 55);
+=======
             this.iconButton1.Location = new System.Drawing.Point(744, 68);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(88, 67);
+>>>>>>> Stashed changes
             this.iconButton1.TabIndex = 106;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconButton5
             // 
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.iconButton5.IconColor = System.Drawing.Color.Black;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+<<<<<<< Updated upstream
+            this.iconButton5.Location = new System.Drawing.Point(772, 318);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(65, 55);
+=======
             this.iconButton5.Location = new System.Drawing.Point(888, 320);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Size = new System.Drawing.Size(88, 67);
+>>>>>>> Stashed changes
             this.iconButton5.TabIndex = 110;
             this.iconButton5.UseVisualStyleBackColor = true;
             // 
@@ -185,7 +217,11 @@
             this.Duración});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
+<<<<<<< Updated upstream
+            this.dataGridView1.Location = new System.Drawing.Point(138, 227);
+=======
             this.dataGridView1.Location = new System.Drawing.Point(141, 227);
+>>>>>>> Stashed changes
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -205,7 +241,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+<<<<<<< Updated upstream
+            this.dataGridView1.Size = new System.Drawing.Size(560, 258);
+=======
             this.dataGridView1.Size = new System.Drawing.Size(691, 258);
+>>>>>>> Stashed changes
             this.dataGridView1.TabIndex = 111;
             // 
             // ID
@@ -228,16 +268,32 @@
             this.Duración.Name = "Duración";
             this.Duración.ReadOnly = true;
             // 
+            // iconButton3
+            // 
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.iconButton3.IconColor = System.Drawing.Color.Yellow;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(1027, 644);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(65, 55);
+            this.iconButton3.TabIndex = 113;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
             // FrmAltaTecni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1104, 711);
+<<<<<<< Updated upstream
+            this.Controls.Add(this.iconButton3);
+=======
+>>>>>>> Stashed changes
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.iconButton4);
-            this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.comboBox3);
@@ -261,7 +317,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label5;
-        private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton4;
@@ -270,5 +325,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duración;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }

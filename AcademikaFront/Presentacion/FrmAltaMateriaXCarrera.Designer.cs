@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblId = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboDictado = new System.Windows.Forms.ComboBox();
@@ -46,7 +46,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cboAyud = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
+=======
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
+>>>>>>> Stashed changes
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnBorrar = new FontAwesome.Sharp.IconButton();
@@ -74,8 +77,12 @@
             this.lblCarga = new System.Windows.Forms.Label();
             this.nudCarga = new System.Windows.Forms.NumericUpDown();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
+<<<<<<< Updated upstream
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+=======
             this.rtbAyuda = new System.Windows.Forms.RichTextBox();
             this.IdMateriasCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCarga)).BeginInit();
             this.SuspendLayout();
@@ -254,6 +261,8 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Ayudante Primera:";
             // 
+<<<<<<< Updated upstream
+=======
             // iconButton3
             // 
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
@@ -267,15 +276,16 @@
             this.iconButton3.UseVisualStyleBackColor = true;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
+>>>>>>> Stashed changes
             // btnLimpiar
             // 
             this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnLimpiar.IconColor = System.Drawing.Color.Crimson;
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.Location = new System.Drawing.Point(933, 159);
+            this.btnLimpiar.Location = new System.Drawing.Point(532, 504);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(88, 67);
+            this.btnLimpiar.Size = new System.Drawing.Size(65, 55);
             this.btnLimpiar.TabIndex = 107;
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -285,10 +295,10 @@
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnGuardar.IconColor = System.Drawing.Color.ForestGreen;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.Location = new System.Drawing.Point(933, 65);
+            this.btnGuardar.Location = new System.Drawing.Point(365, 504);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(88, 67);
+            this.btnGuardar.Size = new System.Drawing.Size(65, 55);
             this.btnGuardar.TabIndex = 106;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -298,10 +308,10 @@
             this.btnBorrar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnBorrar.IconColor = System.Drawing.Color.Black;
             this.btnBorrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBorrar.Location = new System.Drawing.Point(117, 474);
+            this.btnBorrar.Location = new System.Drawing.Point(1004, 337);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(88, 67);
+            this.btnBorrar.Size = new System.Drawing.Size(65, 55);
             this.btnBorrar.TabIndex = 112;
             this.btnBorrar.Tag = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
@@ -312,10 +322,10 @@
             this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.Location = new System.Drawing.Point(22, 474);
+            this.btnEditar.Location = new System.Drawing.Point(1004, 258);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(88, 67);
+            this.btnEditar.Size = new System.Drawing.Size(65, 55);
             this.btnEditar.TabIndex = 111;
             this.btnEditar.Tag = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -328,14 +338,14 @@
             this.dgvResultado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgvResultado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvResultado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResultado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResultado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvResultado.ColumnHeadersHeight = 30;
             this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -359,6 +369,24 @@
             this.dgvResultado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvResultado.Name = "dgvResultado";
             this.dgvResultado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+<<<<<<< Updated upstream
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResultado.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvResultado.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvResultado.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvResultado.Size = new System.Drawing.Size(967, 209);
+=======
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -375,6 +403,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvResultado.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvResultado.Size = new System.Drawing.Size(1100, 209);
+>>>>>>> Stashed changes
             this.dgvResultado.TabIndex = 113;
             this.dgvResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResultado_CellContentClick);
             // 
@@ -559,8 +588,20 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // rtbAyuda
+            // iconButton3
             // 
+<<<<<<< Updated upstream
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.iconButton3.IconColor = System.Drawing.Color.Yellow;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(1077, 644);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(65, 55);
+            this.iconButton3.TabIndex = 122;
+            this.iconButton3.UseVisualStyleBackColor = true;
+=======
             this.rtbAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
             this.rtbAyuda.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbAyuda.ForeColor = System.Drawing.Color.Transparent;
@@ -570,6 +611,7 @@
             this.rtbAyuda.TabIndex = 122;
             this.rtbAyuda.Text = "";
             this.rtbAyuda.Visible = false;
+>>>>>>> Stashed changes
             // 
             // IdMateriasCarrera
             // 
@@ -584,7 +626,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1154, 711);
-            this.Controls.Add(this.rtbAyuda);
+            this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.nudCarga);
             this.Controls.Add(this.lblCarga);
@@ -596,7 +638,6 @@
             this.Controls.Add(this.dgvResultado);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cboAyud);
@@ -657,8 +698,20 @@
         private System.Windows.Forms.Label lblCarga;
         private System.Windows.Forms.NumericUpDown nudCarga;
         private FontAwesome.Sharp.IconButton btnSearch;
+<<<<<<< Updated upstream
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdMateriaCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDocente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdMateriaCarrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dictado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Docente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Curso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AnioDictado;
+=======
         private System.Windows.Forms.RichTextBox rtbAyuda;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMateriasCarrera;
+>>>>>>> Stashed changes
         private System.Windows.Forms.DataGridViewTextBoxColumn Carrera;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreMat;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomCurso;

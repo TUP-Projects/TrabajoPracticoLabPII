@@ -83,6 +83,7 @@
             // 
             this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelProductName.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelProductName.Location = new System.Drawing.Point(237, 0);
             this.labelProductName.Margin = new System.Windows.Forms.Padding(7, 0, 4, 0);
             this.labelProductName.MaximumSize = new System.Drawing.Size(0, 20);
@@ -96,6 +97,7 @@
             // 
             this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelVersion.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelVersion.Location = new System.Drawing.Point(237, 30);
             this.labelVersion.Margin = new System.Windows.Forms.Padding(7, 0, 4, 0);
             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 20);
@@ -109,7 +111,7 @@
             // 
             this.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelCopyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCopyright.ForeColor = System.Drawing.Color.Black;
+            this.labelCopyright.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelCopyright.Location = new System.Drawing.Point(237, 60);
             this.labelCopyright.Margin = new System.Windows.Forms.Padding(7, 0, 4, 0);
             this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 20);
@@ -123,6 +125,7 @@
             // 
             this.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCompanyName.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelCompanyName.Location = new System.Drawing.Point(237, 90);
             this.labelCompanyName.Margin = new System.Windows.Forms.Padding(7, 0, 4, 0);
             this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 20);
@@ -134,8 +137,10 @@
             // 
             // textBoxDescription
             // 
+            this.textBoxDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxDescription.ForeColor = System.Drawing.Color.Gainsboro;
             this.textBoxDescription.Location = new System.Drawing.Point(237, 123);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(7, 3, 4, 3);
             this.textBoxDescription.Multiline = true;
@@ -152,6 +157,7 @@
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.okButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.okButton.Location = new System.Drawing.Point(606, 277);
             this.okButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.okButton.Name = "okButton";
@@ -165,6 +171,7 @@
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(718, 327);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel);

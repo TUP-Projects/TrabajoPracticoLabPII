@@ -77,5 +77,14 @@ namespace AcademikaBackend.Properties {
                 return ResourceManager.GetString("Cristian", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Source=lawbraker\mydb;Initial Catalog=Academika;Integrated Security=True.
+        /// </summary>
+        internal static string Lucio {
+            get {
+                return ResourceManager.GetString("Lucio", resourceCulture);
+            }
+        }
     }
 }
