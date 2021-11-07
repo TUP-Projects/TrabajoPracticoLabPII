@@ -20,14 +20,14 @@ namespace AcademikaBackend.DataLayer
             SqlCommand cmd = new SqlCommand();
             
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_materia", DbType.Int32, id_materia));
-            DataTable table = helper.ConsultaSQL(cmd, "SP_CONSULTA_MATERIAS", sqlParams);
+            DataTable table = helper.ConsultaSQL(cmd, "SP_CONSULTA_MATERIAS_DETALLE", sqlParams);
 
             return table;
         }
 
-        public bool InsertaMateria(Materia materia, MateriasXCarrera mxc, MateriasXCurso mxcur, List<DocentesXMateria> dxm)
+        public bool InsertaMateria(Materia materia, MateriasXCarrera mxc,  List<DocentesXMateria> dxm)
         {
-            bool trx = helper.AltaMaterias(materia, mxc, mxcur, dxm);
+            bool trx = helper.AltaMaterias(materia, mxc, dxm);
            
             return trx;
         }
@@ -72,14 +72,14 @@ namespace AcademikaBackend.DataLayer
             return table;
         }
 
-        public bool EliminaDocxCarrera(DocentesXMateria dxm)
+        public bool BajaCursoMateriaDocente(DocentesXMateria dxm)
         {
             List<DbParameter> sqlParams = new List<DbParameter>();
             SqlCommand cmd = new SqlCommand();
-            sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_docente", DbType.Int32, dxm.Docente.Id_Docente));
-            sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_materia_curso", DbType.Int32, dxm.Mxcur.Id_Materias_x_Curso));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_curso", DbType.Int32, dxm.Curso.Id_Curso));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_materia_carrera", DbType.Int32, dxm.Mxcar.Id_Materias_x_Carrera));
           
-            int retVal = (int)HelperDao.EjecutarSql("SP_DELETE_DOCENTESxMATERIA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            int retVal = (int)HelperDao.EjecutarSql("SP_BAJA_MATERIAxCURSO", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
             
             return retVal > 0;
         }

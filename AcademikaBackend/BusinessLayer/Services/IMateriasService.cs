@@ -10,7 +10,7 @@ namespace AcademikaBackend.BusinessLayer.Services
 {
     public interface IMateriasService
     {
-        bool InsertarMateria(Materia materia, MateriasXCarrera mxc, MateriasXCurso mxcur, List<DocentesXMateria> dxm);
+        bool InsertarMateria(Materia materia, MateriasXCarrera mxc, List<DocentesXMateria> dxm);
         int ObtenerProxId(string tabla);
 
         DataTable ConsultaMateria(int id_materia);
@@ -21,7 +21,7 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc);
 
-        bool EliminaDocxMateria(DocentesXMateria dxm);
+        bool BajaCursoMateriaDocente(DocentesXMateria dxm);
 
         DataTable CargaDgvEntidad(string tabla);
 

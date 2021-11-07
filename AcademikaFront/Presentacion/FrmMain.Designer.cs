@@ -515,12 +515,15 @@
             this.toolStripDetalleMaterias.Size = new System.Drawing.Size(201, 24);
             this.toolStripDetalleMaterias.Text = "Detalle Materias";
             this.toolStripDetalleMaterias.Click += new System.EventHandler(this.toolStripDetalleMaterias_Click);
+<<<<<<< Updated upstream
             // 
             // horafecha
             // 
             this.horafecha.Enabled = true;
             this.horafecha.Interval = 1000;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick_1);
+=======
+>>>>>>> Stashed changes
             // 
             // FrmMain
             // 

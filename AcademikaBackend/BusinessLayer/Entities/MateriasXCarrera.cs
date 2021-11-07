@@ -19,6 +19,8 @@ namespace AcademikaBackend.BusinessLayer.Entities
         public int CargaHoraria { get; set; }
         public string Dictado { get; set; }
 
+        public int Estado { get; set; }
+
         public MateriasXCarrera()
         {
             Materia = new Materia();

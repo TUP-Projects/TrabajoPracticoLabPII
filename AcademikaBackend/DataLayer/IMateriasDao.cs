@@ -14,12 +14,12 @@ namespace AcademikaBackend.DataLayer
         int ObtenerProxId(string tabla); 
         
         DataTable ConsultaMateria(int id_materia);
-        bool InsertaMateria(Materia materia, MateriasXCarrera mxc, MateriasXCurso mxcur, List<DocentesXMateria> dxm);
+        bool InsertaMateria(Materia materia, MateriasXCarrera mxc, List<DocentesXMateria> dxm);
 
         DataTable CargaCombos(string tabla);
         List<Materia> GetMaterias();
         bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc);
 
-        bool EliminaDocxCarrera(DocentesXMateria dxm);
+        bool BajaCursoMateriaDocente(DocentesXMateria dxm);
     }
 }

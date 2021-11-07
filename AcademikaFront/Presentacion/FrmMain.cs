@@ -274,6 +274,7 @@ namespace Academika.Presentacion
         {
             OpenChild(new FrmAltaMateriaXCarrera());
         }
+<<<<<<< Updated upstream
         private void horafecha_Tick_1(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
@@ -289,5 +290,7 @@ namespace Academika.Presentacion
         {
 
         }
+=======
+>>>>>>> Stashed changes
     }
 }
