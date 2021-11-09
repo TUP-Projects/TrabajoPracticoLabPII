@@ -256,5 +256,19 @@ namespace Academika.Presentacion
         {
             OpenChild(new FrmAltaMateriaXCarrera());
         }
+        private void horafecha_Tick_1(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
+            lblFecha.Text = DateTime.Now.ToShortDateString();
+        }
+        private void lblHora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFecha_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

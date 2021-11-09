@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnConsultas = new FontAwesome.Sharp.IconButton();
             this.btnReportes = new FontAwesome.Sharp.IconButton();
@@ -57,6 +60,7 @@
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDetalleMaterias = new System.Windows.Forms.ToolStripMenuItem();
+            this.horafecha = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -69,6 +73,9 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.iconButton2);
+            this.panelMenu.Controls.Add(this.lblFecha);
+            this.panelMenu.Controls.Add(this.lblHora);
             this.panelMenu.Controls.Add(this.iconButton1);
             this.panelMenu.Controls.Add(this.btnConsultas);
             this.panelMenu.Controls.Add(this.btnReportes);
@@ -82,6 +89,45 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(257, 749);
             this.panelMenu.TabIndex = 0;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.ForeColor = System.Drawing.Color.Transparent;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Clock;
+            this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.Location = new System.Drawing.Point(12, 695);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(41, 42);
+            this.iconButton2.TabIndex = 13;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFecha.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblFecha.Location = new System.Drawing.Point(70, 714);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(80, 29);
+            this.lblFecha.TabIndex = 15;
+            this.lblFecha.Text = "Fecha";
+            this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblHora.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblHora.Location = new System.Drawing.Point(71, 686);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(78, 33);
+            this.lblHora.TabIndex = 14;
+            this.lblHora.Text = "Hora";
+            this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
             // 
             // iconButton1
             // 
@@ -442,6 +488,12 @@
             this.toolStripDetalleMaterias.Text = "Detalle Materias";
             this.toolStripDetalleMaterias.Click += new System.EventHandler(this.toolStripDetalleMaterias_Click);
             // 
+            // horafecha
+            // 
+            this.horafecha.Enabled = true;
+            this.horafecha.Interval = 1000;
+            this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick_1);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -458,6 +510,7 @@
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Main_Load);
             this.panelMenu.ResumeLayout(false);
+            this.panelMenu.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -498,5 +551,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripDetalleMaterias;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMaterias;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Timer horafecha;
     }
 }
