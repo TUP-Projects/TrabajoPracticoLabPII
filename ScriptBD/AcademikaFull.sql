@@ -1430,12 +1430,13 @@ GO
 
 -- SP correspondiente a Form Alta Cursos
 CREATE PROC [dbo].[SP_ALTA_CURSO]
-@nombre_curso VARCHAR(30)
+@nombre_curso VARCHAR(30),
+@estado int = 1
 AS
 BEGIN
 DECLARE @id_curso INT
 IF (LTRIM(RTRIM(@nombre_curso)) NOT IN (SELECT curso FROM CURSOS))
-	INSERT INTO CURSOS VALUES (@nombre_curso)
+	INSERT INTO CURSOS VALUES (@nombre_curso, @estado)
 ELSE
 	RAISERROR('El curso ya existe', 16,1)
 END

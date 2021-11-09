@@ -41,12 +41,12 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.dgvTecnicatura = new System.Windows.Forms.DataGridView();
+            this.rtbAyuda = new System.Windows.Forms.Label();
+            this.Nup_Duracion = new System.Windows.Forms.NumericUpDown();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duración = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rtbAyuda = new System.Windows.Forms.Label();
-            this.Nup_Duracion = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTecnicatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nup_Duracion)).BeginInit();
             this.SuspendLayout();
@@ -203,12 +203,30 @@
             this.dgvTecnicatura.Size = new System.Drawing.Size(691, 258);
             this.dgvTecnicatura.TabIndex = 111;
             // 
+            // rtbAyuda
+            // 
+            this.rtbAyuda.AutoSize = true;
+            this.rtbAyuda.Location = new System.Drawing.Point(744, 502);
+            this.rtbAyuda.Name = "rtbAyuda";
+            this.rtbAyuda.Size = new System.Drawing.Size(38, 15);
+            this.rtbAyuda.TabIndex = 119;
+            this.rtbAyuda.Text = "label1";
+            this.rtbAyuda.Visible = false;
+            // 
+            // Nup_Duracion
+            // 
+            this.Nup_Duracion.Location = new System.Drawing.Point(393, 96);
+            this.Nup_Duracion.Name = "Nup_Duracion";
+            this.Nup_Duracion.Size = new System.Drawing.Size(120, 23);
+            this.Nup_Duracion.TabIndex = 120;
+            // 
             // ID
             // 
             this.ID.DataPropertyName = "Id_Carrera";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Visible = false;
             this.ID.Width = 50;
             // 
             // NombreTec
@@ -232,23 +250,6 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            // 
-            // rtbAyuda
-            // 
-            this.rtbAyuda.AutoSize = true;
-            this.rtbAyuda.Location = new System.Drawing.Point(744, 502);
-            this.rtbAyuda.Name = "rtbAyuda";
-            this.rtbAyuda.Size = new System.Drawing.Size(38, 15);
-            this.rtbAyuda.TabIndex = 119;
-            this.rtbAyuda.Text = "label1";
-            this.rtbAyuda.Visible = false;
-            // 
-            // Nup_Duracion
-            // 
-            this.Nup_Duracion.Location = new System.Drawing.Point(393, 96);
-            this.Nup_Duracion.Name = "Nup_Duracion";
-            this.Nup_Duracion.Size = new System.Drawing.Size(120, 23);
-            this.Nup_Duracion.TabIndex = 120;
             // 
             // FrmAltaTecni
             // 

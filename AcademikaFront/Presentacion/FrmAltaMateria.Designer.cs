@@ -203,6 +203,7 @@
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Visible = false;
             this.ID.Width = 45;
             // 
             // Materia

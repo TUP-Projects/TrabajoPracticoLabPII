@@ -27,6 +27,12 @@ namespace AcademikaWebAPI.Controllers
             return Ok(_materiasDetalleService.CargaCombos(entidad));
         }
 
+        [HttpGet("Consulta")]
+        public IActionResult GetCursos()
+        {
+            return Ok(JsonConvert.SerializeObject(_materiasDetalleService.ConsultarMaterias()));
+        }
+
         [HttpGet("Consulta/{idMateria}")]
         public IActionResult GetMateriasDetalle(int idMateria)
         {

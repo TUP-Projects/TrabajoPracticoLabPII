@@ -35,7 +35,6 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnConsultas = new FontAwesome.Sharp.IconButton();
             this.btnReportes = new FontAwesome.Sharp.IconButton();
-            this.btnAltaDocentes = new FontAwesome.Sharp.IconButton();
             this.btnModExamenes = new FontAwesome.Sharp.IconButton();
             this.btnModAcademico = new FontAwesome.Sharp.IconButton();
             this.btnNuevoAlumno = new FontAwesome.Sharp.IconButton();
@@ -75,7 +74,6 @@
             this.panelMenu.Controls.Add(this.iconButton1);
             this.panelMenu.Controls.Add(this.btnConsultas);
             this.panelMenu.Controls.Add(this.btnReportes);
-            this.panelMenu.Controls.Add(this.btnAltaDocentes);
             this.panelMenu.Controls.Add(this.btnModExamenes);
             this.panelMenu.Controls.Add(this.btnModAcademico);
             this.panelMenu.Controls.Add(this.btnNuevoAlumno);
@@ -84,7 +82,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(257, 832);
+            this.panelMenu.Size = new System.Drawing.Size(257, 749);
             this.panelMenu.TabIndex = 0;
             // 
             // iconButton2
@@ -98,7 +96,7 @@
             this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 694);
+            this.iconButton2.Location = new System.Drawing.Point(0, 611);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
@@ -120,7 +118,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 763);
+            this.iconButton1.Location = new System.Drawing.Point(0, 680);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
@@ -143,7 +141,7 @@
             this.btnConsultas.IconColor = System.Drawing.Color.Gainsboro;
             this.btnConsultas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultas.Location = new System.Drawing.Point(0, 507);
+            this.btnConsultas.Location = new System.Drawing.Point(0, 438);
             this.btnConsultas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
@@ -165,7 +163,7 @@
             this.btnReportes.IconColor = System.Drawing.Color.Gainsboro;
             this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 438);
+            this.btnReportes.Location = new System.Drawing.Point(0, 369);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
@@ -176,29 +174,6 @@
             this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReportes.UseVisualStyleBackColor = true;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
-            // 
-            // btnAltaDocentes
-            // 
-            this.btnAltaDocentes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAltaDocentes.FlatAppearance.BorderSize = 0;
-            this.btnAltaDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaDocentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAltaDocentes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAltaDocentes.IconChar = FontAwesome.Sharp.IconChar.UserTie;
-            this.btnAltaDocentes.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnAltaDocentes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAltaDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAltaDocentes.Location = new System.Drawing.Point(0, 369);
-            this.btnAltaDocentes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnAltaDocentes.Name = "btnAltaDocentes";
-            this.btnAltaDocentes.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
-            this.btnAltaDocentes.Size = new System.Drawing.Size(257, 69);
-            this.btnAltaDocentes.TabIndex = 9;
-            this.btnAltaDocentes.Text = "Alta Docente";
-            this.btnAltaDocentes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAltaDocentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAltaDocentes.UseVisualStyleBackColor = true;
-            this.btnAltaDocentes.Click += new System.EventHandler(this.btnConsults_Click);
             // 
             // btnModExamenes
             // 
@@ -281,10 +256,11 @@
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(27, 6);
+            this.btnHome.Image = global::AcademikaFront.Properties.Resources.academikaloguito;
+            this.btnHome.Location = new System.Drawing.Point(53, 3);
             this.btnHome.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(201, 151);
+            this.btnHome.Size = new System.Drawing.Size(142, 151);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
@@ -302,7 +278,7 @@
             this.panel1.Location = new System.Drawing.Point(257, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1122, 92);
+            this.panel1.Size = new System.Drawing.Size(1113, 92);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
@@ -316,7 +292,7 @@
             this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 20;
-            this.btnClose.Location = new System.Drawing.Point(1057, 23);
+            this.btnClose.Location = new System.Drawing.Point(1048, 23);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(48, 33);
@@ -333,7 +309,7 @@
             this.btnMaximize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximize.IconSize = 20;
-            this.btnMaximize.Location = new System.Drawing.Point(1027, 20);
+            this.btnMaximize.Location = new System.Drawing.Point(1018, 20);
             this.btnMaximize.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(40, 40);
@@ -350,7 +326,7 @@
             this.btnMinimize.IconColor = System.Drawing.Color.Gainsboro;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 20;
-            this.btnMinimize.Location = new System.Drawing.Point(990, 23);
+            this.btnMinimize.Location = new System.Drawing.Point(981, 23);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(42, 29);
@@ -392,7 +368,7 @@
             this.panelShadow.Location = new System.Drawing.Point(257, 92);
             this.panelShadow.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1122, 10);
+            this.panelShadow.Size = new System.Drawing.Size(1113, 10);
             this.panelShadow.TabIndex = 2;
             // 
             // panelDesktop
@@ -402,7 +378,7 @@
             this.panelDesktop.Location = new System.Drawing.Point(257, 102);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1122, 730);
+            this.panelDesktop.Size = new System.Drawing.Size(1113, 647);
             this.panelDesktop.TabIndex = 3;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
@@ -420,34 +396,30 @@
             this.rjDropDownMenu2.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropDownMenu2.Name = "rjDropDownMenu2";
             this.rjDropDownMenu2.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropDownMenu2.Size = new System.Drawing.Size(214, 100);
+            this.rjDropDownMenu2.Size = new System.Drawing.Size(157, 100);
             this.rjDropDownMenu2.Opening += new System.ComponentModel.CancelEventHandler(this.rjDropDownMenu2_Opening);
             // 
             // exámenesToolStripMenuItem
             // 
             this.exámenesToolStripMenuItem.Name = "exámenesToolStripMenuItem";
-            this.exámenesToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.exámenesToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             this.exámenesToolStripMenuItem.Text = "Exámenes";
             this.exámenesToolStripMenuItem.Click += new System.EventHandler(this.exámenesToolStripMenuItem_Click);
             // 
             // turnosToolStripMenuItem
             // 
             this.turnosToolStripMenuItem.Name = "turnosToolStripMenuItem";
-            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
-            this.turnosToolStripMenuItem.Text = "Turnos Exámenes";
-            this.turnosToolStripMenuItem.Click += new System.EventHandler(this.turnosToolStripMenuItem_Click);
+            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             // 
             // tipoExámenesToolStripMenuItem
             // 
             this.tipoExámenesToolStripMenuItem.Name = "tipoExámenesToolStripMenuItem";
-            this.tipoExámenesToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
-            this.tipoExámenesToolStripMenuItem.Text = "Tipo Exámenes";
-            this.tipoExámenesToolStripMenuItem.Click += new System.EventHandler(this.tipoExámenesToolStripMenuItem_Click);
+            this.tipoExámenesToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             // 
             // actualizarCondiciónAlumnoToolStripMenuItem
             // 
             this.actualizarCondiciónAlumnoToolStripMenuItem.Name = "actualizarCondiciónAlumnoToolStripMenuItem";
-            this.actualizarCondiciónAlumnoToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.actualizarCondiciónAlumnoToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             // 
             // rjDropDownMenu1
             // 
@@ -498,7 +470,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1379, 832);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panel1);
@@ -539,7 +511,6 @@
         private FontAwesome.Sharp.IconButton btnModAcademico;
         private FontAwesome.Sharp.IconButton btnConsultas;
         private FontAwesome.Sharp.IconButton btnReportes;
-        private FontAwesome.Sharp.IconButton btnAltaDocentes;
         private RJControls.RJDropDownMenu rjDropDownMenu2;
         private System.Windows.Forms.ToolStripMenuItem exámenesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnosToolStripMenuItem;

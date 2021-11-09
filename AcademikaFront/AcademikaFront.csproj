@@ -42,10 +42,11 @@
     <Compile Update="Presentacion\FrmAltaMateria.cs">
       <SubType>Form</SubType>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -56,6 +57,13 @@
     <PackageReference Include="RJCodeAdvance.RJControl2s" Version="1.0.0" />
     <PackageReference Include="RJCodeAdvance.RJControls" Version="1.0.0" />
     <PackageReference Include="VisualBasic.PowerPacks.Vs" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

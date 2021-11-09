@@ -34,15 +34,15 @@
             this.lblLegajoDocente = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.rtbAyuda = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +112,28 @@
             this.dgvCursos.Size = new System.Drawing.Size(516, 258);
             this.dgvCursos.TabIndex = 90;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id_Curso";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Curso
+            // 
+            this.Curso.DataPropertyName = "NombreCurso";
+            this.Curso.HeaderText = "Curso";
+            this.Curso.Name = "Curso";
+            this.Curso.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
             // iconButton5
             // 
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
@@ -135,6 +157,7 @@
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(88, 67);
             this.iconButton2.TabIndex = 107;
+            this.iconButton2.Tag = "";
             this.iconButton2.UseVisualStyleBackColor = true;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
@@ -183,27 +206,6 @@
             this.rtbAyuda.TabIndex = 117;
             this.rtbAyuda.Text = "label1";
             this.rtbAyuda.Visible = false;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id_Curso";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Curso
-            // 
-            this.Curso.DataPropertyName = "NombreCurso";
-            this.Curso.HeaderText = "Curso";
-            this.Curso.Name = "Curso";
-            this.Curso.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
             // 
             // FrmAltaCursos
             // 

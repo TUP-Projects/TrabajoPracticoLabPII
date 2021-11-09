@@ -25,20 +25,11 @@ namespace Academika.Presentacion
             servicio = new ServiceFactoryImp().CrearServiceCursos();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void FrmAltaCursos_Load(object sender, EventArgs e)
         {
-
+            Inicia();
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void ConsultaID()
         {
             lblLegajoDocente.Text = "ID Curso: " + servicio.ObtenerProxId("CURSOS").ToString();
@@ -51,19 +42,15 @@ namespace Academika.Presentacion
             _stringBuilder.Append("- Estado = 1 corresponde a: Habilitado");
             rtbAyuda.Text = _stringBuilder.ToString();
             if (VerAyuda)
-            {
                 VerAyuda = rtbAyuda.Visible = false;
-            }
             else
-            {
                 VerAyuda = rtbAyuda.Visible = true;
-            }
         }
 
         private void Inicia()
         {
             ConsultaID();
-            CargarDgvAsync();
+            _ = CargarDgvAsync();
         }
 
         private async Task CargarDgvAsync()
@@ -74,9 +61,19 @@ namespace Academika.Presentacion
             dgvCursos.DataSource = Cursos;
         }
 
-        private void FrmAltaCursos_Load(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
-            Inicia();
+
         }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

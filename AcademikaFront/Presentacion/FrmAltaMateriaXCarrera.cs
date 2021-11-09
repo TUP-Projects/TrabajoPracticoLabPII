@@ -85,12 +85,12 @@ namespace Academika.Presentacion
         private void Inicia()
         {
             ConsultaID();
-            Cargar_CombosAsync(cboAdj, "docentes");
-            Cargar_CombosAsync(cboMateria, "materias");
-            Cargar_CombosAsync(cboAyud, "docentes");
-            Cargar_CombosAsync(cboJefe, "docentes");
-            Cargar_CombosAsync(cboCarrera, "carreras");
-            Cargar_CombosAsync(cboCurso, "cursos");
+            _ = Cargar_CombosAsync(cboAdj, "docentes");
+            _ = Cargar_CombosAsync(cboMateria, "materias");
+            _ = Cargar_CombosAsync(cboAyud, "docentes");
+            _ = Cargar_CombosAsync(cboJefe, "docentes");
+            _ = Cargar_CombosAsync(cboCarrera, "carreras");
+            _ = Cargar_CombosAsync(cboCurso, "cursos");
         }
 
         private void cboDictado_SelectedIndexChanged(object sender, EventArgs e)
@@ -232,14 +232,14 @@ namespace Academika.Presentacion
             {
                 MessageBox.Show("Se agregó la materia al plan de estudios!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Consultar_DetalleMateriaAsync(materia.Id_Materia);
+                _ = Consultar_DetalleMateriaAsync(materia.Id_Materia);
 
 
             }
             else
             {
                 MessageBox.Show("Error al intentar grabar la materia. Revise no estar duplicando valores en la tabla siguiente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Consultar_DetalleMateriaAsync(materia.Id_Materia);
+                _ = Consultar_DetalleMateriaAsync(materia.Id_Materia);
 
             }
             ConsultaID();
@@ -260,7 +260,7 @@ namespace Academika.Presentacion
 
                 if (servicio.ActualizaDatosMateriasxCarrera(mxc))
                     MessageBox.Show("Se editó el campo deseado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Consultar_DetalleMateriaAsync(materia.Id_Materia);
+                    _ = Consultar_DetalleMateriaAsync(materia.Id_Materia);
             }
             else {
                 MessageBox.Show("Debe seleccionar un registro a editar", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -283,7 +283,7 @@ namespace Academika.Presentacion
                 materia.Id_Materia = (int)cboMateria.SelectedValue;
             }
 
-             Consultar_DetalleMateriaAsync(materia.Id_Materia);
+            _ = Consultar_DetalleMateriaAsync(materia.Id_Materia);
         
         }
         private void iconButton3_Click(object sender, EventArgs e)

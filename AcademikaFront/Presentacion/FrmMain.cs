@@ -201,12 +201,6 @@ namespace Academika.Presentacion
             WindowState = FormWindowState.Minimized;
         }
 
-        private void btnConsults_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color4);
-            OpenChild(new FrmAltaDocentes());
-        }
-
         private void btnReportes_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
@@ -251,18 +245,6 @@ namespace Academika.Presentacion
         {
             OpenChild(new FrmExamenes());
         }
-
-
-        private void tipoExámenesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenChild(new FrmTipoExam());
-        }
-
-        private void turnosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenChild(new FrmTipoExam());
-        }
-
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
