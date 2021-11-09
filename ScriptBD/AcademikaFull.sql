@@ -287,7 +287,7 @@ GO
 CREATE TABLE [dbo].[Credenciales](
 	[IdUsuario] [int] IDENTITY(1,1) NOT NULL,
 	[Usuario] [varchar](50) NULL,
-	[Contrasenia] [nvarchar](50) NULL,
+	[Contrasenia] [nvarchar](255) NULL,
  CONSTRAINT [pk_idUsuario] PRIMARY KEY CLUSTERED 
 (
 	[IdUsuario] ASC
