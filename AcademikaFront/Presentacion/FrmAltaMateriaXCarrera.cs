@@ -108,7 +108,7 @@ namespace Academika.Presentacion
             materia = new Materia();
             mxc = new MateriasXCarrera();
             curso = new Curso();
-            
+
 
             if (cboMateria.SelectedIndex == -1)
             {
@@ -117,21 +117,19 @@ namespace Academika.Presentacion
                 cboMateria.Focus();
                 return;
             }
-
-            materia.Id_Materia = (int)cboMateria.SelectedValue;
-            materia.NombreMateria = cboMateria.SelectedText;
-            mxc.Materia = materia;
+            else
+            {
+                materia.Id_Materia = (int)cboMateria.SelectedValue;
+                materia.NombreMateria = cboMateria.SelectedText;
+                mxc.Materia = materia;
+            }
+            
 
             if (cboCarrera.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe seleccionar una carrera", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboCarrera.Focus();
                 return;
-
-            }
-            if (cboCarrera.SelectedIndex == -1)
-            {
-
             }
             else {
                 mxc.Carrera.Id_Carrera = (int)cboCarrera.SelectedValue;
@@ -149,16 +147,41 @@ namespace Academika.Presentacion
                 return;
 
             }
-            mxc.CargaHoraria = Convert.ToInt32(nudCarga.Text);
-            mxc.Dictado = cboDictado.Text;
+            if (!String.IsNullOrEmpty(nudCarga.Text))
+                mxc.CargaHoraria = Convert.ToInt32(nudCarga.Text);
+            else {
+                MessageBox.Show("Debe seleccionar una carga horaria", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                nudCarga.Focus();
+                return;
+            }
+            if (!String.IsNullOrEmpty(cboDictado.Text))
+            {
+                mxc.Dictado = cboDictado.Text;
+            }
+            else {
+                MessageBox.Show("Debe seleccionar un dictado", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboDictado.Focus();
+                return;
+            }
+
             if (cboCuatrimestre.SelectedIndex != -1)
                 mxc.Cuatrimestre = Convert.ToInt32(cboCuatrimestre.Text);
             else
                 mxc.Cuatrimestre = 0;
+            if (cboCurso.SelectedIndex == -1)
+            {
+               
+                MessageBox.Show("Debe seleccionar un curso", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboCurso.Focus();
+                return;
 
-            curso.Id_Curso = (cboCurso.SelectedIndex != 1) ? (int)cboCurso.SelectedValue : 1;
-            curso.NombreCurso = (cboCurso.SelectedIndex != 1) ? cboCurso.SelectedText.ToString() : "Sin curso";
-            
+            }
+
+            else {
+                curso.Id_Curso = (int)cboCurso.SelectedValue;
+                curso.NombreCurso = cboCurso.SelectedText.ToString();
+            }
+         
            
 
             List<DocentesXMateria> lstDocentes = new List<DocentesXMateria>();
