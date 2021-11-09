@@ -65,7 +65,6 @@
                   <TextRun>
                     <Value>Carreras</Value>
                     <Style>
-                      <FontFamily>Cambria</FontFamily>
                       <FontSize>22pt</FontSize>
                     </Style>
                   </TextRun>
@@ -77,9 +76,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
             <Top>1.84891cm</Top>
-            <Left>3.38667cm</Left>
-            <Height>1.79062cm</Height>
-            <Width>15.06646cm</Width>
+            <Height>1.02333cm</Height>
+            <Width>21cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -94,16 +92,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>5.42629cm</Width>
+                  <Width>5.48979cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.85983cm</Width>
+                  <Width>2.92333cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.0715cm</Width>
+                  <Width>3.135cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.85983cm</Width>
+                  <Width>2.92333cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -419,7 +417,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>3.60066cm</Size>
+                    <Size>3.66416cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox131">
                         <CanGrow>true</CanGrow>
@@ -470,7 +468,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>3.60066cm</Size>
+                    <Size>3.66416cm</Size>
                     <CellContents>
                       <Textbox Name="Carrera1">
                         <CanGrow>true</CanGrow>
@@ -514,10 +512,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsPlan</DataSetName>
-            <Top>4.62703cm</Top>
+            <Top>3.48932cm</Top>
             <Left>1.32292cm</Left>
             <Height>1.2cm</Height>
-            <Width>17.81812cm</Width>
+            <Width>18.13561cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -592,7 +590,7 @@
       <Width>21cm</Width>
       <Page>
         <PageHeader>
-          <Height>4.35433cm</Height>
+          <Height>3.5cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -616,7 +614,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reportes</Value>
+                      <Value>Reporte</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <Color>Silver</Color>
@@ -628,9 +626,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.49953cm</Top>
-              <Left>16.93016cm</Left>
+              <Left>18.41869cm</Left>
               <Height>0.81167cm</Height>
-              <Width>2.84589cm</Width>
+              <Width>2.21089cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -660,7 +658,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>2.75208cm</Top>
+              <Top>1.66729cm</Top>
               <Left>8.33182cm</Left>
               <Height>0.89104cm</Height>
               <Width>5.86214cm</Width>
@@ -683,6 +681,55 @@
             <BackgroundColor>#1f1e44</BackgroundColor>
           </Style>
         </PageHeader>
+        <PageFooter>
+          <Height>2.54cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Sistemas Javier SRL
+Vivero Fénix 1938
+Tel: +549 351 34588984
+Córdoba - Argentina</Value>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                        <FontSize>12pt</FontSize>
+                        <Color>White</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>0.07056cm</Top>
+              <Left>12.62434cm</Left>
+              <Height>2.36361cm</Height>
+              <Width>8.00525cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <BackgroundColor>DimGray</BackgroundColor>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>0cm</LeftMargin>

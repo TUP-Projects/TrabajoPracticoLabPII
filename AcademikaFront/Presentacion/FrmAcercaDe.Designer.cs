@@ -63,7 +63,7 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(698, 307);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(884, 346);
             this.tableLayoutPanel.TabIndex = 0;
             // 
             // logoPictureBox
@@ -74,7 +74,7 @@
             this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
-            this.logoPictureBox.Size = new System.Drawing.Size(222, 301);
+            this.logoPictureBox.Size = new System.Drawing.Size(283, 340);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;
@@ -84,11 +84,11 @@
             this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelProductName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelProductName.Location = new System.Drawing.Point(237, 0);
+            this.labelProductName.Location = new System.Drawing.Point(298, 0);
             this.labelProductName.Margin = new System.Windows.Forms.Padding(7, 0, 4, 0);
             this.labelProductName.MaximumSize = new System.Drawing.Size(0, 20);
             this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(457, 20);
+            this.labelProductName.Size = new System.Drawing.Size(582, 20);
             this.labelProductName.TabIndex = 19;
             this.labelProductName.Text = "Academika";
             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -98,11 +98,11 @@
             this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelVersion.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelVersion.Location = new System.Drawing.Point(237, 30);
+            this.labelVersion.Location = new System.Drawing.Point(298, 34);
             this.labelVersion.Margin = new System.Windows.Forms.Padding(7, 0, 4, 0);
             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 20);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(457, 20);
+            this.labelVersion.Size = new System.Drawing.Size(582, 20);
             this.labelVersion.TabIndex = 0;
             this.labelVersion.Text = "Version 1.0b";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,11 +112,11 @@
             this.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelCopyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelCopyright.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelCopyright.Location = new System.Drawing.Point(237, 60);
+            this.labelCopyright.Location = new System.Drawing.Point(298, 68);
             this.labelCopyright.Margin = new System.Windows.Forms.Padding(7, 0, 4, 0);
             this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 20);
             this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(457, 20);
+            this.labelCopyright.Size = new System.Drawing.Size(582, 20);
             this.labelCopyright.TabIndex = 21;
             this.labelCopyright.Text = "Grupo 16";
             this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,24 +127,25 @@
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxDescription.ForeColor = System.Drawing.Color.Gainsboro;
-            this.textBoxDescription.Location = new System.Drawing.Point(237, 123);
+            this.textBoxDescription.Location = new System.Drawing.Point(298, 138);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(7, 3, 4, 3);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(457, 148);
+            this.textBoxDescription.Size = new System.Drawing.Size(582, 167);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.Text = "Integrantes Grupo 16:\r\n\r\n112929 - Alfonso, Lucio Andrés\r\n112662 - Rojas Cristian\r" +
     "\n113127 - Soria, Juan Javier\r\n112863 - Sosa, Gaston\r\n112903 - Villasanti, Ciro";
+            this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged_1);
             // 
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.okButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.okButton.Location = new System.Drawing.Point(606, 277);
+            this.okButton.Location = new System.Drawing.Point(792, 316);
             this.okButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(88, 27);
@@ -158,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(718, 327);
+            this.ClientSize = new System.Drawing.Size(904, 366);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
