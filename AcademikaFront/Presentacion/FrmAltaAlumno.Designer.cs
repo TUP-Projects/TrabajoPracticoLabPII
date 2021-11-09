@@ -29,9 +29,9 @@ namespace Academika.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTipoDni = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,6 +52,11 @@ namespace Academika.Presentacion
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreTec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rjDatePicker1 = new RJCodeAdvance.RJControls.RJDatePicker();
             this.rjComboBox1 = new RJCodeAdvance.RJControls.RJComboBox();
             this.rjTextBox1 = new RJCodeAdvance.RJControls.RJTextBox();
@@ -72,11 +77,6 @@ namespace Academika.Presentacion
             this.rjComboBox8 = new RJCodeAdvance.RJControls.RJComboBox();
             this.rjComboBox9 = new RJCodeAdvance.RJControls.RJComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreTec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -276,6 +276,7 @@ namespace Academika.Presentacion
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(75, 58);
             this.iconButton1.TabIndex = 105;
+            this.iconButton1.Tag = "Guardar cambios";
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -285,14 +286,14 @@ namespace Academika.Presentacion
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -307,22 +308,52 @@ namespace Academika.Presentacion
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Size = new System.Drawing.Size(870, 249);
             this.dataGridView1.TabIndex = 113;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Carrera
+            // 
+            this.Carrera.HeaderText = "Carrera";
+            this.Carrera.Name = "Carrera";
+            this.Carrera.ReadOnly = true;
+            // 
+            // NombreTec
+            // 
+            this.NombreTec.HeaderText = "Nombre";
+            this.NombreTec.Name = "NombreTec";
+            this.NombreTec.ReadOnly = true;
+            // 
+            // Anio
+            // 
+            this.Anio.HeaderText = "Año";
+            this.Anio.Name = "Anio";
+            this.Anio.ReadOnly = true;
+            // 
+            // Cuatrimestre
+            // 
+            this.Cuatrimestre.HeaderText = "Cuatrimestre";
+            this.Cuatrimestre.Name = "Cuatrimestre";
+            this.Cuatrimestre.ReadOnly = true;
             // 
             // rjDatePicker1
             // 
@@ -704,36 +735,6 @@ namespace Academika.Presentacion
             this.label8.TabIndex = 132;
             this.label8.Text = "Situación habitacional";
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Carrera
-            // 
-            this.Carrera.HeaderText = "Carrera";
-            this.Carrera.Name = "Carrera";
-            this.Carrera.ReadOnly = true;
-            // 
-            // NombreTec
-            // 
-            this.NombreTec.HeaderText = "Nombre";
-            this.NombreTec.Name = "NombreTec";
-            this.NombreTec.ReadOnly = true;
-            // 
-            // Anio
-            // 
-            this.Anio.HeaderText = "Año";
-            this.Anio.Name = "Anio";
-            this.Anio.ReadOnly = true;
-            // 
-            // Cuatrimestre
-            // 
-            this.Cuatrimestre.HeaderText = "Cuatrimestre";
-            this.Cuatrimestre.Name = "Cuatrimestre";
-            this.Cuatrimestre.ReadOnly = true;
-            // 
             // FrmAltaAlumno
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -835,5 +836,6 @@ namespace Academika.Presentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuatrimestre;
+        private System.Windows.Forms.Button button1;
     }
 }
