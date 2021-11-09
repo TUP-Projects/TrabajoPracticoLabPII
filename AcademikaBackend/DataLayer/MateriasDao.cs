@@ -53,19 +53,12 @@ namespace AcademikaBackend.DataLayer
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@carga_horaria", DbType.Int32, mxc.CargaHoraria));
 
             int retVal = (int)HelperDao.EjecutarSql("SP_ACTUALIZA_MATERIASxCARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
-            //if (retVal > 0)
-            //    return true;
-            //else
-            //    return false;
-
             return retVal > 0;
         }
         public DataTable CargaCombos(string tabla, int estado) {
 
             List<DbParameter> sqlParams = new List<DbParameter>();
             SqlCommand cmd = new SqlCommand();
-
-
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@tabla", DbType.String, tabla));
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@estado", DbType.String, estado));
             DataTable table = helper.ConsultaSQL(cmd, "SP_CONSULTA_ENTIDAD", sqlParams);
@@ -93,10 +86,12 @@ namespace AcademikaBackend.DataLayer
 
             foreach (DataRow row in table.Rows)
             {
-                Materia oMateria = new Materia();
-                oMateria.Id_Materia = Convert.ToInt32(row["id_materia"].ToString());
-                oMateria.NombreMateria = row["materia"].ToString();
-                oMateria.Estado = Convert.ToBoolean(row["estado"]);
+                Materia oMateria = new Materia
+                {
+                    Id_Materia = Convert.ToInt32(row["id_materia"].ToString()),
+                    NombreMateria = row["materia"].ToString(),
+                    Estado = Convert.ToBoolean(row["estado"])
+                };
                 lst.Add(oMateria);
             }
 

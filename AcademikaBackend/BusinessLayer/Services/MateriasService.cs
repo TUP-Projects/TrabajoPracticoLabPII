@@ -66,7 +66,6 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         public DataTable CargaDgvEntidad(string tabla, int estado)
         {
-
             return MateriasDao.CargaCombos(tabla, estado);
         }
     }
