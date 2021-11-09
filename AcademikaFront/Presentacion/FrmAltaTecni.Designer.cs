@@ -290,7 +290,6 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton5;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label rtbAyuda;
         private System.Windows.Forms.NumericUpDown Nup_Duracion;
         private System.Windows.Forms.DataGridView dgvTecnicatura;

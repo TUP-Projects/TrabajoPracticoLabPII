@@ -2,15 +2,11 @@
 using AcademikaBackend.Properties;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AcademikaBackend.DataLayer
+namespace AcademikaBackend.DataLayer.Helper
 {
     public class HelperDao
     {
@@ -19,8 +15,7 @@ namespace AcademikaBackend.DataLayer
 
         private HelperDao()
         {
-            connectionString = ConnectionStrings.Lucio.ToString(); //CONEXION CIRO
-            //connectionString = ConnectionStrings.Cristian.ToString();
+            connectionString = ConnectionStrings.Cristian.ToString(); //CONEXION CIRO
         }
 
         public static HelperDao GetInstance()

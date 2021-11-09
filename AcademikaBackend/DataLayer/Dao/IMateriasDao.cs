@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AcademikaBackend.DataLayer
+namespace AcademikaBackend.DataLayer.Dao
 {
     public interface IMateriasDao
     {

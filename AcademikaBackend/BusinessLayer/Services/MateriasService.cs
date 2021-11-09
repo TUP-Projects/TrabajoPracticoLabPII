@@ -1,11 +1,8 @@
 ﻿using AcademikaBackend.BusinessLayer.Entities;
-using AcademikaBackend.DataLayer;
+using AcademikaBackend.DataLayer.Dao;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AcademikaBackend.BusinessLayer.Services
 {

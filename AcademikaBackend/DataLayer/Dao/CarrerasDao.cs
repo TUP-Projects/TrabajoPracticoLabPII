@@ -1,14 +1,12 @@
 ﻿using AcademikaBackend.BusinessLayer.Entities;
+using AcademikaBackend.DataLayer.Helper;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AcademikaBackend.DataLayer
+namespace AcademikaBackend.DataLayer.Dao
 {
     public class CarrerasDao : ICarrerasDao
     {
@@ -36,7 +34,7 @@ namespace AcademikaBackend.DataLayer
                     Id_Carrera = Convert.ToInt32(row[0].ToString()),
                     NombreCarrera = row[1].ToString(),
                     Estado = ((Estado)Convert.ToInt32(row[2])).ToString(),
-                    Duracion = Convert.ToInt32(row[3])
+                    Duracion = Convert.ToInt32(row[3]) + " Año/s"
                 };
                 lst.Add(oCarrera);
             }

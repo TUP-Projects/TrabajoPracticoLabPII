@@ -1,11 +1,12 @@
 ﻿using AcademikaBackend.BusinessLayer.Entities;
+using AcademikaBackend.DataLayer.Helper;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 
-namespace AcademikaBackend.DataLayer
+namespace AcademikaBackend.DataLayer.Dao
 {
     public class MateriasDao : IMateriasDao
     {
@@ -86,9 +87,9 @@ namespace AcademikaBackend.DataLayer
             {
                 Materia oMateria = new Materia
                 {
-                    Id_Materia = Convert.ToInt32(row["id_materia"].ToString()),
-                    NombreMateria = row["materia"].ToString(),
-                    Estado = Convert.ToBoolean(row["estado"])
+                    Id_Materia = Convert.ToInt32(row[0].ToString()),
+                    NombreMateria = row[1].ToString(),
+                    Estado = ((Estado)Convert.ToInt32(row[2])).ToString(),
                 };
                 lst.Add(oMateria);
             }
@@ -101,7 +102,6 @@ namespace AcademikaBackend.DataLayer
             SqlCommand cmd = new SqlCommand();
             DataTable table = helper.ConsultaSQL(cmd, "SP_PLAN_ESTUDIOS");
             return table;
-
         }
     }
 }
