@@ -207,10 +207,10 @@ namespace Academika.Presentacion
             OpenChild(new FrmAltaDocentes());
         }
 
-        private void btnConsultas_Click(object sender, EventArgs e)
+        private void btnReportes_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
-            OpenChild(new FrmConsultas());
+            OpenChild(new FrmReportes());
         }
 
 

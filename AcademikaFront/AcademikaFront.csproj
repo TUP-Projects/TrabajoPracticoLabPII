@@ -29,6 +29,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AcademikaDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AcademikaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="AcademikaDataSetFull.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AcademikaDataSetFull.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Presentacion\FrmAltaMateria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -46,6 +56,17 @@
     <PackageReference Include="RJCodeAdvance.RJControl2s" Version="1.0.0" />
     <PackageReference Include="RJCodeAdvance.RJControls" Version="1.0.0" />
     <PackageReference Include="VisualBasic.PowerPacks.Vs" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AcademikaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcademikaDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="AcademikaDataSetFull.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AcademikaDataSetFull.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -689,7 +689,9 @@ GO
 CREATE PROCEDURE SP_CONSULTAR_CARRERAS
 AS
 BEGIN
-	SELECT * FROM CARRERAS
+	SELECT id_carrera, carrera, CASE WHEN estado = 0 THEN 'Deshabilitado'
+									 WHEN estado = 1 THEN 'Habilitado' END AS Estado
+									 FROM CARRERAS
 END
 GO
 Create  PROCEDURE SP_CONSULTAR_ESTADO_CIVIL
@@ -1058,7 +1060,7 @@ INNER JOIN MATERIAS m ON m.id_materia = mxcar.id_materia
 INNER JOIN CARRERAS ca ON ca.id_carrera = mxcar.id_carrera
 INNER JOIN CARGOS car ON car.id_cargo = dxm.id_cargo
 INNER JOIN CURSOS cur ON cur.id_curso = dxm.id_curso
-WHERE mxcar.estado = 1 AND dxm.estado = 1
+WHERE mxcar.estado = 1 AND dxm.estado = 1 AND m.estado = 1 AND ca.estado = 1
 
 CREATE PROC SP_CONSULTA_MATERIAS_DETALLE 
 @id_materia int = NULL, 
@@ -1066,15 +1068,10 @@ CREATE PROC SP_CONSULTA_MATERIAS_DETALLE
 AS
 BEGIN
 
-IF OBJECT_ID(N'tempdb..#tmp', N'U') IS NOT NULL
-DROP TABLE #tmp
-
-SELECT * INTO #tmp FROM( SELECT * FROM dbo.vw_materias_detalle
- ) tmp
 
 SELECT [IdMateriasCarrera], [IdMateria], [Dictado], MIN([JefedeCatedra]) JefedeCatedra, MIN([ProfesorAdjunto]) ProfesorAdjunto, MIN([AyudantePrimera]) AyudantePrimera,
 [IdCurso], [NomCurso], [AnioDictado], [IdCarrera], [Carrera], [NombreMat], [Cuatrimestre], [Carga]
-FROM #tmp 
+FROM dbo.vw_materias_detalle
 WHERE (@id_materia_carrera IS NULL OR [IdMateriasCarrera] = @id_materia_carrera) AND (@id_materia IS NULL OR [IdMateria] = @id_materia)
 GROUP BY
 [IdMateriasCarrera], [IdMateria], [Dictado],
@@ -1082,6 +1079,14 @@ GROUP BY
 END
 GO
 
+CREATE VIEW dbo.vw_plan_estudios
+AS
+select c.carrera Carrera, m.materia NomMat, mxcar.dictado Dictado, mxcar.anio_dictado AnioDictado, mxcar.cuatrimestre Cuatrimestre, mxcar.carga_horaria Carga from MATERIASxCARRERA mxcar
+INNER JOIN MATERIAS m ON m.id_materia = mxcar.id_materia
+INNER JOIN CARRERAS c ON c.id_carrera = mxcar.id_carrera
+WHERE mxcar.estado = 1
+GO
+select * from dbo.vw_plan_estudios
 --SP Actualiza MateriasXCarrera
 CREATE PROC SP_ACTUALIZA_MATERIASxCARRERA
 @id_materia_x_carrera int,

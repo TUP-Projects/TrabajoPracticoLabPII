@@ -1,6 +1,6 @@
 ﻿namespace Academika.Presentacion
 {
-    partial class FrmConsultas
+    partial class FrmReportes
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // FrmConsultas
+            // FrmReportes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
-            this.ClientSize = new System.Drawing.Size(946, 616);
-            this.Name = "FrmConsultas";
-            this.Text = "Consultas";
+            this.ClientSize = new System.Drawing.Size(1104, 711);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "FrmReportes";
+            this.Text = "Reportes";
             this.ResumeLayout(false);
 
         }

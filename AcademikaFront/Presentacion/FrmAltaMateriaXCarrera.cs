@@ -30,7 +30,7 @@ namespace Academika.Presentacion
             
         }
 
-        private async Task Cargar_CombosAsync(ComboBox combo, string entidad)
+        private async Task Cargar_CombosAsync(ComboBox combo, string entidad, int estado)
         {
             
             string urlBase = "https://localhost:44365/api/MateriasDetalle/";
@@ -194,6 +194,7 @@ namespace Academika.Presentacion
                 Consultar_DetalleMateriaAsync(materia.Id_Materia);
 
             }
+            ConsultaID();
 
         }
 
@@ -281,6 +282,8 @@ namespace Academika.Presentacion
                   MessageBox.Show("Error al intentar borrar la materia. Revise no estar duplicando valores en la tabla siguiente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                   dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
               }
+
+            ConsultaID();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

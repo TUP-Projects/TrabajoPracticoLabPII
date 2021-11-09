@@ -21,7 +21,7 @@ namespace AcademikaWebAPI.Controllers
 
 
         [HttpGet("{entidad}")]
-        public IActionResult GetEntidad(string entidad)
+        public IActionResult GetEntidad(string entidad, int estado)
         {
             if (String.IsNullOrEmpty(entidad))
                 return BadRequest("La entidad no puede ser nula.");

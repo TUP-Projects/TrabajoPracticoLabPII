@@ -28,10 +28,10 @@ namespace AcademikaBackend.BusinessLayer.Services
             return MateriasDao.ActualizaDatosMateriasxCarrera(mxc);
         }
 
-        public List<EntidadGenerica> CargaCombos(string tabla)
+        public List<EntidadGenerica> CargaCombos(string tabla, int estado)
         {
             List<EntidadGenerica> lst = new List<EntidadGenerica>();
-            foreach (DataRow row in MateriasDao.CargaCombos(tabla).Rows) {
+            foreach (DataRow row in MateriasDao.CargaCombos(tabla, estado).Rows) {
 
                 EntidadGenerica oEntidadGen = new EntidadGenerica();
                 oEntidadGen.ID = Convert.ToInt32(row["ID"].ToString());
@@ -64,10 +64,10 @@ namespace AcademikaBackend.BusinessLayer.Services
             return MateriasDao.ObtenerProxId(tabla);
         }
 
-        public DataTable CargaDgvEntidad(string tabla)
+        public DataTable CargaDgvEntidad(string tabla, int estado)
         {
 
-            return MateriasDao.CargaCombos(tabla);
+            return MateriasDao.CargaCombos(tabla, estado);
         }
     }
 }

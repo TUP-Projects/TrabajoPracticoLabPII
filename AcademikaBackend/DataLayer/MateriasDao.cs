@@ -60,13 +60,14 @@ namespace AcademikaBackend.DataLayer
 
             return retVal > 0 ? true : false;
         }
-        public DataTable CargaCombos(string tabla) {
+        public DataTable CargaCombos(string tabla, int estado) {
 
             List<DbParameter> sqlParams = new List<DbParameter>();
             SqlCommand cmd = new SqlCommand();
 
 
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@tabla", DbType.String, tabla));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@estado", DbType.String, estado));
             DataTable table = helper.ConsultaSQL(cmd, "SP_CONSULTA_ENTIDAD", sqlParams);
 
             return table;

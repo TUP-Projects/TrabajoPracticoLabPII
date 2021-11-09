@@ -33,8 +33,8 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnConfiguracion = new FontAwesome.Sharp.IconButton();
             this.btnConsultas = new FontAwesome.Sharp.IconButton();
+            this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.btnAltaDocentes = new FontAwesome.Sharp.IconButton();
             this.btnModExamenes = new FontAwesome.Sharp.IconButton();
             this.btnModAcademico = new FontAwesome.Sharp.IconButton();
@@ -73,8 +73,8 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelMenu.Controls.Add(this.iconButton2);
             this.panelMenu.Controls.Add(this.iconButton1);
-            this.panelMenu.Controls.Add(this.btnConfiguracion);
             this.panelMenu.Controls.Add(this.btnConsultas);
+            this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.btnAltaDocentes);
             this.panelMenu.Controls.Add(this.btnModExamenes);
             this.panelMenu.Controls.Add(this.btnModAcademico);
@@ -132,28 +132,6 @@
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
-            // btnConfiguracion
-            // 
-            this.btnConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConfiguracion.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnConfiguracion.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
-            this.btnConfiguracion.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnConfiguracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 507);
-            this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
-            this.btnConfiguracion.Size = new System.Drawing.Size(257, 69);
-            this.btnConfiguracion.TabIndex = 11;
-            this.btnConfiguracion.Text = "Reportes";
-            this.btnConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConfiguracion.UseVisualStyleBackColor = true;
-            // 
             // btnConsultas
             // 
             this.btnConsultas.Dock = System.Windows.Forms.DockStyle.Top;
@@ -165,17 +143,39 @@
             this.btnConsultas.IconColor = System.Drawing.Color.Gainsboro;
             this.btnConsultas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultas.Location = new System.Drawing.Point(0, 438);
+            this.btnConsultas.Location = new System.Drawing.Point(0, 507);
             this.btnConsultas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
             this.btnConsultas.Size = new System.Drawing.Size(257, 69);
-            this.btnConsultas.TabIndex = 10;
+            this.btnConsultas.TabIndex = 11;
             this.btnConsultas.Text = "Consultas";
             this.btnConsultas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConsultas.UseVisualStyleBackColor = true;
-            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnReportes.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnReportes.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
+            this.btnReportes.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 438);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
+            this.btnReportes.Size = new System.Drawing.Size(257, 69);
+            this.btnReportes.TabIndex = 10;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnAltaDocentes
             // 
@@ -537,8 +537,8 @@
         private FontAwesome.Sharp.IconButton btnClose;
         private FontAwesome.Sharp.IconButton btnMaximize;
         private FontAwesome.Sharp.IconButton btnModAcademico;
-        private FontAwesome.Sharp.IconButton btnConfiguracion;
         private FontAwesome.Sharp.IconButton btnConsultas;
+        private FontAwesome.Sharp.IconButton btnReportes;
         private FontAwesome.Sharp.IconButton btnAltaDocentes;
         private RJControls.RJDropDownMenu rjDropDownMenu2;
         private System.Windows.Forms.ToolStripMenuItem exámenesToolStripMenuItem;

@@ -15,7 +15,7 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         DataTable ConsultaMateria(int id_materia);
 
-        List<EntidadGenerica> CargaCombos(string tabla);
+        List<EntidadGenerica> CargaCombos(string tabla, int estado);
 
         public List<Materia> ConsultarMaterias();
 
