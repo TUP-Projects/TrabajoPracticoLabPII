@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using AcademikaBackend.BusinessLayer.Services;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,16 +13,16 @@ namespace AcademikaFront.Presentacion.Reportes
 {
     class Reporte
     {
-        public static void Load(LocalReport report)
+        
+       
+        public static void Load(LocalReport report, IMateriasService servicio)
         {
+                
 
-            string rvConnection = @"Data Source = .\SQLEXPRESS; Initial Catalog = Academika; Integrated Security = True";
-            using (SqlConnection sqlConn = new SqlConnection(rvConnection))
-            using (SqlDataAdapter da = new SqlDataAdapter("select * from dbo.vw_plan_estudios", rvConnection))
-            {
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                DataTable dt = ds.Tables[0];
+                 DataTable dt = new DataTable();
+
+                dt = servicio.Consulta_PlanEstudios();
+                
                 string ruta = Path.GetFullPath("..\\..\\..\\Presentacion\\Reportes\\Report.rdlc");
 
                 using var fs = new FileStream(ruta, FileMode.Open);
@@ -33,7 +34,6 @@ namespace AcademikaFront.Presentacion.Reportes
                 reportDataSource.Value = dt;
                 report.DataSources.Add(reportDataSource);
 
-            }
 
         }
     }
