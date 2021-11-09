@@ -34,18 +34,21 @@
             this.lblLegajoDocente = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTecnicatura = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duración = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rtbAyuda = new System.Windows.Forms.Label();
+            this.Nup_Duracion = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTecnicatura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nup_Duracion)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLegajoDocente
@@ -77,18 +80,9 @@
             this.label1.Location = new System.Drawing.Point(138, 188);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 18);
+            this.label1.Size = new System.Drawing.Size(97, 18);
             this.label1.TabIndex = 90;
-            this.label1.Text = "Tecnicaturas Activas:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(449, 96);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(140, 23);
-            this.comboBox3.TabIndex = 92;
+            this.label1.Text = "Tecnicaturas:";
             // 
             // label5
             // 
@@ -162,13 +156,13 @@
             this.iconButton5.TabIndex = 110;
             this.iconButton5.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvTecnicatura
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvTecnicatura.AllowUserToAddRows = false;
+            this.dgvTecnicatura.AllowUserToDeleteRows = false;
+            this.dgvTecnicatura.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.dgvTecnicatura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTecnicatura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -176,20 +170,21 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 30;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTecnicatura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTecnicatura.ColumnHeadersHeight = 30;
+            this.dgvTecnicatura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvTecnicatura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NombreTec,
-            this.Duración});
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(141, 227);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.Duración,
+            this.Estado});
+            this.dgvTecnicatura.EnableHeadersVisualStyles = false;
+            this.dgvTecnicatura.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvTecnicatura.Location = new System.Drawing.Point(141, 227);
+            this.dgvTecnicatura.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvTecnicatura.Name = "dgvTecnicatura";
+            this.dgvTecnicatura.ReadOnly = true;
+            this.dgvTecnicatura.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -197,19 +192,20 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowHeadersVisible = false;
+            this.dgvTecnicatura.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTecnicatura.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(691, 258);
-            this.dataGridView1.TabIndex = 111;
+            this.dgvTecnicatura.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTecnicatura.Size = new System.Drawing.Size(691, 258);
+            this.dgvTecnicatura.TabIndex = 111;
             // 
             // ID
             // 
+            this.ID.DataPropertyName = "Id_Carrera";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -217,6 +213,7 @@
             // 
             // NombreTec
             // 
+            this.NombreTec.DataPropertyName = "NombreCarrera";
             this.NombreTec.HeaderText = "Nombre";
             this.NombreTec.Name = "NombreTec";
             this.NombreTec.ReadOnly = true;
@@ -224,9 +221,34 @@
             // 
             // Duración
             // 
+            this.Duración.DataPropertyName = "Duracion";
             this.Duración.HeaderText = "Duración";
             this.Duración.Name = "Duración";
             this.Duración.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // rtbAyuda
+            // 
+            this.rtbAyuda.AutoSize = true;
+            this.rtbAyuda.Location = new System.Drawing.Point(744, 502);
+            this.rtbAyuda.Name = "rtbAyuda";
+            this.rtbAyuda.Size = new System.Drawing.Size(38, 15);
+            this.rtbAyuda.TabIndex = 119;
+            this.rtbAyuda.Text = "label1";
+            this.rtbAyuda.Visible = false;
+            // 
+            // Nup_Duracion
+            // 
+            this.Nup_Duracion.Location = new System.Drawing.Point(393, 96);
+            this.Nup_Duracion.Name = "Nup_Duracion";
+            this.Nup_Duracion.Size = new System.Drawing.Size(120, 23);
+            this.Nup_Duracion.TabIndex = 120;
             // 
             // FrmAltaTecni
             // 
@@ -234,13 +256,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1104, 711);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Nup_Duracion);
+            this.Controls.Add(this.rtbAyuda);
+            this.Controls.Add(this.dgvTecnicatura);
             this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox2);
@@ -248,7 +271,9 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmAltaTecni";
             this.Text = "Alta Carrera";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmAltaTecni_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTecnicatura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nup_Duracion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,7 +284,6 @@
         private System.Windows.Forms.Label lblLegajoDocente;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label5;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
@@ -267,8 +291,12 @@
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton5;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label rtbAyuda;
+        private System.Windows.Forms.NumericUpDown Nup_Duracion;
+        private System.Windows.Forms.DataGridView dgvTecnicatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duración;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

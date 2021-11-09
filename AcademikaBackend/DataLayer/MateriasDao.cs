@@ -58,7 +58,7 @@ namespace AcademikaBackend.DataLayer
             //else
             //    return false;
 
-            return retVal > 0 ? true : false;
+            return retVal > 0;
         }
         public DataTable CargaCombos(string tabla, int estado) {
 
@@ -96,7 +96,7 @@ namespace AcademikaBackend.DataLayer
                 Materia oMateria = new Materia();
                 oMateria.Id_Materia = Convert.ToInt32(row["id_materia"].ToString());
                 oMateria.NombreMateria = row["materia"].ToString();
-
+                oMateria.Estado = Convert.ToBoolean(row["estado"]);
                 lst.Add(oMateria);
             }
 

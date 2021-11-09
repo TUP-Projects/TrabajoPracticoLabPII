@@ -13,6 +13,8 @@ namespace Academika.Presentacion
 {
     public partial class FrmAltaMateria : Form
     {
+
+        private bool VerAyuda = false;
         private IMateriasService servicio;
         public FrmAltaMateria()
         {
@@ -38,6 +40,20 @@ namespace Academika.Presentacion
 
         }
 
-    
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            StringBuilder _stringBuilder = new StringBuilder();
+            _stringBuilder.AppendLine("- Estado = 0 corresponde a: Deshabilitado");
+            _stringBuilder.Append("- Estado = 1 corresponde a: Habilitado");
+            rtbAyuda.Text = _stringBuilder.ToString();
+            if (VerAyuda)
+            {
+                VerAyuda = rtbAyuda.Visible = false;
+            }
+            else
+            {
+                VerAyuda = rtbAyuda.Visible = true;
+            }
+        }
     }
 }
