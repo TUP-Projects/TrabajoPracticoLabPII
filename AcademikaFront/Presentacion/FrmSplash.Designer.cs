@@ -30,6 +30,7 @@ namespace AcademikaFront.Presentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSplash));
             this.SplashTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@ namespace AcademikaFront.Presentacion
             this.BackgroundImage = global::AcademikaFront.Properties.Resources.Throbber4;
             this.ClientSize = new System.Drawing.Size(743, 436);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSplash";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

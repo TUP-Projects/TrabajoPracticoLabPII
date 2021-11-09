@@ -23,10 +23,11 @@ namespace Academika.Presentacion
 			servicio = new ServiceFactoryImp().CrearServiceMaterias();
 			InitializeComponent();
 			reportViewer = new ReportViewer();
-			reportViewer.Dock = DockStyle.Fill;
+            reportViewer.Dock = DockStyle.Fill;
 			
-			
-			Controls.Add(reportViewer);
+
+
+            Controls.Add(reportViewer);
 
 
 		}
