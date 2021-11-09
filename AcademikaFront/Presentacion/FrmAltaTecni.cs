@@ -25,23 +25,9 @@ namespace Academika.Presentacion
             servicio = new ServiceFactoryImp().CrearServiceMaterias();
         }
 
-        private async Task Cargar_CombosAsync(ComboBox combo, string entidad)
-        {
-
-            string urlBase = "https://localhost:44365/api/MateriasDetalle/";
-            string url = urlBase + entidad;
-            var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
-            List<EntidadGenerica> lstEntidad = JsonConvert.DeserializeObject<List<EntidadGenerica>>(resultado);
-            combo.DataSource = lstEntidad;
-            combo.ValueMember = "ID";
-            combo.DisplayMember = "Descripcion";
-            combo.SelectedIndex = -1;
-        }
-
-
         private void ConsultaID()
         {
-            lblLegajoDocente.Text = "ID Tecnicatura:: " + servicio.ObtenerProxId("CARRERAS").ToString();
+            lblLegajoDocente.Text = "ID Tecnicatura: " + servicio.ObtenerProxId("CARRERAS").ToString();
         }
 
         private void iconButton3_Click(object sender, EventArgs e)

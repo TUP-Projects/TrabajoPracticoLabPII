@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AcademikaBackend.DataLayer
 {
@@ -55,12 +52,13 @@ namespace AcademikaBackend.DataLayer
             int retVal = (int)HelperDao.EjecutarSql("SP_ACTUALIZA_MATERIASxCARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
             return retVal > 0;
         }
-        public DataTable CargaCombos(string tabla, int estado) {
+
+        public DataTable CargaCombos(string tabla) {
 
             List<DbParameter> sqlParams = new List<DbParameter>();
             SqlCommand cmd = new SqlCommand();
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@tabla", DbType.String, tabla));
-            sqlParams.Add(HelperDao.CrearParametro(cmd, "@estado", DbType.String, estado));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@estado", DbType.String, (int)Estado.Habilitado));
             DataTable table = helper.ConsultaSQL(cmd, "SP_CONSULTA_ENTIDAD", sqlParams);
 
             return table;

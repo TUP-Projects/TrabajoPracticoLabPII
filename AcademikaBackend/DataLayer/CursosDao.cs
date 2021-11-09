@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AcademikaBackend.DataLayer
 {
-    public class CarrerasDao : ICarrerasDao
+    public class CursosDao : ICursosDao
     {
         HelperDao helper = HelperDao.GetInstance();
 
@@ -23,22 +23,21 @@ namespace AcademikaBackend.DataLayer
             return prox_id;
         }
 
-        public List<Carrera> GetCarreras()
+        public List<Curso> GetCursos()
         {
-            List<Carrera> lst = new();
+            List<Curso> lst = new();
             SqlCommand cmd = new();
-            DataTable table = helper.ConsultaSQL(cmd, "SP_CONSULTAR_CARRERAS");
+            DataTable table = helper.ConsultaSQL(cmd, "SP_CONSULTAR_CURSOS");
 
             foreach (DataRow row in table.Rows)
             {
-                Carrera oCarrera = new Carrera
+                Curso oCurso = new Curso
                 {
-                    Id_Carrera = Convert.ToInt32(row[0].ToString()),
-                    NombreCarrera = row[1].ToString(),
+                    Id_Curso = Convert.ToInt32(row[0].ToString()),
+                    NombreCurso = row[1].ToString(),
                     Estado = ((Estado)Convert.ToInt32(row[2])).ToString(),
-                    Duracion = Convert.ToInt32(row[3])
                 };
-                lst.Add(oCarrera);
+                lst.Add(oCurso);
             }
 
             return lst;

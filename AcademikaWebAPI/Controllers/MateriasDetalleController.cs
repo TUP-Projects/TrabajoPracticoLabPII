@@ -20,11 +20,11 @@ namespace AcademikaWebAPI.Controllers
         }
 
         [HttpGet("{entidad}")]
-        public IActionResult GetEntidad(string entidad, int estado)
+        public IActionResult GetEntidad(string entidad)
         {
             if (String.IsNullOrEmpty(entidad))
                 return BadRequest("La entidad no puede ser nula.");
-            return Ok(_materiasDetalleService.CargaCombos(entidad, estado));
+            return Ok(_materiasDetalleService.CargaCombos(entidad));
         }
 
         [HttpGet("Consulta/{idMateria}")]

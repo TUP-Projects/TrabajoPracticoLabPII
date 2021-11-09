@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Academika.Client;
+using AcademikaBackend.BusinessLayer.Services;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +17,11 @@ namespace Academika.Presentacion
     {
 
         private bool VerAyuda = false;
+        private ICursosService servicio;
         public FrmAltaCursos()
         {
             InitializeComponent();
+            servicio = new ServiceFactoryImp().CrearServiceCursos();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -33,6 +38,10 @@ namespace Academika.Presentacion
         {
 
         }
+        private void ConsultaID()
+        {
+            lblLegajoDocente.Text = "ID Curso: " + servicio.ObtenerProxId("CURSOS").ToString();
+        }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
@@ -48,6 +57,21 @@ namespace Academika.Presentacion
             {
                 VerAyuda = rtbAyuda.Visible = true;
             }
+        }
+
+        private void Inicia()
+        {
+            ConsultaID();
+            CargarDgvAsync();
+        }
+        private async Task CargarDgvAsync()
+        {
+            string urlBase = "https://localhost:44365/api/Cursos/Consulta/";
+
+            var resultado = await ClienteSingleton.GetInstancia().GetAsync(urlBase);
+            DataTable dt = (DataTable)JsonConvert.DeserializeObject(resultado, (typeof(DataTable)));
+
+            dgvCursos.DataSource = dt;
         }
     }
 }

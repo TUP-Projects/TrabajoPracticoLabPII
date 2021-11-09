@@ -31,18 +31,15 @@ namespace Academika.Presentacion
             
         }
 
-        private async Task Cargar_CombosAsync(ComboBox combo, string entidad, int estado)
+        private async Task Cargar_CombosAsync(ComboBox combo, string entidad)
         {
-            
-            string urlBase = "https://localhost:44365/api/MateriasDetalle/";
-            string url = urlBase + entidad + "?estado=" + estado.ToString();
+            string url = "https://localhost:44365/api/MateriasDetalle/" + entidad;
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
             List<EntidadGenerica> lstEntidad = JsonConvert.DeserializeObject<List<EntidadGenerica>>(resultado);
             combo.DataSource = lstEntidad;
             
             combo.ValueMember = "ID";
             combo.DisplayMember = "Descripcion";
-
             combo.SelectedIndex = -1;
         }
 
@@ -88,12 +85,12 @@ namespace Academika.Presentacion
         private void Inicia()
         {
             ConsultaID();
-            Cargar_CombosAsync(cboAdj, "docentes", (int)Estado.Habilitado);
-            Cargar_CombosAsync(cboMateria, "materias", (int)Estado.Habilitado);
-            Cargar_CombosAsync(cboAyud, "docentes", (int)Estado.Habilitado);
-            Cargar_CombosAsync(cboJefe, "docentes", (int)Estado.Habilitado);
-            Cargar_CombosAsync(cboCarrera, "carreras", (int)Estado.Habilitado);
-            Cargar_CombosAsync(cboCurso, "cursos", (int)Estado.Habilitado);
+            Cargar_CombosAsync(cboAdj, "docentes");
+            Cargar_CombosAsync(cboMateria, "materias");
+            Cargar_CombosAsync(cboAyud, "docentes");
+            Cargar_CombosAsync(cboJefe, "docentes");
+            Cargar_CombosAsync(cboCarrera, "carreras");
+            Cargar_CombosAsync(cboCurso, "cursos");
         }
 
         private void cboDictado_SelectedIndexChanged(object sender, EventArgs e)

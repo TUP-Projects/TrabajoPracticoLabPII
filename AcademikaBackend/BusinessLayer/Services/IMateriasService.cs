@@ -15,7 +15,7 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         DataTable ConsultaMateria(int id_materia);
 
-        List<EntidadGenerica> CargaCombos(string tabla, int estado);
+        List<EntidadGenerica> CargaCombos(string tabla);
 
         public List<Materia> ConsultarMaterias();
 
@@ -23,7 +23,7 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         bool BajaCursoMateriaDocente(DocentesXMateria dxm);
 
-        DataTable CargaDgvEntidad(string tabla, int estado);
+        DataTable CargaDgvEntidad(string tabla);
 
 
     }

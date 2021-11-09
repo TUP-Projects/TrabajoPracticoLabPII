@@ -17,5 +17,10 @@ namespace AcademikaBackend.BusinessLayer.Services
         {
             return new CarrerasService();
         }
+
+        public override ICursosService CrearServiceCursos()
+        {
+            return new CursosService();
+        }
     }
 }
