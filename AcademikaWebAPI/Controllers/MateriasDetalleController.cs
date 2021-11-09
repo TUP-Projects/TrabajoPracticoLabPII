@@ -19,7 +19,6 @@ namespace AcademikaWebAPI.Controllers
             _materiasDetalleService = new ServiceFactoryImp().CrearServiceMaterias();
         }
 
-
         [HttpGet("{entidad}")]
         public IActionResult GetEntidad(string entidad, int estado)
         {
@@ -27,6 +26,7 @@ namespace AcademikaWebAPI.Controllers
                 return BadRequest("La entidad no puede ser nula.");
             return Ok(_materiasDetalleService.CargaCombos(entidad));
         }
+
         [HttpGet("Consulta/{idMateria}")]
         public IActionResult GetMateriasDetalle(int idMateria)
         {

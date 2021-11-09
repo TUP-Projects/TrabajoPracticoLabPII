@@ -10,5 +10,7 @@ namespace AcademikaBackend.BusinessLayer.Entities
     {
         public int Id_Carrera { get; set; }
         public string NombreCarrera { get; set; }
+        public int Duracion { get; set; }
+        public string Estado { get; set; }
     }
 }

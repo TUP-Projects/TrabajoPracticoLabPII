@@ -10,5 +10,6 @@ namespace AcademikaBackend.BusinessLayer.Entities
     {
         public int Id_Materia { get; set; }
         public string NombreMateria { get; set; }
+        public bool Estado { get; set; }
     }
 }
