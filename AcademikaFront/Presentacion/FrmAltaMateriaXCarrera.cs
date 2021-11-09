@@ -35,7 +35,7 @@ namespace Academika.Presentacion
         {
             
             string urlBase = "https://localhost:44365/api/MateriasDetalle/";
-            string url = urlBase + entidad;
+            string url = urlBase + entidad + "?estado=" + estado.ToString();
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
             List<EntidadGenerica> lstEntidad = JsonConvert.DeserializeObject<List<EntidadGenerica>>(resultado);
             combo.DataSource = lstEntidad;

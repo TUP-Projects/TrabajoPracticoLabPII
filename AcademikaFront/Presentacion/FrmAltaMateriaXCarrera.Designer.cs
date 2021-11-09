@@ -374,9 +374,10 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvResultado.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvResultado.RowTemplate.Height = 50;
+            this.dgvResultado.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvResultado.Size = new System.Drawing.Size(1100, 209);
             this.dgvResultado.TabIndex = 113;
-
             // 
             // label10
             // 
@@ -487,69 +488,89 @@
             // 
             // Carrera
             // 
+            this.Carrera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Carrera.DataPropertyName = "Carrera";
             this.Carrera.HeaderText = "Carrera";
             this.Carrera.Name = "Carrera";
             this.Carrera.ReadOnly = true;
+            this.Carrera.Width = 81;
             // 
             // NombreMat
             // 
+            this.NombreMat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.NombreMat.DataPropertyName = "NombreMat";
             this.NombreMat.HeaderText = "Materia";
             this.NombreMat.Name = "NombreMat";
             this.NombreMat.ReadOnly = true;
+            this.NombreMat.Width = 81;
             // 
             // NomCurso
             // 
+            this.NomCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.NomCurso.DataPropertyName = "NomCurso";
             this.NomCurso.HeaderText = "Curso";
             this.NomCurso.Name = "NomCurso";
             this.NomCurso.ReadOnly = true;
+            this.NomCurso.Width = 69;
             // 
             // Dictado
             // 
+            this.Dictado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Dictado.DataPropertyName = "Dictado";
             this.Dictado.HeaderText = "Dictado";
             this.Dictado.Name = "Dictado";
+            this.Dictado.Width = 85;
             // 
             // AnioDictado
             // 
+            this.AnioDictado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.AnioDictado.DataPropertyName = "AnioDictado";
             this.AnioDictado.HeaderText = "Anio Dictado";
             this.AnioDictado.Name = "AnioDictado";
+            this.AnioDictado.Width = 118;
             // 
             // Cuatrimestre
             // 
+            this.Cuatrimestre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Cuatrimestre.DataPropertyName = "Cuatrimestre";
             this.Cuatrimestre.HeaderText = "Cuatrimestre";
             this.Cuatrimestre.Name = "Cuatrimestre";
+            this.Cuatrimestre.Width = 115;
             // 
             // Carga
             // 
+            this.Carga.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Carga.DataPropertyName = "Carga";
             this.Carga.HeaderText = "Carga Hs";
             this.Carga.Name = "Carga";
+            this.Carga.Width = 92;
             // 
             // JefedeCatedra
             // 
+            this.JefedeCatedra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.JefedeCatedra.DataPropertyName = "JefedeCatedra";
             this.JefedeCatedra.HeaderText = "Jefe de Catedra";
             this.JefedeCatedra.Name = "JefedeCatedra";
             this.JefedeCatedra.ReadOnly = true;
+            this.JefedeCatedra.Width = 138;
             // 
             // ProfesorAdjunto
             // 
+            this.ProfesorAdjunto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.ProfesorAdjunto.DataPropertyName = "ProfesorAdjunto";
             this.ProfesorAdjunto.HeaderText = "Profesor Adjunto";
             this.ProfesorAdjunto.Name = "ProfesorAdjunto";
             this.ProfesorAdjunto.ReadOnly = true;
+            this.ProfesorAdjunto.Width = 138;
             // 
             // AyudantePrimera
             // 
+            this.AyudantePrimera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.AyudantePrimera.DataPropertyName = "AyudantePrimera";
             this.AyudantePrimera.HeaderText = "Ayudante Primera";
             this.AyudantePrimera.Name = "AyudantePrimera";
             this.AyudantePrimera.ReadOnly = true;
+            this.AyudantePrimera.Width = 147;
             // 
             // IdCarrera
             // 
