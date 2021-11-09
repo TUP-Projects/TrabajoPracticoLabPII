@@ -97,5 +97,13 @@ namespace AcademikaBackend.DataLayer
 
             return lst;
         }
+
+        public DataTable PlandeEstudios()
+        {
+            SqlCommand cmd = new SqlCommand();
+            DataTable table = helper.ConsultaSQL(cmd, "SP_PLAN_ESTUDIOS");
+            return table;
+
+        }
     }
 }

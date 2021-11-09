@@ -68,5 +68,10 @@ namespace AcademikaBackend.BusinessLayer.Services
         {
             return MateriasDao.CargaCombos(tabla, estado);
         }
+
+        public DataTable Consulta_PlanEstudios() {
+
+            return MateriasDao.PlandeEstudios();
+        }
     }
 }

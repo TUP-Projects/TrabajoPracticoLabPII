@@ -21,5 +21,7 @@ namespace AcademikaBackend.DataLayer
         bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc);
 
         bool BajaCursoMateriaDocente(DocentesXMateria dxm);
+
+        DataTable PlandeEstudios();
     }
 }

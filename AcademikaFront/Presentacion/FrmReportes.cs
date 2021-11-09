@@ -1,4 +1,5 @@
-﻿using AcademikaFront.Presentacion.Reportes;
+﻿using AcademikaBackend.BusinessLayer.Services;
+using AcademikaFront.Presentacion.Reportes;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,12 @@ namespace Academika.Presentacion
     public partial class FrmReportes : Form
     {
 		private readonly ReportViewer reportViewer;
+
+		private IMateriasService servicio;
 		public FrmReportes()
         {
-            InitializeComponent();
+			servicio = new ServiceFactoryImp().CrearServiceMaterias();
+			InitializeComponent();
 			reportViewer = new ReportViewer();
 			reportViewer.Dock = DockStyle.Fill;
 			
@@ -29,7 +33,7 @@ namespace Academika.Presentacion
 
 		protected override void OnLoad(EventArgs e)
 		{
-			Reporte.Load(reportViewer.LocalReport);
+			Reporte.Load(reportViewer.LocalReport, servicio);
 			reportViewer.RefreshReport();
 			base.OnLoad(e);
 		}

@@ -25,6 +25,6 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         DataTable CargaDgvEntidad(string tabla, int estado);
 
-
+        DataTable Consulta_PlanEstudios();
     }
 }
