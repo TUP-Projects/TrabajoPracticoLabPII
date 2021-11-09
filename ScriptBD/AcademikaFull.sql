@@ -1,6 +1,6 @@
-CREATE DATABASE academika2
+CREATE DATABASE Academika
 GO
-USE [Academika2]
+USE [Academika]
 GO
 /****** Object:  Table [dbo].[CARRERAS]    Script Date: 9/11/2021 00:13:06 ******/
 SET ANSI_NULLS ON

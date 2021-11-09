@@ -123,4 +123,7 @@
   <data name="Cristian" xml:space="preserve">
     <value>Data Source=.\SQLEXPRESS;Initial Catalog=Academika;Integrated Security=True</value>
   </data>
+  <data name="Lucio" xml:space="preserve">
+    <value>Data Source=lawbraker\mydb;Initial Catalog=Academika;Integrated Security=True</value>
+  </data>
 </root>
