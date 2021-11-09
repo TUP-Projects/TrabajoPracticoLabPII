@@ -32,10 +32,10 @@ namespace Academika.Presentacion
             _stringBuilder.AppendLine("- Estado = 0 corresponde a: Deshabilitado");
             _stringBuilder.Append("- Estado = 1 corresponde a: Habilitado");
             rtbAyuda.Text = _stringBuilder.ToString();
-            if (VerAyuda)
-                VerAyuda = rtbAyuda.Visible = false;
-            else
-                VerAyuda = rtbAyuda.Visible = true;
+           if (VerAyuda)
+            VerAyuda = rtbAyuda.Visible = false;
+           else
+              VerAyuda = rtbAyuda.Visible = true;
         }
 
         private void FrmAltaTecni_Load(object sender, EventArgs e)

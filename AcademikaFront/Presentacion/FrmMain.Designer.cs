@@ -146,7 +146,7 @@
             this.iconButton1.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
             this.iconButton1.Size = new System.Drawing.Size(257, 69);
             this.iconButton1.TabIndex = 12;
-            this.iconButton1.Text = "Ayuda";
+            this.iconButton1.Text = "Acerca de...";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;

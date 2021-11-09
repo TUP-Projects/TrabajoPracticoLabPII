@@ -33,6 +33,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.lblMessageError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -43,7 +44,7 @@
             this.txtUser.BackColor = System.Drawing.Color.White;
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUser.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUser.ForeColor = System.Drawing.Color.DimGray;
+            this.txtUser.ForeColor = System.Drawing.Color.Black;
             this.txtUser.Location = new System.Drawing.Point(130, 480);
             this.txtUser.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtUser.Name = "txtUser";
@@ -58,7 +59,7 @@
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Corbel", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLogin.ForeColor = System.Drawing.Color.DimGray;
+            this.lblLogin.ForeColor = System.Drawing.Color.LightGray;
             this.lblLogin.Location = new System.Drawing.Point(154, 373);
             this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogin.Name = "lblLogin";
@@ -138,7 +139,7 @@
             this.txtPass.BackColor = System.Drawing.Color.White;
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPass.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPass.ForeColor = System.Drawing.Color.Black;
             this.txtPass.Location = new System.Drawing.Point(130, 555);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPass.Name = "txtPass";
@@ -149,12 +150,27 @@
             this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
             this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
             // 
+            // lblMessageError
+            // 
+            this.lblMessageError.AutoSize = true;
+            this.lblMessageError.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMessageError.ForeColor = System.Drawing.Color.Red;
+            this.lblMessageError.Image = ((System.Drawing.Image)(resources.GetObject("lblMessageError.Image")));
+            this.lblMessageError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMessageError.Location = new System.Drawing.Point(130, 597);
+            this.lblMessageError.Name = "lblMessageError";
+            this.lblMessageError.Size = new System.Drawing.Size(45, 19);
+            this.lblMessageError.TabIndex = 10;
+            this.lblMessageError.Text = "label1";
+            this.lblMessageError.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(516, 770);
+            this.Controls.Add(this.lblMessageError);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -189,6 +205,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Label lblMessageError;
     }
 }
 

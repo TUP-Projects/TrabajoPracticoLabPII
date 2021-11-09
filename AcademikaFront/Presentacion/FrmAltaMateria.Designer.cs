@@ -34,16 +34,16 @@
             this.lblLegajoDocente = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
             this.rtbAyuda = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +104,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMaterias.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMaterias.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
@@ -113,18 +114,30 @@
             this.dgvMaterias.Size = new System.Drawing.Size(516, 258);
             this.dgvMaterias.TabIndex = 90;
             // 
-            // iconButton5
+            // ID
             // 
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
-            this.iconButton5.IconColor = System.Drawing.Color.Yellow;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.Location = new System.Drawing.Point(1002, 485);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(88, 67);
-            this.iconButton5.TabIndex = 109;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ID.DataPropertyName = "Id_Materia";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Materia
+            // 
+            this.Materia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Materia.DataPropertyName = "NombreMateria";
+            this.Materia.HeaderText = "Materia";
+            this.Materia.Name = "Materia";
+            this.Materia.ReadOnly = true;
+            this.Materia.Width = 81;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // iconButton2
             // 
@@ -134,7 +147,7 @@
             this.iconButton2.Location = new System.Drawing.Point(413, 467);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(88, 67);
+            this.iconButton2.Size = new System.Drawing.Size(51, 51);
             this.iconButton2.TabIndex = 107;
             this.iconButton2.UseVisualStyleBackColor = true;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
@@ -147,7 +160,7 @@
             this.iconButton1.Location = new System.Drawing.Point(233, 467);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(88, 67);
+            this.iconButton1.Size = new System.Drawing.Size(51, 51);
             this.iconButton1.TabIndex = 106;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
@@ -159,7 +172,7 @@
             this.iconButton6.Location = new System.Drawing.Point(668, 342);
             this.iconButton6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(88, 67);
+            this.iconButton6.Size = new System.Drawing.Size(51, 51);
             this.iconButton6.TabIndex = 114;
             this.iconButton6.UseVisualStyleBackColor = true;
             // 
@@ -171,7 +184,7 @@
             this.iconButton7.Location = new System.Drawing.Point(668, 237);
             this.iconButton7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(88, 67);
+            this.iconButton7.Size = new System.Drawing.Size(51, 51);
             this.iconButton7.TabIndex = 113;
             this.iconButton7.UseVisualStyleBackColor = true;
             // 
@@ -196,43 +209,30 @@
             this.rtbAyuda.Text = "label1";
             this.rtbAyuda.Visible = false;
             // 
-            // ID
+            // iconButton3
             // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ID.DataPropertyName = "Id_Materia";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            this.ID.Width = 45;
-            // 
-            // Materia
-            // 
-            this.Materia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Materia.DataPropertyName = "NombreMateria";
-            this.Materia.HeaderText = "Materia";
-            this.Materia.Name = "Materia";
-            this.Materia.ReadOnly = true;
-            this.Materia.Width = 81;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.iconButton3.IconColor = System.Drawing.Color.Yellow;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(1091, 648);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(51, 51);
+            this.iconButton3.TabIndex = 119;
+            this.iconButton3.UseVisualStyleBackColor = true;
             // 
             // FrmAltaMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
-            this.ClientSize = new System.Drawing.Size(1104, 711);
+            this.ClientSize = new System.Drawing.Size(1154, 711);
+            this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.rtbAyuda);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.iconButton6);
             this.Controls.Add(this.iconButton7);
-            this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.dgvMaterias);
@@ -256,7 +256,6 @@
         private System.Windows.Forms.DataGridView dgvMaterias;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton5;
         private FontAwesome.Sharp.IconButton iconButton6;
         private FontAwesome.Sharp.IconButton iconButton7;
         private System.Windows.Forms.Label label3;
@@ -264,5 +263,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }

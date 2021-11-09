@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,9 +17,8 @@ namespace Academika.Presentacion
             InitializeComponent();
             this.Text = String.Format("Acerca de...");
             this.labelProductName.Text = "Academika";
-            this.labelVersion.Text = String.Format("Version 1.0b", AssemblyVersion);
-            this.labelCopyright.Text = "";
-            this.labelCompanyName.Text = "Grupo 16:";
+            this.labelVersion.Text = String.Format("Version 0.2b", AssemblyVersion);
+            this.labelCopyright.Text = "Sistemas Javier SRL:";
             this.textBoxDescription.Text =
                 "\r N° Legajo 112929 - Alfonso, Lucio Andrés " +
                 "\r\n N° Legajo 112662 - Rojas Cristian " +
@@ -26,7 +26,10 @@ namespace Academika.Presentacion
                 "\r\n N° Legajo 112863 - Sosa, Gastón Iván " +
                 "\r\n N° Legajo 112903 - Villasanti, Ciro ";
         }
-
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         #region Assembly Attribute Accessors
 
         public string AssemblyTitle

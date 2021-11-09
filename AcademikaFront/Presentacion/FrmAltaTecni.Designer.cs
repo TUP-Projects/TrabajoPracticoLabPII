@@ -36,17 +36,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.dgvTecnicatura = new System.Windows.Forms.DataGridView();
-            this.rtbAyuda = new System.Windows.Forms.Label();
-            this.Nup_Duracion = new System.Windows.Forms.NumericUpDown();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duración = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nup_Duracion = new System.Windows.Forms.NumericUpDown();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.rtbAyuda = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTecnicatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nup_Duracion)).BeginInit();
             this.SuspendLayout();
@@ -100,35 +100,22 @@
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.iconButton4.IconColor = System.Drawing.Color.Black;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(888, 227);
+            this.iconButton4.Location = new System.Drawing.Point(788, 227);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(88, 67);
+            this.iconButton4.Size = new System.Drawing.Size(51, 51);
             this.iconButton4.TabIndex = 109;
             this.iconButton4.UseVisualStyleBackColor = true;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
-            this.iconButton3.IconColor = System.Drawing.Color.Yellow;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(1002, 485);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(88, 67);
-            this.iconButton3.TabIndex = 108;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // iconButton2
             // 
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.iconButton2.IconColor = System.Drawing.Color.Crimson;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(888, 68);
+            this.iconButton2.Location = new System.Drawing.Point(531, 559);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(88, 67);
+            this.iconButton2.Size = new System.Drawing.Size(51, 51);
             this.iconButton2.TabIndex = 107;
             this.iconButton2.UseVisualStyleBackColor = true;
             // 
@@ -137,10 +124,10 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.iconButton1.IconColor = System.Drawing.Color.ForestGreen;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(744, 68);
+            this.iconButton1.Location = new System.Drawing.Point(310, 559);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(88, 67);
+            this.iconButton1.Size = new System.Drawing.Size(51, 51);
             this.iconButton1.TabIndex = 106;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
@@ -149,10 +136,10 @@
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.iconButton5.IconColor = System.Drawing.Color.Black;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.Location = new System.Drawing.Point(888, 320);
+            this.iconButton5.Location = new System.Drawing.Point(788, 304);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(88, 67);
+            this.iconButton5.Size = new System.Drawing.Size(51, 51);
             this.iconButton5.TabIndex = 110;
             this.iconButton5.UseVisualStyleBackColor = true;
             // 
@@ -200,25 +187,8 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvTecnicatura.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvTecnicatura.Size = new System.Drawing.Size(691, 258);
+            this.dgvTecnicatura.Size = new System.Drawing.Size(604, 258);
             this.dgvTecnicatura.TabIndex = 111;
-            // 
-            // rtbAyuda
-            // 
-            this.rtbAyuda.AutoSize = true;
-            this.rtbAyuda.Location = new System.Drawing.Point(744, 502);
-            this.rtbAyuda.Name = "rtbAyuda";
-            this.rtbAyuda.Size = new System.Drawing.Size(38, 15);
-            this.rtbAyuda.TabIndex = 119;
-            this.rtbAyuda.Text = "label1";
-            this.rtbAyuda.Visible = false;
-            // 
-            // Nup_Duracion
-            // 
-            this.Nup_Duracion.Location = new System.Drawing.Point(393, 96);
-            this.Nup_Duracion.Name = "Nup_Duracion";
-            this.Nup_Duracion.Size = new System.Drawing.Size(120, 23);
-            this.Nup_Duracion.TabIndex = 120;
             // 
             // ID
             // 
@@ -251,18 +221,47 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
+            // Nup_Duracion
+            // 
+            this.Nup_Duracion.Location = new System.Drawing.Point(393, 96);
+            this.Nup_Duracion.Name = "Nup_Duracion";
+            this.Nup_Duracion.Size = new System.Drawing.Size(120, 23);
+            this.Nup_Duracion.TabIndex = 120;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.iconButton3.IconColor = System.Drawing.Color.Yellow;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(1041, 648);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(51, 51);
+            this.iconButton3.TabIndex = 121;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // rtbAyuda
+            // 
+            this.rtbAyuda.AutoSize = true;
+            this.rtbAyuda.Location = new System.Drawing.Point(1041, 612);
+            this.rtbAyuda.Name = "rtbAyuda";
+            this.rtbAyuda.Size = new System.Drawing.Size(0, 15);
+            this.rtbAyuda.TabIndex = 122;
+            this.rtbAyuda.Visible = false;
+            // 
             // FrmAltaTecni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1104, 711);
-            this.Controls.Add(this.Nup_Duracion);
             this.Controls.Add(this.rtbAyuda);
+            this.Controls.Add(this.iconButton3);
+            this.Controls.Add(this.Nup_Duracion);
             this.Controls.Add(this.dgvTecnicatura);
             this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.iconButton4);
-            this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label5);
@@ -286,17 +285,17 @@
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton5;
-        private System.Windows.Forms.Label rtbAyuda;
         private System.Windows.Forms.NumericUpDown Nup_Duracion;
         private System.Windows.Forms.DataGridView dgvTecnicatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duración;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private System.Windows.Forms.Label rtbAyuda;
     }
 }

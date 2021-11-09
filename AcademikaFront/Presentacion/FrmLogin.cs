@@ -95,9 +95,21 @@ namespace Academika.Presentacion
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FrmMain nuevo = new FrmMain();
-            nuevo.Show();
-            this.Hide();
+            if (txtUser.Text != "USUARIO")
+            {
+                if (txtPass.Text != "CONTRASEÑA") { }
+                else msgError("Por favor ingrese contraseña");
+            }
+
+            else msgError("Por favor ingrese usuario");
+           // FrmMain nuevo = new FrmMain();
+           // nuevo.Show();
+           // this.Hide();
+        }
+        private void msgError(string msg)
+        {
+            lblMessageError.Text = "      " + msg;
+            lblMessageError.Visible = true;
         }
 
         private void txtPass_TextChanged(object sender, EventArgs e)
