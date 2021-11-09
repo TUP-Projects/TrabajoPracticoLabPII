@@ -340,7 +340,7 @@
             // 
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.Silver;
-            this.btnLogout.Location = new System.Drawing.Point(820, 49);
+            this.btnLogout.Location = new System.Drawing.Point(834, 49);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(100, 23);
             this.btnLogout.TabIndex = 8;
@@ -368,7 +368,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::AcademikaFront.Properties.Resources.user;
-            this.pictureBox3.Location = new System.Drawing.Point(764, 25);
+            this.pictureBox3.Location = new System.Drawing.Point(778, 25);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(46, 47);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -380,7 +380,7 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblWelcome.ForeColor = System.Drawing.Color.Silver;
-            this.lblWelcome.Location = new System.Drawing.Point(820, 25);
+            this.lblWelcome.Location = new System.Drawing.Point(834, 25);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(96, 20);
             this.lblWelcome.TabIndex = 7;
