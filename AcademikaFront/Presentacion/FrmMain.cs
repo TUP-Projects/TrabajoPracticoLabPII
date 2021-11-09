@@ -273,9 +273,11 @@ namespace Academika.Presentacion
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Seguro que desea cerrar sesión?", "Advertencia",
+            if (MessageBox.Show("Seguro que desea cerrar sesión y Salir?", "Advertencia",
               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
+            
+
         }
     }
 }

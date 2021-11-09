@@ -34,9 +34,6 @@
             this.lblLegajoDocente = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -44,6 +41,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.rtbAyuda = new System.Windows.Forms.Label();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,31 +114,6 @@
             this.dgvMaterias.Size = new System.Drawing.Size(516, 258);
             this.dgvMaterias.TabIndex = 90;
             // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ID.DataPropertyName = "Id_Materia";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Materia
-            // 
-            this.Materia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Materia.DataPropertyName = "NombreMateria";
-            this.Materia.HeaderText = "Materia";
-            this.Materia.Name = "Materia";
-            this.Materia.ReadOnly = true;
-            this.Materia.Width = 81;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
             // iconButton2
             // 
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Times;
@@ -202,11 +177,11 @@
             // rtbAyuda
             // 
             this.rtbAyuda.AutoSize = true;
+            this.rtbAyuda.ForeColor = System.Drawing.Color.Transparent;
             this.rtbAyuda.Location = new System.Drawing.Point(668, 467);
             this.rtbAyuda.Name = "rtbAyuda";
-            this.rtbAyuda.Size = new System.Drawing.Size(38, 15);
+            this.rtbAyuda.Size = new System.Drawing.Size(0, 15);
             this.rtbAyuda.TabIndex = 118;
-            this.rtbAyuda.Text = "label1";
             this.rtbAyuda.Visible = false;
             // 
             // iconButton3
@@ -221,6 +196,32 @@
             this.iconButton3.Size = new System.Drawing.Size(51, 51);
             this.iconButton3.TabIndex = 119;
             this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ID.DataPropertyName = "Id_Materia";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 45;
+            // 
+            // Materia
+            // 
+            this.Materia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Materia.DataPropertyName = "NombreMateria";
+            this.Materia.HeaderText = "Materia";
+            this.Materia.Name = "Materia";
+            this.Materia.ReadOnly = true;
+            this.Materia.Width = 81;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // FrmAltaMateria
             // 
@@ -261,9 +262,9 @@
         private FontAwesome.Sharp.IconButton iconButton7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label rtbAyuda;
+        private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }

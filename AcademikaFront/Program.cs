@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AcademikaFront.Presentacion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Academika.Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FrmSplash());
             Application.Run(new FrmLogin());
         }
     }

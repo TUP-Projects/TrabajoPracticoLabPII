@@ -31,5 +31,20 @@ namespace Academika.Presentacion
         {
 
         }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjComboBox2_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
