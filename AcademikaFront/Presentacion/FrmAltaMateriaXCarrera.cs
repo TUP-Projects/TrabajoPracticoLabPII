@@ -129,8 +129,26 @@ namespace Academika.Presentacion
                 return;
 
             }
-            mxc.Carrera.Id_Carrera = (int)cboCarrera.SelectedValue;
-            mxc.AnioDictado = Convert.ToInt32(rtbAnio.Text);
+            if (cboCarrera.SelectedIndex == -1)
+            {
+
+            }
+            else {
+                mxc.Carrera.Id_Carrera = (int)cboCarrera.SelectedValue;
+
+            }
+                
+            if (!String.IsNullOrEmpty(rtbAnio.Text))
+            {
+                mxc.AnioDictado = Convert.ToInt32(rtbAnio.Text);
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un año dictado", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                rtbAnio.Focus();
+                return;
+
+            }
             mxc.CargaHoraria = Convert.ToInt32(nudCarga.Text);
             mxc.Dictado = cboDictado.Text;
             if (cboCuatrimestre.SelectedIndex != -1)
@@ -177,17 +195,22 @@ namespace Academika.Presentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             mxc = new MateriasXCarrera();
+            if (dgvResultado.RowCount > 0)
+            {
+                mxc.Id_Materias_x_Carrera = (int)(long)dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value;
+                mxc.Dictado = (string)dgvResultado.CurrentRow.Cells["Dictado"].Value;
+                mxc.AnioDictado = (int)(long)dgvResultado.CurrentRow.Cells["AnioDictado"].Value;
+                mxc.CargaHoraria = (int)(long)dgvResultado.CurrentRow.Cells["Carga"].Value;
+                mxc.Cuatrimestre = (int)(long)dgvResultado.CurrentRow.Cells["Cuatrimestre"].Value;
 
-            mxc.Id_Materias_x_Carrera = (int)(long)dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value;
-            mxc.Dictado = (string)dgvResultado.CurrentRow.Cells["Dictado"].Value;
-            mxc.AnioDictado = (int)(long)dgvResultado.CurrentRow.Cells["AnioDictado"].Value;
-            mxc.CargaHoraria = (int)(long)dgvResultado.CurrentRow.Cells["Carga"].Value;
-            mxc.Cuatrimestre = (int)(long)dgvResultado.CurrentRow.Cells["Cuatrimestre"].Value;
 
-            if (servicio.ActualizaDatosMateriasxCarrera(mxc))
-                MessageBox.Show("Se editó el campo deseado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (servicio.ActualizaDatosMateriasxCarrera(mxc))
+                    MessageBox.Show("Se editó el campo deseado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Consultar_DetalleMateriaAsync(materia.Id_Materia);
-
+            }
+            else {
+                MessageBox.Show("D", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
