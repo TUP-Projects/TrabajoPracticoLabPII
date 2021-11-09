@@ -287,7 +287,7 @@ GO
 CREATE TABLE [dbo].[Credenciales](
 	[IdUsuario] [int] IDENTITY(1,1) NOT NULL,
 	[Usuario] [varchar](50) NULL,
-	[Contrasenia] [varchar](50) NULL,
+	[Contrasenia] [nvarchar](50) NULL,
  CONSTRAINT [pk_idUsuario] PRIMARY KEY CLUSTERED 
 (
 	[IdUsuario] ASC
@@ -295,7 +295,7 @@ CREATE TABLE [dbo].[Credenciales](
 ) ON [PRIMARY]
 GO
 --Carga Usuario y Contraseña ADMIN
-INSERT INTO Credenciales VALUES ('Administrador', 'Jdejavier')
+INSERT INTO Credenciales VALUES ('Administrador', 'Grupo.16')
 
 /****** Object:  Table [dbo].[DOCENTExTURNO]    Script Date: 9/11/2021 01:16:19 ******/
 SET ANSI_NULLS ON
