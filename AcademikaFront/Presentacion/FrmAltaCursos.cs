@@ -1,4 +1,5 @@
 ﻿using Academika.Client;
+using AcademikaBackend.BusinessLayer.Entities;
 using AcademikaBackend.BusinessLayer.Services;
 using Newtonsoft.Json;
 using System;
@@ -64,14 +65,18 @@ namespace Academika.Presentacion
             ConsultaID();
             CargarDgvAsync();
         }
+
         private async Task CargarDgvAsync()
         {
             string urlBase = "https://localhost:44365/api/Cursos/Consulta/";
-
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(urlBase);
-            DataTable dt = (DataTable)JsonConvert.DeserializeObject(resultado, (typeof(DataTable)));
+            List<Curso> Cursos = JsonConvert.DeserializeObject<List<Curso>>(resultado);
+            dgvCursos.DataSource = Cursos;
+        }
 
-            dgvCursos.DataSource = dt;
+        private void FrmAltaCursos_Load(object sender, EventArgs e)
+        {
+            Inicia();
         }
     }
 }

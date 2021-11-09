@@ -4,10 +4,6 @@ using AcademikaBackend.BusinessLayer.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -62,9 +58,8 @@ namespace Academika.Presentacion
             string urlBase = "https://localhost:44365/api/Carreras/Consulta/";
 
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(urlBase);
-            DataTable dt = (DataTable)JsonConvert.DeserializeObject(resultado, (typeof(DataTable)));
-
-            dgvTecnicatura.DataSource = dt;
+            List<Carrera> Carreras = JsonConvert.DeserializeObject<List<Carrera>>(resultado);
+            dgvTecnicatura.DataSource = Carreras;
         }
     }
 }

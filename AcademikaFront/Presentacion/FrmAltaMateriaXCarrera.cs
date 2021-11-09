@@ -100,6 +100,9 @@ namespace Academika.Presentacion
 
                 cboCuatrimestre.Enabled = false;
             }
+            else {
+                cboCuatrimestre.Enabled = true;
+            }
 
         }
 
@@ -188,9 +191,37 @@ namespace Academika.Presentacion
             Docente jefe = new Docente();
             Docente adjunto = new Docente();
             Docente ayudante = new Docente();
-            jefe.Id_Docente = (int)cboJefe.SelectedValue;
-            adjunto.Id_Docente = (int)cboAdj.SelectedValue;
-            ayudante.Id_Docente = (int)cboAyud.SelectedValue;
+            if (cboJefe.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un jefe de cátedra", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboJefe.Focus();
+                return;
+            }
+            else {
+                jefe.Id_Docente = (int)cboJefe.SelectedValue;
+            }
+            if (cboAdj.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un profesor adjunto", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboAdj.Focus();
+                return;
+            }
+            else
+            {
+                adjunto.Id_Docente = (int)cboAdj.SelectedValue;
+            }
+            if (cboAyud.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un ayudante", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboAdj.Focus();
+                return;
+
+            }
+            else
+            {
+                ayudante.Id_Docente = (int)cboAyud.SelectedValue;
+            }
+
             lstDocentes.Add(new DocentesXMateria(adjunto, mxc ,"Adjunto", curso));
             lstDocentes.Add(new DocentesXMateria(ayudante, mxc, "Ayudante", curso));
             lstDocentes.Add(new DocentesXMateria(jefe, mxc, "Jefe", curso));
@@ -229,10 +260,10 @@ namespace Academika.Presentacion
 
                 if (servicio.ActualizaDatosMateriasxCarrera(mxc))
                     MessageBox.Show("Se editó el campo deseado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Consultar_DetalleMateriaAsync(materia.Id_Materia);
+                    Consultar_DetalleMateriaAsync(materia.Id_Materia);
             }
             else {
-                MessageBox.Show("D", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Debe seleccionar un registro a editar", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
