@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnConsultas = new FontAwesome.Sharp.IconButton();
             this.btnReportes = new FontAwesome.Sharp.IconButton();
@@ -70,7 +69,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panelMenu.Controls.Add(this.iconButton2);
             this.panelMenu.Controls.Add(this.iconButton1);
             this.panelMenu.Controls.Add(this.btnConsultas);
             this.panelMenu.Controls.Add(this.btnReportes);
@@ -85,31 +83,9 @@
             this.panelMenu.Size = new System.Drawing.Size(257, 749);
             this.panelMenu.TabIndex = 0;
             // 
-            // iconButton2
-            // 
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Cogs;
-            this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 611);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
-            this.iconButton2.Size = new System.Drawing.Size(257, 69);
-            this.iconButton2.TabIndex = 13;
-            this.iconButton2.Text = "Configuración";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            // 
             // iconButton1
             // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -118,7 +94,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 680);
+            this.iconButton1.Location = new System.Drawing.Point(0, 507);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
@@ -442,7 +418,7 @@
             // 
             this.tToolStripMenuItem.Name = "tToolStripMenuItem";
             this.tToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.tToolStripMenuItem.Text = "Tecnicaturas";
+            this.tToolStripMenuItem.Text = "Carreras";
             this.tToolStripMenuItem.Click += new System.EventHandler(this.tToolStripMenuItem_Click);
             // 
             // cursosToolStripMenuItem
@@ -520,7 +496,6 @@
         private System.Windows.Forms.ToolStripMenuItem tToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripDetalleMaterias;
-        private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMaterias;
     }

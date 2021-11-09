@@ -1,3 +1,4 @@
+create database Academika
 USE [Academika]
 GO
 /****** Object:  Table [dbo].[CARRERAS]    Script Date: 9/11/2021 01:16:19 ******/
