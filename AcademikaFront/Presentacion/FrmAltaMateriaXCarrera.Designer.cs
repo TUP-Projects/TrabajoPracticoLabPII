@@ -52,6 +52,16 @@
             this.btnBorrar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.dgvResultado = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboCuatrimestre = new System.Windows.Forms.ComboBox();
+            this.rtbAnio = new System.Windows.Forms.RichTextBox();
+            this.cboMateria = new System.Windows.Forms.ComboBox();
+            this.lblMateria = new System.Windows.Forms.Label();
+            this.lblCarga = new System.Windows.Forms.Label();
+            this.nudCarga = new System.Windows.Forms.NumericUpDown();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.rtbAyuda = new System.Windows.Forms.RichTextBox();
+            this.IdMateriasCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,16 +76,6 @@
             this.IdCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMateriaCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cboCuatrimestre = new System.Windows.Forms.ComboBox();
-            this.rtbAnio = new System.Windows.Forms.RichTextBox();
-            this.cboMateria = new System.Windows.Forms.ComboBox();
-            this.lblMateria = new System.Windows.Forms.Label();
-            this.lblCarga = new System.Windows.Forms.Label();
-            this.nudCarga = new System.Windows.Forms.NumericUpDown();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.rtbAyuda = new System.Windows.Forms.RichTextBox();
-            this.IdMateriasCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCarga)).BeginInit();
             this.SuspendLayout();
@@ -378,99 +378,6 @@
             this.dgvResultado.TabIndex = 113;
             this.dgvResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResultado_CellContentClick);
             // 
-            // Carrera
-            // 
-            this.Carrera.DataPropertyName = "Carrera";
-            this.Carrera.HeaderText = "Carrera";
-            this.Carrera.Name = "Carrera";
-            this.Carrera.ReadOnly = true;
-            // 
-            // NombreMat
-            // 
-            this.NombreMat.DataPropertyName = "NombreMat";
-            this.NombreMat.HeaderText = "Materia";
-            this.NombreMat.Name = "NombreMat";
-            this.NombreMat.ReadOnly = true;
-            // 
-            // NomCurso
-            // 
-            this.NomCurso.DataPropertyName = "NomCurso";
-            this.NomCurso.HeaderText = "Curso";
-            this.NomCurso.Name = "NomCurso";
-            this.NomCurso.ReadOnly = true;
-            // 
-            // Dictado
-            // 
-            this.Dictado.DataPropertyName = "Dictado";
-            this.Dictado.HeaderText = "Dictado";
-            this.Dictado.Name = "Dictado";
-            // 
-            // AnioDictado
-            // 
-            this.AnioDictado.DataPropertyName = "AnioDictado";
-            this.AnioDictado.HeaderText = "Anio Dictado";
-            this.AnioDictado.Name = "AnioDictado";
-            // 
-            // Cuatrimestre
-            // 
-            this.Cuatrimestre.DataPropertyName = "Cuatrimestre";
-            this.Cuatrimestre.HeaderText = "Cuatrimestre";
-            this.Cuatrimestre.Name = "Cuatrimestre";
-            // 
-            // Carga
-            // 
-            this.Carga.DataPropertyName = "Carga";
-            this.Carga.HeaderText = "Carga Hs";
-            this.Carga.Name = "Carga";
-            // 
-            // JefedeCatedra
-            // 
-            this.JefedeCatedra.DataPropertyName = "JefedeCatedra";
-            this.JefedeCatedra.HeaderText = "Jefe de Catedra";
-            this.JefedeCatedra.Name = "JefedeCatedra";
-            this.JefedeCatedra.ReadOnly = true;
-            // 
-            // ProfesorAdjunto
-            // 
-            this.ProfesorAdjunto.DataPropertyName = "ProfesorAdjunto";
-            this.ProfesorAdjunto.HeaderText = "Profesor Adjunto";
-            this.ProfesorAdjunto.Name = "ProfesorAdjunto";
-            this.ProfesorAdjunto.ReadOnly = true;
-            // 
-            // AyudantePrimera
-            // 
-            this.AyudantePrimera.DataPropertyName = "AyudantePrimera";
-            this.AyudantePrimera.HeaderText = "Ayudante Primera";
-            this.AyudantePrimera.Name = "AyudantePrimera";
-            this.AyudantePrimera.ReadOnly = true;
-            // 
-            // IdCarrera
-            // 
-            this.IdCarrera.DataPropertyName = "IdCarrera";
-            this.IdCarrera.HeaderText = "IdCarrera";
-            this.IdCarrera.Name = "IdCarrera";
-            this.IdCarrera.Visible = false;
-            // 
-            // IdCurso
-            // 
-            this.IdCurso.DataPropertyName = "IdCurso";
-            this.IdCurso.HeaderText = "IdCurso";
-            this.IdCurso.Name = "IdCurso";
-            // 
-            // IdMateria
-            // 
-            this.IdMateria.DataPropertyName = "IdMateria";
-            this.IdMateria.HeaderText = "IdMateria";
-            this.IdMateria.Name = "IdMateria";
-            this.IdMateria.Visible = false;
-            // 
-            // IdMateriaCarrera
-            // 
-            this.IdMateriaCarrera.DataPropertyName = "IdMateriasCarrera";
-            this.IdMateriaCarrera.HeaderText = "IdMateriasCarrera";
-            this.IdMateriaCarrera.Name = "IdMateriaCarrera";
-            this.IdMateriaCarrera.Visible = false;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -577,6 +484,100 @@
             this.IdMateriasCarrera.HeaderText = "IdMateriasCarrera";
             this.IdMateriasCarrera.Name = "IdMateriasCarrera";
             this.IdMateriasCarrera.Visible = false;
+            // 
+            // Carrera
+            // 
+            this.Carrera.DataPropertyName = "Carrera";
+            this.Carrera.HeaderText = "Carrera";
+            this.Carrera.Name = "Carrera";
+            this.Carrera.ReadOnly = true;
+            // 
+            // NombreMat
+            // 
+            this.NombreMat.DataPropertyName = "NombreMat";
+            this.NombreMat.HeaderText = "Materia";
+            this.NombreMat.Name = "NombreMat";
+            this.NombreMat.ReadOnly = true;
+            // 
+            // NomCurso
+            // 
+            this.NomCurso.DataPropertyName = "NomCurso";
+            this.NomCurso.HeaderText = "Curso";
+            this.NomCurso.Name = "NomCurso";
+            this.NomCurso.ReadOnly = true;
+            // 
+            // Dictado
+            // 
+            this.Dictado.DataPropertyName = "Dictado";
+            this.Dictado.HeaderText = "Dictado";
+            this.Dictado.Name = "Dictado";
+            // 
+            // AnioDictado
+            // 
+            this.AnioDictado.DataPropertyName = "AnioDictado";
+            this.AnioDictado.HeaderText = "Anio Dictado";
+            this.AnioDictado.Name = "AnioDictado";
+            // 
+            // Cuatrimestre
+            // 
+            this.Cuatrimestre.DataPropertyName = "Cuatrimestre";
+            this.Cuatrimestre.HeaderText = "Cuatrimestre";
+            this.Cuatrimestre.Name = "Cuatrimestre";
+            // 
+            // Carga
+            // 
+            this.Carga.DataPropertyName = "Carga";
+            this.Carga.HeaderText = "Carga Hs";
+            this.Carga.Name = "Carga";
+            // 
+            // JefedeCatedra
+            // 
+            this.JefedeCatedra.DataPropertyName = "JefedeCatedra";
+            this.JefedeCatedra.HeaderText = "Jefe de Catedra";
+            this.JefedeCatedra.Name = "JefedeCatedra";
+            this.JefedeCatedra.ReadOnly = true;
+            // 
+            // ProfesorAdjunto
+            // 
+            this.ProfesorAdjunto.DataPropertyName = "ProfesorAdjunto";
+            this.ProfesorAdjunto.HeaderText = "Profesor Adjunto";
+            this.ProfesorAdjunto.Name = "ProfesorAdjunto";
+            this.ProfesorAdjunto.ReadOnly = true;
+            // 
+            // AyudantePrimera
+            // 
+            this.AyudantePrimera.DataPropertyName = "AyudantePrimera";
+            this.AyudantePrimera.HeaderText = "Ayudante Primera";
+            this.AyudantePrimera.Name = "AyudantePrimera";
+            this.AyudantePrimera.ReadOnly = true;
+            // 
+            // IdCarrera
+            // 
+            this.IdCarrera.DataPropertyName = "IdCarrera";
+            this.IdCarrera.HeaderText = "IdCarrera";
+            this.IdCarrera.Name = "IdCarrera";
+            this.IdCarrera.Visible = false;
+            // 
+            // IdCurso
+            // 
+            this.IdCurso.DataPropertyName = "IdCurso";
+            this.IdCurso.HeaderText = "IdCurso";
+            this.IdCurso.Name = "IdCurso";
+            this.IdCurso.Visible = false;
+            // 
+            // IdMateria
+            // 
+            this.IdMateria.DataPropertyName = "IdMateria";
+            this.IdMateria.HeaderText = "IdMateria";
+            this.IdMateria.Name = "IdMateria";
+            this.IdMateria.Visible = false;
+            // 
+            // IdMateriaCarrera
+            // 
+            this.IdMateriaCarrera.DataPropertyName = "IdMateriasCarrera";
+            this.IdMateriaCarrera.HeaderText = "IdMateriasCarrera";
+            this.IdMateriaCarrera.Name = "IdMateriaCarrera";
+            this.IdMateriaCarrera.Visible = false;
             // 
             // FrmAltaMateriaXCarrera
             // 
