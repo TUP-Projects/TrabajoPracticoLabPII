@@ -769,6 +769,7 @@ namespace Academika.Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1154, 711);
             this.Controls.Add(this.iconButton6);
             this.Controls.Add(this.iconButton7);

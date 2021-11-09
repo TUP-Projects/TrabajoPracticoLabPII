@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
@@ -62,6 +64,8 @@
             this.toolStripDetalleMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,6 +77,8 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.pictureBox2);
+            this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Controls.Add(this.iconButton2);
             this.panelMenu.Controls.Add(this.lblFecha);
             this.panelMenu.Controls.Add(this.lblHora);
@@ -90,6 +96,24 @@
             this.panelMenu.Size = new System.Drawing.Size(257, 825);
             this.panelMenu.TabIndex = 0;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::AcademikaFront.Properties.Resources.whiteline1;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 802);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(227, 14);
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AcademikaFront.Properties.Resources.whiteline;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 728);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(227, 11);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // iconButton2
             // 
             this.iconButton2.BackColor = System.Drawing.Color.Transparent;
@@ -99,7 +123,7 @@
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Clock;
             this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(12, 695);
+            this.iconButton2.Location = new System.Drawing.Point(26, 751);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(41, 42);
             this.iconButton2.TabIndex = 13;
@@ -110,7 +134,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblFecha.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblFecha.Location = new System.Drawing.Point(70, 714);
+            this.lblFecha.Location = new System.Drawing.Point(84, 770);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(80, 29);
             this.lblFecha.TabIndex = 15;
@@ -122,7 +146,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblHora.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblHora.Location = new System.Drawing.Point(71, 686);
+            this.lblHora.Location = new System.Drawing.Point(85, 742);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(78, 33);
             this.lblHora.TabIndex = 14;
@@ -396,6 +420,8 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
+            this.panelDesktop.BackgroundImage = global::AcademikaFront.Properties.Resources.fondojpeg;
+            this.panelDesktop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(257, 102);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -511,6 +537,8 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -555,5 +583,7 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer horafecha;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

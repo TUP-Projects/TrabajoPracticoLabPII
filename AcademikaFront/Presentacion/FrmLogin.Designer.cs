@@ -1,11 +1,11 @@
 ﻿namespace Academika.Presentacion
 {
-    partial class Form1
+    partial class FrmLogin
     {
-       
+
         private System.ComponentModel.IContainer components = null;
 
-        
+
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.txtUser = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -125,7 +125,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = global::AcademikaFront.Properties.Resources.academikaloguito1;
             this.pictureBox3.Location = new System.Drawing.Point(104, 88);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox3.Name = "pictureBox3";
@@ -155,7 +155,7 @@
             this.lblMessageError.AutoSize = true;
             this.lblMessageError.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMessageError.ForeColor = System.Drawing.Color.Red;
-            this.lblMessageError.Image = ((System.Drawing.Image)(resources.GetObject("lblMessageError.Image")));
+            this.lblMessageError.Image = global::AcademikaFront.Properties.Resources.advertencia;
             this.lblMessageError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblMessageError.Location = new System.Drawing.Point(130, 597);
             this.lblMessageError.Name = "lblMessageError";
@@ -164,7 +164,7 @@
             this.lblMessageError.Text = "label1";
             this.lblMessageError.Visible = false;
             // 
-            // Form1
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,7 +182,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Form1";
+            this.Name = "FrmLogin";
             this.Opacity = 0.86D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

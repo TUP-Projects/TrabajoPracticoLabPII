@@ -65,6 +65,7 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(884, 346);
             this.tableLayoutPanel.TabIndex = 0;
+            this.tableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_Paint);
             // 
             // logoPictureBox
             // 
@@ -78,6 +79,7 @@
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;
+            this.logoPictureBox.Click += new System.EventHandler(this.logoPictureBox_Click);
             // 
             // labelProductName
             // 
@@ -92,6 +94,7 @@
             this.labelProductName.TabIndex = 19;
             this.labelProductName.Text = "Academika";
             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelProductName.Click += new System.EventHandler(this.labelProductName_Click);
             // 
             // labelVersion
             // 
@@ -106,6 +109,7 @@
             this.labelVersion.TabIndex = 0;
             this.labelVersion.Text = "Version 1.0b";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelVersion.Click += new System.EventHandler(this.labelVersion_Click);
             // 
             // labelCopyright
             // 
@@ -171,6 +175,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmAcercaDe_MouseMove);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();

@@ -133,5 +133,34 @@ namespace Academika.Presentacion
         {
 
         }
+
+        private void FrmAcercaDe_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void labelProductName_Click(object sender, EventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void labelVersion_Click(object sender, EventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void logoPictureBox_Click(object sender, EventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
     }
 }

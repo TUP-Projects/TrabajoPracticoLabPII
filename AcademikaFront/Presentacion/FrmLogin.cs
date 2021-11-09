@@ -12,9 +12,9 @@ using System.Runtime.InteropServices;
 
 namespace Academika.Presentacion
     {
-    public partial class Form1 : Form
+    public partial class FrmLogin : Form
     {
-        public Form1()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -102,9 +102,9 @@ namespace Academika.Presentacion
             }
 
             else msgError("Por favor ingrese usuario");
-           // FrmMain nuevo = new FrmMain();
-           // nuevo.Show();
-           // this.Hide();
+           FrmMain nuevo = new FrmMain();
+           nuevo.Show();
+           this.Hide();
         }
         private void msgError(string msg)
         {
