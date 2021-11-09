@@ -294,6 +294,9 @@ CREATE TABLE [dbo].[Credenciales](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+--Carga Usuario y Contraseña ADMIN
+INSERT INTO Credenciales VALUES ('Administrador', 'Jdejavier')
+
 /****** Object:  Table [dbo].[DOCENTExTURNO]    Script Date: 9/11/2021 01:16:19 ******/
 SET ANSI_NULLS ON
 GO
