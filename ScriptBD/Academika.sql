@@ -103,6 +103,7 @@ CREATE TABLE CARRERAS (
 id_carrera int IDENTITY (1,1),
 carrera varchar (100) not null,
 estado tinyint,
+duracion int,
 CONSTRAINT pk_carreras PRIMARY KEY (id_carrera)
 )
 CREATE TABLE CONDICIONES (
@@ -650,7 +651,6 @@ GO
 
 /* SP'S DE CONSULTAS DE TABLAS */
 
-UPDATE MATERIASxCARRERA SET estado = 1
 CREATE PROCEDURE SP_CONSULTAR_MATERIAS
 AS
 BEGIN
@@ -1059,21 +1059,20 @@ INNER JOIN CARRERAS ca ON ca.id_carrera = mxcar.id_carrera
 INNER JOIN CARGOS car ON car.id_cargo = dxm.id_cargo
 INNER JOIN CURSOS cur ON cur.id_curso = dxm.id_curso
 WHERE mxcar.estado = 1 AND dxm.estado = 1 AND m.estado = 1 AND ca.estado = 1
+GO
 
 CREATE PROC SP_CONSULTA_MATERIAS_DETALLE 
 @id_materia int = NULL, 
 @id_materia_carrera int = NULL
 AS
 BEGIN
-
-
-SELECT [IdMateriasCarrera], [IdMateria], [Dictado], MIN([JefedeCatedra]) JefedeCatedra, MIN([ProfesorAdjunto]) ProfesorAdjunto, MIN([AyudantePrimera]) AyudantePrimera,
-[IdCurso], [NomCurso], [AnioDictado], [IdCarrera], [Carrera], [NombreMat], [Cuatrimestre], [Carga]
-FROM dbo.vw_materias_detalle
-WHERE (@id_materia_carrera IS NULL OR [IdMateriasCarrera] = @id_materia_carrera) AND (@id_materia IS NULL OR [IdMateria] = @id_materia)
-GROUP BY
-[IdMateriasCarrera], [IdMateria], [Dictado],
-[IdCurso], [NomCurso], [AnioDictado], [IdCarrera], [Carrera], [NombreMat], [Cuatrimestre], [Carga]
+	SELECT [IdMateriasCarrera], [IdMateria], [Dictado], MIN([JefedeCatedra]) JefedeCatedra, MIN([ProfesorAdjunto]) ProfesorAdjunto, MIN([AyudantePrimera]) AyudantePrimera,
+	[IdCurso], [NomCurso], [AnioDictado], [IdCarrera], [Carrera], [NombreMat], [Cuatrimestre], [Carga]
+	FROM dbo.vw_materias_detalle
+	WHERE (@id_materia_carrera IS NULL OR [IdMateriasCarrera] = @id_materia_carrera) AND (@id_materia IS NULL OR [IdMateria] = @id_materia)
+	GROUP BY
+	[IdMateriasCarrera], [IdMateria], [Dictado],
+	[IdCurso], [NomCurso], [AnioDictado], [IdCarrera], [Carrera], [NombreMat], [Cuatrimestre], [Carga]
 END
 GO
 
@@ -1084,7 +1083,7 @@ INNER JOIN MATERIAS m ON m.id_materia = mxcar.id_materia
 INNER JOIN CARRERAS c ON c.id_carrera = mxcar.id_carrera
 WHERE mxcar.estado = 1
 GO
-select * from dbo.vw_plan_estudios
+
 --SP Actualiza MateriasXCarrera
 CREATE PROC SP_ACTUALIZA_MATERIASxCARRERA
 @id_materia_x_carrera int,

@@ -1,6 +1,7 @@
 ﻿using Academika.Client;
 using AcademikaBackend.BusinessLayer.Entities;
 using AcademikaBackend.BusinessLayer.Services;
+using AcademikaFront;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -65,7 +66,6 @@ namespace Academika.Presentacion
         private void FrmAltaMaterias_Load(object sender, EventArgs e)
         {
             Inicia();
-            //Cargar_MateriasAsync();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -87,18 +87,13 @@ namespace Academika.Presentacion
 
         private void Inicia()
         {
-
             ConsultaID();
-            Cargar_CombosAsync(cboAdj, "docentes",1);
-            Cargar_CombosAsync(cboMateria, "materias",1);
-            Cargar_CombosAsync(cboAyud, "docentes",1);
-            Cargar_CombosAsync(cboJefe, "docentes",1);
-            Cargar_CombosAsync(cboCarrera, "carreras",1);
-            Cargar_CombosAsync(cboCurso, "cursos",1);
-
-
-            
-
+            Cargar_CombosAsync(cboAdj, "docentes", (int)Estado.Habilitado);
+            Cargar_CombosAsync(cboMateria, "materias", (int)Estado.Habilitado);
+            Cargar_CombosAsync(cboAyud, "docentes", (int)Estado.Habilitado);
+            Cargar_CombosAsync(cboJefe, "docentes", (int)Estado.Habilitado);
+            Cargar_CombosAsync(cboCarrera, "carreras", (int)Estado.Habilitado);
+            Cargar_CombosAsync(cboCurso, "cursos", (int)Estado.Habilitado);
         }
 
         private void cboDictado_SelectedIndexChanged(object sender, EventArgs e)
@@ -108,22 +103,6 @@ namespace Academika.Presentacion
 
                 cboCuatrimestre.Enabled = false;
             }
-
-        }
-
-        private void CargaCombo(ComboBox cbo, string nombreEntidad, int estado)
-        {
-
-            List<EntidadGenerica> lst = new List<EntidadGenerica>();
-
-            lst = servicio.CargaCombos(nombreEntidad, estado);
-
-            cbo.DataSource = lst;
-
-            cbo.ValueMember = "IDEntidad";
-            cbo.DisplayMember = "NombreEntidad";
-
-            cbo.SelectedIndex = -1;
 
         }
 
@@ -198,11 +177,6 @@ namespace Academika.Presentacion
 
         }
 
-        private void dgvResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             mxc = new MateriasXCarrera();
@@ -238,7 +212,6 @@ namespace Academika.Presentacion
              Consultar_DetalleMateriaAsync(materia.Id_Materia);
         
         }
-
         private void iconButton3_Click(object sender, EventArgs e)
         {
 
@@ -257,10 +230,6 @@ namespace Academika.Presentacion
                 mostrarAyuda = 0;
                 rtbAyuda.Visible = false;
             }
-
-            
-           
-         
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -299,8 +268,6 @@ namespace Academika.Presentacion
             DataTable DT = (DataTable)dgvResultado.DataSource;
             if (DT != null)
                 DT.Clear();
-
-          
         }
     }
     

@@ -1,19 +1,12 @@
 ﻿using AcademikaBackend.BusinessLayer.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Academika.Presentacion
 {
     public partial class FrmAltaMateria : Form
     {
-
         private bool VerAyuda = false;
         private IMateriasService servicio;
         public FrmAltaMateria()
@@ -21,10 +14,11 @@ namespace Academika.Presentacion
             InitializeComponent();
             servicio = new ServiceFactoryImp().CrearServiceMaterias();
         }
+
         private void FrmAltaMateria_Load(object sender, EventArgs e)
         {
-            dgvMaterias.DataSource = servicio.CargaDgvEntidad("materias", 1);
         }
+
         private void label5_Click(object sender, EventArgs e)
         {
 

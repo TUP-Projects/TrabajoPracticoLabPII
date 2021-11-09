@@ -376,7 +376,7 @@
             this.dgvResultado.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvResultado.Size = new System.Drawing.Size(1100, 209);
             this.dgvResultado.TabIndex = 113;
-            this.dgvResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResultado_CellContentClick);
+
             // 
             // label10
             // 
