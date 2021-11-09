@@ -23,7 +23,7 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         bool BajaCursoMateriaDocente(DocentesXMateria dxm);
 
-        DataTable CargaDgvEntidad(string tabla);
+        DataTable CargaDgvEntidad(string tabla, int estado);
 
 
     }

@@ -15,9 +15,9 @@ namespace AcademikaFront.Presentacion.Reportes
         public static void Load(LocalReport report)
         {
 
-           /* string rvConnection = @"Data Source = localhost; Initial Catalog = Academika; Integrated Security = True";
+           string rvConnection = @"Data Source = localhost; Initial Catalog = Academika; Integrated Security = True";
             using (SqlConnection sqlConn = new SqlConnection(rvConnection))
-            using (SqlDataAdapter da = new SqlDataAdapter("select * from dbo.vw_plan_estudios", rvConnection))*/
+            using (SqlDataAdapter da = new SqlDataAdapter("select * from dbo.vw_plan_estudios", rvConnection))
             {
                 DataSet ds = new DataSet();
                 da.Fill(ds);

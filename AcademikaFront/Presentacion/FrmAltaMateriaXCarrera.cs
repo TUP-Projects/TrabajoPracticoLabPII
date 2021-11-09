@@ -89,12 +89,12 @@ namespace Academika.Presentacion
         {
 
             ConsultaID();
-            Cargar_CombosAsync(cboAdj, "docentes");
-            Cargar_CombosAsync(cboMateria, "materias");
-            Cargar_CombosAsync(cboAyud, "docentes");
-            Cargar_CombosAsync(cboJefe, "docentes");
-            Cargar_CombosAsync(cboCarrera, "carreras");
-            Cargar_CombosAsync(cboCurso, "cursos");
+            Cargar_CombosAsync(cboAdj, "docentes",1);
+            Cargar_CombosAsync(cboMateria, "materias",1);
+            Cargar_CombosAsync(cboAyud, "docentes",1);
+            Cargar_CombosAsync(cboJefe, "docentes",1);
+            Cargar_CombosAsync(cboCarrera, "carreras",1);
+            Cargar_CombosAsync(cboCurso, "cursos",1);
 
 
             
@@ -111,12 +111,12 @@ namespace Academika.Presentacion
 
         }
 
-        private void CargaCombo(ComboBox cbo, string nombreEntidad)
+        private void CargaCombo(ComboBox cbo, string nombreEntidad, int estado)
         {
 
             List<EntidadGenerica> lst = new List<EntidadGenerica>();
 
-            lst = servicio.CargaCombos(nombreEntidad);
+            lst = servicio.CargaCombos(nombreEntidad, estado);
 
             cbo.DataSource = lst;
 

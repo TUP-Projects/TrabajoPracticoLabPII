@@ -25,7 +25,7 @@ namespace AcademikaWebAPI.Controllers
         {
             if (String.IsNullOrEmpty(entidad))
                 return BadRequest("La entidad no puede ser nula.");
-            return Ok(_materiasDetalleService.CargaCombos(entidad));
+            return Ok(_materiasDetalleService.CargaCombos(entidad, estado));
         }
         [HttpGet("Consulta/{idMateria}")]
         public IActionResult GetMateriasDetalle(int idMateria)

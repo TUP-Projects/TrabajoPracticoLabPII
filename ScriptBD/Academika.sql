@@ -689,9 +689,7 @@ GO
 CREATE PROCEDURE SP_CONSULTAR_CARRERAS
 AS
 BEGIN
-	SELECT id_carrera, carrera, CASE WHEN estado = 0 THEN 'Deshabilitado'
-									 WHEN estado = 1 THEN 'Habilitado' END AS Estado
-									 FROM CARRERAS
+	SELECT * FROM CARRERAS
 END
 GO
 Create  PROCEDURE SP_CONSULTAR_ESTADO_CIVIL

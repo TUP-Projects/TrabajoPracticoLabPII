@@ -21,7 +21,7 @@ namespace Academika.Presentacion
         }
         private void FrmAltaMateria_Load(object sender, EventArgs e)
         {
-            dgvMaterias.DataSource = servicio.CargaDgvEntidad("materias");
+            dgvMaterias.DataSource = servicio.CargaDgvEntidad("materias", 1);
         }
         private void label5_Click(object sender, EventArgs e)
         {
