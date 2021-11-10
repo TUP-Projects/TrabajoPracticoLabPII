@@ -77,8 +77,21 @@ namespace Academika.Presentacion
 
         }
 
+        private bool ValidarCampos()
+        {
+            if (String.IsNullOrEmpty(nombreCurso.Text.Trim()))
+            {
+                MessageBox.Show("Se debe ingresar un nombre de curso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
+        }
+
         private async void iconButton1_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos())
+                return;
+            
             Curso curso = new()
             {
                 NombreCurso = nombreCurso.Text

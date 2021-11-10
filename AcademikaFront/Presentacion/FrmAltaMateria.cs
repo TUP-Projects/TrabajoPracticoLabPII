@@ -99,8 +99,21 @@ namespace Academika.Presentacion
             await Inicia();
         }
 
+        private bool ValidarCampos()
+        {
+            if (String.IsNullOrEmpty(txtNombreMateria.Text.Trim()))
+            {
+                MessageBox.Show("Se debe ingresar un nombre de materia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
+        }
+
         private async void btn_Guardar_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos())
+                return;
+
             Materia materia = new()
             {
                 NombreMateria = txtNombreMateria.Text

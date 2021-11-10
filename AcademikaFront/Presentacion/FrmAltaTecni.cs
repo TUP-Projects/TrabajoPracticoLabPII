@@ -57,9 +57,26 @@ namespace Academika.Presentacion
             List<Carrera> Carreras = JsonConvert.DeserializeObject<List<Carrera>>(resultado);
             dgvTecnicatura.DataSource = Carreras;
         }
+        private bool ValidarCampos()
+        {
+            if (String.IsNullOrEmpty(txt_NombreCarrera.Text.Trim()))
+            {
+                MessageBox.Show("Se debe ingresar un nombre de la carrera", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if (String.IsNullOrEmpty(Nup_Duracion.Value.ToString().Trim()))
+            {
+                MessageBox.Show("Se debe ingresar una duracion de la carrera", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
+        }
 
         private async void iconButton1_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos())
+                return;
+
             Carrera carrera = new()
             {
                 NombreCarrera = txt_NombreCarrera.Text,
@@ -90,7 +107,7 @@ namespace Academika.Presentacion
         private async Task LimpiarCamposAsync()
         {
             txt_NombreCarrera.Text = "";
-            Nup_Duracion.Value = 0;
+            Nup_Duracion.Value = 1;
             await Inicia();
         }
 
