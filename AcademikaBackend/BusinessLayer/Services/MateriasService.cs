@@ -20,9 +20,9 @@ namespace AcademikaBackend.BusinessLayer.Services
             return MateriasDao.GetMaterias();
         }
 
-        public bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc)
+        public bool ActualizaDatosMateriasxCarrera(List<MateriasXCarrera> lstmxc, List<DocentesXMateria> dxm, List<Curso> cursos)
         {
-            return MateriasDao.ActualizaDatosMateriasxCarrera(mxc);
+            return MateriasDao.ActualizaDatosMateriasxCarrera(lstmxc, dxm, cursos);
         }
 
         public List<EntidadGenerica> CargaCombos(string tabla)

@@ -15,7 +15,7 @@ namespace AcademikaBackend.DataLayer.Helper
 
         private HelperDao()
         {
-            connectionString = ConnectionStrings.Lucio.ToString();
+            connectionString = ConnectionStrings.Ciro.ToString(); //CONEXION CIRO
         }
 
         public static HelperDao GetInstance()
@@ -119,8 +119,8 @@ namespace AcademikaBackend.DataLayer.Helper
             {
                 cmd.Parameters.Add(parameter);
             }
-            //try
-            //{
+            try
+            {
                 cnn.Open();
                 cmd.Connection = cnn;
                 switch (TipoEjecucion)
@@ -135,11 +135,11 @@ namespace AcademikaBackend.DataLayer.Helper
                 cmd.Dispose();
                 cnn.Close();
                 cnn.Dispose();
-          /*  }
+            }
             catch (Exception)
             {
                 RetVal = 0;
-            }*/
+            }
 
             return (int)RetVal;
         }
@@ -152,6 +152,7 @@ namespace AcademikaBackend.DataLayer.Helper
             MyParameter.DbType = DbCommandType;
             MyParameter.Value = ParameterValue;
             MyParameter.Direction = parameterDirection;
+
 
             return MyParameter;
         }

@@ -39,18 +39,38 @@ namespace AcademikaBackend.DataLayer.Dao
             return prox_id;
         }
 
-        public bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc)
+        public bool ActualizaDatosMateriasxCarrera(List<MateriasXCarrera> lstmxc, List<DocentesXMateria> dxm, List<Curso> cursos)
         {
             
             List<DbParameter> sqlParams = new List<DbParameter>();
             SqlCommand cmd = new SqlCommand();
-            sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_materia_x_carrera ", DbType.Int32, mxc.Id_Materias_x_Carrera));
-            sqlParams.Add(HelperDao.CrearParametro(cmd, "@dictado", DbType.String, mxc.Dictado));
-            sqlParams.Add(HelperDao.CrearParametro(cmd, "@cuatrimestre", DbType.String, mxc.Cuatrimestre));
-            sqlParams.Add(HelperDao.CrearParametro(cmd, "@anio_dictado", DbType.Int32, mxc.AnioDictado));
-            sqlParams.Add(HelperDao.CrearParametro(cmd, "@carga_horaria", DbType.Int32, mxc.CargaHoraria));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_materia_x_carrera", DbType.Int32, lstmxc[0].Id_Materias_x_Carrera));
+            
+            
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_materia_nuevo", DbType.Int32, lstmxc[1].Materia.Id_Materia));
+            
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_carrera_nuevo", DbType.Int32, lstmxc[1].Carrera.Id_Carrera));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_curso", DbType.Int32, cursos[0].Id_Curso));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_curso_nuevo", DbType.Int32, cursos[1].Id_Curso));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@dictado", DbType.String, lstmxc[1].Dictado));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@cuatrimestre", DbType.String, lstmxc[1].Cuatrimestre));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@anio_dictado", DbType.Int32, lstmxc[1].AnioDictado));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@carga_horaria", DbType.Int32, lstmxc[1].CargaHoraria));
 
-            int retVal = (int)helper.EjecutarSql("SP_ACTUALIZA_MATERIASxCARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            foreach (DocentesXMateria item in dxm)
+            {
+
+                if (item.Cargo == "Jefe")
+                {
+                    sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_jefe", DbType.Int32, item.Docente.Id_Docente));
+                }
+                else if (item.Cargo == "Adjunto")
+                    sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_prof_adj", DbType.Int32, item.Docente.Id_Docente));
+                else if (item.Cargo == "Ayudante")
+                    sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_ayud", DbType.Int32, item.Docente.Id_Docente));
+            }
+
+            int retVal = (int)HelperDao.EjecutarSql("SP_ACTUALIZA_MATERIASxCARRERAxCURSO", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
             return retVal > 0;
         }
 

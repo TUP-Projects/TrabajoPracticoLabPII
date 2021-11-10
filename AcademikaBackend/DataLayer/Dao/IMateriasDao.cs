@@ -18,7 +18,7 @@ namespace AcademikaBackend.DataLayer.Dao
 
         DataTable CargaCombos(string tabla);
         List<Materia> GetMaterias();
-        bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc);
+        bool ActualizaDatosMateriasxCarrera(List<MateriasXCarrera> lstmxc, List<DocentesXMateria> dxm, List<Curso> cursos);
 
         bool BajaCursoMateriaDocente(DocentesXMateria dxm);
 
