@@ -195,9 +195,19 @@
             // nudCarga
             // 
             this.nudCarga.Location = new System.Drawing.Point(670, 112);
+            this.nudCarga.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudCarga.Name = "nudCarga";
             this.nudCarga.Size = new System.Drawing.Size(120, 23);
             this.nudCarga.TabIndex = 120;
+            this.nudCarga.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // IdMateriasCarrera
             // 
@@ -272,7 +282,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmAltaMateriaXCarreraUpdate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Actualiza Materia - Carrera - Curso";
+            this.Text = "Actualiza Materia - Carrera ";
             this.Load += new System.EventHandler(this.FrmAltaMaterias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCarga)).EndInit();
             this.ResumeLayout(false);

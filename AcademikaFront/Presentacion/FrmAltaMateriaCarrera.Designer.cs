@@ -28,11 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMateriaCarrera = new System.Windows.Forms.Label();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cargahs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anio_dictado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dictado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -52,16 +62,6 @@
             this.cboDictado = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cargahs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anio_dictado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dictado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCarga)).BeginInit();
             this.SuspendLayout();
@@ -85,52 +85,143 @@
             this.dgvMaterias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgvMaterias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMaterias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMaterias.ColumnHeadersHeight = 30;
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.Carrera,
+            this.Materia,
             this.cuatrimestre,
             this.Cargahs,
             this.anio_dictado,
             this.dictado,
-            this.Carrera,
+            this.Estado,
             this.id_carrera,
-            this.id_materia,
-            this.Materia,
-            this.Estado});
+            this.id_materia});
             this.dgvMaterias.EnableHeadersVisualStyles = false;
             this.dgvMaterias.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvMaterias.Location = new System.Drawing.Point(116, 245);
+            this.dgvMaterias.Location = new System.Drawing.Point(71, 245);
             this.dgvMaterias.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.ReadOnly = true;
             this.dgvMaterias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMaterias.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMaterias.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMaterias.RowHeadersVisible = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvMaterias.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvMaterias.Size = new System.Drawing.Size(659, 258);
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvMaterias.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMaterias.Size = new System.Drawing.Size(835, 258);
             this.dgvMaterias.TabIndex = 90;
             this.dgvMaterias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ID.DataPropertyName = "id_materias_carrera";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID.Visible = false;
+            // 
+            // Carrera
+            // 
+            this.Carrera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Carrera.DataPropertyName = "carrera";
+            this.Carrera.HeaderText = "Carrera";
+            this.Carrera.Name = "Carrera";
+            this.Carrera.ReadOnly = true;
+            this.Carrera.Width = 81;
+            // 
+            // Materia
+            // 
+            this.Materia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Materia.DataPropertyName = "materia";
+            this.Materia.HeaderText = "Materia";
+            this.Materia.Name = "Materia";
+            this.Materia.ReadOnly = true;
+            this.Materia.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Materia.Width = 81;
+            // 
+            // cuatrimestre
+            // 
+            this.cuatrimestre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.cuatrimestre.DataPropertyName = "cuatrimestre";
+            this.cuatrimestre.HeaderText = "Cuatrimestre";
+            this.cuatrimestre.Name = "cuatrimestre";
+            this.cuatrimestre.ReadOnly = true;
+            this.cuatrimestre.Width = 115;
+            // 
+            // Cargahs
+            // 
+            this.Cargahs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Cargahs.DataPropertyName = "carga_horaria";
+            this.Cargahs.HeaderText = "Carga Hs";
+            this.Cargahs.Name = "Cargahs";
+            this.Cargahs.ReadOnly = true;
+            this.Cargahs.Width = 92;
+            // 
+            // anio_dictado
+            // 
+            this.anio_dictado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.anio_dictado.DataPropertyName = "anio_dictado";
+            this.anio_dictado.HeaderText = "Año Dictado";
+            this.anio_dictado.Name = "anio_dictado";
+            this.anio_dictado.ReadOnly = true;
+            this.anio_dictado.Width = 115;
+            // 
+            // dictado
+            // 
+            this.dictado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dictado.DataPropertyName = "dictado";
+            this.dictado.HeaderText = "Dictado";
+            this.dictado.Name = "dictado";
+            this.dictado.ReadOnly = true;
+            this.dictado.Width = 85;
+            // 
+            // Estado
+            // 
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Estado.Width = 76;
+            // 
+            // id_carrera
+            // 
+            this.id_carrera.DataPropertyName = "id_carrera";
+            this.id_carrera.HeaderText = "IdCarrera";
+            this.id_carrera.Name = "id_carrera";
+            this.id_carrera.ReadOnly = true;
+            this.id_carrera.Visible = false;
+            // 
+            // id_materia
+            // 
+            this.id_materia.DataPropertyName = "id_materia";
+            this.id_materia.HeaderText = "IdMateria";
+            this.id_materia.Name = "id_materia";
+            this.id_materia.ReadOnly = true;
+            this.id_materia.Visible = false;
             // 
             // iconButton2
             // 
@@ -163,7 +254,7 @@
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.iconButton6.IconColor = System.Drawing.Color.Black;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.Location = new System.Drawing.Point(853, 449);
+            this.iconButton6.Location = new System.Drawing.Point(959, 452);
             this.iconButton6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton6.Name = "iconButton6";
             this.iconButton6.Size = new System.Drawing.Size(51, 51);
@@ -176,7 +267,7 @@
             this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.iconButton7.IconColor = System.Drawing.Color.Black;
             this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.Location = new System.Drawing.Point(853, 245);
+            this.iconButton7.Location = new System.Drawing.Point(959, 245);
             this.iconButton7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.iconButton7.Name = "iconButton7";
             this.iconButton7.Size = new System.Drawing.Size(51, 51);
@@ -269,9 +360,19 @@
             // nudCarga
             // 
             this.nudCarga.Location = new System.Drawing.Point(220, 180);
+            this.nudCarga.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudCarga.Name = "nudCarga";
             this.nudCarga.Size = new System.Drawing.Size(120, 23);
             this.nudCarga.TabIndex = 131;
+            this.nudCarga.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblCarga
             // 
@@ -358,88 +459,6 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ID.DataPropertyName = "id_materias_carrera";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID.Visible = false;
-            this.ID.Width = 45;
-            // 
-            // cuatrimestre
-            // 
-            this.cuatrimestre.DataPropertyName = "cuatrimestre";
-            this.cuatrimestre.HeaderText = "Cuatrimestre";
-            this.cuatrimestre.Name = "cuatrimestre";
-            this.cuatrimestre.ReadOnly = true;
-            this.cuatrimestre.Visible = false;
-            // 
-            // Cargahs
-            // 
-            this.Cargahs.DataPropertyName = "carga_horaria";
-            this.Cargahs.HeaderText = "Carga Hs";
-            this.Cargahs.Name = "Cargahs";
-            this.Cargahs.ReadOnly = true;
-            this.Cargahs.Visible = false;
-            // 
-            // anio_dictado
-            // 
-            this.anio_dictado.DataPropertyName = "anio_dictado";
-            this.anio_dictado.HeaderText = "Año Dictado";
-            this.anio_dictado.Name = "anio_dictado";
-            this.anio_dictado.ReadOnly = true;
-            // 
-            // dictado
-            // 
-            this.dictado.DataPropertyName = "dictado";
-            this.dictado.HeaderText = "Dictado";
-            this.dictado.Name = "dictado";
-            this.dictado.ReadOnly = true;
-            // 
-            // Carrera
-            // 
-            this.Carrera.DataPropertyName = "carrera";
-            this.Carrera.HeaderText = "Carrera";
-            this.Carrera.Name = "Carrera";
-            this.Carrera.ReadOnly = true;
-            // 
-            // id_carrera
-            // 
-            this.id_carrera.DataPropertyName = "id_carrera";
-            this.id_carrera.HeaderText = "IdCarrera";
-            this.id_carrera.Name = "id_carrera";
-            this.id_carrera.ReadOnly = true;
-            this.id_carrera.Visible = false;
-            // 
-            // id_materia
-            // 
-            this.id_materia.DataPropertyName = "id_materia";
-            this.id_materia.HeaderText = "IdMateria";
-            this.id_materia.Name = "id_materia";
-            this.id_materia.ReadOnly = true;
-            this.id_materia.Visible = false;
-            // 
-            // Materia
-            // 
-            this.Materia.DataPropertyName = "materia";
-            this.Materia.HeaderText = "Materia";
-            this.Materia.Name = "Materia";
-            this.Materia.ReadOnly = true;
-            this.Materia.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Materia.Width = 400;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Estado.Width = 140;
-            // 
             // FrmAltaMateriaCarrera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -504,14 +523,14 @@
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Carrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuatrimestre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargahs;
         private System.Windows.Forms.DataGridViewTextBoxColumn anio_dictado;
         private System.Windows.Forms.DataGridViewTextBoxColumn dictado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Carrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_carrera;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_materia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblId = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboDictado = new System.Windows.Forms.ComboBox();
@@ -309,6 +311,7 @@
             // 
             this.dgvResultado.AllowUserToAddRows = false;
             this.dgvResultado.AllowUserToDeleteRows = false;
+            this.dgvResultado.AllowUserToOrderColumns = true;
             this.dgvResultado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgvResultado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvResultado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -329,6 +332,14 @@
             this.IdCurso,
             this.IdMateria,
             this.IdMateriaCarrera});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResultado.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvResultado.EnableHeadersVisualStyles = false;
             this.dgvResultado.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvResultado.Location = new System.Drawing.Point(15, 273);
@@ -337,6 +348,12 @@
             this.dgvResultado.ReadOnly = true;
             this.dgvResultado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvResultado.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.dgvResultado.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvResultado.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dgvResultado.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvResultado.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             this.dgvResultado.RowTemplate.Height = 50;
             this.dgvResultado.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvResultado.Size = new System.Drawing.Size(1068, 306);
@@ -381,9 +398,19 @@
             // nudCarga
             // 
             this.nudCarga.Location = new System.Drawing.Point(670, 112);
+            this.nudCarga.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudCarga.Name = "nudCarga";
             this.nudCarga.Size = new System.Drawing.Size(120, 23);
             this.nudCarga.TabIndex = 120;
+            this.nudCarga.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label10
             // 
@@ -466,6 +493,7 @@
             this.Carrera.HeaderText = "Carrera";
             this.Carrera.Name = "Carrera";
             this.Carrera.ReadOnly = true;
+            this.Carrera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Carrera.Width = 135;
             // 
             // NombreMat
@@ -476,27 +504,30 @@
             this.NombreMat.Name = "NombreMat";
             this.NombreMat.ReadOnly = true;
             this.NombreMat.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NombreMat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.NombreMat.Width = 135;
             // 
             // NomCurso
             // 
-            this.NomCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.NomCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.NomCurso.DataPropertyName = "NomCurso";
             this.NomCurso.HeaderText = "Curso";
             this.NomCurso.Name = "NomCurso";
             this.NomCurso.ReadOnly = true;
             this.NomCurso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NomCurso.Width = 62;
+            this.NomCurso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.NomCurso.Width = 43;
             // 
             // Dictado
             // 
-            this.Dictado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Dictado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Dictado.DataPropertyName = "Dictado";
             this.Dictado.HeaderText = "Dictado";
             this.Dictado.Name = "Dictado";
             this.Dictado.ReadOnly = true;
             this.Dictado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Dictado.Width = 72;
+            this.Dictado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Dictado.Width = 53;
             // 
             // AnioDictado
             // 
@@ -506,6 +537,7 @@
             this.AnioDictado.Name = "AnioDictado";
             this.AnioDictado.ReadOnly = true;
             this.AnioDictado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.AnioDictado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.AnioDictado.Width = 97;
             // 
             // Cuatrimestre
@@ -516,6 +548,7 @@
             this.Cuatrimestre.Name = "Cuatrimestre";
             this.Cuatrimestre.ReadOnly = true;
             this.Cuatrimestre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Cuatrimestre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Cuatrimestre.Width = 90;
             // 
             // Carga
@@ -526,34 +559,41 @@
             this.Carga.Name = "Carga";
             this.Carga.ReadOnly = true;
             this.Carga.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Carga.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Carga.Width = 80;
             // 
             // JefedeCatedra
             // 
-            this.JefedeCatedra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.JefedeCatedra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.JefedeCatedra.DataPropertyName = "JefedeCatedra";
             this.JefedeCatedra.HeaderText = "Jefe de Catedra";
             this.JefedeCatedra.Name = "JefedeCatedra";
             this.JefedeCatedra.ReadOnly = true;
-            this.JefedeCatedra.Width = 111;
+            this.JefedeCatedra.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.JefedeCatedra.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.JefedeCatedra.Width = 150;
             // 
             // ProfesorAdjunto
             // 
-            this.ProfesorAdjunto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ProfesorAdjunto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ProfesorAdjunto.DataPropertyName = "ProfesorAdjunto";
             this.ProfesorAdjunto.HeaderText = "Profesor Adjunto";
             this.ProfesorAdjunto.Name = "ProfesorAdjunto";
             this.ProfesorAdjunto.ReadOnly = true;
-            this.ProfesorAdjunto.Width = 121;
+            this.ProfesorAdjunto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProfesorAdjunto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ProfesorAdjunto.Width = 150;
             // 
             // AyudantePrimera
             // 
-            this.AyudantePrimera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.AyudantePrimera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.AyudantePrimera.DataPropertyName = "AyudantePrimera";
             this.AyudantePrimera.HeaderText = "Ayudante Primera";
             this.AyudantePrimera.Name = "AyudantePrimera";
             this.AyudantePrimera.ReadOnly = true;
-            this.AyudantePrimera.Width = 126;
+            this.AyudantePrimera.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.AyudantePrimera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AyudantePrimera.Width = 150;
             // 
             // IdCarrera
             // 
@@ -561,6 +601,8 @@
             this.IdCarrera.HeaderText = "IdCarrera";
             this.IdCarrera.Name = "IdCarrera";
             this.IdCarrera.ReadOnly = true;
+            this.IdCarrera.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.IdCarrera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.IdCarrera.Visible = false;
             // 
             // IdCurso
@@ -569,6 +611,8 @@
             this.IdCurso.HeaderText = "IdCurso";
             this.IdCurso.Name = "IdCurso";
             this.IdCurso.ReadOnly = true;
+            this.IdCurso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.IdCurso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.IdCurso.Visible = false;
             // 
             // IdMateria
@@ -577,6 +621,8 @@
             this.IdMateria.HeaderText = "IdMateria";
             this.IdMateria.Name = "IdMateria";
             this.IdMateria.ReadOnly = true;
+            this.IdMateria.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.IdMateria.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.IdMateria.Visible = false;
             // 
             // IdMateriaCarrera
@@ -585,6 +631,8 @@
             this.IdMateriaCarrera.HeaderText = "IdMateriasCarrera";
             this.IdMateriaCarrera.Name = "IdMateriaCarrera";
             this.IdMateriaCarrera.ReadOnly = true;
+            this.IdMateriaCarrera.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.IdMateriaCarrera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.IdMateriaCarrera.Visible = false;
             // 
             // FrmAltaMateriaXCarreraXCurso
