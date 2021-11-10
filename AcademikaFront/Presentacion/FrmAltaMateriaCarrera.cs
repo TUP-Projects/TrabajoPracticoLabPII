@@ -284,5 +284,19 @@ namespace Academika.Presentacion
             }
             
         }
+
+        private void cboDictado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboDictado.Text == "Anual")
+            {
+
+                cboCuatrimestre.Enabled = false;
+            }
+            else
+            {
+                cboCuatrimestre.Enabled = true;
+            }
+
+        }
     }
 }

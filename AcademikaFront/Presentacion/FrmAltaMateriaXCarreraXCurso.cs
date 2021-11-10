@@ -264,6 +264,7 @@ namespace Academika.Presentacion
             if (dgvResultado.RowCount > 0)
             {
                 mxc.Id_Materias_x_Carrera = Convert.ToInt32(dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value);
+                mxc.Materia.Id_Materia = Convert.ToInt32(dgvResultado.CurrentRow.Cells["IdMateria"].Value);
                 mxc.Dictado = (string)dgvResultado.CurrentRow.Cells["Dictado"].Value;
                 mxc.Materia.NombreMateria = (string)dgvResultado.CurrentRow.Cells["NombreMat"].Value;
                 mxc.Carrera.NombreCarrera = (string)dgvResultado.CurrentRow.Cells["Carrera"].Value;
@@ -277,6 +278,7 @@ namespace Academika.Presentacion
                 nombreAdj = dgvResultado.CurrentRow.Cells["ProfesorAdjunto"].Value.ToString();
 
                 new FrmAltaMateriaXCarreraXCursoUpdate(mxc, curso, nombreJefe, nombreAdj, nombreAyud).ShowDialog();
+                _ = Consultar_DetalleMateriaAsync(mxc.Materia.Id_Materia);
 
 
 

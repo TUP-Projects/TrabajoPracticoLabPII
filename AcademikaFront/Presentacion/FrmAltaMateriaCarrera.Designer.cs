@@ -433,6 +433,7 @@
             this.cboDictado.Name = "cboDictado";
             this.cboDictado.Size = new System.Drawing.Size(121, 23);
             this.cboDictado.TabIndex = 126;
+            this.cboDictado.SelectedIndexChanged += new System.EventHandler(this.cboDictado_SelectedIndexChanged);
             // 
             // label2
             // 

@@ -235,9 +235,9 @@ namespace Academika.Presentacion
             
             if (servicio.ActualizaDatosMateriasxCarrera(lstMatxCarrera, lstDocentes, lstCurso))
             {
-                MessageBox.Show("Se agregó la materia al plan de estudios!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se editó el registro seleccionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
+                this.Dispose();
 
             }
             else
