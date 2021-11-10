@@ -19,7 +19,8 @@ namespace Academika.Presentacion
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmSplash());
             //Application.Run(new FrmLogin());
-            Application.Run(new FrmMain());
+            Application.Run(new FrmSplash());
+            Application.Run(new FrmLogin());
         }
     }
 }
