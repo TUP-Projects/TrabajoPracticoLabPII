@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblId = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboDictado = new System.Windows.Forms.ComboBox();
@@ -313,17 +313,18 @@
             // 
             this.dgvResultado.AllowUserToAddRows = false;
             this.dgvResultado.AllowUserToDeleteRows = false;
+            this.dgvResultado.AllowUserToOrderColumns = true;
             this.dgvResultado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgvResultado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvResultado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResultado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResultado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvResultado.ColumnHeadersHeight = 30;
             this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -341,14 +342,14 @@
             this.IdCurso,
             this.IdMateria,
             this.IdMateriaCarrera});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvResultado.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResultado.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvResultado.EnableHeadersVisualStyles = false;
             this.dgvResultado.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvResultado.Location = new System.Drawing.Point(0, 273);
@@ -356,21 +357,21 @@
             this.dgvResultado.Name = "dgvResultado";
             this.dgvResultado.ReadOnly = true;
             this.dgvResultado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResultado.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResultado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvResultado.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvResultado.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvResultado.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvResultado.Size = new System.Drawing.Size(1092, 306);
             this.dgvResultado.TabIndex = 113;
             this.dgvResultado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResultado_CellContentClick);
@@ -509,7 +510,7 @@
             this.Carrera.HeaderText = "Carrera";
             this.Carrera.Name = "Carrera";
             this.Carrera.ReadOnly = true;
-            this.Carrera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Carrera.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Carrera.Width = 135;
             // 
             // NombreMat
@@ -520,7 +521,6 @@
             this.NombreMat.Name = "NombreMat";
             this.NombreMat.ReadOnly = true;
             this.NombreMat.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NombreMat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.NombreMat.Width = 135;
             // 
             // NomCurso
@@ -531,7 +531,6 @@
             this.NomCurso.Name = "NomCurso";
             this.NomCurso.ReadOnly = true;
             this.NomCurso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NomCurso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.NomCurso.Width = 43;
             // 
             // Dictado
@@ -542,7 +541,6 @@
             this.Dictado.Name = "Dictado";
             this.Dictado.ReadOnly = true;
             this.Dictado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Dictado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Dictado.Width = 60;
             // 
             // AnioDictado
@@ -553,7 +551,6 @@
             this.AnioDictado.Name = "AnioDictado";
             this.AnioDictado.ReadOnly = true;
             this.AnioDictado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.AnioDictado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.AnioDictado.Width = 97;
             // 
             // Cuatrimestre
@@ -564,7 +561,6 @@
             this.Cuatrimestre.Name = "Cuatrimestre";
             this.Cuatrimestre.ReadOnly = true;
             this.Cuatrimestre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Cuatrimestre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Cuatrimestre.Width = 90;
             // 
             // Carga
@@ -575,7 +571,6 @@
             this.Carga.Name = "Carga";
             this.Carga.ReadOnly = true;
             this.Carga.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Carga.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Carga.Width = 75;
             // 
             // JefedeCatedra
@@ -586,7 +581,6 @@
             this.JefedeCatedra.Name = "JefedeCatedra";
             this.JefedeCatedra.ReadOnly = true;
             this.JefedeCatedra.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.JefedeCatedra.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.JefedeCatedra.Width = 150;
             // 
             // ProfesorAdjunto
@@ -597,7 +591,6 @@
             this.ProfesorAdjunto.Name = "ProfesorAdjunto";
             this.ProfesorAdjunto.ReadOnly = true;
             this.ProfesorAdjunto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProfesorAdjunto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.ProfesorAdjunto.Width = 150;
             // 
             // AyudantePrimera
@@ -608,47 +601,46 @@
             this.AyudantePrimera.Name = "AyudantePrimera";
             this.AyudantePrimera.ReadOnly = true;
             this.AyudantePrimera.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.AyudantePrimera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.AyudantePrimera.Width = 150;
             // 
             // IdCarrera
             // 
+            this.IdCarrera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.IdCarrera.DataPropertyName = "IdCarrera";
             this.IdCarrera.HeaderText = "IdCarrera";
             this.IdCarrera.Name = "IdCarrera";
             this.IdCarrera.ReadOnly = true;
             this.IdCarrera.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IdCarrera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.IdCarrera.Visible = false;
             // 
             // IdCurso
             // 
+            this.IdCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.IdCurso.DataPropertyName = "IdCurso";
             this.IdCurso.HeaderText = "IdCurso";
             this.IdCurso.Name = "IdCurso";
             this.IdCurso.ReadOnly = true;
             this.IdCurso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IdCurso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.IdCurso.Visible = false;
             // 
             // IdMateria
             // 
+            this.IdMateria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.IdMateria.DataPropertyName = "IdMateria";
             this.IdMateria.HeaderText = "IdMateria";
             this.IdMateria.Name = "IdMateria";
             this.IdMateria.ReadOnly = true;
             this.IdMateria.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IdMateria.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.IdMateria.Visible = false;
             // 
             // IdMateriaCarrera
             // 
+            this.IdMateriaCarrera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.IdMateriaCarrera.DataPropertyName = "IdMateriasCarrera";
             this.IdMateriaCarrera.HeaderText = "IdMateriasCarrera";
             this.IdMateriaCarrera.Name = "IdMateriaCarrera";
             this.IdMateriaCarrera.ReadOnly = true;
             this.IdMateriaCarrera.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IdMateriaCarrera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.IdMateriaCarrera.Visible = false;
             // 
             // FrmAltaMateriaXCarreraXCurso
