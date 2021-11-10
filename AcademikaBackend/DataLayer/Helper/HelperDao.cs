@@ -15,7 +15,7 @@ namespace AcademikaBackend.DataLayer.Helper
 
         private HelperDao()
         {
-            connectionString = ConnectionStrings.Ciro.ToString();
+            connectionString = ConnectionStrings.Cristian.ToString();
         }
 
         public static HelperDao GetInstance()
@@ -54,7 +54,6 @@ namespace AcademikaBackend.DataLayer.Helper
             catch (SqlException)
             {
                 throw;
-               
             }
             finally
             {

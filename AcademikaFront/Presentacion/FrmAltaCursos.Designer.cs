@@ -34,9 +34,6 @@
             this.lblLegajoDocente = new System.Windows.Forms.Label();
             this.nombreCurso = new System.Windows.Forms.RichTextBox();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -46,6 +43,9 @@
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.RichTextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +74,7 @@
             // 
             this.dgvCursos.AllowUserToAddRows = false;
             this.dgvCursos.AllowUserToDeleteRows = false;
+            this.dgvCursos.AllowUserToOrderColumns = true;
             this.dgvCursos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgvCursos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -115,32 +116,6 @@
             this.dgvCursos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCursos.Size = new System.Drawing.Size(516, 258);
             this.dgvCursos.TabIndex = 90;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id_Curso";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID.Visible = false;
-            // 
-            // Curso
-            // 
-            this.Curso.DataPropertyName = "NombreCurso";
-            this.Curso.HeaderText = "Curso";
-            this.Curso.Name = "Curso";
-            this.Curso.ReadOnly = true;
-            this.Curso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Curso.Width = 150;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // iconButton2
             // 
@@ -248,6 +223,33 @@
             this.txtSearch.TabIndex = 123;
             this.txtSearch.Text = "";
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id_Curso";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID.Visible = false;
+            // 
+            // Curso
+            // 
+            this.Curso.DataPropertyName = "NombreCurso";
+            this.Curso.HeaderText = "Curso";
+            this.Curso.Name = "Curso";
+            this.Curso.ReadOnly = true;
+            this.Curso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Curso.Width = 150;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Estado.Visible = false;
+            // 
             // FrmAltaCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -292,9 +294,9 @@
         private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox txtSearch;
+        private System.Windows.Forms.RichTextBox nombreCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Curso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.RichTextBox nombreCurso;
     }
 }
