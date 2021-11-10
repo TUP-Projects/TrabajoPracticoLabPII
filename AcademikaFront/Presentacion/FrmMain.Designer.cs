@@ -65,8 +65,9 @@
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDetalleMaterias = new System.Windows.Forms.ToolStripMenuItem();
-            this.horafecha = new System.Windows.Forms.Timer(this.components);
             this.planEstudiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -320,6 +321,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -525,7 +527,7 @@
             this.rjDropDownMenu1.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropDownMenu1.Name = "rjDropDownMenu1";
             this.rjDropDownMenu1.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropDownMenu1.Size = new System.Drawing.Size(202, 146);
+            this.rjDropDownMenu1.Size = new System.Drawing.Size(202, 124);
             this.rjDropDownMenu1.Opening += new System.ComponentModel.CancelEventHandler(this.rjDropDownMenu1_Opening);
             // 
             // tToolStripMenuItem
@@ -556,17 +558,24 @@
             this.toolStripDetalleMaterias.Text = "Detalle Materias";
             this.toolStripDetalleMaterias.Click += new System.EventHandler(this.toolStripDetalleMaterias_Click);
             // 
+            // planEstudiosToolStripMenuItem
+            // 
+            this.planEstudiosToolStripMenuItem.Name = "planEstudiosToolStripMenuItem";
+            this.planEstudiosToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.planEstudiosToolStripMenuItem.Text = "Plan Estudios";
+            // 
             // horafecha
             // 
             this.horafecha.Enabled = true;
             this.horafecha.Interval = 1000;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick_1);
             // 
-            // planEstudiosToolStripMenuItem
+            // panel3
             // 
-            this.planEstudiosToolStripMenuItem.Name = "planEstudiosToolStripMenuItem";
-            this.planEstudiosToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.planEstudiosToolStripMenuItem.Text = "Plan Estudios";
+            this.panel3.Location = new System.Drawing.Point(437, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 63);
+            this.panel3.TabIndex = 9;
             // 
             // FrmMain
             // 
@@ -638,5 +647,6 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.ToolStripMenuItem planEstudiosToolStripMenuItem;
+        private System.Windows.Forms.Panel panel3;
     }
 }
