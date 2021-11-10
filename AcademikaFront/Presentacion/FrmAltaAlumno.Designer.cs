@@ -873,6 +873,7 @@ namespace Academika.Presentacion
         private RJCodeAdvance.RJControls.RJComboBox rjComboBox9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
+        
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Carrera;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTec;
