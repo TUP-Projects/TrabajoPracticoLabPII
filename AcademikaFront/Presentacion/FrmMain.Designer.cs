@@ -66,6 +66,7 @@
             this.toolStripMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDetalleMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.planEstudiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -518,12 +519,13 @@
             this.tToolStripMenuItem,
             this.cursosToolStripMenuItem,
             this.toolStripMaterias,
-            this.toolStripDetalleMaterias});
+            this.toolStripDetalleMaterias,
+            this.planEstudiosToolStripMenuItem});
             this.rjDropDownMenu1.MenuItemHeight = 25;
             this.rjDropDownMenu1.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropDownMenu1.Name = "rjDropDownMenu1";
             this.rjDropDownMenu1.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropDownMenu1.Size = new System.Drawing.Size(202, 100);
+            this.rjDropDownMenu1.Size = new System.Drawing.Size(202, 146);
             this.rjDropDownMenu1.Opening += new System.ComponentModel.CancelEventHandler(this.rjDropDownMenu1_Opening);
             // 
             // tToolStripMenuItem
@@ -559,6 +561,12 @@
             this.horafecha.Enabled = true;
             this.horafecha.Interval = 1000;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick_1);
+            // 
+            // planEstudiosToolStripMenuItem
+            // 
+            this.planEstudiosToolStripMenuItem.Name = "planEstudiosToolStripMenuItem";
+            this.planEstudiosToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.planEstudiosToolStripMenuItem.Text = "Plan Estudios";
             // 
             // FrmMain
             // 
@@ -629,5 +637,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.ToolStripMenuItem planEstudiosToolStripMenuItem;
     }
 }
