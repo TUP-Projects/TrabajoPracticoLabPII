@@ -10,5 +10,7 @@ namespace AcademikaBackend.BusinessLayer.Services
         bool RegistrarBajaCurso(int id);
         object ConsultarCursos(List<string> lst);
         bool CrearCurso(Curso oCurso);
+        Curso ConsultarCursoById(int id);
+        bool ActualizarCurso(Curso curso);
     }
 }

@@ -10,5 +10,7 @@ namespace AcademikaBackend.DataLayer.Dao
         List<Curso> GetCursos();
         bool CreateCurso(Curso oCurso);
         bool DeleteCurso(int id);
+        Curso GetCursoById(int id);
+        bool UpdateCurso(Curso curso);
     }
 }

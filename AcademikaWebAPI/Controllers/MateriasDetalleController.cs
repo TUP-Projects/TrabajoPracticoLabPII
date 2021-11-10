@@ -77,5 +77,14 @@ namespace AcademikaWebAPI.Controllers
                 return BadRequest("Id es requerido!");
             return Ok(_materiasDetalleService.RegistrarBajaMateria(id));
         }
+
+        // Borrar curso por Id
+        [HttpGet("Consulta/{id}")]
+        public IActionResult GetMateriaById(int id)
+        {
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(_materiasDetalleService.ConsultarMateriaById(id));
+        }
     }
 }

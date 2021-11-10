@@ -9,5 +9,7 @@ namespace AcademikaBackend.BusinessLayer.Services
         public List<Carrera> ConsultarCarreras();
         bool CrearCarrera(Carrera oCarrera);
         bool RegistrarBajaCarrera(int id);
+        Carrera ConsultarCarreraById(int id);
+        bool ActualizarCarrera(Carrera carrera);
     }
 }

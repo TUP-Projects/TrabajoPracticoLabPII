@@ -32,5 +32,15 @@ namespace AcademikaBackend.BusinessLayer.Services
         {
             return CarreraDao.DeleteCarrera(id);
         }
+
+        public Carrera ConsultarCarreraById(int id)
+        {
+            return CarreraDao.GetCarreraById(id);
+        }
+
+        public bool ActualizarCarrera(Carrera carrera)
+        {
+            return CarreraDao.UpdateCarrera(carrera);
+        }
     }
 }

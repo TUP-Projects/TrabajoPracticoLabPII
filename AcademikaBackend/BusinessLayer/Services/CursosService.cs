@@ -13,6 +13,16 @@ namespace AcademikaBackend.BusinessLayer.Services
             CursosDao = new CursosDao();
         }
 
+        public bool ActualizarCurso(Curso curso)
+        {
+            return CursosDao.UpdateCurso(curso);
+        }
+
+        public Curso ConsultarCursoById(int id)
+        {
+            return CursosDao.GetCursoById(id);
+        }
+
         public List<Curso> ConsultarCursos()
         {
             return CursosDao.GetCursos();

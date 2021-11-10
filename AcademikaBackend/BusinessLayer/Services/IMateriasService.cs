@@ -35,5 +35,8 @@ namespace AcademikaBackend.BusinessLayer.Services
         public bool ActualizaMateriasxCarrera(MateriasXCarrera oMateriasxCarrera);
         bool InsertaMateria(Materia oMateria);
         bool RegistrarBajaMateria(int id);
+
+        Materia ConsultarMateriaById(int id);
+        bool ActualizarMateria(Materia materia);
     }
 }

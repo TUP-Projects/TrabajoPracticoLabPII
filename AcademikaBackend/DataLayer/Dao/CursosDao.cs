@@ -68,5 +68,33 @@ namespace AcademikaBackend.DataLayer.Dao
             curso.Estado = ((Estado)Convert.ToInt32(row[2])).ToString();
             return curso;
         }
+
+        public Curso GetCursoById(int id)
+        {
+            Curso curso = new();
+            SqlCommand cmd = new();
+            string sql = $"SELECT* FROM CURSOS WHERE id_curso = {id}";
+            
+            DataTable table = helper.ConsultaSQLNonSP(cmd, sql);
+
+            foreach (DataRow row in table.Rows)
+            {
+                curso = ObjectMapping(row);
+            }
+
+            return curso;
+        }
+
+        public bool UpdateCurso(Curso curso)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string exist = $"SELECT * FROM CURSOS WHERE curso = '{curso.NombreCurso}'";
+            DataTable table = helper.ConsultaSQLNonSP(cmd, exist);
+            if (table.Rows.Count == 1)
+                return false;
+            string sql = $"UPDATE CURSOS SET curso = '{curso.NombreCurso}' WHERE id_curso = '{curso.Id_Curso}'";
+            int result = (int)helper.EjecutarSql(sql, cmd, CommandType.Text, null, "NonQuery");
+            return result != 0;
+        }
     }
 }

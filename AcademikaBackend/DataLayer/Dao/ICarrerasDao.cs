@@ -9,5 +9,7 @@ namespace AcademikaBackend.DataLayer.Dao
         List<Carrera> GetCarreras();
         bool CreateCarrera(Carrera oCarrera);
         bool DeleteCarrera(int id);
+        Carrera GetCarreraById(int id);
+        bool UpdateCarrera(Carrera carrera);
     }
 }

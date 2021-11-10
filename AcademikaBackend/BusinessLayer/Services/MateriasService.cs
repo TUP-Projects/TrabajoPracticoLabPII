@@ -100,5 +100,15 @@ namespace AcademikaBackend.BusinessLayer.Services
         {
             return MateriasDao.DeleteMateria(id);
         }
+
+        public Materia ConsultarMateriaById(int id)
+        {
+            return MateriasDao.GetMateriaById(id);
+        }
+
+        public bool ActualizarMateria(Materia materia)
+        {
+            return MateriasDao.UpdateMateria(materia);
+        }
     }
 }

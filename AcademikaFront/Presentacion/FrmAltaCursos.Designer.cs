@@ -37,7 +37,7 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnBorrar = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.rtbAyuda = new System.Windows.Forms.Label();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
@@ -68,7 +68,8 @@
             this.nombreCurso.Name = "nombreCurso";
             this.nombreCurso.Size = new System.Drawing.Size(190, 28);
             this.nombreCurso.TabIndex = 89;
-            this.nombreCurso.Text = "Nombre Curso";
+            this.nombreCurso.Text = "";
+            this.nombreCurso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreCurso_KeyPress);
             // 
             // dgvCursos
             // 
@@ -157,17 +158,18 @@
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // iconButton7
+            // btnEditar
             // 
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.iconButton7.IconColor = System.Drawing.Color.Black;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.Location = new System.Drawing.Point(668, 237);
-            this.iconButton7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(51, 51);
-            this.iconButton7.TabIndex = 113;
-            this.iconButton7.UseVisualStyleBackColor = true;
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnEditar.IconColor = System.Drawing.Color.Black;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.Location = new System.Drawing.Point(668, 237);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(51, 51);
+            this.btnEditar.TabIndex = 113;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // rtbAyuda
             // 
@@ -264,7 +266,7 @@
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.rtbAyuda);
             this.Controls.Add(this.btnBorrar);
-            this.Controls.Add(this.iconButton7);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.dgvCursos);
@@ -289,7 +291,7 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnBorrar;
-        private FontAwesome.Sharp.IconButton iconButton7;
+        private FontAwesome.Sharp.IconButton btnEditar;
         private System.Windows.Forms.Label rtbAyuda;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton btnSearch;

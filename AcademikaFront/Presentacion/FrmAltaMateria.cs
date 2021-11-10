@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -63,7 +64,7 @@ namespace Academika.Presentacion
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-
+            txtNombreMateria.Text = "";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -147,6 +148,41 @@ namespace Academika.Presentacion
             else
             {
                 MessageBox.Show("Debe seleccionar un registro a borrar", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvMaterias.CurrentRow != null)
+            {
+                FrmEdit frmEdit = new FrmEdit();
+                AddOwnedForm(frmEdit);
+                int idMateria = Convert.ToInt32(dgvMaterias.CurrentRow.Cells["ID"].Value);
+                frmEdit.CargarDatos(Forms.Materia, idMateria);
+                frmEdit.ShowDialog();
+                Inicia();
+            }
+            else
+            {
+                MessageBox.Show("Primero debe seleccionar un registro!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void txtNombreMateria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsWhiteSpace(e.KeyChar) || Char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
             }
         }
     }

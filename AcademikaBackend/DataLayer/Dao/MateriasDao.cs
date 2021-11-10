@@ -122,7 +122,6 @@ namespace AcademikaBackend.DataLayer.Dao
         {
             SqlCommand cmd = new SqlCommand();
             List<DbParameter> sqlParams = new List<DbParameter>();
-            
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@idCarrera", DbType.Int32, idCarrera));
             DataTable table = helper.ConsultaSQL(cmd, "SP_PLAN_ESTUDIOS", sqlParams);
             return table;
@@ -132,7 +131,6 @@ namespace AcademikaBackend.DataLayer.Dao
 
             List<DbParameter> sqlParams = new List<DbParameter>();
             SqlCommand cmd = new SqlCommand();
-
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@idcarrera", DbType.Int32, idcarrera));
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@idmateria", DbType.Int32, idmateria));
             DataTable dt = new DataTable();
@@ -163,7 +161,6 @@ namespace AcademikaBackend.DataLayer.Dao
             List<DbParameter> sqlParams = new List<DbParameter>();
             SqlCommand cmd = new SqlCommand();
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@idmateriacarrera", DbType.Int32, idMateriaCarrera));
-
             int retVal = (int)helper.EjecutarSql("SP_BAJA_MATERIA_CARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
             return retVal > 0;
         }
@@ -179,8 +176,6 @@ namespace AcademikaBackend.DataLayer.Dao
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@cuatrimestre", DbType.String, oMateriasxCarrera.Cuatrimestre));
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@anio_dictado", DbType.Int32, oMateriasxCarrera.AnioDictado));
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@dictado", DbType.String, oMateriasxCarrera.Dictado));
-
-
             int retVal = (int)helper.EjecutarSql("SP_ACTUALIZA_MATERIAS_CARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
             return retVal > 0;
         }
@@ -199,6 +194,45 @@ namespace AcademikaBackend.DataLayer.Dao
         {
             SqlCommand cmd = new SqlCommand();
             string sql = $"UPDATE MATERIAS SET estado = 0 WHERE id_materia = {id}";
+            int result = (int)helper.EjecutarSql(sql, cmd, CommandType.Text, null, "NonQuery");
+            return result != 0;
+        }
+
+        public Materia GetMateriaById(int id)
+        {
+            Materia curso = new();
+            SqlCommand cmd = new();
+            string sql = $"SELECT* FROM MATERIAS WHERE id_materia = {id}";
+
+            DataTable table = helper.ConsultaSQLNonSP(cmd, sql);
+
+            foreach (DataRow row in table.Rows)
+            {
+                curso = ObjectMapping(row);
+            }
+
+            return curso;
+        }
+
+        private Materia ObjectMapping(DataRow row)
+        {
+            Materia oMateria = new Materia
+            {
+                Id_Materia = Convert.ToInt32(row[0].ToString()),
+                NombreMateria = row[1].ToString(),
+                Estado = ((Estado)Convert.ToInt32(row[2])).ToString(),
+            };
+            return oMateria;
+        }
+
+        public bool UpdateMateria(Materia materia)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string exist = $"SELECT * FROM MATERIAS WHERE materia = '{materia.NombreMateria}'";
+            DataTable table = helper.ConsultaSQLNonSP(cmd, exist);
+            if (table.Rows.Count == 1)
+                return false;
+            string sql = $"UPDATE MATERIAS SET materia = '{materia.NombreMateria}' WHERE id_materia = '{materia.Id_Materia}'";
             int result = (int)helper.EjecutarSql(sql, cmd, CommandType.Text, null, "NonQuery");
             return result != 0;
         }

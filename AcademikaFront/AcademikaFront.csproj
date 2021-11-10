@@ -39,6 +39,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AcademikaDataSetFull.xsd</DependentUpon>
     </Compile>
+    <Compile Update="Presentacion\FrmEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\FrmEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Presentacion\FrmAltaMateriaCarrera.cs">
       <SubType>Form</SubType>
     </Compile>

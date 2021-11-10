@@ -15,7 +15,7 @@ namespace AcademikaBackend.DataLayer.Helper
 
         private HelperDao()
         {
-            connectionString = ConnectionStrings.Ciro.ToString();
+            connectionString = ConnectionStrings.Cristian.ToString();
         }
 
         public static HelperDao GetInstance()
@@ -64,8 +64,43 @@ namespace AcademikaBackend.DataLayer.Helper
             return tabla;
         }
 
+        public DataTable ConsultaSQLNonSP(SqlCommand cmd, string query, List<DbParameter> ListaParametros = null)
+        {
+            SqlConnection cnn = new SqlConnection(connectionString);
 
-        
+            DataTable tabla = new DataTable();
+
+            if (ListaParametros != null)
+            {
+                foreach (DbParameter parameter in ListaParametros)
+                {
+                    cmd.Parameters.Add(parameter);
+                }
+            }
+
+            try
+            {
+                cnn.ConnectionString = connectionString;
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                tabla.Load(cmd.ExecuteReader());
+
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+
+            }
+            return tabla;
+        }
+
         public int EjecutarSQLConValorOUT(SqlCommand cmd, string nombreSP, List<DbParameter> ListaParametros = null)
         {
             SqlConnection cnn = new SqlConnection(connectionString);

@@ -61,5 +61,44 @@ namespace AcademikaBackend.DataLayer.Dao
             int result = (int)helper.EjecutarSql(sql, cmd, CommandType.Text, null, "NonQuery");
             return result != 0;
         }
+
+        public Carrera GetCarreraById(int id)
+        {
+            Carrera carrera = new();
+            SqlCommand cmd = new();
+            string sql = $"SELECT * FROM CARRERAS WHERE id_carrera = {id}";
+            DataTable table = helper.ConsultaSQLNonSP(cmd, sql);
+
+            foreach (DataRow row in table.Rows)
+            {
+                carrera = ObjectMapping(row);
+            }
+
+            return carrera;
+        }
+
+        private Carrera ObjectMapping(DataRow row)
+        {
+            Carrera carrera = new Carrera
+            {
+                Id_Carrera = Convert.ToInt32(row[0].ToString()),
+                NombreCarrera = row[1].ToString(),
+                Estado = ((Estado)Convert.ToInt32(row[2])).ToString(),
+                Duracion = Convert.ToString(row[3])
+            };
+            return carrera;
+        }
+
+        public bool UpdateCarrera(Carrera carrera)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string exist = $"SELECT * FROM CARRERAS WHERE carrera = '{carrera.NombreCarrera}'";
+            DataTable table = helper.ConsultaSQLNonSP(cmd, exist);
+            if (table.Rows.Count == 1)
+                return false;
+            string sql = $"UPDATE CARRERAS SET carrera = '{carrera.NombreCarrera}', duracion = '{carrera.Duracion}' WHERE id_carrera = '{carrera.Id_Carrera}'";
+            int result = (int)helper.EjecutarSql(sql, cmd, CommandType.Text, null, "NonQuery");
+            return result != 0;
+        }
     }
 }
