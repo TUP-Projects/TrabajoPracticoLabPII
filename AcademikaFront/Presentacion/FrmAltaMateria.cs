@@ -96,7 +96,6 @@ namespace Academika.Presentacion
 
         private async Task LimpiarCamposAsync()
         {
-            txtSearch.Text = "";
             await Inicia();
         }
 
