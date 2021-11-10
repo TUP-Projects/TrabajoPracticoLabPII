@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Academika.Client;
+using AcademikaBackend.BusinessLayer.Entities;
+using Newtonsoft.Json;
+using System;
 using System.Drawing;
-using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
-
 
 namespace Academika.Presentacion
-    {
+{
     public partial class FrmLogin : Form
     {
         public FrmLogin()
@@ -93,19 +91,48 @@ namespace Academika.Presentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_ClickAsync(object sender, EventArgs e)
         {
-            if (txtUser.Text != "USUARIO")
+            //Validamos que se haya ingresado un usuario.
+            if ((txtUser.Text == ""))
             {
-                if (txtPass.Text != "CONTRASEÑA") { }
-                else msgError("Por favor ingrese contraseña");
+                msgError("Por favor ingrese usuario");
             }
 
-            else msgError("Por favor ingrese usuario");
-           FrmMain nuevo = new FrmMain();
-           nuevo.Show();
-           this.Hide();
+            //Validamos que se haya ingresado una password
+            if ((txtPass.Text == ""))
+            {
+                msgError("Por favor ingrese contraseña");
+            }
+
+            _ = IniciarSesion();
         }
+
+        private async Task IniciarSesion()
+        {
+            Usuario oUsuario = new Usuario();
+            oUsuario.NombreUsuario = txtUser.Text;
+            oUsuario.Password = Convert.ToBase64String(Encoding.UTF8.GetBytes(txtPass.Text), Base64FormattingOptions.None);
+
+            string data = JsonConvert.SerializeObject(oUsuario);
+
+            string urlBase = "https://localhost:44365/api/Login/";
+            var resultado = await ClienteSingleton.GetInstancia().PostAsync(urlBase, data);
+            var IdUser = Convert.ToInt32(resultado);
+            
+            if (IdUser != 0)
+            {
+                MessageBox.Show("Bienvenido a Academika!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FrmMain nuevo = new();
+                nuevo.Show();
+                Hide();
+            }
+            else
+            {
+                msgError("Usuario y/o contraseña incorrecta !");
+            }
+        }
+
         private void msgError(string msg)
         {
             lblMessageError.Text = "      " + msg;

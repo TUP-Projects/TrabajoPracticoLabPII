@@ -17,7 +17,7 @@ namespace AcademikaBackend.DataLayer.Dao
             List<DbParameter> sqlParams = new List<DbParameter>();
             SqlCommand cmd = new SqlCommand();
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@tabla", DbType.String, tabla));
-            int prox_id = (int)HelperDao.EjecutarSql("SP_OBTENER_PROX_ID", cmd, CommandType.StoredProcedure, sqlParams, "Scalar");            
+            int prox_id = (int)helper.EjecutarSql("SP_OBTENER_PROX_ID", cmd, CommandType.StoredProcedure, sqlParams, "Scalar");            
             return prox_id;
         }
 

@@ -83,7 +83,7 @@
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "ACCEDER";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_ClickAsync);
             // 
             // lnkRecover
             // 

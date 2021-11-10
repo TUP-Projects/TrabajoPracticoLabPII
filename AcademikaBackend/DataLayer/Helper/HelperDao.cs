@@ -15,7 +15,7 @@ namespace AcademikaBackend.DataLayer.Helper
 
         private HelperDao()
         {
-            connectionString = ConnectionStrings.Lucio.ToString();
+            connectionString = ConnectionStrings.Cristian.ToString();
         }
 
         public static HelperDao GetInstance()
@@ -67,31 +67,33 @@ namespace AcademikaBackend.DataLayer.Helper
 
 
         
-        public int EjecutarSQLConValorOUT(string nombreSP, string nombreParametro)
+        public int EjecutarSQLConValorOUT(SqlCommand cmd, string nombreSP, List<DbParameter> ListaParametros = null)
         {
             SqlConnection cnn = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand();
             SqlParameter param = new SqlParameter();
             int val;
             try
             {
                 cnn.Open();
-                // Command Type para el Tipo de COmando que quiero ejecutar
-                // cmd.CommandText = CommandType.Text;  ejecutamos sql como texto plano
-                List<DbParameter> sqlParams = new List<DbParameter>();
+
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = nombreSP;
-                param.ParameterName = nombreParametro;
+
+                if (ListaParametros != null)
+                {
+                    foreach (DbParameter parameter in ListaParametros)
+                    {
+                        cmd.Parameters.Add(parameter);
+                    }
+                }
                 param.SqlDbType = SqlDbType.Int;
                 param.Direction = ParameterDirection.Output;
-
-                sqlParams.Add(param);
                 cmd.ExecuteScalar();
                 val = (int)param.Value;
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
                 val = 0;
             }
@@ -106,14 +108,12 @@ namespace AcademikaBackend.DataLayer.Helper
             return val;
         }
 
-        public static object EjecutarSql(string Query, SqlCommand cmd, CommandType TipoDeComando, List<DbParameter> ListaParametros, String TipoEjecucion)
+        public object EjecutarSql(string Query, SqlCommand cmd, CommandType TipoDeComando, List<DbParameter> ListaParametros, String TipoEjecucion)
         {
             SqlConnection cnn = new SqlConnection(instance.connectionString);
-            
-
             cmd.CommandType = TipoDeComando;
             cmd.CommandText = Query;
-            Int32 RetVal = 0;
+            int RetVal = 0;
            
             foreach (DbParameter parameter in ListaParametros)
             {
@@ -126,12 +126,12 @@ namespace AcademikaBackend.DataLayer.Helper
                 switch (TipoEjecucion)
                 {
                     case "Scalar":
-                        RetVal = (Int32)cmd.ExecuteScalar();
+                        RetVal = (int)cmd.ExecuteScalar();
                         break;
                     case "NonQuery":
                         RetVal = cmd.ExecuteNonQuery();
                         break;
-                }
+                 }
                 cmd.Dispose();
                 cnn.Close();
                 cnn.Dispose();
@@ -144,14 +144,14 @@ namespace AcademikaBackend.DataLayer.Helper
             return (int)RetVal;
         }
 
-        public static DbParameter CrearParametro(SqlCommand MyCommand, string DbParameterName, DbType DbCommandType, object ParameterValue)
+        public static DbParameter CrearParametro(SqlCommand MyCommand, string DbParameterName, DbType DbCommandType, object ParameterValue = null, ParameterDirection parameterDirection = ParameterDirection.Input)
         {
        
             SqlParameter MyParameter = MyCommand.CreateParameter();
             MyParameter.ParameterName = DbParameterName;
             MyParameter.DbType = DbCommandType;
             MyParameter.Value = ParameterValue;
-
+            MyParameter.Direction = parameterDirection;
 
             return MyParameter;
         }

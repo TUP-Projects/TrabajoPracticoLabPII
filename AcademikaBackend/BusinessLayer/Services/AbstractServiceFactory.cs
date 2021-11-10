@@ -11,5 +11,6 @@ namespace AcademikaBackend.BusinessLayer.Services
         public abstract IMateriasService CrearServiceMaterias();
         public abstract ICarrerasService CrearServiceCarreras();
         public abstract ICursosService CrearServiceCursos();
+        public abstract ILoginService CrearServiceLogin();
     }
 }

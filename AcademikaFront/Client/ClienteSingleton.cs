@@ -36,8 +36,7 @@ namespace Academika.Client
 
         public async Task<string> PostAsync(string url, string data)
         {
-            StringContent content = new StringContent(data, Encoding.UTF8,
-            "application/json");
+            StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
             var result = await client.PostAsync(url, content);
             var response = "";
             if (result.IsSuccessStatusCode)

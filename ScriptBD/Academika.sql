@@ -651,6 +651,23 @@ GO
 
 /* SP'S DE CONSULTAS DE TABLAS */
 
+CREATE PROC SP_VALIDAR_USUARIO
+	@NombreUsuario nvarchar(50),
+	@Password nvarchar(255),
+	@IdUsuario int OUTPUT
+AS
+BEGIN
+	IF EXISTS(SELECT IdUsuario FROM Credenciales WHERE Usuario = @NombreUsuario AND Contrasenia = @Password)
+		BEGIN
+			SELECT @IdUsuario = IdUsuario FROM Credenciales WHERE Usuario = @NombreUsuario AND Contrasenia = @Password
+	END
+	ELSE
+		BEGIN
+			SELECT @IdUsuario = 0
+	END
+END
+GO
+
 CREATE PROCEDURE SP_CONSULTAR_MATERIAS
 AS
 BEGIN

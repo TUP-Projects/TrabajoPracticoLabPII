@@ -275,9 +275,12 @@ namespace Academika.Presentacion
         {
             if (MessageBox.Show("Seguro que desea cerrar sesión y Salir?", "Advertencia",
               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                FrmLogin frmLogin = new FrmLogin();
+                frmLogin.Show();
                 this.Close();
-            
-
+            }
+                
         }
     }
 }

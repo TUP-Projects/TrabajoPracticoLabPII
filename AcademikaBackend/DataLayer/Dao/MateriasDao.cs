@@ -35,7 +35,7 @@ namespace AcademikaBackend.DataLayer.Dao
             List<DbParameter> sqlParams = new List<DbParameter>();
             SqlCommand cmd = new SqlCommand();
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@tabla", DbType.String, tabla));
-            int prox_id = (int)HelperDao.EjecutarSql("SP_OBTENER_PROX_ID", cmd, CommandType.StoredProcedure, sqlParams, "Scalar");            
+            int prox_id = (int)helper.EjecutarSql("SP_OBTENER_PROX_ID", cmd, CommandType.StoredProcedure, sqlParams, "Scalar");            
             return prox_id;
         }
 
@@ -50,7 +50,7 @@ namespace AcademikaBackend.DataLayer.Dao
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@anio_dictado", DbType.Int32, mxc.AnioDictado));
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@carga_horaria", DbType.Int32, mxc.CargaHoraria));
 
-            int retVal = (int)HelperDao.EjecutarSql("SP_ACTUALIZA_MATERIASxCARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            int retVal = (int)helper.EjecutarSql("SP_ACTUALIZA_MATERIASxCARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
             return retVal > 0;
         }
 
@@ -72,7 +72,7 @@ namespace AcademikaBackend.DataLayer.Dao
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_curso", DbType.Int32, dxm.Curso.Id_Curso));
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_materia_carrera", DbType.Int32, dxm.Mxcar.Id_Materias_x_Carrera));
           
-            int retVal = (int)HelperDao.EjecutarSql("SP_BAJA_MATERIAxCURSO", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            int retVal = (int)helper.EjecutarSql("SP_BAJA_MATERIAxCURSO", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
             
             return retVal > 0;
         }

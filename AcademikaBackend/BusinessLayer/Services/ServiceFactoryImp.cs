@@ -22,5 +22,10 @@ namespace AcademikaBackend.BusinessLayer.Services
         {
             return new CursosService();
         }
+
+        public override ILoginService CrearServiceLogin()
+        {
+            return new LoginService();
+        }
     }
 }
