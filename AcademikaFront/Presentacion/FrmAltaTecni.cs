@@ -57,5 +57,10 @@ namespace Academika.Presentacion
             List<Carrera> Carreras = JsonConvert.DeserializeObject<List<Carrera>>(resultado);
             dgvTecnicatura.DataSource = Carreras;
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
