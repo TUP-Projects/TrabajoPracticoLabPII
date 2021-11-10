@@ -136,7 +136,7 @@ namespace AcademikaBackend.DataLayer.Dao
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@idcarrera", DbType.Int32, idcarrera));
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@idmateria", DbType.Int32, idmateria));
             DataTable dt = new DataTable();
-            dt = helper.ConsultaSQL(cmd, "SP_CONSULTA_MATERIAS_CARRERA");
+            dt = helper.ConsultaSQL(cmd, "SP_CONSULTA_MATERIAS_CARRERA", sqlParams);
             return dt;
 
         }
