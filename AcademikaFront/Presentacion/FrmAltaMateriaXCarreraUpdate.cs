@@ -16,22 +16,32 @@ using System.Windows.Forms;
 
 namespace Academika.Presentacion
 {
-
-    public partial class FrmAltaMateriaXCarrera : Form
+    public partial class FrmAltaMateriaXCarreraUpdate : Form
     {
         private IMateriasService servicio;
-        Materia materia;
-        MateriasXCarrera mxc;
-        Curso curso;
-        DocentesXMateria dxm;
-        private Form currentChildForm;
-
-        int mostrarAyuda = 0;
-        public FrmAltaMateriaXCarrera()
+        
+        MateriasXCarrera mxcAnt;
+        Curso cursoAnt;
+        string jefePreCargado;
+        string profPreCargado;
+        string ayudPreCargado;
+     
+        public FrmAltaMateriaXCarreraUpdate()
         {
             InitializeComponent();
             servicio = new ServiceFactoryImp().CrearServiceMaterias();
             
+        }
+
+        public FrmAltaMateriaXCarreraUpdate(MateriasXCarrera matxcar, Curso cur, string jefe, string prof, string ayud) {
+            InitializeComponent();
+            servicio = new ServiceFactoryImp().CrearServiceMaterias();
+            this.mxcAnt = matxcar;
+            this.cursoAnt = cur;
+            this.jefePreCargado = jefe;
+            this.profPreCargado = prof;
+            this.ayudPreCargado = ayud;
+        
         }
 
         private async Task Cargar_CombosAsync(ComboBox combo, string entidad)
@@ -43,48 +53,18 @@ namespace Academika.Presentacion
             
             combo.ValueMember = "ID";
             combo.DisplayMember = "Descripcion";
-            combo.SelectedIndex = -1;
+
+            setCombos();
         }
 
-        private async Task Consultar_DetalleMateriaAsync(int idMateria) {
-
-
-            string urlBase = "https://localhost:44365/api/MateriasDetalle/Consulta/";
-            string url = urlBase + idMateria.ToString();
-
-            var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
-            DataTable dt = (DataTable)JsonConvert.DeserializeObject(resultado, (typeof(DataTable)));
-            if (dt.Rows.Count > 0)
-                dgvResultado.DataSource = dt;
-            else
-            {
-                dt = (DataTable)dgvResultado.DataSource;
-                dt.Clear();
-            }
-
-
-        }
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void FrmAltaMaterias_Load(object sender, EventArgs e)
         {
             Inicia();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
+           
 
         }
 
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
         private void ConsultaID()
         {
 
@@ -100,6 +80,9 @@ namespace Academika.Presentacion
             _ = Cargar_CombosAsync(cboJefe, "docentes");
             _ = Cargar_CombosAsync(cboCarrera, "carreras");
             _ = Cargar_CombosAsync(cboCurso, "cursos");
+
+            
+            
         }
 
         private void cboDictado_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,12 +98,17 @@ namespace Academika.Presentacion
 
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            materia = new Materia();
-            mxc = new MateriasXCarrera();
-            curso = new Curso();
+        private void btnEditar_Click(object sender, EventArgs e)
 
+        {
+
+            
+            List<MateriasXCarrera> lstMatxCarrera = new List<MateriasXCarrera>();
+            List<Curso> lstCurso = new List<Curso>();
+            MateriasXCarrera mxc = new MateriasXCarrera();
+
+            Curso curso = new Curso();
+            
 
             if (cboMateria.SelectedIndex == -1)
             {
@@ -131,9 +119,9 @@ namespace Academika.Presentacion
             }
             else
             {
-                materia.Id_Materia = (int)cboMateria.SelectedValue;
-                materia.NombreMateria = cboMateria.SelectedText;
-                mxc.Materia = materia;
+                mxc.Materia.Id_Materia = (int)cboMateria.SelectedValue;
+                mxc.Materia.NombreMateria = cboMateria.SelectedText;
+               
             }
             
 
@@ -144,6 +132,7 @@ namespace Academika.Presentacion
                 return;
             }
             else {
+
                 mxc.Carrera.Id_Carrera = (int)cboCarrera.SelectedValue;
 
             }
@@ -235,130 +224,50 @@ namespace Academika.Presentacion
             lstDocentes.Add(new DocentesXMateria(ayudante, mxc, "Ayudante", curso));
             lstDocentes.Add(new DocentesXMateria(jefe, mxc, "Jefe", curso));
 
+            lstMatxCarrera.Add(mxcAnt);
+            lstMatxCarrera.Add(mxc);
+            lstCurso.Add(cursoAnt);
+            lstCurso.Add(curso);
 
-
-            if (servicio.InsertarMateria(materia, mxc, lstDocentes))
+            
+            if (servicio.ActualizaDatosMateriasxCarrera(lstMatxCarrera, lstDocentes, lstCurso))
             {
                 MessageBox.Show("Se agregó la materia al plan de estudios!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                _ = Consultar_DetalleMateriaAsync(materia.Id_Materia);
 
 
             }
             else
             {
                 MessageBox.Show("Error al intentar grabar la materia. Revise no estar duplicando valores en la tabla siguiente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _ = Consultar_DetalleMateriaAsync(materia.Id_Materia);
+               
 
             }
             ConsultaID();
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            mxc = new MateriasXCarrera();
-            curso = new Curso();
 
 
-            string nombreJefe; string nombreAyud; string nombreAdj;
-           
-
-            if (dgvResultado.RowCount > 0)
-            {
-                mxc.Id_Materias_x_Carrera = Convert.ToInt32(dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value);
-                mxc.Dictado = (string)dgvResultado.CurrentRow.Cells["Dictado"].Value;
-                mxc.Materia.NombreMateria = (string)dgvResultado.CurrentRow.Cells["NombreMat"].Value;
-                mxc.Carrera.NombreCarrera = (string)dgvResultado.CurrentRow.Cells["Carrera"].Value;
-                mxc.AnioDictado = Convert.ToInt32(dgvResultado.CurrentRow.Cells["AnioDictado"].Value);
-                mxc.CargaHoraria = Convert.ToInt32(dgvResultado.CurrentRow.Cells["Carga"].Value);
-                mxc.Cuatrimestre = Convert.ToInt32(dgvResultado.CurrentRow.Cells["Cuatrimestre"].Value);
-                curso.Id_Curso = Convert.ToInt32(dgvResultado.CurrentRow.Cells["IdCurso"].Value);
-                curso.NombreCurso = (string)(dgvResultado.CurrentRow.Cells["NomCurso"].Value);
-                nombreJefe = dgvResultado.CurrentRow.Cells["JefedeCatedra"].Value.ToString();
-                nombreAyud = dgvResultado.CurrentRow.Cells["AyudantePrimera"].Value.ToString();
-                nombreAdj = dgvResultado.CurrentRow.Cells["ProfesorAdjunto"].Value.ToString();
-
-                new FrmAltaMateriaXCarreraUpdate(mxc, curso, nombreJefe, nombreAdj, nombreAyud).ShowDialog();
-
-                
-                
-            }
-            else {
-                MessageBox.Show("Debe seleccionar un registro a editar", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            
-
-            if (cboMateria.SelectedIndex == -1)
-            {
-
-                MessageBox.Show("Debe seleccionar una materia", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cboMateria.Focus();
-
-            }
-            else
-            {
-                materia = new Materia();
-                materia.Id_Materia = (int)cboMateria.SelectedValue;
-                _ = Consultar_DetalleMateriaAsync(materia.Id_Materia);
-            }
-
-           
-        
-        }
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-
-            rtbAyuda.Text = " - Utilice el icono de buscar para revisar el detalle de una materia.\n" +
-                        "- Sólo podrá editar los campos: Dictado, Carga Horaria, Cuatrimestre y Año. Para lo demás debe borrar y volver a insertar.\n" +
-                        "- Edite con los datos deseados y luego pulse el botón de editar.\n" +
-                        "- Utilice el botón Guardar para guardar los datos del formulario.\n" +
-                        "- Utilice el botón Cancelar para limpiar el formulario.";
-
-            if (mostrarAyuda == 0)
-            {
-                mostrarAyuda = 1;
-                rtbAyuda.Visible = true;
-            }
-            else {
-                mostrarAyuda = 0;
-                rtbAyuda.Visible = false;
-            }
-        }
-
-        private void btnBorrar_Click(object sender, EventArgs e)
-        {
-            DocentesXMateria dxm = new DocentesXMateria();
-
-            if (dgvResultado.RowCount > 0)
-            {
-                dxm.Curso.Id_Curso = Convert.ToInt32(dgvResultado.CurrentRow.Cells["IdCurso"].Value);
-                dxm.Mxcar.Id_Materias_x_Carrera = Convert.ToInt32(dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value);
 
 
-                if (servicio.BajaCursoMateriaDocente(dxm))
-                {
-                    MessageBox.Show("Se eliminó el registro seleccionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
-                }
-                else
-                {
-                    MessageBox.Show("Error al intentar borrar la materia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
-                }
-            }
-            else {
 
-                MessageBox.Show("Debe seleccionar un registro a borrar", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }
+        private void setCombos() {
 
-            ConsultaID();
-        }
+            cboAdj.SelectedIndex = cboAdj.FindString(profPreCargado);
+            cboAyud.SelectedIndex = cboAyud.FindString(ayudPreCargado);
+            cboJefe.SelectedIndex = cboJefe.FindString(jefePreCargado);
+            cboMateria.SelectedIndex = cboMateria.FindString(mxcAnt.Materia.NombreMateria.ToString());
+            cboCarrera.SelectedIndex = cboCarrera.FindString(mxcAnt.Carrera.NombreCarrera.ToString());
+            cboCuatrimestre.SelectedIndex = cboCuatrimestre.FindString(mxcAnt.Cuatrimestre.ToString());
+            nudCarga.Value = Convert.ToInt32(mxcAnt.CargaHoraria);
+            cboDictado.SelectedIndex = cboDictado.FindString(mxcAnt.Dictado.ToString());
+            cboAnio.SelectedIndex = cboAnio.Items.IndexOf(mxcAnt.AnioDictado.ToString());
+            cboCurso.SelectedIndex = cboCurso.FindString(cursoAnt.NombreCurso.ToString());
+
+        } 
+       
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -372,13 +281,8 @@ namespace Academika.Presentacion
             cboMateria.SelectedIndex = -1;
             cboAnio.SelectedIndex = -1;
             nudCarga.Value = 0;
-            DataTable DT = (DataTable)dgvResultado.DataSource;
-            if (DT != null)
-                DT.Clear();
+          
         }
-
-
-      
     }
     
 }

@@ -19,7 +19,7 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         public List<Materia> ConsultarMaterias();
 
-        bool ActualizaDatosMateriasxCarrera(MateriasXCarrera mxc);
+        bool ActualizaDatosMateriasxCarrera(List<MateriasXCarrera> lstmxc, List<DocentesXMateria> dxm, List<Curso> cursos);
 
         bool BajaCursoMateriaDocente(DocentesXMateria dxm);
 
