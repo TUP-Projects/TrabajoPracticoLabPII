@@ -75,5 +75,15 @@ namespace Academika.Presentacion
         {
 
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
     }
 }

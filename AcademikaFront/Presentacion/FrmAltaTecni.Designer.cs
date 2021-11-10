@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblLegajoDocente = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,16 +40,16 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.dgvTecnicatura = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreTec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duración = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nup_Duracion = new System.Windows.Forms.NumericUpDown();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.rtbAyuda = new System.Windows.Forms.Label();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.RichTextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreTec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duración = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTecnicatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nup_Duracion)).BeginInit();
             this.SuspendLayout();
@@ -153,14 +153,14 @@
             this.dgvTecnicatura.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgvTecnicatura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTecnicatura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTecnicatura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTecnicatura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTecnicatura.ColumnHeadersHeight = 30;
             this.dgvTecnicatura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvTecnicatura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -175,54 +175,23 @@
             this.dgvTecnicatura.Name = "dgvTecnicatura";
             this.dgvTecnicatura.ReadOnly = true;
             this.dgvTecnicatura.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTecnicatura.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTecnicatura.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTecnicatura.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvTecnicatura.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTecnicatura.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTecnicatura.Size = new System.Drawing.Size(604, 258);
             this.dgvTecnicatura.TabIndex = 111;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id_Carrera";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            this.ID.Width = 50;
-            // 
-            // NombreTec
-            // 
-            this.NombreTec.DataPropertyName = "NombreCarrera";
-            this.NombreTec.HeaderText = "Nombre";
-            this.NombreTec.Name = "NombreTec";
-            this.NombreTec.ReadOnly = true;
-            this.NombreTec.Width = 400;
-            // 
-            // Duración
-            // 
-            this.Duración.DataPropertyName = "Duracion";
-            this.Duración.HeaderText = "Duración";
-            this.Duración.Name = "Duración";
-            this.Duración.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
             // 
             // Nup_Duracion
             // 
@@ -287,6 +256,41 @@
             this.txtSearch.TabIndex = 123;
             this.txtSearch.Text = "";
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id_Carrera";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID.Visible = false;
+            this.ID.Width = 50;
+            // 
+            // NombreTec
+            // 
+            this.NombreTec.DataPropertyName = "NombreCarrera";
+            this.NombreTec.HeaderText = "Nombre";
+            this.NombreTec.Name = "NombreTec";
+            this.NombreTec.ReadOnly = true;
+            this.NombreTec.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NombreTec.Width = 400;
+            // 
+            // Duración
+            // 
+            this.Duración.DataPropertyName = "Duracion";
+            this.Duración.HeaderText = "Duración";
+            this.Duración.Name = "Duración";
+            this.Duración.ReadOnly = true;
+            this.Duración.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // FrmAltaTecni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -332,14 +336,14 @@
         private FontAwesome.Sharp.IconButton iconButton5;
         private System.Windows.Forms.NumericUpDown Nup_Duracion;
         private System.Windows.Forms.DataGridView dgvTecnicatura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreTec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Duración;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.Label rtbAyuda;
         private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox txtSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreTec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Duración;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

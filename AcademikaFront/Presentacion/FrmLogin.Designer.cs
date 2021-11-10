@@ -28,7 +28,6 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.lnkRecover = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -51,6 +50,7 @@
             this.txtUser.Size = new System.Drawing.Size(272, 20);
             this.txtUser.TabIndex = 1;
             this.txtUser.Text = "USUARIO";
+            this.txtUser.UseWaitCursor = true;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
             this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
@@ -80,24 +80,10 @@
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(272, 46);
-            this.btnLogin.TabIndex = 5;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "ACCEDER";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_ClickAsync);
-            // 
-            // lnkRecover
-            // 
-            this.lnkRecover.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.lnkRecover.AutoSize = true;
-            this.lnkRecover.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lnkRecover.LinkColor = System.Drawing.Color.DimGray;
-            this.lnkRecover.Location = new System.Drawing.Point(265, 737);
-            this.lnkRecover.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lnkRecover.Name = "lnkRecover";
-            this.lnkRecover.Size = new System.Drawing.Size(203, 19);
-            this.lnkRecover.TabIndex = 0;
-            this.lnkRecover.TabStop = true;
-            this.lnkRecover.Text = "Ha olvidado la contraseña?";
             // 
             // pictureBox1
             // 
@@ -174,7 +160,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.lnkRecover);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txtPass);
@@ -185,7 +170,7 @@
             this.Name = "FrmLogin";
             this.Opacity = 0.86D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -200,7 +185,6 @@
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.LinkLabel lnkRecover;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
