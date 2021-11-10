@@ -376,9 +376,5 @@ namespace Academika.Presentacion
             if (DT != null)
                 DT.Clear();
         }
-
-
-      
     }
-    
 }

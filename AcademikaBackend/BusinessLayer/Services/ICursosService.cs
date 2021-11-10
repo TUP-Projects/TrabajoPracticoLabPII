@@ -7,6 +7,8 @@ namespace AcademikaBackend.BusinessLayer.Services
     {
         int ObtenerProxId(string tabla);
         public List<Curso> ConsultarCursos();
-
+        object RegistrarBajaCurso(int id);
+        object ConsultarCursos(List<string> lst);
+        bool CrearCurso(Curso oCurso);
     }
 }

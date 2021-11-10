@@ -123,7 +123,7 @@ namespace Academika.Presentacion
             if (IdUser != 0)
             {
                 MessageBox.Show("Bienvenido a Academika!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FrmMain nuevo = new();
+                FrmMain nuevo = new(txtUser.Text);
                 nuevo.Show();
                 Hide();
             }

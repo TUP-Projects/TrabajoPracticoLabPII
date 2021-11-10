@@ -19,7 +19,7 @@ namespace Academika.Presentacion
         private Panel leftBorderBtn;
         private Form currentChildForm;
 
-        public FrmMain()
+        public FrmMain(string NombreUsuario = "")
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -30,7 +30,9 @@ namespace Academika.Presentacion
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            lblWelcome.Text = "Bienvenido: " + NombreUsuario;
         }
+
         //Estructuras de color
         private struct RGBColors
         {

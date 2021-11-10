@@ -21,7 +21,7 @@ namespace Academika.Presentacion
             servicio = new ServiceFactoryImp().CrearServiceMaterias();
         }
 
-        private void ConsultaID()
+        private async Task ConsultaID()
         {
             lblLegajoDocente.Text = "ID Tecnicatura: " + servicio.ObtenerProxId("CARRERAS").ToString();
         }
@@ -38,24 +38,59 @@ namespace Academika.Presentacion
               VerAyuda = rtbAyuda.Visible = true;
         }
 
-        private void FrmAltaTecni_Load(object sender, EventArgs e)
+        private async void FrmAltaTecni_Load(object sender, EventArgs e)
         {
-            Inicia();
+            await Inicia();
         }
 
-        private void Inicia()
+        private async Task Inicia()
         {
-            ConsultaID();
-            _ = CargarDgvAsync();
+            await ConsultaID();
+            await CargarDgvAsync();
         }
 
         private async Task CargarDgvAsync()
         {
             string urlBase = "https://localhost:44365/api/Carreras/Consulta/";
-
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(urlBase);
             List<Carrera> Carreras = JsonConvert.DeserializeObject<List<Carrera>>(resultado);
             dgvTecnicatura.DataSource = Carreras;
+        }
+
+        private async void iconButton1_Click(object sender, EventArgs e)
+        {
+            Carrera carrera = new()
+            {
+                NombreCarrera = txt_NombreCarrera.Text,
+                Duracion = Nup_Duracion.Value.ToString()
+            };
+            string data = JsonConvert.SerializeObject(carrera);
+
+
+            bool success = await GrabarCarreraAsync(data);
+            if (success)
+            {
+                MessageBox.Show("Carrera registrada con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await LimpiarCamposAsync();
+            }
+            else
+            {
+                MessageBox.Show("La carrera ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task<bool> GrabarCarreraAsync(string data)
+        {
+            string urlBase = "https://localhost:44365/api/Carreras/";
+            bool resultado = Convert.ToBoolean(await ClienteSingleton.GetInstancia().PostAsync(urlBase, data));
+            return resultado;
+        }
+
+        private async Task LimpiarCamposAsync()
+        {
+            txt_NombreCarrera.Text = "";
+            Nup_Duracion.Value = 0;
+            await Inicia();
         }
 
         private void label2_Click(object sender, EventArgs e)

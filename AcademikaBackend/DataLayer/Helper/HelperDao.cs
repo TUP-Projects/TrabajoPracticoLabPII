@@ -15,7 +15,7 @@ namespace AcademikaBackend.DataLayer.Helper
 
         private HelperDao()
         {
-            connectionString = ConnectionStrings.Ciro.ToString(); //CONEXION CIRO
+            connectionString = ConnectionStrings.Cristian.ToString();
         }
 
         public static HelperDao GetInstance()

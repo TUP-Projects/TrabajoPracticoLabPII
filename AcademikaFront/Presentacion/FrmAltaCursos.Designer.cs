@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblLegajoDocente = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.nombreCurso = new System.Windows.Forms.RichTextBox();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,14 +61,14 @@
             this.lblLegajoDocente.TabIndex = 88;
             this.lblLegajoDocente.Text = "ID Curso:";
             // 
-            // richTextBox1
+            // nombreCurso
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(131, 75);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(190, 28);
-            this.richTextBox1.TabIndex = 89;
-            this.richTextBox1.Text = "Nombre Curso";
+            this.nombreCurso.Location = new System.Drawing.Point(131, 75);
+            this.nombreCurso.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.nombreCurso.Name = "nombreCurso";
+            this.nombreCurso.Size = new System.Drawing.Size(190, 28);
+            this.nombreCurso.TabIndex = 89;
+            this.nombreCurso.Text = "Nombre Curso";
             // 
             // dgvCursos
             // 
@@ -167,6 +167,7 @@
             this.iconButton1.Size = new System.Drawing.Size(51, 51);
             this.iconButton1.TabIndex = 106;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconButton6
             // 
@@ -264,7 +265,7 @@
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.dgvCursos);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.nombreCurso);
             this.Controls.Add(this.lblLegajoDocente);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmAltaCursos";
@@ -294,5 +295,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Curso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.RichTextBox nombreCurso;
     }
 }

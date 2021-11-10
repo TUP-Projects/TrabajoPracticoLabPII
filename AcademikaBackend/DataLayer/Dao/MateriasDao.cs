@@ -70,7 +70,7 @@ namespace AcademikaBackend.DataLayer.Dao
                     sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_ayud", DbType.Int32, item.Docente.Id_Docente));
             }
 
-            int retVal = (int)HelperDao.EjecutarSql("SP_ACTUALIZA_MATERIASxCARRERAxCURSO", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            int retVal = (int)helper.EjecutarSql("SP_ACTUALIZA_MATERIASxCARRERAxCURSO", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
             return retVal > 0;
         }
 

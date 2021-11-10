@@ -25,12 +25,12 @@ namespace Academika.Presentacion
             servicio = new ServiceFactoryImp().CrearServiceCursos();
         }
 
-        private void FrmAltaCursos_Load(object sender, EventArgs e)
+        private async void FrmAltaCursos_Load(object sender, EventArgs e)
         {
-            Inicia();
+            await Inicia();
         }
 
-        private void ConsultaID()
+        private async Task ConsultaID()
         {
             lblLegajoDocente.Text = "ID Curso: " + servicio.ObtenerProxId("CURSOS").ToString();
         }
@@ -47,10 +47,10 @@ namespace Academika.Presentacion
                 VerAyuda = rtbAyuda.Visible = true;
         }
 
-        private void Inicia()
+        private async Task Inicia()
         {
-            ConsultaID();
-            _ = CargarDgvAsync();
+            await ConsultaID();
+            await CargarDgvAsync();
         }
 
         private async Task CargarDgvAsync()
@@ -73,6 +73,40 @@ namespace Academika.Presentacion
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void iconButton1_Click(object sender, EventArgs e)
+        {
+            Curso curso = new()
+            {
+                NombreCurso = nombreCurso.Text
+            };
+            string data = JsonConvert.SerializeObject(curso);
+            
+
+            bool success = await GrabarCursoAsync(data);
+            if (success)
+            {
+                MessageBox.Show("Curso registrado con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await LimpiarCamposAsync();
+            }
+            else
+            {
+                MessageBox.Show("El curso ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task<bool> GrabarCursoAsync(string data)
+        {
+            string urlBase = "https://localhost:44365/api/Cursos/";
+            bool resultado = Convert.ToBoolean(await ClienteSingleton.GetInstancia().PostAsync(urlBase, data));
+            return resultado;
+        }
+
+        private async Task LimpiarCamposAsync()
+        {
+            nombreCurso.Text = "";
+            await Inicia();
         }
 
     }

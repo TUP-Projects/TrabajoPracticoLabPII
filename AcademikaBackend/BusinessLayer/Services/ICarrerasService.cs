@@ -7,6 +7,6 @@ namespace AcademikaBackend.BusinessLayer.Services
     {
         int ObtenerProxId(string tabla);
         public List<Carrera> ConsultarCarreras();
-
+        bool CrearCarrera(Carrera oCarrera);
     }
 }

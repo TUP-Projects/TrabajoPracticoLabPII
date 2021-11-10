@@ -41,5 +41,16 @@ namespace AcademikaBackend.DataLayer.Dao
 
             return lst;
         }
+
+        public bool CreateCarrera(Carrera oCarrera)
+        {
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@carrera", DbType.String, oCarrera.NombreCarrera));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@duracion", DbType.Int32, oCarrera.Duracion));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@estado", DbType.Int32, (int)Estado.Habilitado));
+            int result = (int)helper.EjecutarSql("SP_ALTA_CARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            return result != 0;
+        }
     }
 }

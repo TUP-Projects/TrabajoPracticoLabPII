@@ -38,7 +38,7 @@ namespace Academika.Presentacion
 
         private async Task CargarDgvAsync()
         {
-            string urlBase = "https://localhost:44365/api/Materias/Consulta/";
+            string urlBase = "https://localhost:44365/api/MateriasDetalle/Consulta/";
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(urlBase);
             List<Materia> Materias = JsonConvert.DeserializeObject<List<Materia>>(resultado);
             dgvMaterias.DataSource = Materias;

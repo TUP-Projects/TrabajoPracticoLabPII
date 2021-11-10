@@ -22,5 +22,10 @@ namespace AcademikaBackend.BusinessLayer.Services
         {
             return CarreraDao.ObtenerProxId(tabla);
         }
+
+        public bool CrearCarrera(Carrera oCarrera)
+        {
+            return CarreraDao.CreateCarrera(oCarrera);
+        }
     }
 }

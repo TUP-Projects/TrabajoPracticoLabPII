@@ -18,9 +18,24 @@ namespace AcademikaBackend.BusinessLayer.Services
             return CursosDao.GetCursos();
         }
 
+        public object ConsultarCursos(List<string> lst)
+        {
+            return CursosDao.GetCursos(lst);
+        }
+
+        public bool CrearCurso(Curso oCurso)
+        {
+            return CursosDao.CreateCurso(oCurso);
+        }
+
         public int ObtenerProxId(string tabla)
         {
             return CursosDao.ObtenerProxId(tabla);
+        }
+
+        public object RegistrarBajaCurso(int id)
+        {
+            return CursosDao.DeleteCurso(id);
         }
     }
 }

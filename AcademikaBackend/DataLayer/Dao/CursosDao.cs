@@ -29,16 +29,44 @@ namespace AcademikaBackend.DataLayer.Dao
 
             foreach (DataRow row in table.Rows)
             {
-                Curso oCurso = new Curso
-                {
-                    Id_Curso = Convert.ToInt32(row[0].ToString()),
-                    NombreCurso = row[1].ToString(),
-                    Estado = ((Estado)Convert.ToInt32(row[2])).ToString(),
-                };
-                lst.Add(oCurso);
+                lst.Add(ObjectMapping(row));
             }
 
             return lst;
+        }
+
+        public List<Curso> GetCursos(List<string> lst)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CreateCurso(Curso oCurso)
+        {
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@nombre_curso", DbType.String, oCurso.NombreCurso));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@estado", DbType.Int32, (int)Estado.Habilitado));
+            int result = (int)helper.EjecutarSql("SP_ALTA_CURSO", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            return result != 0;
+        }
+
+        public object DeleteCurso(int id)
+        {
+            return null;
+            //string sql = " UPDATE Equipo " +
+            //    " SET estado = 'N' " +
+            //    " WHERE idEquipo = '" + equipo.IdEquipo + "' ";
+
+            //return DataManager.GetInstance().EjecutarSQL(sql) > 0;
+        }
+
+        private Curso ObjectMapping(DataRow row)
+        {
+            Curso curso = new Curso();
+            curso.Id_Curso = Convert.ToInt32(row[0]);
+            curso.NombreCurso = row[1].ToString();
+            curso.Estado = ((Estado)Convert.ToInt32(row[2])).ToString();
+            return curso;
         }
     }
 }
