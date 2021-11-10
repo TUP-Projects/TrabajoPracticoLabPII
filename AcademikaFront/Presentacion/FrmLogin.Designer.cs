@@ -48,9 +48,9 @@
             this.txtUser.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(272, 20);
-            this.txtUser.TabIndex = 1;
+            this.txtUser.TabIndex = 2;
             this.txtUser.Text = "USUARIO";
-            this.txtUser.UseWaitCursor = true;
+            this.txtUser.WordWrap = false;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
             this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
@@ -64,7 +64,7 @@
             this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(233, 39);
-            this.lblLogin.TabIndex = 4;
+            this.lblLogin.TabIndex = 1;
             this.lblLogin.Text = "INICIAR SESION";
             // 
             // btnLogin
@@ -80,7 +80,7 @@
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(272, 46);
-            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "ACCEDER";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_ClickAsync);
@@ -130,8 +130,9 @@
             this.txtPass.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(272, 20);
-            this.txtPass.TabIndex = 2;
+            this.txtPass.TabIndex = 3;
             this.txtPass.Text = "CONTRASEÑA";
+            this.txtPass.WordWrap = false;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
             this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
