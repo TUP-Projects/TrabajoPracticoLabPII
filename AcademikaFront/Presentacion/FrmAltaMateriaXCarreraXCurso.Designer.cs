@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblId = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboDictado = new System.Windows.Forms.ComboBox();
@@ -50,16 +51,6 @@
             this.btnBorrar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.dgvResultado = new System.Windows.Forms.DataGridView();
-            this.rtbAyuda = new System.Windows.Forms.Label();
-            this.cboAnio = new System.Windows.Forms.ComboBox();
-            this.lblCarga = new System.Windows.Forms.Label();
-            this.nudCarga = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cboCuatrimestre = new System.Windows.Forms.ComboBox();
-            this.cboMateria = new System.Windows.Forms.ComboBox();
-            this.lblMateria = new System.Windows.Forms.Label();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +65,16 @@
             this.IdCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMateriaCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rtbAyuda = new System.Windows.Forms.Label();
+            this.cboAnio = new System.Windows.Forms.ComboBox();
+            this.lblCarga = new System.Windows.Forms.Label();
+            this.nudCarga = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboCuatrimestre = new System.Windows.Forms.ComboBox();
+            this.cboMateria = new System.Windows.Forms.ComboBox();
+            this.lblMateria = new System.Windows.Forms.Label();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCarga)).BeginInit();
             this.SuspendLayout();
@@ -284,7 +285,7 @@
             this.btnBorrar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnBorrar.IconColor = System.Drawing.Color.Black;
             this.btnBorrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBorrar.Location = new System.Drawing.Point(1091, 327);
+            this.btnBorrar.Location = new System.Drawing.Point(1091, 342);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(51, 51);
@@ -298,7 +299,7 @@
             this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.Location = new System.Drawing.Point(1091, 258);
+            this.btnEditar.Location = new System.Drawing.Point(1091, 273);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(51, 51);
@@ -311,10 +312,17 @@
             // 
             this.dgvResultado.AllowUserToAddRows = false;
             this.dgvResultado.AllowUserToDeleteRows = false;
-            this.dgvResultado.AllowUserToOrderColumns = true;
             this.dgvResultado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgvResultado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvResultado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResultado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvResultado.ColumnHeadersHeight = 30;
             this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -332,14 +340,14 @@
             this.IdCurso,
             this.IdMateria,
             this.IdMateriaCarrera});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvResultado.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResultado.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvResultado.EnableHeadersVisualStyles = false;
             this.dgvResultado.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvResultado.Location = new System.Drawing.Point(15, 273);
@@ -348,9 +356,9 @@
             this.dgvResultado.ReadOnly = true;
             this.dgvResultado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvResultado.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.dgvResultado.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.dgvResultado.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvResultado.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Highlight;
             this.dgvResultado.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dgvResultado.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -358,133 +366,6 @@
             this.dgvResultado.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvResultado.Size = new System.Drawing.Size(1068, 306);
             this.dgvResultado.TabIndex = 113;
-            // 
-            // rtbAyuda
-            // 
-            this.rtbAyuda.Location = new System.Drawing.Point(0, 0);
-            this.rtbAyuda.Name = "rtbAyuda";
-            this.rtbAyuda.Size = new System.Drawing.Size(100, 23);
-            this.rtbAyuda.TabIndex = 125;
-            // 
-            // cboAnio
-            // 
-            this.cboAnio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboAnio.DropDownWidth = 140;
-            this.cboAnio.FormattingEnabled = true;
-            this.cboAnio.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.cboAnio.Location = new System.Drawing.Point(386, 112);
-            this.cboAnio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cboAnio.Name = "cboAnio";
-            this.cboAnio.Size = new System.Drawing.Size(140, 23);
-            this.cboAnio.TabIndex = 124;
-            // 
-            // lblCarga
-            // 
-            this.lblCarga.AutoSize = true;
-            this.lblCarga.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblCarga.Location = new System.Drawing.Point(554, 114);
-            this.lblCarga.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCarga.Name = "lblCarga";
-            this.lblCarga.Size = new System.Drawing.Size(83, 15);
-            this.lblCarga.TabIndex = 119;
-            this.lblCarga.Text = "Carga Horaria:";
-            // 
-            // nudCarga
-            // 
-            this.nudCarga.Location = new System.Drawing.Point(670, 112);
-            this.nudCarga.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudCarga.Name = "nudCarga";
-            this.nudCarga.Size = new System.Drawing.Size(120, 23);
-            this.nudCarga.TabIndex = 120;
-            this.nudCarga.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label10.Location = new System.Drawing.Point(554, 159);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 15);
-            this.label10.TabIndex = 114;
-            this.label10.Text = "Cuatrimestre";
-            // 
-            // cboCuatrimestre
-            // 
-            this.cboCuatrimestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCuatrimestre.FormattingEnabled = true;
-            this.cboCuatrimestre.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.cboCuatrimestre.Location = new System.Drawing.Point(670, 156);
-            this.cboCuatrimestre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cboCuatrimestre.Name = "cboCuatrimestre";
-            this.cboCuatrimestre.Size = new System.Drawing.Size(140, 23);
-            this.cboCuatrimestre.TabIndex = 115;
-            // 
-            // cboMateria
-            // 
-            this.cboMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMateria.DropDownWidth = 300;
-            this.cboMateria.FormattingEnabled = true;
-            this.cboMateria.Location = new System.Drawing.Point(108, 69);
-            this.cboMateria.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cboMateria.Name = "cboMateria";
-            this.cboMateria.Size = new System.Drawing.Size(140, 23);
-            this.cboMateria.TabIndex = 118;
-            // 
-            // lblMateria
-            // 
-            this.lblMateria.AutoSize = true;
-            this.lblMateria.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblMateria.Location = new System.Drawing.Point(23, 77);
-            this.lblMateria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(47, 15);
-            this.lblMateria.TabIndex = 117;
-            this.lblMateria.Text = "Materia";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSearch.IconColor = System.Drawing.Color.Black;
-            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSearch.IconSize = 30;
-            this.btnSearch.Location = new System.Drawing.Point(276, 62);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(35, 35);
-            this.btnSearch.TabIndex = 121;
-            this.btnSearch.Tag = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
-            this.iconButton3.IconColor = System.Drawing.Color.Yellow;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(1091, 648);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(51, 51);
-            this.iconButton3.TabIndex = 122;
-            this.iconButton3.UseVisualStyleBackColor = true;
             // 
             // Carrera
             // 
@@ -634,6 +515,133 @@
             this.IdMateriaCarrera.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.IdMateriaCarrera.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.IdMateriaCarrera.Visible = false;
+            // 
+            // rtbAyuda
+            // 
+            this.rtbAyuda.Location = new System.Drawing.Point(0, 0);
+            this.rtbAyuda.Name = "rtbAyuda";
+            this.rtbAyuda.Size = new System.Drawing.Size(100, 23);
+            this.rtbAyuda.TabIndex = 125;
+            // 
+            // cboAnio
+            // 
+            this.cboAnio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboAnio.DropDownWidth = 140;
+            this.cboAnio.FormattingEnabled = true;
+            this.cboAnio.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.cboAnio.Location = new System.Drawing.Point(386, 112);
+            this.cboAnio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cboAnio.Name = "cboAnio";
+            this.cboAnio.Size = new System.Drawing.Size(140, 23);
+            this.cboAnio.TabIndex = 124;
+            // 
+            // lblCarga
+            // 
+            this.lblCarga.AutoSize = true;
+            this.lblCarga.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblCarga.Location = new System.Drawing.Point(554, 114);
+            this.lblCarga.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCarga.Name = "lblCarga";
+            this.lblCarga.Size = new System.Drawing.Size(83, 15);
+            this.lblCarga.TabIndex = 119;
+            this.lblCarga.Text = "Carga Horaria:";
+            // 
+            // nudCarga
+            // 
+            this.nudCarga.Location = new System.Drawing.Point(670, 112);
+            this.nudCarga.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCarga.Name = "nudCarga";
+            this.nudCarga.Size = new System.Drawing.Size(120, 23);
+            this.nudCarga.TabIndex = 120;
+            this.nudCarga.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label10.Location = new System.Drawing.Point(554, 159);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 15);
+            this.label10.TabIndex = 114;
+            this.label10.Text = "Cuatrimestre";
+            // 
+            // cboCuatrimestre
+            // 
+            this.cboCuatrimestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCuatrimestre.FormattingEnabled = true;
+            this.cboCuatrimestre.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.cboCuatrimestre.Location = new System.Drawing.Point(670, 156);
+            this.cboCuatrimestre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cboCuatrimestre.Name = "cboCuatrimestre";
+            this.cboCuatrimestre.Size = new System.Drawing.Size(140, 23);
+            this.cboCuatrimestre.TabIndex = 115;
+            // 
+            // cboMateria
+            // 
+            this.cboMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMateria.DropDownWidth = 300;
+            this.cboMateria.FormattingEnabled = true;
+            this.cboMateria.Location = new System.Drawing.Point(108, 69);
+            this.cboMateria.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cboMateria.Name = "cboMateria";
+            this.cboMateria.Size = new System.Drawing.Size(140, 23);
+            this.cboMateria.TabIndex = 118;
+            // 
+            // lblMateria
+            // 
+            this.lblMateria.AutoSize = true;
+            this.lblMateria.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblMateria.Location = new System.Drawing.Point(23, 77);
+            this.lblMateria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMateria.Name = "lblMateria";
+            this.lblMateria.Size = new System.Drawing.Size(47, 15);
+            this.lblMateria.TabIndex = 117;
+            this.lblMateria.Text = "Materia";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSearch.IconColor = System.Drawing.Color.Black;
+            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearch.IconSize = 30;
+            this.btnSearch.Location = new System.Drawing.Point(276, 62);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(35, 35);
+            this.btnSearch.TabIndex = 121;
+            this.btnSearch.Tag = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.iconButton3.IconColor = System.Drawing.Color.Yellow;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(1091, 648);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(51, 51);
+            this.iconButton3.TabIndex = 122;
+            this.iconButton3.UseVisualStyleBackColor = true;
             // 
             // FrmAltaMateriaXCarreraXCurso
             // 

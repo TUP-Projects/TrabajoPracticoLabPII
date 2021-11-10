@@ -303,7 +303,7 @@
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
             this.iconButton3.IconColor = System.Drawing.Color.Yellow;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(1091, 648);
+            this.iconButton3.Location = new System.Drawing.Point(1072, 648);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(51, 51);
             this.iconButton3.TabIndex = 119;
