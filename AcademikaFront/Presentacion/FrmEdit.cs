@@ -71,6 +71,8 @@ namespace Academika.Presentacion
             switch (forms1)
             {
                 case Forms.Carrera:
+                    if (!ValidarCampoCarrera())
+                        return;
                     Carrera carrera = new Carrera();
                     carrera.Id_Carrera = _Id;
                     carrera.NombreCarrera = txtNombre.Text;
@@ -86,6 +88,8 @@ namespace Academika.Presentacion
                     }
                     break;
                 case Forms.Curso:
+                    if (!ValidarCampoCurso())
+                        return;
                     Curso curso = new Curso();
                     curso.Id_Curso = _Id;
                     curso.NombreCurso = txtNombre.Text;
@@ -101,6 +105,8 @@ namespace Academika.Presentacion
                     }
                     break;
                 case Forms.Materia:
+                    if (!ValidarCampoMateria())
+                        return;
                     Materia materia = new Materia();
                     materia.NombreMateria = txtNombre.Text;
                     materia.Id_Materia = _Id;
@@ -116,6 +122,39 @@ namespace Academika.Presentacion
                     }
                     break;
             }
+        }
+
+        private bool ValidarCampoMateria()
+        {
+            if (String.IsNullOrEmpty(txtNombre.Text.Trim()))
+            {
+                MessageBox.Show("Se debe ingresar un nombre de la materia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
+        }
+        private bool ValidarCampoCarrera()
+        {
+            if (String.IsNullOrEmpty(txtNombre.Text.Trim()))
+            {
+                MessageBox.Show("Se debe ingresar un nombre de la carrera", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if (String.IsNullOrEmpty(Nup_Duracion.Value.ToString().Trim()))
+            {
+                MessageBox.Show("Se debe ingresar una duracion de la carrera", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
+        }
+        private bool ValidarCampoCurso()
+        {
+            if (String.IsNullOrEmpty(txtNombre.Text.Trim()))
+            {
+                MessageBox.Show("Se debe ingresar un nombre del curso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
