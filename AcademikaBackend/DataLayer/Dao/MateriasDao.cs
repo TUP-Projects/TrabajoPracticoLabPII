@@ -117,11 +117,77 @@ namespace AcademikaBackend.DataLayer.Dao
             return lst;
         }
 
-        public DataTable PlandeEstudios()
+        public DataTable PlandeEstudios(int idCarrera)
         {
             SqlCommand cmd = new SqlCommand();
-            DataTable table = helper.ConsultaSQL(cmd, "SP_PLAN_ESTUDIOS");
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@idCarrera", DbType.Int32, idCarrera));
+            DataTable table = helper.ConsultaSQL(cmd, "SP_PLAN_ESTUDIOS", sqlParams);
             return table;
+        }
+
+        public DataTable ConsultaMateriasCarrera(int idcarrera, int idmateria) {
+
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@idcarrera", DbType.Int32, idcarrera));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@idmateria", DbType.Int32, idmateria));
+
+
+
+
+            DataTable dt = new DataTable();
+            dt = helper.ConsultaSQL(cmd, "SP_CONSULTA_MATERIAS_CARRERA");
+
+            return dt;
+
+        }
+
+        public bool InsertaMateriaCarrera(MateriasXCarrera oMateriasxCarrera) {
+
+
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@idmateria", DbType.Int32, oMateriasxCarrera.Materia.Id_Materia));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@carga_horaria", DbType.Int32, oMateriasxCarrera.CargaHoraria));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@idcarrera", DbType.Int32, oMateriasxCarrera.Carrera.Id_Carrera));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@cuatrimestre", DbType.String, oMateriasxCarrera.Cuatrimestre));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@anio_dictado", DbType.Int32, oMateriasxCarrera.AnioDictado));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@dictado", DbType.String, oMateriasxCarrera.Dictado));
+
+            int retVal = (int)helper.EjecutarSql("SP_ALTA_MATERIA_CARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            return retVal > 0;
+
+        }
+
+
+        public bool BajaMateriaCarrera(int idMateriaCarrera) {
+
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@idmateriacarrera", DbType.Int32, idMateriaCarrera));
+
+            int retVal = (int)helper.EjecutarSql("SP_BAJA_MATERIA_CARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            return retVal > 0;
+        }
+
+        public bool ActualizaMateriasxCarrera(MateriasXCarrera oMateriasxCarrera) {
+
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@idmateriacarrera", DbType.Int32, oMateriasxCarrera.Id_Materias_x_Carrera));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@idmateria", DbType.Int32, oMateriasxCarrera.Materia.Id_Materia));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@carga_horaria", DbType.Int32, oMateriasxCarrera.CargaHoraria));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@idcarrera", DbType.Int32, oMateriasxCarrera.Carrera.Id_Carrera));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@cuatrimestre", DbType.String, oMateriasxCarrera.Cuatrimestre));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@anio_dictado", DbType.Int32, oMateriasxCarrera.AnioDictado));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@dictado", DbType.String, oMateriasxCarrera.Dictado));
+
+
+            int retVal = (int)helper.EjecutarSql("SP_ACTUALIZA_MATERIAS_CARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            return retVal > 0;
         }
     }
 }

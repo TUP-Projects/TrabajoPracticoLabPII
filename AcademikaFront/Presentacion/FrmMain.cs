@@ -256,12 +256,18 @@ namespace Academika.Presentacion
 
         private void toolStripDetalleMaterias_Click(object sender, EventArgs e)
         {
-            OpenChild(new FrmAltaMateriaXCarrera());
+            OpenChild(new FrmAltaMateriaXCarreraXCurso());
         }
         private void horafecha_Tick_1(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
             lblFecha.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void planEstudiosToolStripMenuItem_Click(object sender, EventArgs e) {
+
+            OpenChild(new FrmAltaMateriaCarrera());
+
         }
         private void lblHora_Click(object sender, EventArgs e)
         {

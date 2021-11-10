@@ -39,10 +39,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AcademikaDataSetFull.xsd</DependentUpon>
     </Compile>
+    <Compile Update="Presentacion\FrmAltaMateriaCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Presentacion\FrmAltaMateria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\FrmAltaMateriaXCarreraUpdate.cs">
+    <Compile Update="Presentacion\FrmAltaMateriaCarreraUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\FrmAltaMateriaXCarreraXCursoUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">

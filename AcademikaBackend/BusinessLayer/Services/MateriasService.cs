@@ -66,9 +66,30 @@ namespace AcademikaBackend.BusinessLayer.Services
             return MateriasDao.CargaCombos(tabla);
         }
 
-        public DataTable Consulta_PlanEstudios() {
+        public DataTable Consulta_PlanEstudios(int idCarrera) {
 
-            return MateriasDao.PlandeEstudios();
+            return MateriasDao.PlandeEstudios(idCarrera);
+        }
+
+        public DataTable ConsultaMateriasCarrera(int idcarrera, int idmateria) {
+
+            return MateriasDao.ConsultaMateriasCarrera(idcarrera, idmateria);
+        }
+
+        public bool InsertaMateriaCarrera(MateriasXCarrera oMateriasxCarrera) {
+
+            return MateriasDao.InsertaMateriaCarrera(oMateriasxCarrera);
+        
+        }
+        public bool BajaMateriaCarrera(int idMateriaCarrera) {
+
+            return MateriasDao.BajaMateriaCarrera(idMateriaCarrera);
+        }
+
+        public bool ActualizaMateriasxCarrera(MateriasXCarrera oMateriasxCarrera) {
+
+            return MateriasDao.ActualizaMateriasxCarrera(oMateriasxCarrera);
+        
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace Academika.Presentacion
 {
-    partial class FrmAltaMateriaXCarrera
+    partial class FrmAltaMateriaXCarreraXCursoUpdate
+
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +29,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblId = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboDictado = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.cboCarrera = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,47 +44,16 @@
             this.cboAyud = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.btnBorrar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.dgvResultado = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.cboCuatrimestre = new System.Windows.Forms.ComboBox();
-            //this.rtbAnio = new System.Windows.Forms.RichTextBox();
             this.cboMateria = new System.Windows.Forms.ComboBox();
             this.lblMateria = new System.Windows.Forms.Label();
             this.lblCarga = new System.Windows.Forms.Label();
             this.nudCarga = new System.Windows.Forms.NumericUpDown();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.IdMateriasCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.rtbAyuda = new System.Windows.Forms.Label();
-            this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreMat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dictado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnioDictado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Carga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JefedeCatedra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProfesorAdjunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AyudantePrimera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdMateriaCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cboCuatrimestre = new System.Windows.Forms.ComboBox();
-
-            this.cboMateria = new System.Windows.Forms.ComboBox();
-            this.lblMateria = new System.Windows.Forms.Label();
-            this.lblCarga = new System.Windows.Forms.Label();
-            this.nudCarga = new System.Windows.Forms.NumericUpDown();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.IdMateriasCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.rtbAyuda = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
+            this.cboAnio = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCarga)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,11 +65,10 @@
             this.lblId.Location = new System.Drawing.Point(24, 21);
             this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(165, 20);
+            this.lblId.Size = new System.Drawing.Size(226, 20);
             this.lblId.TabIndex = 0;
             this.lblId.Tag = "Materia";
-            this.lblId.Text = "ID Materia - Carrera:";
-            this.lblId.Click += new System.EventHandler(this.label1_Click);
+            this.lblId.Text = "ID Materia - Carrera - Curso:";
             // 
             // label2
             // 
@@ -130,18 +95,6 @@
             this.cboDictado.Size = new System.Drawing.Size(140, 23);
             this.cboDictado.TabIndex = 3;
             this.cboDictado.SelectedIndexChanged += new System.EventHandler(this.cboDictado_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(23, 240);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 25);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Listado materias:";
             // 
             // cboCarrera
             // 
@@ -186,7 +139,6 @@
             this.cboCurso.Name = "cboCurso";
             this.cboCurso.Size = new System.Drawing.Size(140, 23);
             this.cboCurso.TabIndex = 12;
-            this.cboCurso.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -231,7 +183,6 @@
             this.cboAdj.Name = "cboAdj";
             this.cboAdj.Size = new System.Drawing.Size(140, 23);
             this.cboAdj.TabIndex = 17;
-            this.cboAdj.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -271,7 +222,7 @@
             this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnLimpiar.IconColor = System.Drawing.Color.Crimson;
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.Location = new System.Drawing.Point(632, 614);
+            this.btnLimpiar.Location = new System.Drawing.Point(432, 280);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(51, 51);
@@ -279,39 +230,12 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnGuardar.IconColor = System.Drawing.Color.ForestGreen;
-            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.Location = new System.Drawing.Point(445, 614);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(51, 51);
-            this.btnGuardar.TabIndex = 106;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnBorrar.IconColor = System.Drawing.Color.Black;
-            this.btnBorrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBorrar.Location = new System.Drawing.Point(1091, 327);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(51, 51);
-            this.btnBorrar.TabIndex = 112;
-            this.btnBorrar.Tag = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
             // btnEditar
             // 
-            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnEditar.IconColor = System.Drawing.Color.Black;
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnEditar.IconColor = System.Drawing.Color.Green;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.Location = new System.Drawing.Point(1091, 258);
+            this.btnEditar.Location = new System.Drawing.Point(325, 280);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(51, 51);
@@ -319,156 +243,6 @@
             this.btnEditar.Tag = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // dgvResultado
-            // 
-            this.dgvResultado.AllowUserToAddRows = false;
-            this.dgvResultado.AllowUserToDeleteRows = false;
-            this.dgvResultado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.dgvResultado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvResultado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-
-            this.dgvResultado.ColumnHeadersHeight = 30;
-            this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Carrera,
-            this.NombreMat,
-            this.NomCurso,
-            this.Dictado,
-            this.AnioDictado,
-            this.Cuatrimestre,
-            this.Carga,
-            this.JefedeCatedra,
-            this.ProfesorAdjunto,
-            this.AyudantePrimera,
-            this.IdCarrera,
-            this.IdCurso,
-            this.IdMateria,
-            this.IdMateriaCarrera,
-            });
-            this.dgvResultado.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dgvResultado.EnableHeadersVisualStyles = false;
-            this.dgvResultado.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvResultado.Location = new System.Drawing.Point(15, 273);
-            this.dgvResultado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dgvResultado.Name = "dgvResultado";
-            this.dgvResultado.ReadOnly = true;
-            this.dgvResultado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-
-            this.dgvResultado.RowHeadersVisible = false;
-
-            this.dgvResultado.RowTemplate.Height = 50;
-            this.dgvResultado.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResultado.Size = new System.Drawing.Size(1068, 310);
-            this.dgvResultado.TabIndex = 113;
-            // 
-            // Carrera
-            // 
-            this.Carrera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Carrera.DataPropertyName = "Carrera";
-            this.Carrera.HeaderText = "Carrera";
-            this.Carrera.Name = "Carrera";
-            this.Carrera.Width = 81;
-            // 
-            // NombreMat
-            // 
-            this.NombreMat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.NombreMat.DataPropertyName = "NombreMat";
-            this.NombreMat.HeaderText = "Materia";
-            this.NombreMat.Name = "NombreMat";
-            this.NombreMat.Width = 81;
-            // 
-            // NomCurso
-            // 
-            this.NomCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.NomCurso.DataPropertyName = "NomCurso";
-            this.NomCurso.HeaderText = "Curso";
-            this.NomCurso.Name = "NomCurso";
-            this.NomCurso.Width = 69;
-            // 
-            // Dictado
-            // 
-            this.Dictado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Dictado.DataPropertyName = "Dictado";
-            this.Dictado.HeaderText = "Dictado";
-            this.Dictado.Name = "Dictado";
-            this.Dictado.Width = 85;
-            // 
-            // AnioDictado
-            // 
-            this.AnioDictado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AnioDictado.DataPropertyName = "AnioDictado";
-            this.AnioDictado.HeaderText = "Año Dictado";
-            this.AnioDictado.Name = "AnioDictado";
-            this.AnioDictado.Width = 115;
-            // 
-            // Cuatrimestre
-            // 
-            this.Cuatrimestre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Cuatrimestre.DataPropertyName = "Cuatrimestre";
-            this.Cuatrimestre.HeaderText = "Cuatrimestre";
-            this.Cuatrimestre.Name = "Cuatrimestre";
-            this.Cuatrimestre.Width = 115;
-            // 
-            // Carga
-            // 
-            this.Carga.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Carga.DataPropertyName = "Carga";
-            this.Carga.HeaderText = "Carga Hs";
-            this.Carga.Name = "Carga";
-            this.Carga.Width = 92;
-            // 
-            // JefedeCatedra
-            // 
-            this.JefedeCatedra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.JefedeCatedra.DataPropertyName = "JefedeCatedra";
-            this.JefedeCatedra.HeaderText = "Jefe de Catedra";
-            this.JefedeCatedra.Name = "JefedeCatedra";
-            this.JefedeCatedra.Width = 138;
-            // 
-            // ProfesorAdjunto
-            // 
-            this.ProfesorAdjunto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ProfesorAdjunto.DataPropertyName = "ProfesorAdjunto";
-            this.ProfesorAdjunto.HeaderText = "Profesor Adjunto";
-            this.ProfesorAdjunto.Name = "ProfesorAdjunto";
-            this.ProfesorAdjunto.Width = 138;
-            // 
-            // AyudantePrimera
-            // 
-            this.AyudantePrimera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AyudantePrimera.DataPropertyName = "AyudantePrimera";
-            this.AyudantePrimera.HeaderText = "Ayudante Primera";
-            this.AyudantePrimera.Name = "AyudantePrimera";
-            this.AyudantePrimera.Width = 147;
-            // 
-            // IdCarrera
-            // 
-            this.IdCarrera.DataPropertyName = "IdCarrera";
-            this.IdCarrera.HeaderText = "IdCarrera";
-            this.IdCarrera.Name = "IdCarrera";
-            this.IdCarrera.Visible = false;
-            // 
-            // IdCurso
-            // 
-            this.IdCurso.DataPropertyName = "IdCurso";
-            this.IdCurso.HeaderText = "IdCurso";
-            this.IdCurso.Name = "IdCurso";
-            this.IdCurso.Visible = false;
-            // 
-            // IdMateria
-            // 
-            this.IdMateria.DataPropertyName = "IdMateria";
-            this.IdMateria.HeaderText = "IdMateria";
-            this.IdMateria.Name = "IdMateria";
-            this.IdMateria.Visible = false;
-            // 
-            // IdMateriaCarrera
-            // 
-            this.IdMateriaCarrera.DataPropertyName = "IdMateriasCarrera";
-            this.IdMateriaCarrera.HeaderText = "IdMateriasCarrera";
-            this.IdMateriaCarrera.Name = "IdMateriaCarrera";
-            this.IdMateriaCarrera.Visible = false;
             // 
             // label10
             // 
@@ -534,40 +308,12 @@
             this.nudCarga.Size = new System.Drawing.Size(120, 23);
             this.nudCarga.TabIndex = 120;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSearch.IconColor = System.Drawing.Color.Black;
-            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSearch.IconSize = 30;
-            this.btnSearch.Location = new System.Drawing.Point(276, 62);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(35, 35);
-            this.btnSearch.TabIndex = 121;
-            this.btnSearch.Tag = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // IdMateriasCarrera
             // 
             this.IdMateriasCarrera.DataPropertyName = "IdMateriasCarrera";
             this.IdMateriasCarrera.HeaderText = "IdMateriasCarrera";
             this.IdMateriasCarrera.Name = "IdMateriasCarrera";
             this.IdMateriasCarrera.Visible = false;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
-            this.iconButton3.IconColor = System.Drawing.Color.Yellow;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(1091, 648);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(51, 51);
-            this.iconButton3.TabIndex = 122;
-            this.iconButton3.UseVisualStyleBackColor = true;
             // 
             // rtbAyuda
             // 
@@ -578,28 +324,41 @@
             this.rtbAyuda.TabIndex = 123;
             this.rtbAyuda.Visible = false;
             // 
-            // FrmAltaMateriaXCarrera
+            // cboAnio
+            // 
+            this.cboAnio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboAnio.FormattingEnabled = true;
+            this.cboAnio.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"});
+            this.cboAnio.Location = new System.Drawing.Point(386, 112);
+            this.cboAnio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cboAnio.Name = "cboAnio";
+            this.cboAnio.Size = new System.Drawing.Size(140, 23);
+            this.cboAnio.TabIndex = 124;
+            // 
+            // FrmAltaMateriaXCarreraUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1154, 711);
+            this.ClientSize = new System.Drawing.Size(858, 400);
             this.Controls.Add(this.cboAnio);
             this.Controls.Add(this.rtbAyuda);
-            this.Controls.Add(this.iconButton3);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.nudCarga);
             this.Controls.Add(this.lblCarga);
             this.Controls.Add(this.cboMateria);
             this.Controls.Add(this.lblMateria);
             this.Controls.Add(this.cboCuatrimestre);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dgvResultado);
-            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cboAyud);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cboAdj);
@@ -611,16 +370,15 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cboCarrera);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.cboDictado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblId);
             this.ForeColor = System.Drawing.Color.Transparent;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FrmAltaMateriaXCarrera";
-            this.Text = "Alta Materia - Carrera - Curso";
+            this.Name = "FrmAltaMateriaXCarreraUpdate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Actualiza Materia - Carrera - Curso";
             this.Load += new System.EventHandler(this.FrmAltaMaterias_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCarga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -630,10 +388,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.ComboBox cboAnio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboDictado;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboCarrera;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -646,33 +402,15 @@
         private System.Windows.Forms.ComboBox cboAyud;
         private System.Windows.Forms.Label label9;
         private FontAwesome.Sharp.IconButton btnLimpiar;
-        private FontAwesome.Sharp.IconButton btnGuardar;
-        private FontAwesome.Sharp.IconButton btnBorrar;
         private FontAwesome.Sharp.IconButton btnEditar;
-        private System.Windows.Forms.DataGridView dgvResultado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cboCuatrimestre;
         private System.Windows.Forms.ComboBox cboMateria;
         private System.Windows.Forms.Label lblMateria;
         private System.Windows.Forms.Label lblCarga;
         private System.Windows.Forms.NumericUpDown nudCarga;
-        private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMateriasCarrera;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Carrera;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreMat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomCurso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dictado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AnioDictado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuatrimestre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Carga;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JefedeCatedra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProfesorAdjunto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AyudantePrimera;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCarrera;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCurso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdMateria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdMateriaCarrera;
         private System.Windows.Forms.Label rtbAyuda;
+        private System.Windows.Forms.ComboBox cboAnio;
     }
 }

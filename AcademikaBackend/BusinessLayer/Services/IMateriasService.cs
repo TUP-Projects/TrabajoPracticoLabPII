@@ -25,6 +25,13 @@ namespace AcademikaBackend.BusinessLayer.Services
 
         DataTable CargaDgvEntidad(string tabla);
 
-        DataTable Consulta_PlanEstudios();
+        DataTable Consulta_PlanEstudios(int idCarrera);
+
+        DataTable ConsultaMateriasCarrera(int idcarrera, int idmateria);
+
+        bool InsertaMateriaCarrera(MateriasXCarrera oMateriasxCarrera);
+        bool BajaMateriaCarrera(int idMateriaCarrera);
+
+        public bool ActualizaMateriasxCarrera(MateriasXCarrera oMateriasxCarrera);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AcademikaBackend.BusinessLayer.Services;
+using AcademikaBackend.BusinessLayer.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -38,6 +39,22 @@ namespace AcademikaWebAPI.Controllers
         {
             return Ok(JsonConvert.SerializeObject(_materiasDetalleService.ConsultaMateria(idMateria)));
         }
+        [HttpGet("RelacionCarreras/{idcarrera}/{idmateria}")]
+        public IActionResult GetMateriasCarrera(int idcarrera, int idmateria)
+        {
+            return Ok(JsonConvert.SerializeObject(_materiasDetalleService.ConsultaMateriasCarrera(idcarrera, idmateria)));
+        }
 
+
+        [HttpPost]
+        public IActionResult PostMateriaCarrera(MateriasXCarrera oMateriaxCarrera)
+        {
+            if (oMateriaxCarrera is null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(_materiasDetalleService.InsertaMateriaCarrera(oMateriaxCarrera));
+        }
     }
 }

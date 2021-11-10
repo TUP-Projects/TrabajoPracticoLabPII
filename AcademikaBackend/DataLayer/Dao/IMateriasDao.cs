@@ -22,6 +22,13 @@ namespace AcademikaBackend.DataLayer.Dao
 
         bool BajaCursoMateriaDocente(DocentesXMateria dxm);
 
-        DataTable PlandeEstudios();
+        DataTable PlandeEstudios(int idCarrera);
+
+        DataTable ConsultaMateriasCarrera(int idcarrera, int idmateria);
+
+        public bool InsertaMateriaCarrera(MateriasXCarrera oMateriasXCarrera);
+
+        public bool BajaMateriaCarrera(int idmateriacarrera);
+        bool ActualizaMateriasxCarrera(MateriasXCarrera oMateriasxCarrera);
     }
 }

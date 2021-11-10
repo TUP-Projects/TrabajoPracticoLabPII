@@ -21,11 +21,7 @@ namespace Academika.Presentacion
         private IMateriasService servicio;
         
         MateriasXCarrera mxcAnt;
-        Curso cursoAnt;
-        string jefePreCargado;
-        string profPreCargado;
-        string ayudPreCargado;
-     
+        
         public FrmAltaMateriaXCarreraUpdate()
         {
             InitializeComponent();
@@ -33,15 +29,11 @@ namespace Academika.Presentacion
             
         }
 
-        public FrmAltaMateriaXCarreraUpdate(MateriasXCarrera matxcar, Curso cur, string jefe, string prof, string ayud) {
+        public FrmAltaMateriaXCarreraUpdate(MateriasXCarrera matxcar) {
             InitializeComponent();
             servicio = new ServiceFactoryImp().CrearServiceMaterias();
             this.mxcAnt = matxcar;
-            this.cursoAnt = cur;
-            this.jefePreCargado = jefe;
-            this.profPreCargado = prof;
-            this.ayudPreCargado = ayud;
-        
+           
         }
 
         private async Task Cargar_CombosAsync(ComboBox combo, string entidad)
@@ -69,17 +61,19 @@ namespace Academika.Presentacion
         {
 
             lblId.Text = "ID Materia - Carrera: " + servicio.ObtenerProxId("MATERIASxCARRERA").ToString();
+           
         }
 
         private void Inicia()
         {
             ConsultaID();
-            _ = Cargar_CombosAsync(cboAdj, "docentes");
+           
             _ = Cargar_CombosAsync(cboMateria, "materias");
-            _ = Cargar_CombosAsync(cboAyud, "docentes");
-            _ = Cargar_CombosAsync(cboJefe, "docentes");
+           
             _ = Cargar_CombosAsync(cboCarrera, "carreras");
-            _ = Cargar_CombosAsync(cboCurso, "cursos");
+
+            cboMateria.Enabled = false;
+            cboCarrera.Enabled = false;
 
             
             
@@ -91,6 +85,7 @@ namespace Academika.Presentacion
             {
 
                 cboCuatrimestre.Enabled = false;
+                cboCuatrimestre.Text = "0";
             }
             else {
                 cboCuatrimestre.Enabled = true;
@@ -101,15 +96,9 @@ namespace Academika.Presentacion
         private void btnEditar_Click(object sender, EventArgs e)
 
         {
-
-            
-            List<MateriasXCarrera> lstMatxCarrera = new List<MateriasXCarrera>();
-            List<Curso> lstCurso = new List<Curso>();
             MateriasXCarrera mxc = new MateriasXCarrera();
-
-            Curso curso = new Curso();
-            
-
+            mxc.Id_Materias_x_Carrera = mxcAnt.Id_Materias_x_Carrera;
+         
             if (cboMateria.SelectedIndex == -1)
             {
 
@@ -169,68 +158,10 @@ namespace Academika.Presentacion
                 mxc.Cuatrimestre = Convert.ToInt32(cboCuatrimestre.Text);
             else
                 mxc.Cuatrimestre = 0;
-            if (cboCurso.SelectedIndex == -1)
-            {
-               
-                MessageBox.Show("Debe seleccionar un curso", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cboCurso.Focus();
-                return;
-
-            }
-
-            else {
-                curso.Id_Curso = (int)cboCurso.SelectedValue;
-                curso.NombreCurso = cboCurso.SelectedText.ToString();
-            }
-         
            
 
-            List<DocentesXMateria> lstDocentes = new List<DocentesXMateria>();
-            Docente jefe = new Docente();
-            Docente adjunto = new Docente();
-            Docente ayudante = new Docente();
-            if (cboJefe.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar un jefe de cátedra", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cboJefe.Focus();
-                return;
-            }
-            else {
-                jefe.Id_Docente = (int)cboJefe.SelectedValue;
-            }
-            if (cboAdj.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar un profesor adjunto", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cboAdj.Focus();
-                return;
-            }
-            else
-            {
-                adjunto.Id_Docente = (int)cboAdj.SelectedValue;
-            }
-            if (cboAyud.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar un ayudante", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cboAdj.Focus();
-                return;
-
-            }
-            else
-            {
-                ayudante.Id_Docente = (int)cboAyud.SelectedValue;
-            }
-
-            lstDocentes.Add(new DocentesXMateria(adjunto, mxc ,"Adjunto", curso));
-            lstDocentes.Add(new DocentesXMateria(ayudante, mxc, "Ayudante", curso));
-            lstDocentes.Add(new DocentesXMateria(jefe, mxc, "Jefe", curso));
-
-            lstMatxCarrera.Add(mxcAnt);
-            lstMatxCarrera.Add(mxc);
-            lstCurso.Add(cursoAnt);
-            lstCurso.Add(curso);
-
             
-            if (servicio.ActualizaDatosMateriasxCarrera(lstMatxCarrera, lstDocentes, lstCurso))
+            if (servicio.ActualizaMateriasxCarrera(mxc))
             {
                 MessageBox.Show("Se agregó la materia al plan de estudios!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -247,37 +178,26 @@ namespace Academika.Presentacion
 
         }
 
-
-
-
-
-
-
         private void setCombos() {
 
-            cboAdj.SelectedIndex = cboAdj.FindString(profPreCargado);
-            cboAyud.SelectedIndex = cboAyud.FindString(ayudPreCargado);
-            cboJefe.SelectedIndex = cboJefe.FindString(jefePreCargado);
+            
             cboMateria.SelectedIndex = cboMateria.FindString(mxcAnt.Materia.NombreMateria.ToString());
             cboCarrera.SelectedIndex = cboCarrera.FindString(mxcAnt.Carrera.NombreCarrera.ToString());
             cboCuatrimestre.SelectedIndex = cboCuatrimestre.FindString(mxcAnt.Cuatrimestre.ToString());
             nudCarga.Value = Convert.ToInt32(mxcAnt.CargaHoraria);
             cboDictado.SelectedIndex = cboDictado.FindString(mxcAnt.Dictado.ToString());
             cboAnio.SelectedIndex = cboAnio.Items.IndexOf(mxcAnt.AnioDictado.ToString());
-            cboCurso.SelectedIndex = cboCurso.FindString(cursoAnt.NombreCurso.ToString());
-
+            
         } 
-       
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            cboAdj.SelectedIndex = -1;
-            cboAyud.SelectedIndex = -1;
+            
             cboCarrera.SelectedIndex = -1;
             cboCuatrimestre.SelectedIndex = -1;
-            cboCurso.SelectedIndex = -1;
+          
             cboDictado.SelectedIndex = -1;
-            cboJefe.SelectedIndex = -1;
+          
             cboMateria.SelectedIndex = -1;
             cboAnio.SelectedIndex = -1;
             nudCarga.Value = 0;

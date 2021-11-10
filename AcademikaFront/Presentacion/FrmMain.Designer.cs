@@ -45,6 +45,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -67,7 +68,6 @@
             this.toolStripDetalleMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.planEstudiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -339,6 +339,13 @@
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(437, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 63);
+            this.panel3.TabIndex = 9;
+            // 
             // btnLogout
             // 
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -563,19 +570,13 @@
             this.planEstudiosToolStripMenuItem.Name = "planEstudiosToolStripMenuItem";
             this.planEstudiosToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.planEstudiosToolStripMenuItem.Text = "Plan Estudios";
+            this.planEstudiosToolStripMenuItem.Click += new System.EventHandler(this.planEstudiosToolStripMenuItem_Click);
             // 
             // horafecha
             // 
             this.horafecha.Enabled = true;
             this.horafecha.Interval = 1000;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick_1);
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(437, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 63);
-            this.panel3.TabIndex = 9;
             // 
             // FrmMain
             // 

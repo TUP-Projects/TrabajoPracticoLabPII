@@ -15,7 +15,7 @@ namespace AcademikaBackend.DataLayer.Helper
 
         private HelperDao()
         {
-            connectionString = ConnectionStrings.Cristian.ToString();
+            connectionString = ConnectionStrings.Ciro.ToString();
         }
 
         public static HelperDao GetInstance()
@@ -191,7 +191,7 @@ namespace AcademikaBackend.DataLayer.Helper
                     else if (item.Cargo == "Ayudante")
                         sqlParams.Add(HelperDao.CrearParametro(cmd, "@id_ayud", DbType.Int32, item.Docente.Id_Docente));
                 }
-                EjecutarSql("SP_ALTA_MATERIA_CARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+                EjecutarSql("SP_ALTA_MATERIA_CARRERA_CURSO", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
 
                 transaction.Commit();
         }
