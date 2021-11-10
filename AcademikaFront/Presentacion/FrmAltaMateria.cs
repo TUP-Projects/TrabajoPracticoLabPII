@@ -20,18 +20,18 @@ namespace Academika.Presentacion
             servicio = new ServiceFactoryImp().CrearServiceMaterias();
         }
 
-        private void FrmAltaMateria_Load(object sender, EventArgs e)
+        private async void FrmAltaMateria_Load(object sender, EventArgs e)
         {
-            Inicia();
+            await Inicia();
         }
 
-        private void Inicia()
+        private async Task Inicia()
         {
-            ConsultaID();
-            _ = CargarDgvAsync();
+            await ConsultaID();
+            await CargarDgvAsync();
         }
 
-        private void ConsultaID()
+        private async Task ConsultaID()
         {
             lblLegajoDocente.Text = "ID Materia: " + servicio.ObtenerProxId("MATERIAS").ToString();
         }
@@ -83,7 +83,71 @@ namespace Academika.Presentacion
 
         private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
+        }
+        
+        private async Task<bool> GrabarMateriaAsync(string data)
+        {
+            string urlBase = "https://localhost:44365/api/MateriasDetalle/AgregarMateria";
+            bool resultado = Convert.ToBoolean(await ClienteSingleton.GetInstancia().PostAsync(urlBase, data));
+            return resultado;
+        }
+
+        private async Task LimpiarCamposAsync()
+        {
+            txtSearch.Text = "";
+            await Inicia();
+        }
+
+        private async void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            Materia materia = new()
+            {
+                NombreMateria = txtNombreMateria.Text
+            };
+
+            string data = JsonConvert.SerializeObject(materia);
+            bool success = await GrabarMateriaAsync(data);
+            if (success)
+            {
+                MessageBox.Show("Materia registrada con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await LimpiarCamposAsync();
+            }
+            else
+            {
+                MessageBox.Show("La materia ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task<bool> BorrarMateriaAsync(int idCurso)
+        {
+            string urlBase = "https://localhost:44365/api/MateriasDetalle/" + idCurso;
+            bool resultado = Convert.ToBoolean(await ClienteSingleton.GetInstancia().DeleteAsync(urlBase));
+            return resultado;
+        }
+
+        private async void btnBorrar_Click(object sender, EventArgs e)
+        {
+            int idMaterias;
+            if (dgvMaterias.RowCount > 0)
+            {
+                idMaterias = Convert.ToInt32(dgvMaterias.CurrentRow.Cells["ID"].Value);
+                bool success = await BorrarMateriaAsync(idMaterias);
+
+                if (success)
+                {
+                    MessageBox.Show("Se eliminó el registro seleccionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await CargarDgvAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Error al intentar borrar la materia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un registro a borrar", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

@@ -108,6 +108,35 @@ namespace Academika.Presentacion
             nombreCurso.Text = "";
             await Inicia();
         }
+        private async Task<bool> BorrarCursoAsync(int idCurso)
+        {
+            string urlBase = "https://localhost:44365/api/Cursos/" + idCurso;
+            bool resultado = Convert.ToBoolean(await ClienteSingleton.GetInstancia().DeleteAsync(urlBase));
+            return resultado;
+        }
 
+        private async void btnBorrar_Click(object sender, EventArgs e)
+        {
+            int idCurso;
+            if (dgvCursos.RowCount > 0)
+            {
+                idCurso = Convert.ToInt32(dgvCursos.CurrentRow.Cells["ID"].Value);
+                bool success = await BorrarCursoAsync(idCurso);
+
+                if (success)
+                {
+                    MessageBox.Show("Se eliminó el registro seleccionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await CargarDgvAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Error al intentar borrar el curso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un registro a borrar", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

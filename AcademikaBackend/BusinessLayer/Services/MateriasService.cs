@@ -91,5 +91,14 @@ namespace AcademikaBackend.BusinessLayer.Services
             return MateriasDao.ActualizaMateriasxCarrera(oMateriasxCarrera);
         
         }
+        public bool InsertaMateria(Materia oMateria)
+        {
+            return MateriasDao.InsertaMateria(oMateria);
+        }
+
+        public bool RegistrarBajaMateria(int id)
+        {
+            return MateriasDao.DeleteMateria(id);
+        }
     }
 }

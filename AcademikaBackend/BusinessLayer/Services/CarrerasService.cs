@@ -27,5 +27,10 @@ namespace AcademikaBackend.BusinessLayer.Services
         {
             return CarreraDao.CreateCarrera(oCarrera);
         }
+
+        public bool RegistrarBajaCarrera(int id)
+        {
+            return CarreraDao.DeleteCarrera(id);
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace AcademikaBackend.DataLayer.Dao
 {
@@ -38,7 +39,7 @@ namespace AcademikaBackend.DataLayer.Dao
                 };
                 lst.Add(oCarrera);
             }
-
+            lst = lst.Where(x => x.Estado == Estado.Habilitado.ToString()).ToList();
             return lst;
         }
 
@@ -50,6 +51,14 @@ namespace AcademikaBackend.DataLayer.Dao
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@duracion", DbType.Int32, oCarrera.Duracion));
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@estado", DbType.Int32, (int)Estado.Habilitado));
             int result = (int)helper.EjecutarSql("SP_ALTA_CARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            return result != 0;
+        }
+
+        public bool DeleteCarrera(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string sql = $"UPDATE CARRERAS SET estado = 0 WHERE id_carrera = {id}";
+            int result = (int)helper.EjecutarSql(sql, cmd, CommandType.Text, null, "NonQuery");
             return result != 0;
         }
     }

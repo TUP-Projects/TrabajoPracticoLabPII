@@ -107,17 +107,20 @@ namespace AcademikaBackend.DataLayer.Helper
             return val;
         }
 
-        public object EjecutarSql(string Query, SqlCommand cmd, CommandType TipoDeComando, List<DbParameter> ListaParametros, String TipoEjecucion)
+        public object EjecutarSql(string Query, SqlCommand cmd, CommandType TipoDeComando, List<DbParameter> ListaParametros = null, string TipoEjecucion = "")
         {
             SqlConnection cnn = new SqlConnection(instance.connectionString);
             cmd.CommandType = TipoDeComando;
             cmd.CommandText = Query;
             int RetVal = 0;
-           
-            foreach (DbParameter parameter in ListaParametros)
+            if(ListaParametros != null)
             {
-                cmd.Parameters.Add(parameter);
+                foreach (DbParameter parameter in ListaParametros)
+                {
+                    cmd.Parameters.Add(parameter);
+                }
             }
+            
             try
             {
                 cnn.Open();

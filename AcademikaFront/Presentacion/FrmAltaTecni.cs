@@ -97,5 +97,36 @@ namespace Academika.Presentacion
         {
 
         }
+
+        private async Task<bool> BorrarCarreraAsync(int idCurso)
+        {
+            string urlBase = "https://localhost:44365/api/Carreras/" + idCurso;
+            bool resultado = Convert.ToBoolean(await ClienteSingleton.GetInstancia().DeleteAsync(urlBase));
+            return resultado;
+        }
+
+        private async void btnBorrar_Click(object sender, EventArgs e)
+        {
+            int idCurso;
+            if (dgvTecnicatura.RowCount > 0)
+            {
+                idCurso = Convert.ToInt32(dgvTecnicatura.CurrentRow.Cells["ID"].Value);
+                bool success = await BorrarCarreraAsync(idCurso);
+
+                if (success)
+                {
+                    MessageBox.Show("Se eliminó el registro seleccionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await CargarDgvAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Error al intentar borrar la carrera.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un registro a borrar", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace AcademikaBackend.DataLayer.Dao
 {
@@ -32,6 +33,7 @@ namespace AcademikaBackend.DataLayer.Dao
                 lst.Add(ObjectMapping(row));
             }
 
+            lst = lst.Where(x => x.Estado == Estado.Habilitado.ToString()).ToList();
             return lst;
         }
 
@@ -50,14 +52,12 @@ namespace AcademikaBackend.DataLayer.Dao
             return result != 0;
         }
 
-        public object DeleteCurso(int id)
+        public bool DeleteCurso(int id)
         {
-            return null;
-            //string sql = " UPDATE Equipo " +
-            //    " SET estado = 'N' " +
-            //    " WHERE idEquipo = '" + equipo.IdEquipo + "' ";
-
-            //return DataManager.GetInstance().EjecutarSQL(sql) > 0;
+            SqlCommand cmd = new SqlCommand();
+            string sql = $"UPDATE CURSOS SET estado = 0 WHERE id_curso = {id}";
+            int result = (int)helper.EjecutarSql(sql, cmd, CommandType.Text, null, "NonQuery");
+            return result != 0;
         }
 
         private Curso ObjectMapping(DataRow row)

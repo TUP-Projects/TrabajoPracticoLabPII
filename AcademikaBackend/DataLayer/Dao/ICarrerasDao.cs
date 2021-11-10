@@ -8,5 +8,6 @@ namespace AcademikaBackend.DataLayer.Dao
         int ObtenerProxId(string tabla); 
         List<Carrera> GetCarreras();
         bool CreateCarrera(Carrera oCarrera);
+        bool DeleteCarrera(int id);
     }
 }

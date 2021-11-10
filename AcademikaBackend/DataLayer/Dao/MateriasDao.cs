@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace AcademikaBackend.DataLayer.Dao
 {
@@ -113,7 +114,7 @@ namespace AcademikaBackend.DataLayer.Dao
                 };
                 lst.Add(oMateria);
             }
-
+            lst = lst.Where(x => x.Estado == Estado.Habilitado.ToString()).ToList();
             return lst;
         }
 
@@ -134,13 +135,8 @@ namespace AcademikaBackend.DataLayer.Dao
 
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@idcarrera", DbType.Int32, idcarrera));
             sqlParams.Add(HelperDao.CrearParametro(cmd, "@idmateria", DbType.Int32, idmateria));
-
-
-
-
             DataTable dt = new DataTable();
             dt = helper.ConsultaSQL(cmd, "SP_CONSULTA_MATERIAS_CARRERA");
-
             return dt;
 
         }
@@ -161,7 +157,6 @@ namespace AcademikaBackend.DataLayer.Dao
             return retVal > 0;
 
         }
-
 
         public bool BajaMateriaCarrera(int idMateriaCarrera) {
 
@@ -188,6 +183,24 @@ namespace AcademikaBackend.DataLayer.Dao
 
             int retVal = (int)helper.EjecutarSql("SP_ACTUALIZA_MATERIAS_CARRERA", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
             return retVal > 0;
+        }
+
+        public bool InsertaMateria(Materia oMateria)
+        {
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@materia", DbType.String, oMateria.NombreMateria));
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@estado", DbType.Int32, (int)Estado.Habilitado));
+            int result = (int)helper.EjecutarSql("SP_ALTA_MATERIAS", cmd, CommandType.StoredProcedure, sqlParams, "NonQuery");
+            return result != 0;
+        }
+
+        public bool DeleteMateria(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string sql = $"UPDATE MATERIAS SET estado = 0 WHERE id_materia = {id}";
+            int result = (int)helper.EjecutarSql(sql, cmd, CommandType.Text, null, "NonQuery");
+            return result != 0;
         }
     }
 }

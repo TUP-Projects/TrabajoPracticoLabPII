@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace AcademikaWebAPI.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class MateriasDetalleController : Controller
     {
         private IMateriasService _materiasDetalleService;
@@ -55,6 +56,26 @@ namespace AcademikaWebAPI.Controllers
             }
 
             return Ok(_materiasDetalleService.InsertaMateriaCarrera(oMateriaxCarrera));
+        }
+
+        [HttpPost("AgregarMateria")]
+        public IActionResult PostMateria(Materia oMateria)
+        {
+            if (oMateria is null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(_materiasDetalleService.InsertaMateria(oMateria));
+        }
+
+        // Borrar curso por Id
+        [HttpDelete("{id}")]
+        public IActionResult DeleteMateria(int id)
+        {
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(_materiasDetalleService.RegistrarBajaMateria(id));
         }
     }
 }

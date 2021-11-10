@@ -33,7 +33,7 @@ namespace AcademikaBackend.BusinessLayer.Services
             return CursosDao.ObtenerProxId(tabla);
         }
 
-        public object RegistrarBajaCurso(int id)
+        public bool RegistrarBajaCurso(int id)
         {
             return CursosDao.DeleteCurso(id);
         }

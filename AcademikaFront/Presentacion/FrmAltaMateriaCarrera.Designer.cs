@@ -156,7 +156,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(51, 51);
             this.btnGuardar.TabIndex = 106;
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_ClickAsync);
             // 
             // iconButton6
             // 

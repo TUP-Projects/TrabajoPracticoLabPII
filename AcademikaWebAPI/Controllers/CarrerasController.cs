@@ -38,5 +38,14 @@ namespace AcademikaWebAPI.Controllers
 
             return Ok(_carrerasService.CrearCarrera(oCarrera));
         }
+
+        // Borrar curso por Id
+        [HttpDelete("{id}")]
+        public IActionResult DeleteMateria(int id)
+        {
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(_carrerasService.RegistrarBajaCarrera(id));
+        }
     }
 }

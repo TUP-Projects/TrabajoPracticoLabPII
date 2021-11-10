@@ -31,10 +31,7 @@ namespace Academika.Presentacion
         {
             ConsultaID();
             _ = CargarDgvAsync();
-
-            
             _ = Cargar_CombosAsync(cboMateria, "materias");
-          
             _ = Cargar_CombosAsync(cboCarrera, "carreras");
             
         }
@@ -69,12 +66,12 @@ namespace Academika.Presentacion
             combo.SelectedIndex = -1;
         }
 
-       /* private async Task<bool> GrabarMateriaCarreraAsync(string data)
+        private async Task<bool> GrabarMateriaCarreraAsync(string data)
         {
             string urlBase = "https://localhost:44365/api/MateriasDetalle/";
             bool resultado = Convert.ToBoolean(await ClienteSingleton.GetInstancia().PostAsync(urlBase, data));
             return resultado;
-        }*/
+        }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
@@ -125,13 +122,9 @@ namespace Academika.Presentacion
            
         }
 
-        private  void btnGuardar_Click(object sender, EventArgs e)
+        private async void btnGuardar_ClickAsync(object sender, EventArgs e)
         {
-          
             mxc = new MateriasXCarrera();
-         
-
-
             if (cboMateria.SelectedIndex == -1)
             {
 
@@ -194,8 +187,6 @@ namespace Academika.Presentacion
             else
                 mxc.Cuatrimestre = 0;
 
-
-
             if (ExisteMateriaCarrera((int)cboMateria.SelectedValue, (int)cboCarrera.SelectedValue))
             {
 
@@ -206,16 +197,13 @@ namespace Academika.Presentacion
             }
             else
             {
-              /*  string data = JsonConvert.SerializeObject(mxc);
-                bool success = await GrabarMateriaCarreraAsync(data);*/
+                string data = JsonConvert.SerializeObject(mxc);
+                bool success = await GrabarMateriaCarreraAsync(data);
 
-                if (servicio.InsertaMateriaCarrera(mxc))
+                if (success)
                 {
                     MessageBox.Show("Se agregó la relación materia-carrera!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     _ = CargarDgvAsync();
-
-
                 }
                 else
                 {

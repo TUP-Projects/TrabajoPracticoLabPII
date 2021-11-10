@@ -30,5 +30,7 @@ namespace AcademikaBackend.DataLayer.Dao
 
         public bool BajaMateriaCarrera(int idmateriacarrera);
         bool ActualizaMateriasxCarrera(MateriasXCarrera oMateriasxCarrera);
+        bool InsertaMateria(Materia oMateria);
+        bool DeleteMateria(int id);
     }
 }

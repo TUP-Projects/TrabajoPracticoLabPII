@@ -9,6 +9,6 @@ namespace AcademikaBackend.DataLayer.Dao
         List<Curso> GetCursos(List<string> lst);
         List<Curso> GetCursos();
         bool CreateCurso(Curso oCurso);
-        object DeleteCurso(int id);
+        bool DeleteCurso(int id);
     }
 }

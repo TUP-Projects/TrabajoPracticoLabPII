@@ -28,7 +28,7 @@ namespace AcademikaWebAPI.Controllers
         }
 
         // Borrar curso por Id
-        [HttpDelete("{IdCurso}")]
+        [HttpDelete("{id}")]
         public IActionResult DeleteCurso(int id)
         {
             if (id == 0)
