@@ -376,5 +376,10 @@ namespace Academika.Presentacion
             if (DT != null)
                 DT.Clear();
         }
+
+        private void dgvResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvResultado.AutoGenerateColumns = false;
+        }
     }
 }

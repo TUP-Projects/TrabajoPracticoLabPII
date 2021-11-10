@@ -119,7 +119,7 @@ namespace Academika.Presentacion
 
         private void dgvMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            dgvMaterias.AutoGenerateColumns = false;
         }
 
         private async void btnGuardar_ClickAsync(object sender, EventArgs e)
