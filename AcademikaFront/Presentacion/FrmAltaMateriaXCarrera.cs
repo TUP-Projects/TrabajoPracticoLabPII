@@ -16,16 +16,13 @@ using System.Windows.Forms;
 
 namespace Academika.Presentacion
 {
-
     public partial class FrmAltaMateriaXCarrera : Form
     {
         private IMateriasService servicio;
         Materia materia;
         MateriasXCarrera mxc;
         Curso curso;
-        DocentesXMateria dxm;
-        private Form currentChildForm;
-
+        
         int mostrarAyuda = 0;
         public FrmAltaMateriaXCarrera()
         {
@@ -54,14 +51,8 @@ namespace Academika.Presentacion
 
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);
             DataTable dt = (DataTable)JsonConvert.DeserializeObject(resultado, (typeof(DataTable)));
-            if (dt.Rows.Count > 0)
-                dgvResultado.DataSource = dt;
-            else
-            {
-                dt = (DataTable)dgvResultado.DataSource;
-                dt.Clear();
-            }
-
+            
+            dgvResultado.DataSource = dt;
 
         }
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,14 +139,14 @@ namespace Academika.Presentacion
 
             }
                 
-            if (cboAnio.SelectedIndex != -1)
+            if (!String.IsNullOrEmpty(rtbAnio.Text))
             {
-                mxc.AnioDictado = Convert.ToInt32(cboAnio.Text);
+                mxc.AnioDictado = Convert.ToInt32(rtbAnio.Text);
             }
             else
             {
                 MessageBox.Show("Debe seleccionar un año dictado", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cboAnio.Focus();
+                rtbAnio.Focus();
                 return;
 
             }
@@ -258,31 +249,18 @@ namespace Academika.Presentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             mxc = new MateriasXCarrera();
-            curso = new Curso();
-
-
-            string nombreJefe; string nombreAyud; string nombreAdj;
-           
-
             if (dgvResultado.RowCount > 0)
             {
-                mxc.Id_Materias_x_Carrera = Convert.ToInt32(dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value);
+                mxc.Id_Materias_x_Carrera = (int)(long)dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value;
                 mxc.Dictado = (string)dgvResultado.CurrentRow.Cells["Dictado"].Value;
-                mxc.Materia.NombreMateria = (string)dgvResultado.CurrentRow.Cells["NombreMat"].Value;
-                mxc.Carrera.NombreCarrera = (string)dgvResultado.CurrentRow.Cells["Carrera"].Value;
-                mxc.AnioDictado = Convert.ToInt32(dgvResultado.CurrentRow.Cells["AnioDictado"].Value);
-                mxc.CargaHoraria = Convert.ToInt32(dgvResultado.CurrentRow.Cells["Carga"].Value);
-                mxc.Cuatrimestre = Convert.ToInt32(dgvResultado.CurrentRow.Cells["Cuatrimestre"].Value);
-                curso.Id_Curso = Convert.ToInt32(dgvResultado.CurrentRow.Cells["IdCurso"].Value);
-                curso.NombreCurso = (string)(dgvResultado.CurrentRow.Cells["NomCurso"].Value);
-                nombreJefe = dgvResultado.CurrentRow.Cells["JefedeCatedra"].Value.ToString();
-                nombreAyud = dgvResultado.CurrentRow.Cells["AyudantePrimera"].Value.ToString();
-                nombreAdj = dgvResultado.CurrentRow.Cells["ProfesorAdjunto"].Value.ToString();
+                mxc.AnioDictado = (int)(long)dgvResultado.CurrentRow.Cells["AnioDictado"].Value;
+                mxc.CargaHoraria = (int)(long)dgvResultado.CurrentRow.Cells["Carga"].Value;
+                mxc.Cuatrimestre = (int)(long)dgvResultado.CurrentRow.Cells["Cuatrimestre"].Value;
 
-                new FrmAltaMateriaXCarreraUpdate(mxc, curso, nombreJefe, nombreAdj, nombreAyud).ShowDialog();
 
-                
-                
+                if (servicio.ActualizaDatosMateriasxCarrera(mxc))
+                    MessageBox.Show("Se editó el campo deseado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _ = Consultar_DetalleMateriaAsync(materia.Id_Materia);
             }
             else {
                 MessageBox.Show("Debe seleccionar un registro a editar", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -291,7 +269,7 @@ namespace Academika.Presentacion
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            
+            materia = new Materia();
 
             if (cboMateria.SelectedIndex == -1)
             {
@@ -302,12 +280,10 @@ namespace Academika.Presentacion
             }
             else
             {
-                materia = new Materia();
                 materia.Id_Materia = (int)cboMateria.SelectedValue;
-                _ = Consultar_DetalleMateriaAsync(materia.Id_Materia);
             }
 
-           
+            _ = Consultar_DetalleMateriaAsync(materia.Id_Materia);
         
         }
         private void iconButton3_Click(object sender, EventArgs e)
@@ -333,29 +309,22 @@ namespace Academika.Presentacion
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             DocentesXMateria dxm = new DocentesXMateria();
+            
 
-            if (dgvResultado.RowCount > 0)
-            {
-                dxm.Curso.Id_Curso = Convert.ToInt32(dgvResultado.CurrentRow.Cells["IdCurso"].Value);
-                dxm.Mxcar.Id_Materias_x_Carrera = Convert.ToInt32(dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value);
+            dxm.Curso.Id_Curso = (int)(long)dgvResultado.CurrentRow.Cells["IdCurso"].Value;
+            dxm.Mxcar.Id_Materias_x_Carrera = (int)(long)dgvResultado.CurrentRow.Cells["IdMateriaCarrera"].Value;
 
 
-                if (servicio.BajaCursoMateriaDocente(dxm))
-                {
-                    MessageBox.Show("Se eliminó el registro seleccionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
-                }
-                else
-                {
-                    MessageBox.Show("Error al intentar borrar la materia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
-                }
-            }
-            else {
-
-                MessageBox.Show("Debe seleccionar un registro a borrar", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
+            if (servicio.BajaCursoMateriaDocente(dxm))
+              {
+                  MessageBox.Show("Se eliminó el registro seleccionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                  dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
+              }
+              else
+              {
+                  MessageBox.Show("Error al intentar borrar la materia. Revise no estar duplicando valores en la tabla siguiente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  dgvResultado.DataSource = servicio.ConsultaMateria(materia.Id_Materia);
+              }
 
             ConsultaID();
         }
@@ -370,15 +339,10 @@ namespace Academika.Presentacion
             cboDictado.SelectedIndex = -1;
             cboJefe.SelectedIndex = -1;
             cboMateria.SelectedIndex = -1;
-            cboAnio.SelectedIndex = -1;
-            nudCarga.Value = 0;
             DataTable DT = (DataTable)dgvResultado.DataSource;
             if (DT != null)
                 DT.Clear();
         }
-
-
-      
     }
     
 }

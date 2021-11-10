@@ -844,8 +844,6 @@ namespace Academika.Presentacion
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.Label label10;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton7;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -880,6 +878,5 @@ namespace Academika.Presentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreTec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuatrimestre;
-        
     }
 }
