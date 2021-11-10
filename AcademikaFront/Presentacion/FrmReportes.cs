@@ -40,17 +40,13 @@ namespace Academika.Presentacion
         {
             if (cboReporte.SelectedIndex != -1)
             {
-
                 Reporte.Load(reportViewer.LocalReport, servicio, (int)cboReporte.SelectedValue);
-
                 reportViewer.RefreshReport();
-
             }
             else
             {
                 MessageBox.Show
-                ("Elija un torneo para generar el informe!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                ("Elija una carrera para generar el informe!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

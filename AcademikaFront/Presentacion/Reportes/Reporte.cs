@@ -13,8 +13,6 @@ namespace AcademikaFront.Presentacion.Reportes
 {
     class Reporte
     {
-
-
         public static void Load(LocalReport report, IMateriasService servicio, int idCarrera)
         {
             report.DataSources.Clear();
