@@ -185,7 +185,7 @@ namespace AcademikaFront.Presentacion.Consultas
             this.Controls.Add(this.dgvAlumnosSinCursar);
             this.Controls.Add(this.btnSearch);
             this.Name = "FrmAlumnosSinCursar";
-            this.Text = "FrmAlumnosSinCursar";
+            this.Text = "Alunnos sin cursar";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosSinCursar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
