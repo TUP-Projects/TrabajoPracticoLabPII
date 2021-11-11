@@ -246,7 +246,7 @@ namespace Academika.Presentacion
         }
         private void exámenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChild(new FrmExamenes());
+            OpenChild(new FrmCondicionAlumnos());
         }
 
         private void iconButton1_Click_1(object sender, EventArgs e)
@@ -306,6 +306,16 @@ namespace Academika.Presentacion
         {
             FrmAcercaDe nuevo = new FrmAcercaDe();
             nuevo.Show();
+        }
+
+        private void turnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChild(new FrmPromedioAlumno());
+        }
+
+        private void tipoExámenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChild(new FrmEstadisticas());
         }
     }
 }

@@ -148,6 +148,7 @@
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.Visible = false;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click_1);
             // 
             // pictureBox2
@@ -228,6 +229,7 @@
             this.btnConsultas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConsultas.UseVisualStyleBackColor = true;
+            this.btnConsultas.Visible = false;
             this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
             // btnReportes
@@ -261,7 +263,7 @@
             this.btnModExamenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModExamenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnModExamenes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnModExamenes.IconChar = FontAwesome.Sharp.IconChar.Tasks;
+            this.btnModExamenes.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
             this.btnModExamenes.IconColor = System.Drawing.Color.Gainsboro;
             this.btnModExamenes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnModExamenes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -271,7 +273,7 @@
             this.btnModExamenes.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
             this.btnModExamenes.Size = new System.Drawing.Size(257, 69);
             this.btnModExamenes.TabIndex = 4;
-            this.btnModExamenes.Text = "Módulo Exámenes";
+            this.btnModExamenes.Text = "Consultas";
             this.btnModExamenes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModExamenes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModExamenes.UseVisualStyleBackColor = true;
@@ -521,30 +523,34 @@
             this.rjDropDownMenu2.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropDownMenu2.Name = "rjDropDownMenu2";
             this.rjDropDownMenu2.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropDownMenu2.Size = new System.Drawing.Size(157, 100);
+            this.rjDropDownMenu2.Size = new System.Drawing.Size(241, 122);
             this.rjDropDownMenu2.Opening += new System.ComponentModel.CancelEventHandler(this.rjDropDownMenu2_Opening);
             // 
             // exámenesToolStripMenuItem
             // 
             this.exámenesToolStripMenuItem.Name = "exámenesToolStripMenuItem";
-            this.exámenesToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
-            this.exámenesToolStripMenuItem.Text = "Exámenes";
+            this.exámenesToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.exámenesToolStripMenuItem.Text = "Condición Alumno";
             this.exámenesToolStripMenuItem.Click += new System.EventHandler(this.exámenesToolStripMenuItem_Click);
             // 
             // turnosToolStripMenuItem
             // 
             this.turnosToolStripMenuItem.Name = "turnosToolStripMenuItem";
-            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.turnosToolStripMenuItem.Text = "Promedio Alumno";
+            this.turnosToolStripMenuItem.Click += new System.EventHandler(this.turnosToolStripMenuItem_Click);
             // 
             // tipoExámenesToolStripMenuItem
             // 
             this.tipoExámenesToolStripMenuItem.Name = "tipoExámenesToolStripMenuItem";
-            this.tipoExámenesToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.tipoExámenesToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
+            this.tipoExámenesToolStripMenuItem.Text = "Estadísticas Alumnos";
+            this.tipoExámenesToolStripMenuItem.Click += new System.EventHandler(this.tipoExámenesToolStripMenuItem_Click);
             // 
             // actualizarCondiciónAlumnoToolStripMenuItem
             // 
             this.actualizarCondiciónAlumnoToolStripMenuItem.Name = "actualizarCondiciónAlumnoToolStripMenuItem";
-            this.actualizarCondiciónAlumnoToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.actualizarCondiciónAlumnoToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             // 
             // rjDropDownMenu1
             // 
