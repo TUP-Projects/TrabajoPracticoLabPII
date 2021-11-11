@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AcademikaFront.Presentacion
+namespace AcademikaFront.Presentacion.Consultas
 {
     public partial class FrmPromedioAlumno : Form
     {
@@ -64,6 +64,12 @@ namespace AcademikaFront.Presentacion
                 lst.Add(key, entity);
             else
                 lst.Add(key, entity.ID);
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            dgvPromedioAlumnos.Rows.Clear();
+            dgvPromedioAlumnos.DataSource = null;
         }
     }
 }

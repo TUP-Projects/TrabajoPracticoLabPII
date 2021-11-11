@@ -36,5 +36,8 @@ namespace AcademikaBackend.DataLayer.Dao
         bool UpdateMateria(Materia materia);
         DataTable GetCondiciones(string filtro);
         DataTable GetCondiciones(Dictionary<string, object> lst);
+        DataTable GetAlumnosSinCursar(int year);
+        DataTable GetAlumnosSinAprobar(int year);
+        DataTable GetAlumnosSinAprobar(Dictionary<string, object> lst);
     }
 }

@@ -259,5 +259,36 @@ namespace AcademikaBackend.DataLayer.Dao
             DataTable dt = helper.ConsultaSQL(cmd, "SP_PROMEDIO_NOTAS", sqlParams);
             return dt;
         }
+
+        public DataTable GetAlumnosSinCursar(int year)
+        {
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@anioinscripcion", DbType.Int32, year));
+            DataTable dt = helper.ConsultaSQL(cmd, "SP_ALUMNOS_SIN_CURSADA", sqlParams);
+            return dt;
+        }
+
+        public DataTable GetAlumnosSinAprobar(int year)
+        {
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@anioinscripcion", DbType.Int32, year));
+            DataTable dt = helper.ConsultaSQL(cmd, "SP_ALUMNOS_SIN_APROBADAS", sqlParams);
+            return dt;
+        }
+
+        public DataTable GetAlumnosSinAprobar(Dictionary<string, object> lst)
+        {
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            foreach (var item in lst)
+            {
+                sqlParams.Add(HelperDao.CrearParametro(cmd, item.Key, DbType.String, item.Value));
+            }
+
+            DataTable dt = helper.ConsultaSQL(cmd, "SP_CONDICIONES_ALUMNOS", sqlParams);
+            return dt;
+        }
     }
 }

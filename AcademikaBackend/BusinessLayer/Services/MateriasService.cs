@@ -120,5 +120,20 @@ namespace AcademikaBackend.BusinessLayer.Services
         {
             return MateriasDao.GetCondiciones(lst);
         }
+
+        public DataTable GetAlumnosSinCursar(int year)
+        {
+            return MateriasDao.GetAlumnosSinCursar(year);
+        }
+
+        public DataTable GetAlumnosSinAprobar(int year)
+        {
+            return MateriasDao.GetAlumnosSinAprobar(year);
+        }
+
+        public DataTable GetCondicionesAlumnos(Dictionary<string, object> lst)
+        {
+            return MateriasDao.GetAlumnosSinAprobar(lst);
+        }
     }
 }

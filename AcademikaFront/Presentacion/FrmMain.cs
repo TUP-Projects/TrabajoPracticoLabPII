@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using AcademikaFront.Presentacion;
+﻿using AcademikaFront.Presentacion;
+using AcademikaFront.Presentacion.Consultas;
 using FontAwesome.Sharp;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace Academika.Presentacion
 {

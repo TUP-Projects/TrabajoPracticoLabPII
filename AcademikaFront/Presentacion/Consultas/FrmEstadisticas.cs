@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AcademikaFront.Presentacion
+namespace AcademikaFront.Presentacion.Consultas
 {
     public partial class FrmEstadisticas : Form
     {
@@ -30,6 +30,12 @@ namespace AcademikaFront.Presentacion
             string Filtro = cboFiltro.SelectedItem.ToString();
             DataTable lst = materiasService.GetCondiciones(Filtro);
             dgvEstadisticas.DataSource = lst;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            dgvEstadisticas.Rows.Clear();
+            dgvEstadisticas.DataSource = null;
         }
     }
 }

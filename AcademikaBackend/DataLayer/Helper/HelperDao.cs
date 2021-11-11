@@ -50,7 +50,7 @@ namespace AcademikaBackend.DataLayer.Helper
                 cmd.CommandText = storeName;
                 tabla.Load(cmd.ExecuteReader());
 
-        }
+            }
             catch (SqlException)
             {
                 throw;

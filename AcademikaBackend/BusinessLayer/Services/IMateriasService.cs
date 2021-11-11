@@ -24,7 +24,8 @@ namespace AcademikaBackend.BusinessLayer.Services
         bool BajaCursoMateriaDocente(DocentesXMateria dxm);
 
         DataTable CargaDgvEntidad(string tabla);
-
+        DataTable GetAlumnosSinAprobar(int year);
+        DataTable GetAlumnosSinCursar(int year);
         DataTable Consulta_PlanEstudios(int idCarrera);
 
         DataTable ConsultaMateriasCarrera(int idcarrera, int idmateria);
@@ -39,5 +40,6 @@ namespace AcademikaBackend.BusinessLayer.Services
         Materia ConsultarMateriaById(int id);
         bool ActualizarMateria(Materia materia);
         DataTable GetCondiciones(Dictionary<string, object> lst);
+        DataTable GetCondicionesAlumnos(Dictionary<string, object> lst);
     }
 }

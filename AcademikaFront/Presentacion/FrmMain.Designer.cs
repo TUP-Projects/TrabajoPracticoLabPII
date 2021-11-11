@@ -62,6 +62,7 @@
             this.turnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoExámenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarCondiciónAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alumnosSinCursarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rjDropDownMenu1 = new Academika.RJControls.RJDropDownMenu(this.components);
             this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +70,6 @@
             this.toolStripDetalleMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.planEstudiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.alumnosSinCursarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,7 +102,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(257, 832);
+            this.panelMenu.Size = new System.Drawing.Size(257, 749);
             this.panelMenu.TabIndex = 0;
             // 
             // iconButton1
@@ -254,7 +254,6 @@
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Visible = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnModExamenes
@@ -506,7 +505,7 @@
             this.panelDesktop.Location = new System.Drawing.Point(257, 102);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1122, 730);
+            this.panelDesktop.Size = new System.Drawing.Size(1122, 647);
             this.panelDesktop.TabIndex = 3;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
@@ -525,7 +524,7 @@
             this.rjDropDownMenu2.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropDownMenu2.Name = "rjDropDownMenu2";
             this.rjDropDownMenu2.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropDownMenu2.Size = new System.Drawing.Size(241, 146);
+            this.rjDropDownMenu2.Size = new System.Drawing.Size(241, 124);
             this.rjDropDownMenu2.Opening += new System.ComponentModel.CancelEventHandler(this.rjDropDownMenu2_Opening);
             // 
             // exámenesToolStripMenuItem
@@ -555,6 +554,13 @@
             this.actualizarCondiciónAlumnoToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
             this.actualizarCondiciónAlumnoToolStripMenuItem.Text = "Alumnos Sin Aprobar";
             this.actualizarCondiciónAlumnoToolStripMenuItem.Click += new System.EventHandler(this.actualizarCondiciónAlumnoToolStripMenuItem_Click);
+            // 
+            // alumnosSinCursarToolStripMenuItem
+            // 
+            this.alumnosSinCursarToolStripMenuItem.Name = "alumnosSinCursarToolStripMenuItem";
+            this.alumnosSinCursarToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
+            this.alumnosSinCursarToolStripMenuItem.Text = "Alumnos Sin Cursar";
+            this.alumnosSinCursarToolStripMenuItem.Click += new System.EventHandler(this.alumnosSinCursarToolStripMenuItem_Click);
             // 
             // rjDropDownMenu1
             // 
@@ -615,18 +621,11 @@
             this.horafecha.Interval = 1000;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick_1);
             // 
-            // alumnosSinCursarToolStripMenuItem
-            // 
-            this.alumnosSinCursarToolStripMenuItem.Name = "alumnosSinCursarToolStripMenuItem";
-            this.alumnosSinCursarToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
-            this.alumnosSinCursarToolStripMenuItem.Text = "Alumnos Sin Cursar";
-            this.alumnosSinCursarToolStripMenuItem.Click += new System.EventHandler(this.alumnosSinCursarToolStripMenuItem_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1379, 832);
+            this.ClientSize = new System.Drawing.Size(1379, 749);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panel1);

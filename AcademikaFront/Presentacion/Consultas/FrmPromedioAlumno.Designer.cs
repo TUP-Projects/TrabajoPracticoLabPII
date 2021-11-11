@@ -1,5 +1,5 @@
 ﻿
-namespace AcademikaFront.Presentacion
+namespace AcademikaFront.Presentacion.Consultas
 {
     partial class FrmPromedioAlumno
     {
@@ -295,6 +295,7 @@ namespace AcademikaFront.Presentacion
             this.btnLimpiar.Size = new System.Drawing.Size(51, 51);
             this.btnLimpiar.TabIndex = 177;
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // label1
             // 

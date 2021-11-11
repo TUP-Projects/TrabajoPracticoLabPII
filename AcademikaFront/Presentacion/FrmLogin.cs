@@ -1,5 +1,6 @@
 ﻿using Academika.Client;
 using AcademikaBackend.BusinessLayer.Entities;
+using AcademikaBackend.BusinessLayer.Services;
 using Newtonsoft.Json;
 using System;
 using System.Drawing;
@@ -12,9 +13,11 @@ namespace Academika.Presentacion
 {
     public partial class FrmLogin : Form
     {
+        private ILoginService _loginService;
         public FrmLogin()
         {
             InitializeComponent();
+            _loginService = new ServiceFactoryImp().CrearServiceLogin();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -114,12 +117,12 @@ namespace Academika.Presentacion
             oUsuario.NombreUsuario = txtUser.Text;
             oUsuario.Password = Convert.ToBase64String(Encoding.UTF8.GetBytes(txtPass.Text), Base64FormattingOptions.None);
 
-            string data = JsonConvert.SerializeObject(oUsuario);
+            //string data = JsonConvert.SerializeObject(oUsuario);
 
-            string urlBase = "https://localhost:44365/api/Login/";
-            var resultado = await ClienteSingleton.GetInstancia().PostAsync(urlBase, data);
-            var IdUser = Convert.ToInt32(resultado);
-            
+            //string urlBase = "https://localhost:44365/api/Login/";
+            //var resultado = await ClienteSingleton.GetInstancia().PostAsync(urlBase, data);
+            //var IdUser = Convert.ToInt32(resultado);
+            int IdUser = _loginService.IniciarSesion(oUsuario);
             if (IdUser != 0)
             {
                 MessageBox.Show("Bienvenido a Academika!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
