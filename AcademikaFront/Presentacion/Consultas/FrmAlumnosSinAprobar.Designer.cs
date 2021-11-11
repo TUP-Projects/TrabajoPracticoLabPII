@@ -33,7 +33,6 @@ namespace AcademikaFront.Presentacion.Consultas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvAlumnosSinAprobar = new System.Windows.Forms.DataGridView();
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,16 +46,6 @@ namespace AcademikaFront.Presentacion.Consultas
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosSinAprobar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(77, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 15);
-            this.label1.TabIndex = 161;
-            this.label1.Text = "SP_ALUMNOS_SIN_APROBADAS";
             // 
             // dgvAlumnosSinAprobar
             // 
@@ -203,7 +192,6 @@ namespace AcademikaFront.Presentacion.Consultas
             this.Controls.Add(this.lblAnioCursado);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.dgvAlumnosSinAprobar);
-            this.Controls.Add(this.label1);
             this.Name = "FrmAlumnosSinAprobar";
             this.Text = "FrmAlumnosSinAprobar";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosSinAprobar)).EndInit();
@@ -213,7 +201,6 @@ namespace AcademikaFront.Presentacion.Consultas
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvAlumnosSinAprobar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alumno;
