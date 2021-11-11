@@ -50,7 +50,7 @@ namespace Academika.Presentacion
         {
 
 
-            string urlBase = "https://localhost:44365/api/MateriasDetalle/Consulta/";
+            string urlBase = "https://localhost:44365/api/MateriasDetalle/ConsultaDetalle/";
             string url = urlBase + idMateria.ToString();
 
             var resultado = await ClienteSingleton.GetInstancia().GetAsync(url);

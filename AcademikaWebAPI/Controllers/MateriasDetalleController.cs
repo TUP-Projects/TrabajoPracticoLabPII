@@ -35,7 +35,7 @@ namespace AcademikaWebAPI.Controllers
             return Ok(JsonConvert.SerializeObject(_materiasDetalleService.ConsultarMaterias()));
         }
 
-        [HttpGet("Consulta/{idMateria}")]
+        [HttpGet("ConsultaDetalle/{idMateria}")]
         public IActionResult GetMateriasDetalle(int idMateria)
         {
             return Ok(JsonConvert.SerializeObject(_materiasDetalleService.ConsultaMateria(idMateria)));
