@@ -29,20 +29,20 @@ namespace AcademikaFront.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblIdCurso = new System.Windows.Forms.Label();
-            this.cboSituacionHabitacional = new RJCodeAdvance.RJControls.RJComboBox();
-            this.cboIdMateria = new RJCodeAdvance.RJControls.RJComboBox();
+            this.cboCurso = new RJCodeAdvance.RJControls.RJComboBox();
+            this.cboMateria = new RJCodeAdvance.RJControls.RJComboBox();
             this.cboLegajo = new RJCodeAdvance.RJControls.RJComboBox();
             this.lblIdMateria = new System.Windows.Forms.Label();
             this.lblLegajo = new System.Windows.Forms.Label();
-            this.cboIdCarrera = new RJCodeAdvance.RJControls.RJComboBox();
+            this.cboCarrera = new RJCodeAdvance.RJControls.RJComboBox();
             this.lblIdCarrera = new System.Windows.Forms.Label();
             this.dtpAnioCursado = new RJCodeAdvance.RJControls.RJDatePicker();
             this.lblAnioCursado = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPromedioAlumnos = new System.Windows.Forms.DataGridView();
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +51,7 @@ namespace AcademikaFront.Presentacion
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPromedioAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIdCurso
@@ -64,43 +64,43 @@ namespace AcademikaFront.Presentacion
             this.lblIdCurso.TabIndex = 167;
             this.lblIdCurso.Text = "Curso:";
             // 
-            // cboSituacionHabitacional
+            // cboCurso
             // 
-            this.cboSituacionHabitacional.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cboSituacionHabitacional.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cboSituacionHabitacional.BorderSize = 1;
-            this.cboSituacionHabitacional.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cboSituacionHabitacional.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cboSituacionHabitacional.ForeColor = System.Drawing.Color.DimGray;
-            this.cboSituacionHabitacional.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cboSituacionHabitacional.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cboSituacionHabitacional.ListTextColor = System.Drawing.Color.DimGray;
-            this.cboSituacionHabitacional.Location = new System.Drawing.Point(126, 208);
-            this.cboSituacionHabitacional.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cboSituacionHabitacional.Name = "cboSituacionHabitacional";
-            this.cboSituacionHabitacional.Padding = new System.Windows.Forms.Padding(1);
-            this.cboSituacionHabitacional.Size = new System.Drawing.Size(200, 30);
-            this.cboSituacionHabitacional.TabIndex = 166;
-            this.cboSituacionHabitacional.Texts = "";
+            this.cboCurso.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cboCurso.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cboCurso.BorderSize = 1;
+            this.cboCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cboCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cboCurso.ForeColor = System.Drawing.Color.DimGray;
+            this.cboCurso.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cboCurso.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cboCurso.ListTextColor = System.Drawing.Color.DimGray;
+            this.cboCurso.Location = new System.Drawing.Point(126, 208);
+            this.cboCurso.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cboCurso.Name = "cboCurso";
+            this.cboCurso.Padding = new System.Windows.Forms.Padding(1);
+            this.cboCurso.Size = new System.Drawing.Size(200, 30);
+            this.cboCurso.TabIndex = 166;
+            this.cboCurso.Texts = "";
             // 
-            // cboIdMateria
+            // cboMateria
             // 
-            this.cboIdMateria.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cboIdMateria.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cboIdMateria.BorderSize = 1;
-            this.cboIdMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cboIdMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cboIdMateria.ForeColor = System.Drawing.Color.DimGray;
-            this.cboIdMateria.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cboIdMateria.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cboIdMateria.ListTextColor = System.Drawing.Color.DimGray;
-            this.cboIdMateria.Location = new System.Drawing.Point(397, 148);
-            this.cboIdMateria.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cboIdMateria.Name = "cboIdMateria";
-            this.cboIdMateria.Padding = new System.Windows.Forms.Padding(1);
-            this.cboIdMateria.Size = new System.Drawing.Size(200, 30);
-            this.cboIdMateria.TabIndex = 165;
-            this.cboIdMateria.Texts = "";
+            this.cboMateria.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cboMateria.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cboMateria.BorderSize = 1;
+            this.cboMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cboMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cboMateria.ForeColor = System.Drawing.Color.DimGray;
+            this.cboMateria.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cboMateria.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cboMateria.ListTextColor = System.Drawing.Color.DimGray;
+            this.cboMateria.Location = new System.Drawing.Point(397, 148);
+            this.cboMateria.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cboMateria.Name = "cboMateria";
+            this.cboMateria.Padding = new System.Windows.Forms.Padding(1);
+            this.cboMateria.Size = new System.Drawing.Size(200, 30);
+            this.cboMateria.TabIndex = 165;
+            this.cboMateria.Texts = "";
             // 
             // cboLegajo
             // 
@@ -141,24 +141,24 @@ namespace AcademikaFront.Presentacion
             this.lblLegajo.TabIndex = 161;
             this.lblLegajo.Text = "Legajo:";
             // 
-            // cboIdCarrera
+            // cboCarrera
             // 
-            this.cboIdCarrera.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cboIdCarrera.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cboIdCarrera.BorderSize = 1;
-            this.cboIdCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cboIdCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cboIdCarrera.ForeColor = System.Drawing.Color.DimGray;
-            this.cboIdCarrera.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cboIdCarrera.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cboIdCarrera.ListTextColor = System.Drawing.Color.DimGray;
-            this.cboIdCarrera.Location = new System.Drawing.Point(423, 208);
-            this.cboIdCarrera.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cboIdCarrera.Name = "cboIdCarrera";
-            this.cboIdCarrera.Padding = new System.Windows.Forms.Padding(1);
-            this.cboIdCarrera.Size = new System.Drawing.Size(200, 30);
-            this.cboIdCarrera.TabIndex = 170;
-            this.cboIdCarrera.Texts = "";
+            this.cboCarrera.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cboCarrera.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cboCarrera.BorderSize = 1;
+            this.cboCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cboCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cboCarrera.ForeColor = System.Drawing.Color.DimGray;
+            this.cboCarrera.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cboCarrera.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cboCarrera.ListTextColor = System.Drawing.Color.DimGray;
+            this.cboCarrera.Location = new System.Drawing.Point(423, 208);
+            this.cboCarrera.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cboCarrera.Name = "cboCarrera";
+            this.cboCarrera.Padding = new System.Windows.Forms.Padding(1);
+            this.cboCarrera.Size = new System.Drawing.Size(200, 30);
+            this.cboCarrera.TabIndex = 170;
+            this.cboCarrera.Texts = "";
             // 
             // lblIdCarrera
             // 
@@ -193,52 +193,46 @@ namespace AcademikaFront.Presentacion
             this.lblAnioCursado.TabIndex = 171;
             this.lblAnioCursado.Text = "Año Cursado:";
             // 
-            // dataGridView1
+            // dgvPromedioAlumnos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 30;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Legajo,
-            this.Materia,
-            this.Anio,
-            this.Curso,
-            this.Carrera});
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(55, 294);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(845, 301);
-            this.dataGridView1.TabIndex = 173;
+            this.dgvPromedioAlumnos.AllowUserToAddRows = false;
+            this.dgvPromedioAlumnos.AllowUserToDeleteRows = false;
+            this.dgvPromedioAlumnos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.dgvPromedioAlumnos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPromedioAlumnos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPromedioAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvPromedioAlumnos.ColumnHeadersHeight = 30;
+            this.dgvPromedioAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPromedioAlumnos.EnableHeadersVisualStyles = false;
+            this.dgvPromedioAlumnos.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvPromedioAlumnos.Location = new System.Drawing.Point(55, 294);
+            this.dgvPromedioAlumnos.Name = "dgvPromedioAlumnos";
+            this.dgvPromedioAlumnos.ReadOnly = true;
+            this.dgvPromedioAlumnos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPromedioAlumnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvPromedioAlumnos.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPromedioAlumnos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvPromedioAlumnos.Size = new System.Drawing.Size(845, 207);
+            this.dgvPromedioAlumnos.TabIndex = 173;
             // 
             // Legajo
             // 
@@ -288,6 +282,7 @@ namespace AcademikaFront.Presentacion
             this.btnSearch.TabIndex = 178;
             this.btnSearch.Tag = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnLimpiar
             // 
@@ -320,20 +315,21 @@ namespace AcademikaFront.Presentacion
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPromedioAlumnos);
             this.Controls.Add(this.dtpAnioCursado);
             this.Controls.Add(this.lblAnioCursado);
-            this.Controls.Add(this.cboIdCarrera);
+            this.Controls.Add(this.cboCarrera);
             this.Controls.Add(this.lblIdCarrera);
             this.Controls.Add(this.lblIdCurso);
-            this.Controls.Add(this.cboSituacionHabitacional);
-            this.Controls.Add(this.cboIdMateria);
+            this.Controls.Add(this.cboCurso);
+            this.Controls.Add(this.cboMateria);
             this.Controls.Add(this.cboLegajo);
             this.Controls.Add(this.lblIdMateria);
             this.Controls.Add(this.lblLegajo);
             this.Name = "FrmPromedioAlumno";
             this.Text = "Consulta Promedio Alumno";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmPromedioAlumno_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPromedioAlumnos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,16 +337,16 @@ namespace AcademikaFront.Presentacion
 
         #endregion
         private System.Windows.Forms.Label lblIdCurso;
-        private RJCodeAdvance.RJControls.RJComboBox cboSituacionHabitacional;
-        private RJCodeAdvance.RJControls.RJComboBox cboIdMateria;
+        private RJCodeAdvance.RJControls.RJComboBox cboCurso;
+        private RJCodeAdvance.RJControls.RJComboBox cboMateria;
         private RJCodeAdvance.RJControls.RJComboBox cboLegajo;
         private System.Windows.Forms.Label lblIdMateria;
         private System.Windows.Forms.Label lblLegajo;
-        private RJCodeAdvance.RJControls.RJComboBox cboIdCarrera;
+        private RJCodeAdvance.RJControls.RJComboBox cboCarrera;
         private System.Windows.Forms.Label lblIdCarrera;
         private RJCodeAdvance.RJControls.RJDatePicker dtpAnioCursado;
         private System.Windows.Forms.Label lblAnioCursado;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPromedioAlumnos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio;

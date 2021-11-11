@@ -34,12 +34,8 @@ namespace AcademikaFront.Presentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.lblEdad = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboFiltro = new System.Windows.Forms.ComboBox();
             this.dgvEstadisticas = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadExamenes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadisticas)).BeginInit();
             this.SuspendLayout();
@@ -65,19 +61,19 @@ namespace AcademikaFront.Presentacion
             this.lblEdad.TabIndex = 153;
             this.lblEdad.Text = "Filtrar por:";
             // 
-            // comboBox1
+            // cboFiltro
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFiltro.FormattingEnabled = true;
+            this.cboFiltro.Items.AddRange(new object[] {
             "Edad",
             "Estado Civil",
             "Situación Habitacional",
             "Situación Laboral"});
-            this.comboBox1.Location = new System.Drawing.Point(95, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 23);
-            this.comboBox1.TabIndex = 156;
+            this.cboFiltro.Location = new System.Drawing.Point(95, 69);
+            this.cboFiltro.Name = "cboFiltro";
+            this.cboFiltro.Size = new System.Drawing.Size(178, 23);
+            this.cboFiltro.TabIndex = 156;
             // 
             // dgvEstadisticas
             // 
@@ -96,13 +92,9 @@ namespace AcademikaFront.Presentacion
             this.dgvEstadisticas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEstadisticas.ColumnHeadersHeight = 30;
             this.dgvEstadisticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEstadisticas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Condicion,
-            this.Promedio,
-            this.CantidadExamenes});
             this.dgvEstadisticas.EnableHeadersVisualStyles = false;
             this.dgvEstadisticas.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvEstadisticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstadisticas.Location = new System.Drawing.Point(28, 117);
             this.dgvEstadisticas.Name = "dgvEstadisticas";
             this.dgvEstadisticas.ReadOnly = true;
@@ -122,35 +114,6 @@ namespace AcademikaFront.Presentacion
             this.dgvEstadisticas.RowTemplate.Height = 25;
             this.dgvEstadisticas.Size = new System.Drawing.Size(747, 360);
             this.dgvEstadisticas.TabIndex = 157;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ChangeNameColumn";
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Condicion
-            // 
-            this.Condicion.DataPropertyName = "Condicion";
-            this.Condicion.HeaderText = "Condicion";
-            this.Condicion.Name = "Condicion";
-            this.Condicion.ReadOnly = true;
-            // 
-            // Promedio
-            // 
-            this.Promedio.DataPropertyName = "Promedio";
-            this.Promedio.HeaderText = "Promedio";
-            this.Promedio.Name = "Promedio";
-            this.Promedio.ReadOnly = true;
-            // 
-            // CantidadExamenes
-            // 
-            this.CantidadExamenes.DataPropertyName = "CantidadExamenes";
-            this.CantidadExamenes.HeaderText = "Cantidad de Examenes";
-            this.CantidadExamenes.Name = "CantidadExamenes";
-            this.CantidadExamenes.ReadOnly = true;
-            this.CantidadExamenes.Width = 200;
             // 
             // btnSearch
             // 
@@ -174,11 +137,11 @@ namespace AcademikaFront.Presentacion
             this.ClientSize = new System.Drawing.Size(1154, 711);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgvEstadisticas);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboFiltro);
             this.Controls.Add(this.lblEdad);
             this.Controls.Add(this.label4);
             this.Name = "FrmEstadisticas";
-            this.Text = "FrmEstadisticas";
+            this.Text = "Estadisticas Alumnos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadisticas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,13 +152,9 @@ namespace AcademikaFront.Presentacion
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblEdad;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboFiltro;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dgvEstadisticas;
         private FontAwesome.Sharp.IconButton btnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Promedio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadExamenes;
     }
 }

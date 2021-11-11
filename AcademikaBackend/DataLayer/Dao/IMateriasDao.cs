@@ -34,5 +34,7 @@ namespace AcademikaBackend.DataLayer.Dao
         bool DeleteMateria(int id);
         Materia GetMateriaById(int id);
         bool UpdateMateria(Materia materia);
+        DataTable GetCondiciones(string filtro);
+        DataTable GetCondiciones(Dictionary<string, object> lst);
     }
 }

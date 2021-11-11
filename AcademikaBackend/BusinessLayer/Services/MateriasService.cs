@@ -110,5 +110,15 @@ namespace AcademikaBackend.BusinessLayer.Services
         {
             return MateriasDao.UpdateMateria(materia);
         }
+
+        public DataTable GetCondiciones(string Filtro)
+        {
+            return MateriasDao.GetCondiciones(Filtro);
+        }
+
+        public DataTable GetCondiciones(Dictionary<string, object> lst)
+        {
+            return MateriasDao.GetCondiciones(lst);
+        }
     }
 }

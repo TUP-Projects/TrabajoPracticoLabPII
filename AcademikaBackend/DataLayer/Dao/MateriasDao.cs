@@ -236,5 +236,28 @@ namespace AcademikaBackend.DataLayer.Dao
             int result = (int)helper.EjecutarSql(sql, cmd, CommandType.Text, null, "NonQuery");
             return result != 0;
         }
+
+        public DataTable GetCondiciones(string filtro)
+        {
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            sqlParams.Add(HelperDao.CrearParametro(cmd, "@groupElegido", DbType.String, filtro));
+            DataTable dt = new DataTable();
+            dt = helper.ConsultaSQL(cmd, "SP_ESTADISTICAS_ALUMNOS", sqlParams);
+            return dt;
+        }
+
+        public DataTable GetCondiciones(Dictionary<string, object> lst)
+        {
+            List<DbParameter> sqlParams = new List<DbParameter>();
+            SqlCommand cmd = new SqlCommand();
+            foreach (var item in lst)
+            {
+                sqlParams.Add(HelperDao.CrearParametro(cmd, item.Key, DbType.Int32, item.Value));
+            }
+
+            DataTable dt = helper.ConsultaSQL(cmd, "SP_PROMEDIO_NOTAS", sqlParams);
+            return dt;
+        }
     }
 }
