@@ -29,6 +29,9 @@ namespace AcademikaFront.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.lblEdad = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -80,15 +83,42 @@ namespace AcademikaFront.Presentacion
             // 
             this.dgvEstadisticas.AllowUserToAddRows = false;
             this.dgvEstadisticas.AllowUserToDeleteRows = false;
-            this.dgvEstadisticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstadisticas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.dgvEstadisticas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEstadisticas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstadisticas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEstadisticas.ColumnHeadersHeight = 30;
+            this.dgvEstadisticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEstadisticas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Condicion,
             this.Promedio,
             this.CantidadExamenes});
+            this.dgvEstadisticas.EnableHeadersVisualStyles = false;
+            this.dgvEstadisticas.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvEstadisticas.Location = new System.Drawing.Point(28, 117);
             this.dgvEstadisticas.Name = "dgvEstadisticas";
             this.dgvEstadisticas.ReadOnly = true;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEstadisticas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEstadisticas.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEstadisticas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEstadisticas.RowTemplate.Height = 25;
             this.dgvEstadisticas.Size = new System.Drawing.Size(747, 360);
             this.dgvEstadisticas.TabIndex = 157;
@@ -120,6 +150,7 @@ namespace AcademikaFront.Presentacion
             this.CantidadExamenes.HeaderText = "Cantidad de Examenes";
             this.CantidadExamenes.Name = "CantidadExamenes";
             this.CantidadExamenes.ReadOnly = true;
+            this.CantidadExamenes.Width = 200;
             // 
             // btnSearch
             // 
@@ -160,11 +191,11 @@ namespace AcademikaFront.Presentacion
         private System.Windows.Forms.Label lblEdad;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEstadisticas;
+        private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Promedio;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadExamenes;
-        private System.Windows.Forms.DataGridView dgvEstadisticas;
-        private FontAwesome.Sharp.IconButton btnSearch;
     }
 }
