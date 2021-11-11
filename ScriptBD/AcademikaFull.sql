@@ -1,8 +1,8 @@
-CREATE DATABASE Academika
-GO
+create database academika 
+go
 USE [Academika]
 GO
-/****** Object:  Table [dbo].[CARRERAS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[CARRERAS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -18,7 +18,7 @@ CREATE TABLE [dbo].[CARRERAS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MATERIAS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[MATERIAS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -33,7 +33,7 @@ CREATE TABLE [dbo].[MATERIAS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MATERIASxCARRERA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[MATERIASxCARRERA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -53,7 +53,7 @@ CREATE TABLE [dbo].[MATERIASxCARRERA](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[vw_plan_estudios]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  View [dbo].[vw_plan_estudios]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -66,7 +66,7 @@ FROM            dbo.MATERIASxCARRERA AS mxcar INNER JOIN
                          dbo.CARRERAS AS c ON c.id_carrera = mxcar.id_carrera
 WHERE        (mxcar.estado = 1) AND (c.estado = 1) AND (m.estado = 1)
 GO
-/****** Object:  Table [dbo].[ALUMNOS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[ALUMNOS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -94,7 +94,7 @@ CREATE TABLE [dbo].[ALUMNOS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CURSOS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[CURSOS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -109,7 +109,7 @@ CREATE TABLE [dbo].[CURSOS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CONDICIONES]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[CONDICIONES]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -123,7 +123,7 @@ CREATE TABLE [dbo].[CONDICIONES](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ALUMNOSxMATERIA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[ALUMNOSxMATERIA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -140,7 +140,7 @@ CREATE TABLE [dbo].[ALUMNOSxMATERIA](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ALUMNOSxCARRERA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[ALUMNOSxCARRERA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -156,7 +156,7 @@ CREATE TABLE [dbo].[ALUMNOSxCARRERA](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ALUMNOSxCURSO]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[ALUMNOSxCURSO]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -172,7 +172,7 @@ CREATE TABLE [dbo].[ALUMNOSxCURSO](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[vw_condiciones_alumnos]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  View [dbo].[vw_condiciones_alumnos]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -194,7 +194,7 @@ AS
 	INNER JOIN CONDICIONES co ON co.id_condicion = am.id_condicion
 
 GO
-/****** Object:  Table [dbo].[CARGOS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[CARGOS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -208,7 +208,7 @@ CREATE TABLE [dbo].[CARGOS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DOCENTES]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[DOCENTES]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -225,7 +225,7 @@ CREATE TABLE [dbo].[DOCENTES](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DOCENTESxMATERIA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[DOCENTESxMATERIA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -243,7 +243,7 @@ CREATE TABLE [dbo].[DOCENTESxMATERIA](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[vw_materias_detalle]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  View [dbo].[vw_materias_detalle]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -266,7 +266,7 @@ INNER JOIN CARGOS car ON car.id_cargo = dxm.id_cargo
 INNER JOIN CURSOS cur ON cur.id_curso = dxm.id_curso
 WHERE mxcar.estado = 1 AND dxm.estado = 1 AND m.estado = 1 AND ca.estado = 1
 GO
-/****** Object:  Table [dbo].[BARRIOS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[BARRIOS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -281,7 +281,7 @@ CREATE TABLE [dbo].[BARRIOS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Credenciales]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[Credenciales]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -296,7 +296,7 @@ CREATE TABLE [dbo].[Credenciales](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DOCENTExTURNO]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[DOCENTExTURNO]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -312,7 +312,7 @@ CREATE TABLE [dbo].[DOCENTExTURNO](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ESTADOS_CIVIL]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[ESTADOS_CIVIL]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -326,7 +326,7 @@ CREATE TABLE [dbo].[ESTADOS_CIVIL](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[EXAMENES]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[EXAMENES]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -346,7 +346,7 @@ CREATE TABLE [dbo].[EXAMENES](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LOCALIDADES]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[LOCALIDADES]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -361,7 +361,7 @@ CREATE TABLE [dbo].[LOCALIDADES](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PAISES]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[PAISES]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -375,7 +375,7 @@ CREATE TABLE [dbo].[PAISES](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PROVINCIAS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[PROVINCIAS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -390,7 +390,7 @@ CREATE TABLE [dbo].[PROVINCIAS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SITUACIONES_HABIT]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[SITUACIONES_HABIT]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -404,7 +404,7 @@ CREATE TABLE [dbo].[SITUACIONES_HABIT](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TIPOS_DOC]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[TIPOS_DOC]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -418,7 +418,7 @@ CREATE TABLE [dbo].[TIPOS_DOC](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TIPOS_EXAMEN]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[TIPOS_EXAMEN]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -433,7 +433,7 @@ CREATE TABLE [dbo].[TIPOS_EXAMEN](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TIPOS_TRABAJO]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[TIPOS_TRABAJO]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -447,7 +447,7 @@ CREATE TABLE [dbo].[TIPOS_TRABAJO](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TURNOS_EXAMEN]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Table [dbo].[TURNOS_EXAMEN]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -475,11 +475,27 @@ INSERT [dbo].[ALUMNOS] ([legajo], [nombre], [apellido], [genero], [id_tipo_doc],
 GO
 INSERT [dbo].[ALUMNOS] ([legajo], [nombre], [apellido], [genero], [id_tipo_doc], [num_doc], [calle], [numero], [id_situac_habit], [fecha_nac], [id_estado_civil], [trabaja], [id_tipo_trab], [id_barrio], [telefono], [email]) VALUES (5, N'Javier', N'Yonose', N'NS/NC', 1, N'30002', N'avenida siempre viva', 1237, 1, CAST(N'1992-10-10' AS Date), 1, 1, 1, 1, 3512, N'javier@utn.edu.ar')
 GO
+INSERT [dbo].[ALUMNOS] ([legajo], [nombre], [apellido], [genero], [id_tipo_doc], [num_doc], [calle], [numero], [id_situac_habit], [fecha_nac], [id_estado_civil], [trabaja], [id_tipo_trab], [id_barrio], [telefono], [email]) VALUES (6, N'patito', N'otro', N'hermafrodita ', 1, N'040302', N'aca nuevo', 12306, 1, CAST(N'1990-10-10' AS Date), 1, 1, 1, 1, 2342423, N'otr@yahoo.com.ar')
+GO
+INSERT [dbo].[ALUMNOS] ([legajo], [nombre], [apellido], [genero], [id_tipo_doc], [num_doc], [calle], [numero], [id_situac_habit], [fecha_nac], [id_estado_civil], [trabaja], [id_tipo_trab], [id_barrio], [telefono], [email]) VALUES (7, N'beatriz', N'kunda', N'mujer', 1, N'2800000', N'frente a la pc', 1, 1, CAST(N'1980-10-10' AS Date), 2, 1, 1, 1, 49239429, N'profekunda@gmail.com')
+GO
 SET IDENTITY_INSERT [dbo].[ALUMNOS] OFF
 GO
 SET IDENTITY_INSERT [dbo].[ALUMNOSxCARRERA] ON 
 GO
-INSERT [dbo].[ALUMNOSxCARRERA] ([id_carrera_alumno], [legajo], [id_carrera], [anio_inscripcion]) VALUES (1, 1, 1, NULL)
+INSERT [dbo].[ALUMNOSxCARRERA] ([id_carrera_alumno], [legajo], [id_carrera], [anio_inscripcion]) VALUES (1, 1, 3, 2020)
+GO
+INSERT [dbo].[ALUMNOSxCARRERA] ([id_carrera_alumno], [legajo], [id_carrera], [anio_inscripcion]) VALUES (4, 2, 2, 2020)
+GO
+INSERT [dbo].[ALUMNOSxCARRERA] ([id_carrera_alumno], [legajo], [id_carrera], [anio_inscripcion]) VALUES (7, 3, 5, 2019)
+GO
+INSERT [dbo].[ALUMNOSxCARRERA] ([id_carrera_alumno], [legajo], [id_carrera], [anio_inscripcion]) VALUES (12, 4, 1, 2018)
+GO
+INSERT [dbo].[ALUMNOSxCARRERA] ([id_carrera_alumno], [legajo], [id_carrera], [anio_inscripcion]) VALUES (24, 5, 3, 2019)
+GO
+INSERT [dbo].[ALUMNOSxCARRERA] ([id_carrera_alumno], [legajo], [id_carrera], [anio_inscripcion]) VALUES (25, 6, 2, 2020)
+GO
+INSERT [dbo].[ALUMNOSxCARRERA] ([id_carrera_alumno], [legajo], [id_carrera], [anio_inscripcion]) VALUES (31, 7, 4, 2000)
 GO
 SET IDENTITY_INSERT [dbo].[ALUMNOSxCARRERA] OFF
 GO
@@ -487,11 +503,139 @@ SET IDENTITY_INSERT [dbo].[ALUMNOSxCURSO] ON
 GO
 INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (1, 1, 1, NULL)
 GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (2, 1, 1, 4)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (3, 1, 1, 5)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (4, 1, 1, 6)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (5, 1, 1, 7)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (10, 2, 1, 4)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (11, 2, 1, 5)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (12, 2, 1, 6)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (13, 2, 1, 7)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (16, 3, 1, 4)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (17, 3, 1, 5)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (18, 3, 1, 6)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (19, 3, 1, 7)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (20, 3, 1, 4)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (21, 3, 1, 5)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (22, 3, 1, 6)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (23, 3, 1, 7)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (32, 4, 1, 4)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (33, 4, 1, 5)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (34, 4, 1, 6)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (35, 4, 1, 7)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (80, 5, 1, 1)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (81, 5, 1, 2)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (82, 5, 1, 3)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (83, 5, 1, 4)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (84, 6, 1, 2)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (85, 6, 1, 3)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (86, 6, 1, 4)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (87, 6, 1, 5)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (88, 7, 1, 2)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (89, 7, 1, 3)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (90, 7, 1, 4)
+GO
+INSERT [dbo].[ALUMNOSxCURSO] ([id_alumno_curso], [legajo], [id_curso], [id_materia]) VALUES (91, 7, 1, 5)
+GO
 SET IDENTITY_INSERT [dbo].[ALUMNOSxCURSO] OFF
 GO
 SET IDENTITY_INSERT [dbo].[ALUMNOSxMATERIA] ON 
 GO
 INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (1, 1, 1, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (2, 1, 4, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (3, 1, 5, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (4, 1, 6, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (5, 1, 7, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (12, 2, 4, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (13, 2, 5, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (14, 2, 6, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (15, 2, 7, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (19, 3, 4, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (20, 3, 5, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (21, 3, 6, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (22, 3, 7, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (23, 3, 4, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (24, 3, 5, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (25, 3, 6, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (26, 3, 7, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (39, 4, 4, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (40, 4, 5, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (41, 4, 6, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (42, 4, 7, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (87, 5, 1, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (88, 5, 2, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (89, 5, 3, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (90, 5, 4, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (91, 6, 2, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (92, 6, 3, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (93, 6, 4, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (94, 6, 5, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (95, 7, 2, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (96, 7, 3, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (97, 7, 4, 1, 2021)
+GO
+INSERT [dbo].[ALUMNOSxMATERIA] ([id_alumno_materia], [legajo], [id_materia], [id_condicion], [anio_cursado]) VALUES (98, 7, 5, 1, 2021)
 GO
 SET IDENTITY_INSERT [dbo].[ALUMNOSxMATERIA] OFF
 GO
@@ -541,15 +685,17 @@ SET IDENTITY_INSERT [dbo].[CARGOS] OFF
 GO
 SET IDENTITY_INSERT [dbo].[CARRERAS] ON 
 GO
-INSERT [dbo].[CARRERAS] ([id_carrera], [carrera], [estado], [duracion]) VALUES (1, N'Tecnicatura en Programación', 1, 3)
+INSERT [dbo].[CARRERAS] ([id_carrera], [carrera], [estado], [duracion]) VALUES (1, N'Tecnicatura en Programación', 0, 3)
 GO
 INSERT [dbo].[CARRERAS] ([id_carrera], [carrera], [estado], [duracion]) VALUES (2, N'Tecnicatura en Mecatrónica', 1, 3)
 GO
 INSERT [dbo].[CARRERAS] ([id_carrera], [carrera], [estado], [duracion]) VALUES (3, N'Tecnicatura en Mantenimiento Industrial', 1, 3)
 GO
-INSERT [dbo].[CARRERAS] ([id_carrera], [carrera], [estado], [duracion]) VALUES (4, N'Nombre Tecnicatura2', 1, 1)
+INSERT [dbo].[CARRERAS] ([id_carrera], [carrera], [estado], [duracion]) VALUES (4, N'Tecnicatura2', 1, 1)
 GO
-INSERT [dbo].[CARRERAS] ([id_carrera], [carrera], [estado], [duracion]) VALUES (5, N'tecni', 1, 3)
+INSERT [dbo].[CARRERAS] ([id_carrera], [carrera], [estado], [duracion]) VALUES (5, N'Tecnicos En desastre 1', 1, 3)
+GO
+INSERT [dbo].[CARRERAS] ([id_carrera], [carrera], [estado], [duracion]) VALUES (6, N'Algo para aprobar ', 1, 1)
 GO
 SET IDENTITY_INSERT [dbo].[CARRERAS] OFF
 GO
@@ -566,6 +712,16 @@ GO
 SET IDENTITY_INSERT [dbo].[Credenciales] ON 
 GO
 INSERT [dbo].[Credenciales] ([IdUsuario], [Usuario], [Contrasenia]) VALUES (1, N'Administrador', N'ITEyMzQ1NiE=')
+GO
+INSERT [dbo].[Credenciales] ([IdUsuario], [Usuario], [Contrasenia]) VALUES (2, N'Javier', N'cG9sbGlvdG8=')
+GO
+INSERT [dbo].[Credenciales] ([IdUsuario], [Usuario], [Contrasenia]) VALUES (3, N'Ciro', N'cHJ1ZWJhMg==')
+GO
+INSERT [dbo].[Credenciales] ([IdUsuario], [Usuario], [Contrasenia]) VALUES (4, N'Gaston', N'cHJ1ZWJhdXNlcg==')
+GO
+INSERT [dbo].[Credenciales] ([IdUsuario], [Usuario], [Contrasenia]) VALUES (5, N'Lucio', N'cHJ1ZWJhdXNlcg==')
+GO
+INSERT [dbo].[Credenciales] ([IdUsuario], [Usuario], [Contrasenia]) VALUES (6, N'Cristian', N'cHJ1ZWJhdXNlcg==')
 GO
 SET IDENTITY_INSERT [dbo].[Credenciales] OFF
 GO
@@ -833,11 +989,33 @@ INSERT [dbo].[DOCENTESxMATERIA] ([id_docente_materia], [id_docente], [id_cargo],
 GO
 INSERT [dbo].[DOCENTESxMATERIA] ([id_docente_materia], [id_docente], [id_cargo], [id_materias_carrera], [id_curso], [estado]) VALUES (9, 7, 6, 2, 1, 1)
 GO
+INSERT [dbo].[DOCENTESxMATERIA] ([id_docente_materia], [id_docente], [id_cargo], [id_materias_carrera], [id_curso], [estado]) VALUES (10, 4, 4, 17, 4, 1)
+GO
+INSERT [dbo].[DOCENTESxMATERIA] ([id_docente_materia], [id_docente], [id_cargo], [id_materias_carrera], [id_curso], [estado]) VALUES (11, 6, 5, 17, 4, 1)
+GO
+INSERT [dbo].[DOCENTESxMATERIA] ([id_docente_materia], [id_docente], [id_cargo], [id_materias_carrera], [id_curso], [estado]) VALUES (12, 5, 6, 17, 4, 1)
+GO
+INSERT [dbo].[DOCENTESxMATERIA] ([id_docente_materia], [id_docente], [id_cargo], [id_materias_carrera], [id_curso], [estado]) VALUES (13, 1, 4, 17, 1, 1)
+GO
+INSERT [dbo].[DOCENTESxMATERIA] ([id_docente_materia], [id_docente], [id_cargo], [id_materias_carrera], [id_curso], [estado]) VALUES (14, 2, 5, 17, 1, 1)
+GO
+INSERT [dbo].[DOCENTESxMATERIA] ([id_docente_materia], [id_docente], [id_cargo], [id_materias_carrera], [id_curso], [estado]) VALUES (15, 2, 6, 17, 1, 1)
+GO
 SET IDENTITY_INSERT [dbo].[DOCENTESxMATERIA] OFF
 GO
 SET IDENTITY_INSERT [dbo].[DOCENTExTURNO] ON 
 GO
 INSERT [dbo].[DOCENTExTURNO] ([id_docente_turno], [id_docente], [id_turno], [id_cargo]) VALUES (1, 1, 1, 1)
+GO
+INSERT [dbo].[DOCENTExTURNO] ([id_docente_turno], [id_docente], [id_turno], [id_cargo]) VALUES (2, 2, 3, 2)
+GO
+INSERT [dbo].[DOCENTExTURNO] ([id_docente_turno], [id_docente], [id_turno], [id_cargo]) VALUES (3, 3, 2, 4)
+GO
+INSERT [dbo].[DOCENTExTURNO] ([id_docente_turno], [id_docente], [id_turno], [id_cargo]) VALUES (4, 5, 1, 5)
+GO
+INSERT [dbo].[DOCENTExTURNO] ([id_docente_turno], [id_docente], [id_turno], [id_cargo]) VALUES (5, 4, 4, 6)
+GO
+INSERT [dbo].[DOCENTExTURNO] ([id_docente_turno], [id_docente], [id_turno], [id_cargo]) VALUES (6, 6, 6, 6)
 GO
 SET IDENTITY_INSERT [dbo].[DOCENTExTURNO] OFF
 GO
@@ -1055,6 +1233,8 @@ INSERT [dbo].[MATERIAS] ([id_materia], [materia], [estado]) VALUES (62, N'PRACTI
 GO
 INSERT [dbo].[MATERIAS] ([id_materia], [materia], [estado]) VALUES (63, N'PASANTIA - TUMI', 1)
 GO
+INSERT [dbo].[MATERIAS] ([id_materia], [materia], [estado]) VALUES (64, N'materia pollioto', 0)
+GO
 SET IDENTITY_INSERT [dbo].[MATERIAS] OFF
 GO
 SET IDENTITY_INSERT [dbo].[MATERIASxCARRERA] ON 
@@ -1090,6 +1270,8 @@ GO
 INSERT [dbo].[MATERIASxCARRERA] ([id_materias_carrera], [id_carrera], [id_materia], [anio_dictado], [cuatrimestre], [dictado], [carga_horaria], [estado]) VALUES (19, 1, 45, 1, 1, N'Cuatrimestral', 3, 1)
 GO
 INSERT [dbo].[MATERIASxCARRERA] ([id_materias_carrera], [id_carrera], [id_materia], [anio_dictado], [cuatrimestre], [dictado], [carga_horaria], [estado]) VALUES (20, 4, 2, 1, 2, N'Cuatrimestral', 1, 1)
+GO
+INSERT [dbo].[MATERIASxCARRERA] ([id_materias_carrera], [id_carrera], [id_materia], [anio_dictado], [cuatrimestre], [dictado], [carga_horaria], [estado]) VALUES (21, 3, 18, 2, 1, N'Anual', 1, 1)
 GO
 SET IDENTITY_INSERT [dbo].[MATERIASxCARRERA] OFF
 GO
@@ -1395,7 +1577,7 @@ REFERENCES [dbo].[MATERIAS] ([id_materia])
 GO
 ALTER TABLE [dbo].[TURNOS_EXAMEN] CHECK CONSTRAINT [fk_materia_turnos_examen]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ACTUALIZA_MATERIAS_CARRERA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ACTUALIZA_MATERIAS_CARRERA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1412,7 +1594,7 @@ AS
 UPDATE MATERIASxCARRERA SET id_carrera = @idcarrera, id_materia = @idmateria, anio_dictado = @anio_dictado, cuatrimestre = @cuatrimestre, dictado = @dictado, carga_horaria = @carga_horaria
 WHERE id_materias_carrera = @idmateriacarrera
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ACTUALIZA_MATERIASxCARRERAxCURSO]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ACTUALIZA_MATERIASxCARRERAxCURSO]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1481,7 +1663,7 @@ END
 /****** Object:  StoredProcedure [dbo].[SP_ALTA_ALUMNOS]    Script Date: 9/11/2021 01:16:19 ******/
 SET ANSI_NULLS ON
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALTA_ALUMNOS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALTA_ALUMNOS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1520,7 +1702,7 @@ IF (@nombre IS NOT NULL AND @apellido IS NOT NULL AND @fecha_nac IS NOT NULL AND
 	END
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALTA_CARRERA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALTA_CARRERA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1535,7 +1717,7 @@ INSERT INTO CARRERAS VALUES (@carrera, @estado, @duracion)
 ELSE
 RAISERROR('La carrera ya está dada de alta.', 16, 1)
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALTA_CURSO]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALTA_CURSO]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1552,7 +1734,7 @@ ELSE
 	RAISERROR('El curso ya existe', 16,1)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALTA_DOCENTE]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALTA_DOCENTE]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1572,7 +1754,7 @@ ELSE
 RAISERROR ('El nombre y el apellido del docente son datos obligatorios', 16, 1)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALTA_LUGARES]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALTA_LUGARES]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1601,7 +1783,7 @@ END
 EXEC SP_EXECUTESQL @SQL
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALTA_MATERIA_CARRERA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALTA_MATERIA_CARRERA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1618,7 +1800,7 @@ AS
 INSERT INTO MATERIASxCARRERA VALUES (@idcarrera, @idmateria, @anio_dictado, @cuatrimestre, @dictado, @carga_horaria, @estado)
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALTA_MATERIA_CARRERA_CURSO]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALTA_MATERIA_CARRERA_CURSO]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1688,7 +1870,7 @@ END
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALTA_MATERIAS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALTA_MATERIAS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1705,7 +1887,7 @@ ELSE
 	RAISERROR('La materia ya existe', 16,1)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALTA_TIPO_EX]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALTA_TIPO_EX]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1721,7 +1903,7 @@ INSERT INTO TIPOS_EXAMEN VALUES (@tipo_examen, @id_cargo)
 ELSE
 RAISERROR('Tipo de examen existente.', 16, 1)
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALTA_TURNOS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALTA_TURNOS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1737,7 +1919,7 @@ INSERT INTO TURNOS_EXAMEN VALUES (@turno, YEAR(@anio_lectivo), @id_materia)
 ELSE
 RAISERROR('Turno de examen existente.', 16, 1)
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALUMNOS_SIN_APROBADAS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALUMNOS_SIN_APROBADAS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1754,7 +1936,7 @@ CREATE PROC [dbo].[SP_ALUMNOS_SIN_APROBADAS]
 		WHERE (e.id_examen IS NULL)  OR (YEAR(e.fecha) > YEAR(GETDATE()) - 5 AND e.nota < 4)
 		END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ALUMNOS_SIN_CURSADA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ALUMNOS_SIN_CURSADA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1775,7 +1957,7 @@ CREATE PROC [dbo].[SP_ALUMNOS_SIN_CURSADA]
 		WHERE a.legajo NOT IN (SELECT legajo FROM ALUMNOSxMATERIA WHERE anio_cursado = YEAR(GETDATE()) AND id_condicion IN (1,2))
 	END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BAJA_DOCENTESxMATERIA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BAJA_DOCENTESxMATERIA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1794,7 +1976,7 @@ UPDATE DOCENTESxMATERIA SET estado = 0 WHERE id_docente = @id_docente AND @id_ma
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BAJA_MATERIA_CARRERA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BAJA_MATERIA_CARRERA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1805,7 +1987,7 @@ CREATE PROC [dbo].[SP_BAJA_MATERIA_CARRERA]
 AS
 UPDATE MATERIASxCARRERA SET estado = 0 WHERE id_materias_carrera = @idmateriacarrera
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BAJA_MATERIASXCARRERA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BAJA_MATERIASXCARRERA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1818,7 +2000,7 @@ BEGIN
 UPDATE MATERIASxCARRERA SET estado = 0 WHERE id_materia = @idmateria AND id_carrera = @idcarrera
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BAJA_MATERIAxCURSO]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BAJA_MATERIAxCURSO]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1834,7 +2016,7 @@ UPDATE DOCENTESxMATERIA SET estado = 0 WHERE id_materias_carrera = @id_materia_c
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONDICIONES_ALUMNOS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONDICIONES_ALUMNOS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1875,7 +2057,7 @@ CREATE PROCEDURE [dbo].[SP_CONDICIONES_ALUMNOS]
 	DROP TABLE #tmp
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTA_ENTIDAD]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTA_ENTIDAD]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1918,7 +2100,7 @@ DECLARE @COLUMNADESC NVARCHAR(MAX)
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTA_MATERIAS_CARRERA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTA_MATERIAS_CARRERA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1935,7 +2117,7 @@ INNER JOIN MATERIAS m ON m.id_materia = mcar.id_materia AND m.estado = 1
 INNER JOIN CARRERAS c ON c.id_carrera = mcar.id_carrera AND c.estado = 1
 WHERE (((mcar.estado = @estado) OR (@estado IS NULL)) AND ((mcar.id_materia = @idmateria) OR (@idmateria = 0)) AND ((mcar.id_carrera = @idcarrera) OR (@idcarrera = 0)))
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTA_MATERIAS_DETALLE]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTA_MATERIAS_DETALLE]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1957,7 +2139,7 @@ GROUP BY
 [IdCurso], [NomCurso], [AnioDictado], [IdCarrera], [Carrera], [NombreMat], [Cuatrimestre], [Carga]
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_BARRIO]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_BARRIO]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1969,7 +2151,7 @@ BEGIN
 	SELECT * FROM BARRIOS
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_CARRERAS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_CARRERAS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1981,7 +2163,7 @@ BEGIN
 	SELECT * FROM CARRERAS
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_CREDENCIALES]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_CREDENCIALES]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1993,7 +2175,7 @@ BEGIN
 SELECT * FROM Credenciales
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_CURSOS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_CURSOS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2004,7 +2186,7 @@ BEGIN
 SELECT * FROM CURSOS
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_ESTADO_CIVIL]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_ESTADO_CIVIL]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2016,7 +2198,7 @@ BEGIN
 	SELECT * FROM ESTADOS_CIVIL
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_LOCALIDAD]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_LOCALIDAD]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2028,7 +2210,7 @@ BEGIN
 	SELECT * FROM LOCALIDADES
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_MATERIAS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_MATERIAS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2046,7 +2228,7 @@ BEGIN
 	SELECT * FROM MATERIAS
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_PAIS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_PAIS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2058,7 +2240,7 @@ BEGIN
 	SELECT * FROM PAISES
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_PROVINCIA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_PROVINCIA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2070,7 +2252,7 @@ BEGIN
 	SELECT * FROM PAISES
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_SITU_HABIT]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_SITU_HABIT]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2082,7 +2264,7 @@ BEGIN
 	SELECT * FROM SITUACIONES_HABIT
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_TIPOS_DOC]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_TIPOS_DOC]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2094,7 +2276,7 @@ BEGIN
 	SELECT * FROM TIPOS_DOC
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_DNI_TIPO]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_DNI_TIPO]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2112,7 +2294,7 @@ BEGIN
 	SELECT * FROM TIPOS_DOC
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ESTADISTICAS_ALUMNOS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ESTADISTICAS_ALUMNOS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2156,7 +2338,7 @@ CREATE PROC [dbo].[SP_ESTADISTICAS_ALUMNOS]
 
 		END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_INSCRIPCION_CARRERA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_INSCRIPCION_CARRERA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2174,7 +2356,7 @@ ELSE
 	RAISERROR('El alumno ya está inscripto en la carrera especificada', 16, 1)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_INSERTA_EXAMEN]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_INSERTA_EXAMEN]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2224,7 +2406,7 @@ ELSE
 RAISERROR ('Falta especificar alguno de los parámetros', 16, 1)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_OBTENER_PROX_ID]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_OBTENER_PROX_ID]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2243,7 +2425,7 @@ BEGIN
 	EXEC sp_executesql @SQL
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_PLAN_ESTUDIOS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_PLAN_ESTUDIOS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2256,7 +2438,7 @@ SELECT * FROM dbo.vw_plan_estudios
 WHERE (idCarrera = @idCarrera OR @idCarrera = 0)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_PROMEDIO_NOTAS]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_PROMEDIO_NOTAS]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2293,7 +2475,7 @@ CREATE PROC [dbo].[SP_PROMEDIO_NOTAS]
 			(@aniocursado IS NULL OR am.anio_cursado = @aniocursado)
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_VALIDAR_USUARIO]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  StoredProcedure [dbo].[SP_VALIDAR_USUARIO]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2316,21 +2498,17 @@ BEGIN
 	SELECT @IdUsuario
 END
 GO
-/****** Object:  Trigger [dbo].[TRG_INSCRIPCION_CARRERA]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Trigger [dbo].[TRG_INSCRIPCION_CARRERA]    Script Date: 11/11/2021 02:09:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
---SELECT dbo.FN_MATERIAS_APROBADAS(2)
-
-
--- Trigger que al inscribir un alumno en una carrera lo inscribie automáticamente en las primeras 4 materias de esa carrera, en un curso determinado según la cantidad alumnos inscriptos (<= 100).
--- Suposiciones: las cursadas no pueden tener más de 100 alumnos, al pasar el número se asigna al otro curso. Los id de materia están correlativos y ordenados en MATERIASxCARRERA
 CREATE TRIGGER [dbo].[TRG_INSCRIPCION_CARRERA]
 ON [dbo].[ALUMNOSxCARRERA]
-AFTER INSERT, UPDATE
+AFTER INSERT
 AS
 BEGIN
+DECLARE @id_carrera_alumno INT
 DECLARE @carrera INT 
 DECLARE @legajo INT 
 DECLARE @id_materia INT 
@@ -2339,51 +2517,48 @@ DECLARE @cant_alumnos_materia INT = 0
 DECLARE @corte INT
 
 
-SELECT @carrera = id_carrera, @legajo = legajo FROM inserted
+SELECT @id_carrera_alumno = id_carrera_alumno, @carrera = id_carrera, @legajo = legajo FROM inserted -- Guardamos carrera y legajo insertados en variables para usar luego
 
-SELECT * INTO #primeras_materias FROM (SELECT TOP 4 id_materia FROM MATERIASxCARRERA WHERE id_carrera = @carrera ORDER BY id_materia) t
-SELECT @id_materia = id_materia FROM #primeras_materias
-SET @corte = @id_materia + 3
-IF (EXISTS (SELECT * FROM #primeras_materias))
+SELECT * INTO #primeras_materias FROM (SELECT TOP 4 id_materia FROM MATERIASxCARRERA WHERE id_carrera = @carrera ORDER BY id_materia) t -- Guarda las primeras 4 materias de la carrera a la que se inscribe el alumno
+																																-- suponiendo que se han cargado en orden de correlatividad
+SELECT TOP 1 @id_materia = id_materia FROM #primeras_materias ORDER BY id_materia ASC -- tomo el primer id de materia
+
+SET @corte = @id_materia + 3 -- set de variable de corte para que el while no se vaya
+IF (EXISTS (SELECT * FROM #primeras_materias)) -- Si la carrera tiene materias asociadas entramos al while
 BEGIN
-WHILE @id_materia <= @corte AND @cant_alumnos_materia < 201 -- Suponemos que el tope de alumnos que soporta una cátedra es de 200.
+WHILE @id_materia <= @corte AND @cant_alumnos_materia < 201 -- Suponemos que el tope de alumnos que soporta una catedra en total es de 200.
 BEGIN
-	INSERT INTO ALUMNOSxMATERIA VALUES (@legajo, @id_materia, 1, YEAR(GETDATE()))
-	SELECT @cant_alumnos_materia = count(*) FROM ALUMNOSxCURSO where id_materia = @id_materia AND id_curso = @id_curso
+	INSERT INTO ALUMNOSxMATERIA VALUES (@legajo, @id_materia, 1, YEAR(GETDATE())) -- Asociamos el alumno a la primer materia de la carrera
+	SELECT @cant_alumnos_materia = count(*) FROM ALUMNOSxCURSO where id_materia = @id_materia AND id_curso = @id_curso -- Control de los alumnos que se van anotando en el curso
+	
 	IF @cant_alumnos_materia <= 100 AND  @id_materia <= @corte
+		BEGIN-- Si no nos pasamos insertamos en curso 1 que es por defecto
 		INSERT INTO ALUMNOSxCURSO VALUES (@legajo, @id_curso, @id_materia)
+		END
 	ELSE 
 	BEGIN
-		INSERT INTO ALUMNOSxCURSO VALUES (@legajo, @id_curso + 1, @id_materia)
+		INSERT INTO ALUMNOSxCURSO VALUES (@legajo, @id_curso + 1, @id_materia) -- Si nos pasamos vamos al curso siguiente
 		SET @id_curso = @id_curso + 1
 	END
+
 	SET @id_materia = @id_materia + 1 
 END
 END
 ELSE
- RAISERROR('No se realiza la inscripción automática, no hay materias asociadas a la carrera elegida.', 16, 1)
+BEGIN
+ DELETE FROM ALUMNOSxCARRERA WHERE id_carrera_alumno = @id_carrera_alumno -- Borramos el registro insertado si no hay materias asociadas a la carrera
+ RAISERROR('No se realiza la inscripción automática, no hay materias asociadas a la carrera elegida.', 16, 1) -- Devulevo error
+ END
 END
+
 GO
 ALTER TABLE [dbo].[ALUMNOSxCARRERA] ENABLE TRIGGER [TRG_INSCRIPCION_CARRERA]
 GO
-/****** Object:  Trigger [dbo].[TRG_VALIDA_EXAMEN]    Script Date: 10/11/2021 18:09:15 ******/
+/****** Object:  Trigger [dbo].[TRG_VALIDA_EXAMEN]    Script Date: 11/11/2021 02:09:48 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-
-
-/* SECTION TRIGGERS */
-
-/* 
-	Trigger que al insertar un registro en exámenes valida que el alumno se haya inscripto en la materia en los 
-	últimos 5 años y no esté en condición de libre.
-	Si se quiere modificar algún registro del examen, posterior a la inscripción se hace la misma validación 
-	para no dar posbilidad de dejar datos inconsistentes.
-	Ejemplos de uso:
-		INSERT INTO EXAMENES VALUES (1, '2021-10-01', 1, 1, 5, NULL) -- El legajo 5 no está inscripto en la materia ID = 1, esto da error y borra el registro insertado
-		UPDATE EXAMENES SET nota = 5 WHERE id_examen = 7 -- No afecta, no se tocan los campos clave. Se cambia la nota con éxito
-*/
 CREATE TRIGGER [dbo].[TRG_VALIDA_EXAMEN]
 ON [dbo].[EXAMENES]
 FOR INSERT, UPDATE
@@ -2394,27 +2569,28 @@ AS
 	DECLARE @materia int DECLARE @materiaOld int
 	DECLARE @id_examen int
 
-	SELECT @legajo = legajo, @materia = id_materia, @id_examen = id_examen FROM inserted
+	SELECT @legajo = legajo, @materia = id_materia, @id_examen = id_examen FROM inserted -- Valores insertados
 
-	SELECT @legajoOld = legajo, @materiaOld = id_materia, @id_examen = id_examen FROM deleted
+	SELECT @legajoOld = legajo, @materiaOld = id_materia, @id_examen = id_examen FROM deleted -- Valores borrados
 
-	IF(EXISTS (SELECT legajo FROM ALUMNOSxMATERIA WHERE legajo = @legajo AND id_materia = @materia AND id_condicion in (1,2) AND anio_cursado > YEAR(GETDATE()) - 5))
-		IF (EXISTS (SELECT * FROM DELETED))
+	IF(EXISTS (SELECT legajo FROM ALUMNOSxMATERIA WHERE legajo = @legajo AND id_materia = @materia AND id_condicion in (1,2) AND anio_cursado > YEAR(GETDATE()) - 5)) -- Se valida que el alumno esté en condiciones regular/promocional
+		IF (EXISTS (SELECT * FROM DELETED)) -- Devuelve mensaje según de donde viene la llamada (update o insert)
 			PRINT ('Modificación en datos de examen realizada con éxito.')
 		ELSE
 			PRINT ('Inscripción realizada con éxito.')
-	ELSE
-		IF (EXISTS (SELECT * FROM DELETED))
+	ELSE -- Si el alumno no estaba en condiciones pero se anotó igual
+		IF (EXISTS(SELECT * FROM DELETED) AND UPDATE(legajo)) -- Acá se supone que se intento cambiar el legajo en una inscripcion y que el nuevo legajo no estaba en condiciones.
 		BEGIN
-			UPDATE EXAMENES SET id_materia = @materia, legajo = @legajoOld WHERE id_examen = @id_examen
+			UPDATE EXAMENES SET id_materia = @materia, legajo = @legajoOld WHERE id_examen = @id_examen -- recuperamos el viejo legajo
 			RAISERROR('Hubo un error al modificar los datos del examen. Revise el estado del alumno y vuelva a intentarlo.', 16,1)
 		END
 		ELSE
 		BEGIN
-			DELETE FROM EXAMENES WHERE id_examen = @id_examen
+			DELETE FROM EXAMENES WHERE id_examen = @id_examen -- Se elimna el registro del legajo que no está en condiciones si la llamada viene del isnert
 			RAISERROR('Hubo un error al registrar el examen, verifique que el alumno esté en condiciones de poder inscribirse.', 16, 1)
 		END
 	END
+
 GO
 ALTER TABLE [dbo].[EXAMENES] ENABLE TRIGGER [TRG_VALIDA_EXAMEN]
 GO
