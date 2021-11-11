@@ -76,6 +76,8 @@ namespace AcademikaFront.Presentacion
             this.cboLibres = new RJCodeAdvance.RJControls.RJComboBox();
             this.lblLibres = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -670,12 +672,40 @@ namespace AcademikaFront.Presentacion
             // 
             this.toolTip1.Tag = "Ver estadísticas";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSearch.IconColor = System.Drawing.Color.Black;
+            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearch.IconSize = 30;
+            this.btnSearch.Location = new System.Drawing.Point(949, 422);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(51, 51);
+            this.btnSearch.TabIndex = 174;
+            this.btnSearch.Tag = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnLimpiar.IconColor = System.Drawing.Color.Crimson;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.Location = new System.Drawing.Point(1040, 422);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(51, 51);
+            this.btnLimpiar.TabIndex = 173;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
             // FrmConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1154, 711);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.cboLibres);
             this.Controls.Add(this.lblLibres);
             this.Controls.Add(this.cboCuatrimestre);
@@ -767,5 +797,7 @@ namespace AcademikaFront.Presentacion
         private RJCodeAdvance.RJControls.RJComboBox cboLibres;
         private System.Windows.Forms.Label lblLibres;
         private System.Windows.Forms.ToolTip toolTip1;
+        private FontAwesome.Sharp.IconButton btnSearch;
+        private FontAwesome.Sharp.IconButton btnLimpiar;
     }
 }
