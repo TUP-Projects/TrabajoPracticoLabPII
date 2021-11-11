@@ -20,15 +20,15 @@ namespace Academika.Presentacion
             this.labelVersion.Text = String.Format("Version 0.2b", AssemblyVersion);
             this.labelCopyright.Text = "Sistemas Javier SRL:";
             this.textBoxDescription.Text =
-                "\r N° Legajo 112929 - Alfonso, Lucio Andrés (UX-UI / Coffe drinker) " +
+                "\r N° Legajo 112929 - Alfonso, Lucio Andrés " +
                 "\r\n " +
-                "\r\n N° Legajo 112662 - Rojas Cristian (Developer / El Rojazo) " +
+                "\r\n N° Legajo 112662 - Rojas Cristian " +
                 "\r\n " +
-                "\r\n N° Legajo 113127 - Soria, Juan Javier (Team Leader/ Variable Owner )" +
+                "\r\n N° Legajo 113127 - Soria, Juan Javier " +
                 "\r\n " +
-                "\r\n N° Legajo 112863 - Sosa, Gastón Iván (Scrum Master - Coffe Maker) " +
+                "\r\n N° Legajo 112863 - Sosa, Gastón Iván " +
                 "\r\n " +
-                "\r\n N° Legajo 112903 - Villasanti, Ciro (DBA /Cat Lover) ";
+                "\r\n N° Legajo 112903 - Villasanti, Ciro  ";
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

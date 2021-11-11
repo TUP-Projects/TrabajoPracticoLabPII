@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnConsultas = new FontAwesome.Sharp.IconButton();
             this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.btnModExamenes = new FontAwesome.Sharp.IconButton();
@@ -83,12 +84,13 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.iconButton1);
+            this.panelMenu.Controls.Add(this.iconButton3);
             this.panelMenu.Controls.Add(this.pictureBox2);
             this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Controls.Add(this.iconButton2);
             this.panelMenu.Controls.Add(this.lblFecha);
             this.panelMenu.Controls.Add(this.lblHora);
-            this.panelMenu.Controls.Add(this.iconButton1);
             this.panelMenu.Controls.Add(this.btnConsultas);
             this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.btnModExamenes);
@@ -101,6 +103,52 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(257, 832);
             this.panelMenu.TabIndex = 0;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
+            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 576);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
+            this.iconButton1.Size = new System.Drawing.Size(257, 69);
+            this.iconButton1.TabIndex = 19;
+            this.iconButton1.Text = "Acerca de...";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_2);
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
+            this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.Location = new System.Drawing.Point(0, 507);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
+            this.iconButton3.Size = new System.Drawing.Size(257, 69);
+            this.iconButton3.TabIndex = 18;
+            this.iconButton3.Text = "Estadísticas";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click_1);
             // 
             // pictureBox2
             // 
@@ -159,29 +207,6 @@
             this.lblHora.Text = "Hora";
             this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
             // 
-            // iconButton1
-            // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.QuestionCircle;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 507);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
-            this.iconButton1.Size = new System.Drawing.Size(257, 69);
-            this.iconButton1.TabIndex = 12;
-            this.iconButton1.Text = "Acerca de...";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
-            // 
             // btnConsultas
             // 
             this.btnConsultas.Dock = System.Windows.Forms.DockStyle.Top;
@@ -203,6 +228,7 @@
             this.btnConsultas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConsultas.UseVisualStyleBackColor = true;
+            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
             // btnReportes
             // 
@@ -225,6 +251,7 @@
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Visible = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnModExamenes
@@ -636,7 +663,6 @@
         private System.Windows.Forms.ToolStripMenuItem tToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripDetalleMaterias;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMaterias;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Label lblFecha;
@@ -649,5 +675,7 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.ToolStripMenuItem planEstudiosToolStripMenuItem;
         private System.Windows.Forms.Panel panel3;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }

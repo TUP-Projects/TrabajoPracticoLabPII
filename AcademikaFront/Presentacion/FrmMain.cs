@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AcademikaFront.Presentacion;
 using FontAwesome.Sharp;
 
 namespace Academika.Presentacion
@@ -289,6 +290,22 @@ namespace Academika.Presentacion
                 this.Close();
             }
                 
+        }
+
+        private void btnConsultas_Click(object sender, EventArgs e)
+        {
+            OpenChild(new FrmConsultas());
+        }
+
+        private void iconButton3_Click_1(object sender, EventArgs e)
+        {
+            OpenChild(new FrmEstadisticas());
+        }
+
+        private void iconButton1_Click_2(object sender, EventArgs e)
+        {
+            FrmAcercaDe nuevo = new FrmAcercaDe();
+            nuevo.Show();
         }
     }
 }
