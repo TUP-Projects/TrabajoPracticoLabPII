@@ -20,6 +20,9 @@ namespace AcademikaFront.Presentacion
         {
             InitializeComponent();
             _materiasService = new ServiceFactoryImp().CrearServiceMaterias();
+            dtpAnioCursado.Format = DateTimePickerFormat.Custom;
+            dtpAnioCursado.CustomFormat = "yyyy";
+            dtpAnioCursado.ShowUpDown = true;
         }
 
         private void FrmPromedioAlumno_Load(object sender, EventArgs e)
@@ -46,29 +49,21 @@ namespace AcademikaFront.Presentacion
             EntidadGenerica curso = (EntidadGenerica)cboCurso.SelectedItem;
             EntidadGenerica carrera = (EntidadGenerica)cboCarrera.SelectedItem;
             Dictionary<string, object> lst = new Dictionary<string, object>();
-            if(legajo is null)
-                lst.Add("@legajo", legajo);
-            else
-                lst.Add("@legajo", legajo.ID);
-
-            if (materia is null)
-                lst.Add("@idmateria", materia);
-            else
-                lst.Add("@idmateria", materia.ID);
-
-            if (curso is null)
-                lst.Add("@idcurso", curso);
-            else
-                lst.Add("@idcurso", curso.ID);
-
-            if (carrera is null)
-                lst.Add("@idcarrera", carrera);
-            else
-                lst.Add("@idcarrera", carrera.ID);
-
+            AddParametro(lst, "@legajo", legajo);
+            AddParametro(lst, "@idmateria", materia);
+            AddParametro(lst, "@idcurso", curso);
+            AddParametro(lst, "@idcarrera", carrera);
             lst.Add("@aniocursado", dtpAnioCursado.Value.Year);
             DataTable dt = _materiasService.GetCondiciones(lst);
             dgvPromedioAlumnos.DataSource = dt;
+        }
+
+        private void AddParametro(Dictionary<string, object> lst, string key, EntidadGenerica entity)
+        {
+            if (entity is null)
+                lst.Add(key, entity);
+            else
+                lst.Add(key, entity.ID);
         }
     }
 }
