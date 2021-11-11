@@ -193,7 +193,7 @@ namespace AcademikaFront.Presentacion.Consultas
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.dgvAlumnosSinAprobar);
             this.Name = "FrmAlumnosSinAprobar";
-            this.Text = "FrmAlumnosSinAprobar";
+            this.Text = "Alumnos sin aprobar";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosSinAprobar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
