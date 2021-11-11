@@ -70,7 +70,11 @@ namespace AcademikaFront.Presentacion.Consultas
         {
             dgvPromedioAlumnos.DataSource = null;
             dgvPromedioAlumnos.Rows.Clear();
-            
+            cboLegajo.SelectedIndex = -1;
+            cboMateria.SelectedIndex = -1;
+            cboCurso.SelectedIndex = -1;
+            cboCarrera.SelectedIndex = -1;
+
         }
 
         private void iconButton3_Click(object sender, EventArgs e)

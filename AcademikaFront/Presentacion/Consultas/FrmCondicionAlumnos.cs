@@ -39,6 +39,7 @@ namespace AcademikaFront.Presentacion.Consultas
             lst.Add("@aniocursado", dtpAnioCursado.Value.Year.ToString());
             DataTable dt = _materiasService.GetCondicionesAlumnos(lst);
             dgvCondicionAlumnos.DataSource = dt;
+            dgvCondicionAlumnos.Columns[0].Width = 100;
         }
 
         private void AddParametro(Dictionary<string, object> lst, string key, EntidadGenerica entity)
@@ -70,6 +71,10 @@ namespace AcademikaFront.Presentacion.Consultas
         {
             dgvCondicionAlumnos.DataSource = null;
             dgvCondicionAlumnos.Rows.Clear();
+            cboCarrera.SelectedIndex = -1;
+            cboMateria.SelectedIndex = -1;
+            cboCurso.SelectedIndex = -1;
+            cboCondicion.SelectedIndex = -1;
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
