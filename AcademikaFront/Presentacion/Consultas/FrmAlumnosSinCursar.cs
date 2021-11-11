@@ -31,8 +31,10 @@ namespace AcademikaFront.Presentacion.Consultas
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            dgvAlumnosSinCursar.Rows.Clear();
             dgvAlumnosSinCursar.DataSource = null;
+            dgvAlumnosSinCursar.Rows.Clear();
+
+
         }
 
         private void iconButton3_Click(object sender, EventArgs e)

@@ -68,8 +68,9 @@ namespace AcademikaFront.Presentacion.Consultas
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            dgvPromedioAlumnos.Rows.Clear();
             dgvPromedioAlumnos.DataSource = null;
+            dgvPromedioAlumnos.Rows.Clear();
+            
         }
 
         private void iconButton3_Click(object sender, EventArgs e)

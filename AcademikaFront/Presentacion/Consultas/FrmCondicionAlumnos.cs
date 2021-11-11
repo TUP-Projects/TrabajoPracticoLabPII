@@ -68,15 +68,15 @@ namespace AcademikaFront.Presentacion.Consultas
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            dgvCondicionAlumnos.Rows.Clear();
             dgvCondicionAlumnos.DataSource = null;
+            dgvCondicionAlumnos.Rows.Clear();
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
             ToolTip toolTip1 = new ToolTip();
 
-            toolTip1.SetToolTip(iconButton3, "SP_CONDICIONES_ALUMNOS: Cantidad de alumnos regulares, libres, por materia, curso, carrera, año de cursado.");
+            toolTip1.SetToolTip(iconButton3, "SP_CONDICIONES_ALUMNOS: Alumnos regulares, libres, por materia, curso, carrera, año de cursado.");
         }
     }
     

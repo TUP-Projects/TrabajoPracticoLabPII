@@ -34,8 +34,10 @@ namespace AcademikaFront.Presentacion.Consultas
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            dgvEstadisticas.Rows.Clear();
             dgvEstadisticas.DataSource = null;
+            dgvEstadisticas.Rows.Clear();
+
+
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
