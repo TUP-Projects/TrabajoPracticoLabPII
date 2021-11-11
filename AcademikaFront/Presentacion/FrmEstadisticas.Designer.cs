@@ -171,7 +171,7 @@ namespace AcademikaFront.Presentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
-            this.ClientSize = new System.Drawing.Size(806, 501);
+            this.ClientSize = new System.Drawing.Size(1154, 711);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgvEstadisticas);
             this.Controls.Add(this.comboBox1);

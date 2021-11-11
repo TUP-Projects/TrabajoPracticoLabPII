@@ -317,5 +317,15 @@ namespace Academika.Presentacion
         {
             OpenChild(new FrmEstadisticas());
         }
+
+        private void actualizarCondiciónAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChild(new FrmAlumnosSinAprobar());
+        }
+
+        private void alumnosSinCursarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChild(new FrmAlumnosSinCursar());
+        }
     }
 }

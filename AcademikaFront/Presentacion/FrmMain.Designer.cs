@@ -69,6 +69,7 @@
             this.toolStripDetalleMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.planEstudiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.alumnosSinCursarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -518,25 +519,26 @@
             this.exámenesToolStripMenuItem,
             this.turnosToolStripMenuItem,
             this.tipoExámenesToolStripMenuItem,
-            this.actualizarCondiciónAlumnoToolStripMenuItem});
+            this.actualizarCondiciónAlumnoToolStripMenuItem,
+            this.alumnosSinCursarToolStripMenuItem});
             this.rjDropDownMenu2.MenuItemHeight = 25;
             this.rjDropDownMenu2.MenuItemTextColor = System.Drawing.Color.Empty;
             this.rjDropDownMenu2.Name = "rjDropDownMenu2";
             this.rjDropDownMenu2.PrimaryColor = System.Drawing.Color.Empty;
-            this.rjDropDownMenu2.Size = new System.Drawing.Size(241, 122);
+            this.rjDropDownMenu2.Size = new System.Drawing.Size(241, 146);
             this.rjDropDownMenu2.Opening += new System.ComponentModel.CancelEventHandler(this.rjDropDownMenu2_Opening);
             // 
             // exámenesToolStripMenuItem
             // 
             this.exámenesToolStripMenuItem.Name = "exámenesToolStripMenuItem";
-            this.exámenesToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.exámenesToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
             this.exámenesToolStripMenuItem.Text = "Condición Alumno";
             this.exámenesToolStripMenuItem.Click += new System.EventHandler(this.exámenesToolStripMenuItem_Click);
             // 
             // turnosToolStripMenuItem
             // 
             this.turnosToolStripMenuItem.Name = "turnosToolStripMenuItem";
-            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.turnosToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
             this.turnosToolStripMenuItem.Text = "Promedio Alumno";
             this.turnosToolStripMenuItem.Click += new System.EventHandler(this.turnosToolStripMenuItem_Click);
             // 
@@ -550,7 +552,9 @@
             // actualizarCondiciónAlumnoToolStripMenuItem
             // 
             this.actualizarCondiciónAlumnoToolStripMenuItem.Name = "actualizarCondiciónAlumnoToolStripMenuItem";
-            this.actualizarCondiciónAlumnoToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.actualizarCondiciónAlumnoToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
+            this.actualizarCondiciónAlumnoToolStripMenuItem.Text = "Alumnos Sin Aprobar";
+            this.actualizarCondiciónAlumnoToolStripMenuItem.Click += new System.EventHandler(this.actualizarCondiciónAlumnoToolStripMenuItem_Click);
             // 
             // rjDropDownMenu1
             // 
@@ -610,6 +614,13 @@
             this.horafecha.Enabled = true;
             this.horafecha.Interval = 1000;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick_1);
+            // 
+            // alumnosSinCursarToolStripMenuItem
+            // 
+            this.alumnosSinCursarToolStripMenuItem.Name = "alumnosSinCursarToolStripMenuItem";
+            this.alumnosSinCursarToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
+            this.alumnosSinCursarToolStripMenuItem.Text = "Alumnos Sin Cursar";
+            this.alumnosSinCursarToolStripMenuItem.Click += new System.EventHandler(this.alumnosSinCursarToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -683,5 +694,6 @@
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton3;
+        private System.Windows.Forms.ToolStripMenuItem alumnosSinCursarToolStripMenuItem;
     }
 }
