@@ -71,5 +71,12 @@ namespace AcademikaFront.Presentacion.Consultas
             dgvPromedioAlumnos.Rows.Clear();
             dgvPromedioAlumnos.DataSource = null;
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+
+            toolTip1.SetToolTip(iconButton3, "SP_PROMEDIO_NOTAS: Muestra Promedio de notas por alumno, materia, año, curso, etc.");
+        }
     }
 }

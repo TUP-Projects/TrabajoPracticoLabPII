@@ -71,5 +71,13 @@ namespace AcademikaFront.Presentacion.Consultas
             dgvCondicionAlumnos.Rows.Clear();
             dgvCondicionAlumnos.DataSource = null;
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+
+            toolTip1.SetToolTip(iconButton3, "SP_CONDICIONES_ALUMNOS: Cantidad de alumnos regulares, libres, por materia, curso, carrera, año de cursado.");
+        }
     }
+    
 }

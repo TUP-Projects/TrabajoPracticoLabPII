@@ -34,5 +34,12 @@ namespace AcademikaFront.Presentacion.Consultas
             dgvAlumnosSinCursar.Rows.Clear();
             dgvAlumnosSinCursar.DataSource = null;
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+
+            toolTip1.SetToolTip(iconButton3, "SP_ALUMNOS_SIN_CURSADA: Alumnos que no han cursado materias en un año.");
+        }
     }
 }

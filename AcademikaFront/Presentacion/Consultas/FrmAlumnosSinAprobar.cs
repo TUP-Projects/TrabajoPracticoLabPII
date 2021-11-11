@@ -34,5 +34,12 @@ namespace AcademikaFront.Presentacion.Consultas
             dgvAlumnosSinAprobar.Rows.Clear();
             dgvAlumnosSinAprobar.DataSource = null;
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+
+            toolTip1.SetToolTip(iconButton3, "SP_ALUMNOS_SIN_APROBADAS: Alumnos que no han rendido (o no han aprobado) ninguna materia en los últimos año.");
+        }
     }
 }

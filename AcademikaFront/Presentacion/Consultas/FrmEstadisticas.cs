@@ -37,5 +37,12 @@ namespace AcademikaFront.Presentacion.Consultas
             dgvEstadisticas.Rows.Clear();
             dgvEstadisticas.DataSource = null;
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+
+            toolTip1.SetToolTip(iconButton3, "SP_ESTADISTICAS_ALUMNOS: Cantidades de alumnos (promedio de notas, cantidad de materias regulares y aprobadas) por edades, estado civil, situación habitacional y laboral, etc.");
+        }
     }
 }
