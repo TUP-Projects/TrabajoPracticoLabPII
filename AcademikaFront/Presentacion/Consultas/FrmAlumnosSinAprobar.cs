@@ -27,6 +27,11 @@ namespace AcademikaFront.Presentacion.Consultas
         {
             DataTable dt = _materiasService.GetAlumnosSinAprobar(dtpAnioCursado.Value.Year);
             dgvAlumnosSinAprobar.DataSource = dt;
+            dgvAlumnosSinAprobar.AutoResizeColumn(0);
+            dgvAlumnosSinAprobar.AutoResizeColumn(1);
+            dgvAlumnosSinAprobar.AutoResizeColumn(2);
+            dgvAlumnosSinAprobar.AutoResizeColumn(3);
+            dgvAlumnosSinAprobar.AutoResizeColumn(4);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
