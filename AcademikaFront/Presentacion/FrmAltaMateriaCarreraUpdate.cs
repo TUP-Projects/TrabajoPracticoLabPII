@@ -200,7 +200,7 @@ namespace Academika.Presentacion
           
             cboMateria.SelectedIndex = -1;
             cboAnio.SelectedIndex = -1;
-            nudCarga.Value = 0;
+            nudCarga.Value = 1;
           
         }
     }

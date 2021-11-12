@@ -74,7 +74,6 @@ namespace AcademikaFront.Presentacion.Consultas
             cboMateria.SelectedIndex = -1;
             cboCurso.SelectedIndex = -1;
             cboCarrera.SelectedIndex = -1;
-
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
